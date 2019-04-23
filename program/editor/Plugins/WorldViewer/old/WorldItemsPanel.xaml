@@ -1,0 +1,37 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WorldViewer"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:SearchBox="clr-namespace:SearchBox;assembly=EditorControlLib" x:Name="userControl" x:Class="WorldViewer.WorldItemsPanel"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Control.Resources>
+        <HierarchicalDataTemplate DataType="{x:Type local:WorldItem}">
+            <Grid d:DesignWidth="128.25">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="19*"/>
+                    <ColumnDefinition Width="110*"/>
+                </Grid.ColumnDefinitions>
+                <ToggleButton IsChecked="{Binding ActorVisible}" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ToggleButtonStyle}}">
+                    <Image Source="/ResourceLibrary;component/Icon/preview.png" />
+                </ToggleButton>
+                <TextBlock Text="{Binding DisplayName}" Grid.Column="1" Margin="5,0,0,0" VerticalAlignment="Center" />
+            </Grid>
+        </HierarchicalDataTemplate>
+    </Control.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <SearchBox:SearchBox Margin="5" Height="24"/>
+        <TextBlock x:Name="textBlock" Margin="5" Grid.Row="2" TextWrapping="Wrap" Text="{Binding InfoString, ElementName=userControl}" d:LayoutOverrides="Height" Foreground="White"/>
+        <TreeView x:Name="treeView" Margin="5" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TreeViewStyle_Default}}" ItemsSource="{Binding WorldItems, ElementName=userControl}" />
+
+    </Grid>
+</UserControl>

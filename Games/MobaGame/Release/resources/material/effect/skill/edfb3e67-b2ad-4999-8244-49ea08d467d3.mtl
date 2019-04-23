@@ -1,0 +1,40 @@
+/*Material
+
+<Material Name="SrcColorModel" Require="DiffuseUV|VertexColor0" Main="DoMaterial_edfb3e67_b2ad_4999_8244_49ea08d467d3" ExtendString="" Id="edfb3e67-b2ad-4999-8244-49ea08d467d3" Ver="2">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="edfb3e67-b2ad-4999-8244-49ea08d467d3" Id="8e943c55-dbee-4e7c-90e6-66219aae8ebe" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_57abd2e1_40b6_484f_972d_4ffa92246e1c EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+texture ShaderVar_57abd2e1_40b6_484f_972d_4ffa92246e1c;
+sampler2D Samp_ShaderVar_57abd2e1_40b6_484f_972d_4ffa92246e1c = sampler_state
+{
+	Texture = <ShaderVar_57abd2e1_40b6_484f_972d_4ffa92246e1c>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_edfb3e67_b2ad_4999_8244_49ea08d467d3(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    pssem.mDiffuseColor = ((vise_tex2D(Samp_ShaderVar_57abd2e1_40b6_484f_972d_4ffa92246e1c,pssem.mDiffuseUV.xy) * pssem.mVertexColor0) * pssem.mVertexColor0.a);
+
+}

@@ -1,0 +1,40 @@
+﻿<myTypes:BaseNodeControl x:Name="baseNodeControl" x:Class="MaterialEditor.Controls.Value.ParticleColor"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:myTypes ="clr-namespace:CodeGenerateSystem.Base;assembly=CodeGenerateSystem"
+             xmlns:baseCtrl="clr-namespace:CodeGenerateSystem.Controls;assembly=CodeGenerateSystem"
+			 xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary Source="/MaterialEditor;component/Themes/Generic.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <theme:SystemDropShadowChrome Color="#B2000000">
+            <Border Background="{StaticResource NodeBackground}" CornerRadius="5">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Border CornerRadius="5,5,0,0" Name="TitleLabel" Background="{StaticResource Value}"/>
+                    <TextBlock VerticalAlignment="Center" Margin="5" Foreground="{StaticResource TextForeground}" Text="粒子颜色" />
+                    <baseCtrl:LinkOutControl Name="TimeValueLink" Margin="0,-2.834,-20,-3.505" Width="15" Height="15" BackBrush="{StaticResource ValueLink_float1}" HorizontalAlignment="Right" Direction="Right" />
+                    <baseCtrl:LinkOutControl x:Name="TimeValueLink_R" Margin="0,5.753,-18,5.083" Width="13" Height="13" BackBrush="{StaticResource ValueLink_float1}" HorizontalAlignment="Right" Grid.Row="1" Direction="Right" />
+                    <baseCtrl:LinkOutControl x:Name="TimeValueLink_G" Margin="0,5.753,-18,5.083" Width="13" Height="13" BackBrush="{StaticResource ValueLink_float1}" HorizontalAlignment="Right" Grid.Row="2" Direction="Right" />
+                    <baseCtrl:LinkOutControl x:Name="TimeValueLink_B" Margin="0,5.753,-18,5.083" Width="13" Height="13" BackBrush="{StaticResource ValueLink_float1}" HorizontalAlignment="Right" Grid.Row="3" Direction="Right" />
+                    <baseCtrl:LinkOutControl x:Name="TimeValueLink_A" Margin="0,5.753,-18,5.083" Width="13" Height="13" BackBrush="{StaticResource ValueLink_float1}" HorizontalAlignment="Right" Grid.Row="4" Direction="Right" />
+                    <TextBlock VerticalAlignment="Center" Margin="5" Grid.Row="1" HorizontalAlignment="Right" Text="R" Foreground="{StaticResource TextForeground}"/>
+                    <TextBlock VerticalAlignment="Center" Margin="5" Grid.Row="2" HorizontalAlignment="Right" Text="G" Foreground="{StaticResource TextForeground}"/>
+                    <TextBlock VerticalAlignment="Center" Margin="5" Grid.Row="3" HorizontalAlignment="Right" Text="B" Foreground="{StaticResource TextForeground}"/>
+                    <TextBlock VerticalAlignment="Center" Margin="5" Grid.Row="4" HorizontalAlignment="Right" Text="A" Foreground="{StaticResource TextForeground}"/>
+                </Grid>
+            </Border>
+        </theme:SystemDropShadowChrome>
+        <baseCtrl:CommentControl d:LayoutOverrides="Width, Height" Comment="{Binding Comment, ElementName=baseNodeControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+    </Grid>
+</myTypes:BaseNodeControl>

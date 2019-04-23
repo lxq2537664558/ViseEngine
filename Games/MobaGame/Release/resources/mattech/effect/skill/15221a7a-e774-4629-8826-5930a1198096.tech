@@ -1,0 +1,18 @@
+<Technique Name="»ðÇòÍÏÎ²µÄÑÌ" Ver="131" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ef883fa9-1a47-42a0-8262-ae0cb4968996" Id="15221a7a-e774-4629-8826-5930a1198096" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_39b7acd1_eda2_42a4_9656_4bdcf374d736 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+		<ShaderVar_834b9b45_6516_47f3_9938_60afb63f3c73 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_66b6c1dd_9c78_432a_9daf_9bdea82476b9 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/noise028.png"/>
+		<ShaderVar_speed2 EditorType="Vector" Type="float2" Value="0.18,0.06"/>
+		<ShaderVar_speed1 EditorType="Vector" Type="float2" Value="-0.14,-0.048"/>
+		<ShaderVar_scale1 EditorType="Vector" Type="float2" Value="1.4,0.6"/>
+		<ShaderVar_scale2 EditorType="Vector" Type="float2" Value="0.85,1.25"/>
+		<ShaderVar_texspeed EditorType="Vector" Type="float2" Value="0,0"/>
+		<ShaderVar_texscale EditorType="Vector" Type="float2" Value="1,1.5"/>
+		<ShaderVar_color EditorType="Vector" Type="float4" Value="1.5,0.55,0.3,1"/>
+		<ShaderVar_maskSpeed EditorType="Vector" Type="float2" Value="0,0.05"/>
+		<ShaderVar_maskScale EditorType="Vector" Type="float2" Value="0.85,0.9"/>
+		<ShaderVar_MaskDisSpeed EditorType="Vector" Type="float2" Value="-0.4,0"/>
+	</ShaderVar>
+</Technique>
+

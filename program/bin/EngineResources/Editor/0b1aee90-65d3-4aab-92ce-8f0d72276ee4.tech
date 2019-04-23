@@ -1,0 +1,6 @@
+<Technique Name="Ä¬ÈÏÁ£×Ó²ÄÖÊ" Ver="7" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="8b89cdb7-fa5c-4727-9bd8-6ccea3f5e1ce" Id="0b1aee90-65d3-4aab-92ce-8f0d72276ee4" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_GDiffuseTexture EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/GF_474.png"/>
+	</ShaderVar>
+</Technique>
+

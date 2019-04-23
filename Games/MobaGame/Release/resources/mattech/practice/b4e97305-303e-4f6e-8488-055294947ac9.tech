@@ -1,0 +1,8 @@
+<Technique Name="µ¶¹âÍÏÎ²²ÄÖÊ" Ver="6" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="faa0563f-af51-4e49-8888-c1531bf0a325" Id="b4e97305-303e-4f6e-8488-055294947ac9" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_a0df4986_0107_4bc6_833d_390d8cea9123 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_8fa109f7_380e_4763_b21c_99c5bd330553 EditorType="Texture" Type="texture" Value="resources/texture/effect/weapontrail/trail_101_4.png"/>
+		<ShaderVar_6efe215f_f817_4955_9941_efb68c040c9a EditorType="Texture" Type="texture" Value="resources/texture/effect/weapontrail/trail_vein.png"/>
+	</ShaderVar>
+</Technique>
+

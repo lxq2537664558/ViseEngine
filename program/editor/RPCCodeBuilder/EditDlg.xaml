@@ -1,0 +1,37 @@
+﻿<DockControls:DockAbleWindowBase x:Class="RPCCodeBuilder.EditDlg"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RPCCodeBuilder"
+        xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+        xmlns:wpg="clr-namespace:WPG;assembly=WPG"        
+        xmlns:DockControls="clr-namespace:DockControl.Controls;assembly=DockControl"
+        mc:Ignorable="d"
+        Title="Editor" Height="300" Width="500" Closing="Window_Closing" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=DefaultWindowStyle}}">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        
+        <DockPanel LastChildFill="True" Margin="10">
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom">
+                <Button Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Click="Button_Click_Add">+</Button>
+                <Button Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Margin="10,0,0,0" Click="Button_Click_Delete">-</Button>
+            </StackPanel>
+            <ListBox x:Name="listBox" Height="Auto" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ListBoxStyle_Default}}" SelectionChanged="listBox_SelectionChanged">
+
+            </ListBox>
+        </DockPanel>
+        <DockPanel Grid.Column="1" LastChildFill="True" Margin="10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Bottom">
+                <Button Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Click="Button_Click_OK">确定</Button>
+                <Button Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Margin="10,0,0,0" Click="Button_Click_Cancle">取消</Button>
+            </StackPanel>
+            <wpg:PropertyGrid x:Name="propertGrid">
+
+            </wpg:PropertyGrid>
+        </DockPanel>
+    </Grid>
+</DockControls:DockAbleWindowBase>

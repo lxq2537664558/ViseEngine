@@ -1,0 +1,86 @@
+<Event ViewBoxMain_X="79" ViewBoxMain_Y="139" ViewBoxMain_Width="1024" GUID="00000000-0000-0000-0000-000000000000">
+	<OrigionCtrls>
+		<OrigionCtrl Id="a2a9aef0-fdab-4a0e-94e9-edd2ddea8f2b"/>
+	</OrigionCtrls>
+	<ChildNodesCtrls>
+		<MethodNode Useable="False" OverrideAble="True" CallBasePosition="None" UseBaseVisibility="Collapsed" IsStatic="True" ID="a2a9aef0-fdab-4a0e-94e9-edd2ddea8f2b" Type="DelegateMethodEditor@CodeDomNode.MethodNode" X="28" Y="-76" Params="Invoke,processData:cscommon@CSUtility.Map.Trigger.TriggerProcessData/trigger:cscommon@CSUtility.Map.Trigger.TriggerData,mscorlib.dll@System.Void,cscommon@CSUtility.Map.Trigger.FOnEnter,true,false" IsDeleteable="False" Comment="">
+			<ChildNodes>
+				<ParameterControl ID="ffe8db0d-040b-4d6c-b27c-4a1eab2afff2" Type="DelegateMethodEditor@CodeDomNode.ParameterControl" X="NaN" Y="NaN" Params="processData:cscommon@CSUtility.Map.Trigger.TriggerProcessData" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="b4458487-b2db-4ee6-859e-70f3bca56392">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</ParameterControl>
+				<ParameterControl ID="500fb9e8-0470-428e-9c1b-9669768662c1" Type="DelegateMethodEditor@CodeDomNode.ParameterControl" X="NaN" Y="NaN" Params="trigger:cscommon@CSUtility.Map.Trigger.TriggerData" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="519738d5-ce1f-4a53-9870-78f6808dbb4d">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</ParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="28841aae-fefe-41bb-9157-dafe6b494e32">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="6c7b6d0a-c107-4a5a-8ee6-fe9d6800290f">
+					<Link LinkFrom="6c7b6d0a-c107-4a5a-8ee6-fe9d6800290f" LinkTo="96c6beef-2278-4972-a8d9-265c56d0145b"/>
+				</LinkObject>
+				<LinkObject ID="1092978d-dbce-450d-9fca-15ed742c81e1">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="c2d115a2-6817-4c07-929e-d388cb793ed1">
+					<Link LinkFrom="c2d115a2-6817-4c07-929e-d388cb793ed1" LinkTo="6c84a51d-bccb-4924-955a-f879181e8186"/>
+				</LinkObject>
+			</LinkObjects>
+		</MethodNode>
+		<PropertyNode ID="3da0da68-ce2b-4547-b2ad-d8eb507c3d66" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="-358.721923828125" Y="149.532333374023" Params="触发器数据.属性.绑定对象(读取),Actor,CSUtility.Component.ActorBase,get;Normal,Server.Hall.Role.Trigger.TriggerProcessData_Server,a2a9aef0-fdab-4a0e-94e9-edd2ddea8f2b,28841aae-fefe-41bb-9157-dafe6b494e32" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="dc401b01-fa8f-475c-9d18-63713865ceef">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<Value_Boolean ID="2b5dae68-2053-47f9-9b5a-2ecc7aba50b3" Type="DelegateMethodEditor@CodeDomNode.Value_Boolean" X="81.41455078125" Y="315.941467285156" Params="True," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="9ec99f5f-d2ff-49eb-9fc7-63cff9285a52">
+					<Link LinkFrom="9ec99f5f-d2ff-49eb-9fc7-63cff9285a52" LinkTo="2522de80-7636-4556-822f-dba04edac6c8"/>
+				</LinkObject>
+			</LinkObjects>
+		</Value_Boolean>
+		<MethodInvokeNode ID="11a200b3-cd01-459e-a648-c30dfc599701" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeNode" X="144.00537109375" Y="154.89599609375" Params="角色对象.设置是否在温泉里属性,game@Server.Hall.Role.RoleActor,Trigger_SetHotSpring,triggerData:cscommon@CSUtility.Map.Trigger.TriggerData/value:mscorlib.dll@System.Boolean,mscorlib.dll@System.Void,Server;Normal,Server.Hall.Role.RoleActor,3da0da68-ce2b-4547-b2ad-d8eb507c3d66,dc401b01-fa8f-475c-9d18-63713865ceef" IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<triggerData Type="cscommon@CSUtility.Map.Trigger.TriggerData" Value="null"/>
+				<value Type="mscorlib.dll@System.Boolean" Value="False"/>
+			</DefaultParamValue>
+			<ChildNodes>
+				<MethodInvokeParameterControl ID="b47bf92f-6330-4b95-8ff7-19749cbcfcfc" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="triggerData:cscommon@CSUtility.Map.Trigger.TriggerData" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="96c6beef-2278-4972-a8d9-265c56d0145b">
+							<Link LinkFrom="6c7b6d0a-c107-4a5a-8ee6-fe9d6800290f" LinkTo="96c6beef-2278-4972-a8d9-265c56d0145b"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+				<MethodInvokeParameterControl ID="47593d4b-1752-419e-b4a1-1bface3a73d2" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="value:mscorlib.dll@System.Boolean" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="2522de80-7636-4556-822f-dba04edac6c8">
+							<Link LinkFrom="9ec99f5f-d2ff-49eb-9fc7-63cff9285a52" LinkTo="2522de80-7636-4556-822f-dba04edac6c8"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="6c84a51d-bccb-4924-955a-f879181e8186">
+					<Link LinkFrom="c2d115a2-6817-4c07-929e-d388cb793ed1" LinkTo="6c84a51d-bccb-4924-955a-f879181e8186"/>
+				</LinkObject>
+				<LinkObject ID="8d32cf00-7f35-4aa6-adb3-3a97a4873494">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</MethodInvokeNode>
+	</ChildNodesCtrls>
+</Event>
+

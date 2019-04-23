@@ -1,0 +1,95 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+#include "CommonDeferredShadingFunc.fxh"
+
+float2		g_InvScreenSize;
+float2		g_ScreenSize;
+texture 		RT_SRC;
+sampler2D Samp_RT_SRC = sampler_state
+{
+	Texture = <RT_SRC>;
+    MipFilter = NONE;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+};
+
+texture 		RT_ADAPTED;
+sampler2D Samp_RT_ADAPTED = sampler_state
+{
+	Texture = <RT_SRC>;
+    MipFilter = NONE;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+};
+
+float g_FrameDelta;
+
+struct VSInput
+{
+	float3 Pos		: LOCALPOS;
+	float2 UV		: DIFFUSEUV;
+};
+VSInput dummyVSIn;
+
+struct VSOutput
+{
+    float4 Pos		: POSITION;
+    float2 UV		: TEXCOORD0;
+};
+struct PSOutput
+{
+    float4	Color	: COLOR0;
+};
+
+VSOutput vs_main( VSInput Input )
+{
+	VSOutput o=(VSOutput)0;
+	o.Pos	= float4(Input.Pos,1);
+	o.UV		= Input.UV;
+
+#ifdef D3D_EFFECT
+	o.Pos.xy += float2(-1,1) * g_InvScreenSize;
+#else
+	//o.UV.y = 1 - o.UV.y;
+#endif
+
+    return o;
+}
+
+float CalcAdaptedLum(float adapted_lum, float current_lum)
+{
+	return adapted_lum + (current_lum - adapted_lum) * (1 - pow(0.98f, 50 * g_FrameDelta));
+}
+
+PSOutput	ps_main( VSOutput Input )
+{
+	PSOutput o = (PSOutput)0;
+	// float2 uv = Input.UV+0.5*g_InvScreenSize;
+	float2 uv = Input.UV;
+
+//	float adapted_lum = exp(tex2D(Samp_RT_ADAPTED, float2(0.5f,0.5f)).r);
+	float current_lum = exp(tex2D(Samp_RT_SRC, float2(0.5f,0.5f)).r);
+
+//	o.Color = CalcAdaptedLum(adapted_lum, current_lum);
+
+
+	o.Color = current_lum;
+	o.Color.w = 1;
+
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique AdaptedLum
+{
+   pass p0
+   {
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

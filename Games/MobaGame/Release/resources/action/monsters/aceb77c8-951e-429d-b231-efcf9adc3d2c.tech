@@ -1,0 +1,6 @@
+<Technique Name="demo" Ver="8" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="30f96d91-7e2b-4dd1-b62c-fe6c9f1a76ea" Id="aceb77c8-951e-429d-b231-efcf9adc3d2c" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_ec064d7f_578a_42de_9d1c_fd3f8c54cc35 EditorType="Texture" Type="texture" Value="resources/texture/effect/object/archer_arrows.png"/>
+	</ShaderVar>
+</Technique>
+

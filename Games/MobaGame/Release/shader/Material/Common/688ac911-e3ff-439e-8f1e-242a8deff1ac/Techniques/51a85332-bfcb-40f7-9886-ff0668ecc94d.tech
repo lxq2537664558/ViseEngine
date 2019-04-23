@@ -1,0 +1,7 @@
+<Technique Name="Green" Ver="80" AlphaRef="30" CullMode="CCW" ZDisable="1" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyTest" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="240" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="688ac911-e3ff-439e-8f1e-242a8deff1ac" Id="51a85332-bfcb-40f7-9886-ff0668ecc94d" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<Value_35221e29_5b5f_4300_b37e_84ef23551197 Type="float4" Value="0.1,1,1,0.5"/>
+		<DiffTexture Type="texture" Value="Texture/UVchecker.dds"/>
+	</ShaderVar>
+</Technique>
+

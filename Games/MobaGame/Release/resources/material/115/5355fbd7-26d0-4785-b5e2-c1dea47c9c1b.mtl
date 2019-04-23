@@ -1,0 +1,51 @@
+/*Material
+
+<Material Name="石头地表1" Require="DiffuseUV" Main="DoMaterial_5355fbd7_26d0_4785_b5e2_c1dea47c9c1b" ExtendString="" Id="5355fbd7-26d0-4785-b5e2-c1dea47c9c1b" Ver="4">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="5355fbd7-26d0-4785-b5e2-c1dea47c9c1b" Id="7d5c2157-cdcc-429d-bd09-953bcc15f5db" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_GDiffuseTexture EditorType="Texture" Type="texture" Value="resources/texture/115/ShireCity_yuka_02_d.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../shader/function/Common.function"
+
+
+texture ShaderVar_GDiffuseTexture;
+sampler2D Samp_ShaderVar_GDiffuseTexture = sampler_state
+{
+	Texture = <ShaderVar_GDiffuseTexture>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_5355fbd7_26d0_4785_b5e2_c1dea47c9c1b(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 ShaderVar_GDiffuseTexture_2D = float4(0,0,0,0);
+    float2 ShaderVar_Scale = float2(0.5,0.5);
+    float2 ShaderVar_00703d5e_e24d_4ae2_b8ea_91c7af8bae32 = float2(1,0.4);
+
+
+    float2 FuncTempValue_cf55bc36_cb47_453f_9a41_0ebbf98d1a28_4 = float2(0, 0);
+    Panner(pssem.mDiffuseUV,1,float2(0,0),ShaderVar_Scale,FuncTempValue_cf55bc36_cb47_453f_9a41_0ebbf98d1a28_4);
+    ShaderVar_GDiffuseTexture_2D = vise_tex2D(Samp_ShaderVar_GDiffuseTexture,FuncTempValue_cf55bc36_cb47_453f_9a41_0ebbf98d1a28_4.xy);
+    pssem.mDiffuseColor = ShaderVar_GDiffuseTexture_2D;
+    float FuncTempValue_458a8298_026b_48ac_b8b9_7aa0c0794e0c_1 = 0;
+    Luminance4(ShaderVar_GDiffuseTexture_2D,FuncTempValue_458a8298_026b_48ac_b8b9_7aa0c0794e0c_1);
+    pssem.mSpecularIntensity = (FuncTempValue_458a8298_026b_48ac_b8b9_7aa0c0794e0c_1 * ShaderVar_00703d5e_e24d_4ae2_b8ea_91c7af8bae32.x);
+    pssem.mSpecularPower = ShaderVar_00703d5e_e24d_4ae2_b8ea_91c7af8bae32.y;
+
+}

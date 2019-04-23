@@ -1,0 +1,67 @@
+/*Material
+
+<Material Name="Ö÷½ÇÆ´ºÏ²ÄÖÊ" Require="DiffuseUV|LocalPos|LocalNorm" Main="DoMaterial_1c1023d1_0f98_46db_af2e_3ebad1eab941" ExtendString="" Id="1c1023d1-0f98-46db-af2e-3ebad1eab941" Ver="48">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="1c1023d1-0f98-46db-af2e-3ebad1eab941" Id="ea30345a-60f8-4ab6-a19a-0bef2bfc3842" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_80756e86_567f_4c5c_856d_c4a52a4da673 EditorType="Texture" Type="texture" Value="resources/texture/character/warrior_suit07_05_shoes.png"/>
+			<ShaderVar_Scale EditorType="Vector" Type="float2" Value="0.5,0.25"/>
+			<ShaderVar_Pos EditorType="Vector" Type="float2" Value="0.5,0.75"/>
+			<ShaderVar_Color EditorType="Vector" Type="float4" Value="1.5,0.75,0.4,1"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../shader/function/CharacterMerge.function"
+#include "../shader/function/Common.function"
+
+
+texture ShaderVar_80756e86_567f_4c5c_856d_c4a52a4da673;
+sampler2D Samp_ShaderVar_80756e86_567f_4c5c_856d_c4a52a4da673 = sampler_state
+{
+	Texture = <ShaderVar_80756e86_567f_4c5c_856d_c4a52a4da673>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Clamp;
+	AddressV = Clamp;
+	SRGBTexture = True;
+};
+
+float2 ShaderVar_Pos;
+float2 ShaderVar_Scale;
+float4 ShaderVar_Color;
+
+#ifdef ByLayerBased
+void DoMaterial_1c1023d1_0f98_46db_af2e_3ebad1eab941(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float3 ShaderVar_9e97364e_2b82_4ea4_aa10_49142936df30 = float3(0,0,0);
+    float3 ShaderVar_d8e31a4d_82cb_471e_9a44_aaa917118080 = float3(0,0,0);
+    float3 ShaderVar_9533c878_d1cd_426d_b978_96cea761fba5 = float3(0.65,1,0.2);
+    float4 ShaderVar_7b249692_f354_48e2_a27b_de894dd12156 = float4(0,0,0,0);
+    int ShaderVar_e31f10b1_2571_414e_b34a_f8f4ce7b2d00 = 1;
+    float1 ShaderVar_01e30082_4bf7_4754_9cf5_616f51f6d9fe = 0.2;
+    float2 ShaderVar_07333a7b_4f24_4cc2_a1e9_ef021437d3bc = float2(1,0.2);
+
+
+    ShaderVar_9e97364e_2b82_4ea4_aa10_49142936df30 = pssem.mLocalPos.xyz;
+    ShaderVar_d8e31a4d_82cb_471e_9a44_aaa917118080 = pssem.mLocalNorm.xyz;
+    float4 FuncTempValue_c3045544_6cee_4e03_ae34_d3fbbe26e6ce_5 = float4(0, 0, 0, 0);
+    float2 FuncTempValue_c3045544_6cee_4e03_ae34_d3fbbe26e6ce_6 = float2(0, 0);
+    float1 FuncTempValue_c3045544_6cee_4e03_ae34_d3fbbe26e6ce_7 = 0;
+    CharacterMergePart(ShaderVar_7b249692_f354_48e2_a27b_de894dd12156,Samp_ShaderVar_80756e86_567f_4c5c_856d_c4a52a4da673,pssem.mDiffuseUV,ShaderVar_Pos,ShaderVar_Scale,FuncTempValue_c3045544_6cee_4e03_ae34_d3fbbe26e6ce_5,FuncTempValue_c3045544_6cee_4e03_ae34_d3fbbe26e6ce_6,FuncTempValue_c3045544_6cee_4e03_ae34_d3fbbe26e6ce_7);
+    float4 FuncTempValue_27162609_f25c_4947_bdd1_ae80bb21445d_8 = float4(0, 0, 0, 0);
+    float FuncTempValue_27162609_f25c_4947_bdd1_ae80bb21445d_9 = 0;
+    RimLightBloom(ShaderVar_9e97364e_2b82_4ea4_aa10_49142936df30,ShaderVar_d8e31a4d_82cb_471e_9a44_aaa917118080,ShaderVar_9533c878_d1cd_426d_b978_96cea761fba5.x,ShaderVar_9533c878_d1cd_426d_b978_96cea761fba5.y,ShaderVar_Color,ShaderVar_9533c878_d1cd_426d_b978_96cea761fba5.z,FuncTempValue_c3045544_6cee_4e03_ae34_d3fbbe26e6ce_5,ShaderVar_e31f10b1_2571_414e_b34a_f8f4ce7b2d00,FuncTempValue_27162609_f25c_4947_bdd1_ae80bb21445d_8,FuncTempValue_27162609_f25c_4947_bdd1_ae80bb21445d_9);
+    pssem.mDiffuseColor = FuncTempValue_27162609_f25c_4947_bdd1_ae80bb21445d_8;
+    pssem.mBloom = ShaderVar_01e30082_4bf7_4754_9cf5_616f51f6d9fe;
+    pssem.mSpecularIntensity = ShaderVar_07333a7b_4f24_4cc2_a1e9_ef021437d3bc.x;
+    pssem.mSpecularPower = ShaderVar_07333a7b_4f24_4cc2_a1e9_ef021437d3bc.y;
+
+}

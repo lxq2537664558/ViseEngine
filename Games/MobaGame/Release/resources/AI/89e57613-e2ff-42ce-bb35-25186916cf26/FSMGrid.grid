@@ -1,0 +1,14 @@
+<FSMGrid Name="»Ø¸´">
+	<DefaultState Type="Idle"/>
+	<State Type="Idle" NickName="Idle" BaseType="CSUtility.AISystem.States.Idle">
+		<StatePropertys/>
+	</State>
+	<State Type="Death" NickName="Death" BaseType="CSUtility.AISystem.States.Death">
+		<StatePropertys/>
+	</State>
+	<StateSwitch FromState="Idle" ToState="Idle" NewCurrentState="Idle" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="Idle" NewCurrentState="" NewTargetState=""/>
+	<StateSwitch FromState="Idle" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+</FSMGrid>
+

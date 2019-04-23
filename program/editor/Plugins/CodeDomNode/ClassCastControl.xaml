@@ -1,0 +1,33 @@
+﻿<myTypes:BaseNodeControl x:Class="CodeDomNode.ClassCastControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:myTypes ="clr-namespace:CodeGenerateSystem.Base;assembly=CodeGenerateSystem"
+             xmlns:baseCtrl="clr-namespace:CodeGenerateSystem.Controls;assembly=CodeGenerateSystem"
+             xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             x:Name="baseNodeControl"  mc:Ignorable="d" >
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CodeGenerateSystem;Component/Themes/Generic.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+    <theme:SystemDropShadowChrome>
+        <Border Background="{DynamicResource NormalControlBackground}" CornerRadius="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Rectangle x:Name="RectangleTitle" Fill="{DynamicResource LinkNode_ClassControl_Background}" RadiusX="5" RadiusY="5" Margin="-3,0" />
+                <baseCtrl:LinkInControl x:Name="ClassLinkHandle_In" Width="12" Height="12" BackBrush="{DynamicResource Link_ValueBrush}" Margin="-19,0,0,0" HorizontalAlignment="Left" Grid.RowSpan="2" Direction="Left" />
+                <baseCtrl:LinkOutControl x:Name="ClassLinkHandle_Out" Width="12" Height="12" BackBrush="{DynamicResource Link_ValueBrush}" Margin="0,0,-17,0" HorizontalAlignment="Right" Grid.RowSpan="2" Direction="Right" />
+                <TextBlock Text="继承类类型转换" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="3" IsHitTestVisible="False" Foreground="{DynamicResource TextForeground}"/>
+                <ComboBox x:Name="ComboBox_Types" Grid.RowSpan="2" d:LayoutOverrides="Height" Grid.Row="1" ItemsSource="{Binding SubClasses, ElementName=baseNodeControl}" Margin="2" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            </Grid>
+        </Border>
+    </theme:SystemDropShadowChrome>
+</myTypes:BaseNodeControl>

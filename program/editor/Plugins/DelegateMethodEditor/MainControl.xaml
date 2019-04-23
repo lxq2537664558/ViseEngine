@@ -1,0 +1,53 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:local="clr-namespace:DelegateMethodEditor" xmlns:SearchBox="clr-namespace:SearchBox;assembly=EditorControlLib" x:Name="userControl" x:Class="DelegateMethodEditor.MainControl" 
+             mc:Ignorable="d" 
+             d:DesignHeight="354" d:DesignWidth="634" Background="{DynamicResource {ComponentResourceKey ResourceId=ControlBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/DelegateMethodEditor;Component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.1*"/>
+            <ColumnDefinition Width="3"/>
+            <ColumnDefinition Width="0.4*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Margin="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="类型：" VerticalAlignment="Center" Margin="5,0,0,0" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            <ComboBox x:Name="ComboBox_Types" VerticalAlignment="Center" Margin="0.499,2,2,2" SelectionChanged="ComboBox_Types_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Column="1"/>
+            <TextBlock Text="脚本：" VerticalAlignment="Center" Margin="5,0,0,0" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Row="1"/>
+            <ComboBox x:Name="ComboBox_Methods" VerticalAlignment="Center" Margin="0.499,2,2,2" SelectionChanged="ComboBox_Methods_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Column="1" Grid.Row="1"/>
+            <local:EventListControl x:Name="EvtListControl" Margin="0" Grid.Row="2" Grid.ColumnSpan="2" />
+        </Grid>
+        <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Margin="0" Grid.Row="1" ShowsPreview="True" Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        <TabControl Grid.Column="2" Margin="0,2,2,2" Style="{DynamicResource {ComponentResourceKey ResourceId=TabControlStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+            <TabItem Header="公共" Margin="-2,-2,-2,-1" Visibility="Collapsed" >
+                <local:NodesContainerControl x:Name="NodesContainerControl_Common" />
+            </TabItem>
+            <TabItem Header="客户端" IsSelected="True" >
+                <local:NodesContainerControl x:Name="NodesContainerControl_Client" />
+            </TabItem>
+            <TabItem Header="服务器端" >
+                <local:NodesContainerControl x:Name="NodesContainerControl_Server" />
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</UserControl>

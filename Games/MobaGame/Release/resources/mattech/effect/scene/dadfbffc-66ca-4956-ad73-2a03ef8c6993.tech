@@ -1,0 +1,12 @@
+<Technique Name="Ó¿³öµÄÑÒ½¬" Ver="153" AlphaRef="50" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="4a881190-6088-4b15-aef6-353ca0c861a6" Id="dadfbffc-66ca-4956-ad73-2a03ef8c6993" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_fe1437f4_7bbd_4d58_9c24_2c7580da4597 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/GF_062.png"/>
+		<ShaderVar_bd479548_8dd3_4ca8_85cb_404a7df30304 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/mask_141.png"/>
+		<ShaderVar_afc04c76_1bb3_4bdf_a68e_6c9b8280cc7e EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/smokeRing_diff.png"/>
+		<ShaderVar_735509a5_58ba_40d3_abfc_e3e485e095c3 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_dc5ec477_68e2_4f42_8686_eea6b543725a EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/237-v1.png"/>
+		<ShaderVar_fc8bc60c_787e_4be3_935a_5eeff7f7c846 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/ice_vein_mask.png"/>
+		<ShaderVar_8dd53187_351f_4c6f_87e3_3b8f47e4da85 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_005_mask_uv.png"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,75 @@
+﻿<UserControl x:Name="userControl" x:Class="MainEditor.BackgroundWorkerView.BackgroundWorkerViewer"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MainEditor.BackgroundWorkerView"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <Storyboard x:Key="Storyboard_StartShow">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="userControl">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Storyboard_EndShow">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.LayoutTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="userControl">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="UserControl_OnLoaded" RepeatBehavior="Forever">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="180"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="360"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.LayoutTransform>
+        <TransformGroup>
+            <ScaleTransform CenterX="1" ScaleX="0"/>
+            <SkewTransform CenterX="1"/>
+            <RotateTransform CenterX="1"/>
+            <TranslateTransform/>
+        </TransformGroup>
+    </UserControl.LayoutTransform>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard x:Name="UserControl_OnLoaded_BeginStoryboard" Storyboard="{StaticResource UserControl_OnLoaded}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <ToggleButton x:Name="ToggleButton_BackgroundWork" Grid.Column="1"  d:LayoutOverrides="GridBox" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" 
+                  Style="{DynamicResource {ComponentResourceKey ResourceId=ToggleButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+        <Grid VerticalAlignment="Center" Margin="3,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="16"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="后台任务处理中" HorizontalAlignment="Center" Foreground="{Binding Foreground, ElementName=ToggleButton_BackgroundWork}" Margin="0,0,2,0" VerticalAlignment="Center" />
+            <Image x:Name="image" Source="/ResourceLibrary;component/Icon/loading.png" RenderTransformOrigin="0.5,0.5" Grid.Column="1">
+                <Image.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Image.RenderTransform>
+            </Image>
+            <Popup x:Name="BackgroundWorkPopup" StaysOpen="False" PopupAnimation="Fade" Placement="Left" IsOpen="{Binding IsChecked, ElementName=ToggleButton_BackgroundWork}" Grid.ColumnSpan="2">
+                <Border Background="#FF444444" BorderBrush="Black" BorderThickness="1">
+                    <Grid Grid.IsSharedSizeScope="True">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Text="后台任务列表" Margin="2" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                        <StackPanel x:Name="StackPanel_BGView" Grid.Row="1">
+
+
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </Popup>
+        </Grid>
+    </ToggleButton>
+</UserControl>

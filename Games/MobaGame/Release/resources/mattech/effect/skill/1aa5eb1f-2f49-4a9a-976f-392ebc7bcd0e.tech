@@ -1,0 +1,9 @@
+<Technique Name="地面的风" Ver="4" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="8e9ba77c-d8d5-409f-85cb-e8c3c636d0ca" Id="1aa5eb1f-2f49-4a9a-976f-392ebc7bcd0e" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_dcab4c47_af4d_49aa_94b2_f90d50c5c448 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_10b0e9ec_ee82_4199_a13a_f5230c83bf00 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/shockwave02.png"/>
+		<ShaderVar_1bcf1ca0_3eab_4eb0_bc2e_d8f17a5612cc EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/mask_spray.png"/>
+		<ShaderVar_17311bff_be2d_4ef1_a39c_bff1a31d9a85 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/spiderWeb_boneyClouds_diffAlpha.png"/>
+	</ShaderVar>
+</Technique>
+

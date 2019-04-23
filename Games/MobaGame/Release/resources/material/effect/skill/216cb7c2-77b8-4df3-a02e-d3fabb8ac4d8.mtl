@@ -1,0 +1,51 @@
+/*Material
+
+<Material Name="ÎäÆ÷ÉÏµÄÍÏÎ²²ÄÖÊ" Require="DiffuseUV" Main="DoMaterial_216cb7c2_77b8_4df3_a02e_d3fabb8ac4d8" ExtendString="" Id="216cb7c2-77b8-4df3-a02e-d3fabb8ac4d8" Ver="8">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="216cb7c2-77b8-4df3-a02e-d3fabb8ac4d8" Id="977a0abe-a49d-461f-ac5e-d347a442b4b6" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_15290b8f_322d_4c6b_a1ce_b875a2a4014c EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/trail36_2.png"/>
+			<ShaderVar_rotation EditorType="Vector" Type="float1" Value="180"/>
+			<ShaderVar_color EditorType="Vector" Type="float4" Value="1,1,1,1"/>
+			<ShaderVar_Scale EditorType="Vector" Type="float2" Value="1,0.8"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../shader/function/Common.function"
+
+
+texture ShaderVar_15290b8f_322d_4c6b_a1ce_b875a2a4014c;
+sampler2D Samp_ShaderVar_15290b8f_322d_4c6b_a1ce_b875a2a4014c = sampler_state
+{
+	Texture = <ShaderVar_15290b8f_322d_4c6b_a1ce_b875a2a4014c>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Clamp;
+	AddressV = Clamp;
+	SRGBTexture = True;
+};
+
+float4 ShaderVar_color;
+float1 ShaderVar_rotation;
+float2 ShaderVar_Scale;
+
+#ifdef ByLayerBased
+void DoMaterial_216cb7c2_77b8_4df3_a02e_d3fabb8ac4d8(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 ShaderVar_15290b8f_322d_4c6b_a1ce_b875a2a4014c_2D = float4(0,0,0,0);
+
+
+    float2 FuncTempValue_b8adcac5_6368_4d81_869d_0d1409b79130_5 = float2(0, 0);
+    Rotator(pssem.mDiffuseUV,1,float2(0,0),ShaderVar_Scale,ShaderVar_rotation,FuncTempValue_b8adcac5_6368_4d81_869d_0d1409b79130_5);
+    ShaderVar_15290b8f_322d_4c6b_a1ce_b875a2a4014c_2D = vise_tex2D(Samp_ShaderVar_15290b8f_322d_4c6b_a1ce_b875a2a4014c,FuncTempValue_b8adcac5_6368_4d81_869d_0d1409b79130_5.xy);
+    pssem.mDiffuseColor = (ShaderVar_15290b8f_322d_4c6b_a1ce_b875a2a4014c_2D * ShaderVar_color);
+
+}

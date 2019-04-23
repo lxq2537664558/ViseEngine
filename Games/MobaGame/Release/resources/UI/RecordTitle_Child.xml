@@ -1,0 +1,27 @@
+<cscommon TypeName="UISystem.WinForm" Id="6cc2b5f4-118b-46cc-88ad-9071c6381b2d" Width="325" Width_Auto="True" Height="70" Height_Auto="True">
+	<WinState/>
+	<cscommon TypeName="UISystem.Container.Grid.Grid" Id="6b803765-f8bf-40c1-a08c-8f848114f201" Width="325" Width_Auto="True" Height="70" Height_Auto="True">
+		<WinState/>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<cscommon TypeName="UISystem.Image" Id="f9c7835a-ea37-4b5c-b2a5-09928cb57029" Width="255" Width_Auto="True" Height="70" Height_Auto="True" BackColor="7B4FAD79" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridRow="1">
+			<WinState/>
+		</cscommon>
+		<cscommon TypeName="UISystem.Image" Id="bbc4c7f3-4e86-4aa5-9a68-adf41f3e0a87" Width="70" Width_Auto="True" Height="70" Height_Auto="True" BackColor="54D1CB60" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+			<WinState/>
+		</cscommon>
+		<cscommon TypeName="UISystem.TextBlock" Id="c623571a-85a5-40f4-a6d0-76661177eee0" Width="235" Width_Auto="True" Height="50" GridRow="1" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,10,10,10" HitTestVisible="False" FontSize="50">
+			<WinState/>
+			<FontRenderParams>
+				<0 BLColor="FF4C4C4C" BRColor="FF4C4C4C" TLColor="FF4C4C4C" TRColor="FF4C4C4C" OutlineType="Inner" OutlineThickness="0.8"/>
+				<1 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="Inner" OutlineThickness="0.1"/>
+			</FontRenderParams>
+		</cscommon>
+		<cscommon TypeName="UISystem.Image" Id="edf8f5ee-0e2f-4e5c-9b1d-7082a61af8b4" WinName="TitleImage" Width="60" Height="60" Margin="5,5,5,5" HitTestVisible="False">
+			<WinState/>
+		</cscommon>
+	</cscommon>
+</cscommon>
+

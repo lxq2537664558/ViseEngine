@@ -1,0 +1,7 @@
+<Technique Name="地面中心光" Ver="4" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ef84ada1-d751-48b7-99cc-20ccf3870359" Id="2c0a80ad-de36-4ed0-b16c-fd9122959536" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_cf4a851f_e80f_4ff6_affd_1186185e9d81 EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/50006.png"/>
+		<ShaderVar_Alpha EditorType="Vector" Type="float1" Value="0"/>
+	</ShaderVar>
+</Technique>
+

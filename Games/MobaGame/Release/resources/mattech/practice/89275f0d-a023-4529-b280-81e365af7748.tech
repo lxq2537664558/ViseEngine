@@ -1,0 +1,9 @@
+<Technique Name="ÂÝÐý·ç±©" Ver="13" AlphaRef="50" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="f5612c7e-d074-4d0b-9bbf-fdb5a2b49230" Id="89275f0d-a023-4529-b280-81e365af7748" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_1922df0c_6166_4ec4_9937_0282011268cd EditorType="Texture" Type="texture" Value="resources/texture/effect/water/NFX_Water01A_blue.png"/>
+		<ShaderVar_21a31598_b417_4d7f_a02d_f7820c6c8226 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_00b56aaa_bc71_45d7_986f_b5268aa2bffb EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+		<ShaderVar_47a2c006_f9d9_4886_985a_e7c8ce2d4448 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/xiaosan_mask2.png"/>
+	</ShaderVar>
+</Technique>
+

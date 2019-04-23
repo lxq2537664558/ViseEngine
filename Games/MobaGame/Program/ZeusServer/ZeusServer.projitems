@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>aa58bde4-79d5-44c3-8a68-b3d7fef90ed7</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Server</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Callee\ServerCallee.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Com\ComServer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\DataServer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\HallsData.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\LoaderThread.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gate\ClientLinker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Gate\GateServer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Bag\BagBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\HallInstance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\HallManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\HallServer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\LogicProcessor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Map\MapCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Map\MapInstance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Map\MapInstanceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Map\MapPathManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Map\MapTemplate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Map\MapTemplateManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Map\RoleIdManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\PlayerInstanceManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Role\Buff\BuffBag.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Role\DynamicBlockInstance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Role\Fight\Hatred.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Role\Monster\MonsterInstance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Role\Player\PlayerInstance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Role\Player\Player_Skill.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Role\RoleActor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Role\RoleComp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Role\RolePlacement.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Role\Summon\SummonRole.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\Role\Trigger\TriggerInstance.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\ServerStates\BeAttack.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\ServerStates\Death.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\ServerStates\Idle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\ServerStates\LostControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\ServerStates\MoveAttack.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\ServerStates\SpecialAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\ServerStates\StayAttack.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\ServerStates\StayChannel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hall\ServerStates\Walk.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Log\LogServer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Monitor\MonitorServer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Path\PathFinder\PathFinderManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Path\PathFindServer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Reg\RegisterServer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Common\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Hall\Function\Events\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Hall\Function\Pet\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Hall\Function\Trade\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Hall\Role\Gather\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Hall\Role\Item\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Hall\Role\Npc\" />
+  </ItemGroup>
+</Project>

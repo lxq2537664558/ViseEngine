@@ -1,0 +1,24 @@
+<CCore.Graphics.PostProcess_ColorGrading ClassType="cscommon@CCore.Graphics.PostProcess_ColorGrading" Ver="0">
+	<Class HashCode="-1444772936" LastUseTime="2015/12/15 15:18:00">
+		<Property HashCode="1301079057" Type="mscorlib.dll@System.Boolean" Name="GammaCorrect"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="1770076888" Type="mscorlib.dll@System.Boolean" Name="DoLerp"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="-2001596071" Type="mscorlib.dll@System.Single" Name="LerpValue"/>
+		<Property HashCode="681830085" Type="mscorlib.dll@System.Boolean" Name="EnableColorGrading"/>
+		<Property HashCode="-421682994" Type="mscorlib.dll@System.Boolean" Name="EnableFXAA"/>
+		<Property HashCode="355535074" Type="mscorlib.dll@System.String" Name="ColorGradingTexName"/>
+	</Class>
+	<Class HashCode="-1364094933" LastUseTime="2016/3/22 17:24:34">
+		<Property HashCode="1301079057" Type="mscorlib.dll@System.Boolean" Name="GammaCorrect"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="1770076888" Type="mscorlib.dll@System.Boolean" Name="DoLerp"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="-2001596071" Type="mscorlib.dll@System.Single" Name="LerpValue"/>
+		<Property HashCode="1770269069" Type="cscommon@CCore.Performance.EAntiAliasing" Name="AAQuality"/>
+		<Property HashCode="681830085" Type="mscorlib.dll@System.Boolean" Name="EnableColorGrading"/>
+		<Property HashCode="-421682994" Type="mscorlib.dll@System.Boolean" Name="EnableFXAA"/>
+		<Property HashCode="355535074" Type="mscorlib.dll@System.String" Name="ColorGradingTexName"/>
+	</Class>
+</CCore.Graphics.PostProcess_ColorGrading>
+

@@ -1,0 +1,9 @@
+<Technique Name="ÉÁ¹âÈÜ½â" Ver="5" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ad0d7d53-3681-4387-82ee-d08f0aea5b8e" Id="6bdd240b-b796-48cb-8f9b-85ad2b207ada" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_162d5148_b9cf_4ed1_8687_6c14f2b9debc EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+		<ShaderVar_d6833f6b_61a2_4cd3_9799_0410b9a2cda8 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_2624f427_35ab_457a_b7ae_a97192c3a3b5 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/xiaosan_mask_V.png"/>
+		<ShaderVar_ba9e40d4_2495_440e_825e_22aa30eefbbb EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/GF_474.png"/>
+	</ShaderVar>
+</Technique>
+

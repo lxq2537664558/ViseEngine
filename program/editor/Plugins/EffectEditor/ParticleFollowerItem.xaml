@@ -1,0 +1,30 @@
+﻿<UserControl x:Name="userControl" x:Class="EffectEditor.ParticleFollowerItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="NormalBackground" Color="#FFBB8A80" />
+        <SolidColorBrush x:Key="SelectedBackground" Color="#FFCAD419" />
+    </UserControl.Resources>
+    <Border x:Name="Border_Main" BorderThickness="1" CornerRadius="2" Background="{DynamicResource NormalBackground}">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="跟随:" VerticalAlignment="Center" Margin="2" />
+            <TextBlock Margin="2" TextWrapping="Wrap" Text="{Binding FollowerEmitterName, ElementName=userControl}" VerticalAlignment="Center" Foreground="White" Grid.Column="1"/>
+            <Button Margin="2" Height="24" Grid.Column="2" Click="Button_Set_Click" ToolTip="设置" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Width="Auto" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/set.png" Width="18" Height="18"/>
+            </Button>
+            <Button Margin="2" Height="24" Grid.Column="3" Click="Button_Remove_Click" ToolTip="删除" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Width="Auto" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/File/Delete.png" Width="18" Height="18"/>
+            </Button>
+        </Grid>
+    </Border>
+</UserControl>

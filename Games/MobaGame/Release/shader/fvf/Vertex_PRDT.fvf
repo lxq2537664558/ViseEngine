@@ -1,0 +1,71 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+float2 gViewPortHW : ViewPort_WH;
+
+struct V3D_VS_IN
+{
+	float4	Pos : POSITION;
+	float4	DifColor : COLOR;
+	float2	UV : TEXCOORD;
+};
+V3D_VS_IN dummyVSIn;
+
+struct V3D_VS_OUT
+{
+	float4 Pos : POSITION;
+	float4 DifColor : Color;
+	float2 UV : TEXCOORD;
+};
+
+struct V3D_PS_OUT
+{
+	float4	Color	: COLOR0;
+};
+
+V3D_VS_OUT vs_main( V3D_VS_IN Input )
+{
+	V3D_VS_OUT vsOut;
+	vsOut.Pos.w = 1;
+	vsOut.Pos.z = Input.Pos.z;
+	vsOut.Pos.x = -1 + Input.Pos.x*2/gViewPortHW.x;
+	vsOut.Pos.y = 1 - Input.Pos.y*2/gViewPortHW.y;
+	vsOut.DifColor = Input.DifColor;
+	vsOut.UV = Input.UV;
+
+#ifdef D3D_EFFECT
+	vsOut.Pos.xy += float2(-1,1) / gViewPortHW;
+#else
+	//vsOut.UV.y = 1 - vsOut.UV.y;
+#endif
+
+	return vsOut;
+}
+
+texture gDiffTexture;
+
+sampler2D Samp_gDiffTexture = sampler_state
+{
+    Texture = <gDiffTexture>;
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+};
+
+V3D_PS_OUT	ps_main( V3D_VS_OUT Input )
+{
+	V3D_PS_OUT psOut;
+	psOut.Color = vise_tex2D(Samp_gDiffTexture,Input.UV.xy) * Input.DifColor;
+	return psOut;
+}
+
+#ifdef D3D_EFFECT
+technique tech
+{
+	pass p0
+	{
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

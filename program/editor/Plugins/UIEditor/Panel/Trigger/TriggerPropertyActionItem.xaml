@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="UIEditor.Panel.Trigger.TriggerPropertyActionItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             mc:Ignorable="d"  d:DesignWidth="365">
+    <Grid>
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="20"/>
+    		<ColumnDefinition Width="Auto"/>
+    		<ColumnDefinition Width="0.726*"/>
+    		<ColumnDefinition Width="Auto"/>
+    	</Grid.ColumnDefinitions>
+        <TextBlock x:Name="TextBlock_Info" Margin="0,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="2" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"><Run Text="TextBlock"/></TextBlock>
+        <Button Content=" - " Click="Button_Remove_Click" Grid.Column="3" Margin="2" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        <TextBlock x:Name="TextBlock_Control" Margin="0,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"><Run Text="TextBlock"/></TextBlock>
+    </Grid>
+</UserControl>

@@ -1,0 +1,54 @@
+/*Material
+
+<Material Name="½¨Öþ" Require="DiffuseUV" Main="DoMaterial_98e4c9bf_0101_4e44_bb7c_cf075e9bd97c" ExtendString="" Id="98e4c9bf-0101-4e44-bb7c-cf075e9bd97c" Ver="10">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="98e4c9bf-0101-4e44-bb7c-cf075e9bd97c" Id="bb08335f-7317-486c-8b95-79b9ce9add9f" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_Vein EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+			<ShaderVar_Color EditorType="Color" Type="float4" Value="1,1,1,1"/>
+			<ShaderVar_SpecPow EditorType="Vector" Type="float1" Value="0.7"/>
+			<ShaderVar_speed EditorType="Vector" Type="float2" Value="0,0"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+#include "../Shader/function/Common.function"
+
+
+texture ShaderVar_Vein;
+sampler2D Samp_ShaderVar_Vein = sampler_state
+{
+	Texture = <ShaderVar_Vein>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+float4 ShaderVar_Color;
+float1 ShaderVar_SpecPow;
+float Time_43ea0aa4_9e98_4373_9818_7bc9f0f7bb61 : Time;
+float2 ShaderVar_speed;
+
+#ifdef ByLayerBased
+void DoMaterial_98e4c9bf_0101_4e44_bb7c_cf075e9bd97c(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float1 ShaderVar_ed0b0a10_d22f_4204_86ef_2699c8acc528 = 0;
+
+
+    float2 FuncTempValue_89ab1864_f7b6_4142_b5a4_9b3138a6c692_4 = float2(0, 0);
+    Panner(pssem.mDiffuseUV,Time_43ea0aa4_9e98_4373_9818_7bc9f0f7bb61,ShaderVar_speed,float2(1,1),FuncTempValue_89ab1864_f7b6_4142_b5a4_9b3138a6c692_4);
+    pssem.mDiffuseColor = (vise_tex2D(Samp_ShaderVar_Vein,FuncTempValue_89ab1864_f7b6_4142_b5a4_9b3138a6c692_4.xy) * ShaderVar_Color);
+    pssem.mSpecularIntensity = ShaderVar_ed0b0a10_d22f_4204_86ef_2699c8acc528;
+    pssem.mSpecularPower = ShaderVar_SpecPow;
+
+}

@@ -1,0 +1,43 @@
+/*Material
+
+<Material Name="ALPHA°ëÍ¸²âÊÔ" Require="DiffuseUV" Main="DoMaterial_b4a10bc3_1e0a_499b_82d9_e813022928d1" ExtendString="" Id="b4a10bc3-1e0a-499b-82d9-e813022928d1" Ver="2">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="b4a10bc3-1e0a-499b-82d9-e813022928d1" Id="dece48c1-af1f-43a7-8df7-a095b6cdde9b" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_531345b0_ea9f_4848_a80d_c10878335eca EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/50006.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+texture ShaderVar_531345b0_ea9f_4848_a80d_c10878335eca;
+sampler2D Samp_ShaderVar_531345b0_ea9f_4848_a80d_c10878335eca = sampler_state
+{
+	Texture = <ShaderVar_531345b0_ea9f_4848_a80d_c10878335eca>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_b4a10bc3_1e0a_499b_82d9_e813022928d1(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 ShaderVar_531345b0_ea9f_4848_a80d_c10878335eca_2D = float4(0,0,0,0);
+    float4 ShaderVar_f773f3da_d21f_4803_96f3_f6ca72e14b78 = float4(1,1,1,1);
+
+
+    ShaderVar_531345b0_ea9f_4848_a80d_c10878335eca_2D = vise_tex2D(Samp_ShaderVar_531345b0_ea9f_4848_a80d_c10878335eca,pssem.mDiffuseUV.xy);
+    pssem.mDiffuseColor = (ShaderVar_531345b0_ea9f_4848_a80d_c10878335eca_2D * ShaderVar_f773f3da_d21f_4803_96f3_f6ca72e14b78);
+
+}

@@ -1,0 +1,8 @@
+<Technique Name="LightMesh" Ver="2" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="0" WireFrame="1" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="0" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="3ed1838c-f4c6-4dda-8c3d-ba3d516b2795" Id="ec85b100-d239-46e1-b92a-7f34806869fb" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<GDiffuse Type="float4" Value="255,255,255,1"/>
+		<GEmissive Type="float4" Value="0,0,0,0"/>
+		<GSpecular Type="float4" Value="0,0,0,0"/>
+	</ShaderVar>
+</Technique>
+

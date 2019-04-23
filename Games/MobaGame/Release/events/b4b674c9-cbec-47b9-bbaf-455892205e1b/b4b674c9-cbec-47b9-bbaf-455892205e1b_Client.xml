@@ -1,0 +1,38 @@
+<Event ViewBoxMain_X="138.675537109375" ViewBoxMain_Y="17.6238403320313" ViewBoxMain_Width="1438.64611816406" GUID="00000000-0000-0000-0000-000000000000">
+	<OrigionCtrls>
+		<OrigionCtrl Id="af93f870-f3c7-4c5c-8a5b-ee6b515b4743"/>
+	</OrigionCtrls>
+	<ChildNodesCtrls>
+		<MethodNode Useable="False" OverrideAble="True" CallBasePosition="None" UseBaseVisibility="Collapsed" IsStatic="True" ID="af93f870-f3c7-4c5c-8a5b-ee6b515b4743" Type="DelegateMethodEditor@CodeDomNode.MethodNode" X="0" Y="0" Params="Invoke,host:cscommon@CSUtility.AISystem.IStateHost,mscorlib.dll@System.Void,game@GameData.Role.FOnRoleDeath,true,false" IsDeleteable="False" Comment="">
+			<ChildNodes>
+				<ParameterControl ID="0f719501-a327-4fcf-96c8-0483e962e4eb" Type="DelegateMethodEditor@CodeDomNode.ParameterControl" X="NaN" Y="NaN" Params="host:cscommon@CSUtility.AISystem.IStateHost" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="d2d6b461-d70b-420c-91f3-f47c15bb1e51">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</ParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="c1242386-ae17-4e2e-8df6-be523c553e62">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="07387f88-802b-4b9e-b91d-4fe3825116ee">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="a29feed0-ff59-4b0b-8745-548ffe3c2022">
+					<Link LinkFrom="a29feed0-ff59-4b0b-8745-548ffe3c2022" LinkTo="ecc5af64-eb48-4934-9cb8-389452988848"/>
+				</LinkObject>
+			</LinkObjects>
+		</MethodNode>
+		<MethodInvokeNode ID="b61d4b7f-6f88-42dc-840b-0eef7976592d" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeNode" X="37.1226196289063" Y="223.558959960938" Params="½áÊøÓÎÏ·,game@Client.Role.RoleActor,GameOver,,mscorlib.dll@System.Void,Client;Normal,Client.Role.RoleActor,af93f870-f3c7-4c5c-8a5b-ee6b515b4743,c1242386-ae17-4e2e-8df6-be523c553e62" IsDeleteable="True" Comment="">
+			<DefaultParamValue/>
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="ecc5af64-eb48-4934-9cb8-389452988848">
+					<Link LinkFrom="a29feed0-ff59-4b0b-8745-548ffe3c2022" LinkTo="ecc5af64-eb48-4934-9cb8-389452988848"/>
+				</LinkObject>
+				<LinkObject ID="f423d343-a7fe-438f-b925-ebcad6cbfe96">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</MethodInvokeNode>
+	</ChildNodesCtrls>
+</Event>
+

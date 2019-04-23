@@ -1,0 +1,53 @@
+/*Material
+
+<?xml version="1.0" encoding="utf-16"?>
+<Material Name="勾边材质" Require="DiffuseUV" Main="DoMaterial_688ac911_e3ff_439e_8f1e_242a8deff1ac" ExtendString="" Id="688ac911-e3ff-439e-8f1e-242a8deff1ac" Ver="39">
+  <DefaultTechnique Name="DefaultTech" Ver="40" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" HostMaterialId="688ac911-e3ff-439e-8f1e-242a8deff1ac" Id="cf68e7fd-b7e8-491a-8126-cee7e1451693" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="0" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" DepthBias="0" SlopeScaleDepthBias="0">
+    <ShaderVar>
+      <Value_35221e29_5b5f_4300_b37e_84ef23551197 Type="float4" Value="1,0,0,1" />
+      <DiffTexture Type="texture" Value="Texture/Assist/Color_white.dds" />
+    </ShaderVar>
+  </DefaultTechnique>
+</Material>
+*/
+
+#include "../Shader/Material/Common/Common.function"
+
+
+float4 Value_35221e29_5b5f_4300_b37e_84ef23551197;
+float Time_c21d8607_d3aa_48b5_b0b1_18374f47643d : Time;
+texture DiffTexture;
+sampler2D Samp_DiffTexture = sampler_state
+{
+	Texture = <DiffTexture>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_688ac911_e3ff_439e_8f1e_242a8deff1ac(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 Value_7fc283d7_0bd3_4d80_8ddb_db206d822e78 = float4(0,0,0,0);
+    float3 Value_d5c5339f_c15a_446b_9bb3_4c990f888965 = float3(0,0,0);
+    float4 Value_1ee0abf6_8cde_49db_865d_126f42266580 = float4(0,0,0,0);
+
+
+    Value_d5c5339f_c15a_446b_9bb3_4c990f888965 = Value_35221e29_5b5f_4300_b37e_84ef23551197.xyz;
+    Value_7fc283d7_0bd3_4d80_8ddb_db206d822e78.x = Value_d5c5339f_c15a_446b_9bb3_4c990f888965.x;
+    Value_d5c5339f_c15a_446b_9bb3_4c990f888965 = Value_35221e29_5b5f_4300_b37e_84ef23551197.xyz;
+    Value_7fc283d7_0bd3_4d80_8ddb_db206d822e78.y = Value_d5c5339f_c15a_446b_9bb3_4c990f888965.y;
+    Value_d5c5339f_c15a_446b_9bb3_4c990f888965 = Value_35221e29_5b5f_4300_b37e_84ef23551197.xyz;
+    Value_7fc283d7_0bd3_4d80_8ddb_db206d822e78.z = Value_d5c5339f_c15a_446b_9bb3_4c990f888965.z;
+    Value_1ee0abf6_8cde_49db_865d_126f42266580 = vise_tex2D(Samp_DiffTexture,pssem.mDiffuseUV.xy);
+    Value_7fc283d7_0bd3_4d80_8ddb_db206d822e78.w = (Value_35221e29_5b5f_4300_b37e_84ef23551197.w * Value_1ee0abf6_8cde_49db_865d_126f42266580.w);
+    pssem.mDiffuseColor = Value_7fc283d7_0bd3_4d80_8ddb_db206d822e78;
+
+}

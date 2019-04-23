@@ -1,0 +1,31 @@
+<CCore.Mesh.MeshTemplate Ver="0">
+	<Ver Type="mscorlib.dll@System.UInt32" Value="7"/>
+	<MeshID Type="mscorlib.dll@System.Guid" Value="1bb1ab4f-0f78-4594-8b91-c6d0f42129a9"/>
+	<NickName Type="mscorlib.dll@System.String" Value="Å®ÊÌÎÀ"/>
+	<NeedCalcFullSkeleton Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshInitList Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Mesh.MeshInitPart]]">
+		<Data Type="cscommon@CCore.Mesh.MeshInitPart" Value="null">
+			<MeshName Type="mscorlib.dll@System.String" Value="resources/meshsource/1_15/church/human_f_aide_skel.vms"/>
+			<Techs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+				<Data Type="mscorlib.dll@System.Guid" Value="87d96f21-2336-40db-a53a-038de79d53e3"/>
+				<Data Type="mscorlib.dll@System.Guid" Value="b817758b-c890-4ec1-b124-6c01a276b6ef"/>
+				<Data Type="mscorlib.dll@System.Guid" Value="82d932f9-95ba-492c-9796-d634e83d31bc"/>
+				<Data Type="mscorlib.dll@System.Guid" Value="ab27d439-fd6a-4f08-8da9-1c41fe09ab6d"/>
+			</Techs>
+		</Data>
+	</MeshInitList>
+	<ActionName Type="mscorlib.dll@System.String" Value="resources/meshsource/1_15/church/idle.vma"/>
+	<PlayRate Type="mscorlib.dll@System.Double" Value="1"/>
+	<ActionPercent Type="mscorlib.dll@System.Double" Value="0"/>
+	<Scale Type="mscorlib.dll@System.Single" Value="0.035"/>
+	<LayerName Type="mscorlib.dll@System.String" Value="Other"/>
+	<Layer Type="cscommon@CCore.RLayer" Value="RL_DSBase"/>
+	<SocketComponentInfoList Type="cscommon@CSUtility.Support.ConcurentObjManager`2[[mscorlib.dll@System.Guid][cscommon@CCore.Socket.ISocketComponentInfo]]"/>
+	<CastShadow Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<TickAllTime Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<MeshFadeType Type="cscommon@CCore.Mesh.MeshFadeType" Value="None"/>
+	<FadeInTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<FadeOutTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<IgnoreMouseLineCheckInGame Type="mscorlib.dll@System.Boolean" Value="False"/>
+</CCore.Mesh.MeshTemplate>
+

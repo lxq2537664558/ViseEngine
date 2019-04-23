@@ -1,0 +1,28 @@
+<CCore.Mesh.MeshTemplate Ver="0">
+	<Ver Type="mscorlib.dll@System.UInt32" Value="3"/>
+	<MeshID Type="mscorlib.dll@System.Guid" Value="d349898a-ef04-4860-8538-bf683338cb7e"/>
+	<NickName Type="mscorlib.dll@System.String" Value="¹â¶ÜµÄ¹âÔÎ"/>
+	<NeedCalcFullSkeleton Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshInitList Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Mesh.MeshInitPart]]">
+		<Data Type="cscommon@CCore.Mesh.MeshInitPart" Value="null">
+			<MeshName Type="mscorlib.dll@System.String" Value="resources/meshsource/practice/glow_water_sph.vms"/>
+			<Techs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+				<Data Type="mscorlib.dll@System.Guid" Value="43b938d1-be4d-41ea-a827-3c5de7617448"/>
+			</Techs>
+		</Data>
+	</MeshInitList>
+	<ActionName Type="mscorlib.dll@System.String" Value=""/>
+	<PlayRate Type="mscorlib.dll@System.Double" Value="1"/>
+	<ActionPercent Type="mscorlib.dll@System.Double" Value="0"/>
+	<Scale Type="mscorlib.dll@System.Single" Value="1"/>
+	<LayerName Type="mscorlib.dll@System.String" Value="Other"/>
+	<Layer Type="cscommon@CCore.RLayer" Value="RL_Translucent"/>
+	<SocketComponentInfoList Type="cscommon@CSUtility.Support.ConcurentObjManager`2[[mscorlib.dll@System.Guid][cscommon@CCore.Socket.ISocketComponentInfo]]"/>
+	<CastShadow Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<TickAllTime Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<MeshFadeType Type="cscommon@CCore.Mesh.MeshFadeType" Value="None"/>
+	<FadeInTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<FadeOutTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<IgnoreMouseLineCheckInGame Type="mscorlib.dll@System.Boolean" Value="False"/>
+</CCore.Mesh.MeshTemplate>
+

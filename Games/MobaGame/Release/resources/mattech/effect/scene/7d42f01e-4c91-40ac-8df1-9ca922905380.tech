@@ -1,0 +1,7 @@
+<Technique Name="暗色流动纹理" Ver="129" AlphaRef="0" CullMode="CCW" ZDisable="1" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="RevSubtract" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="c82adf68-47fd-47ec-b6b9-f208e25d570e" Id="7d42f01e-4c91-40ac-8df1-9ca922905380" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_cd6e317e_9cc6_4f02_8f6d_ebb9970fd90e EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_e572bf24_f8ab_487c_a10b_e7af82517648 EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/fe752732.png"/>
+	</ShaderVar>
+</Technique>
+

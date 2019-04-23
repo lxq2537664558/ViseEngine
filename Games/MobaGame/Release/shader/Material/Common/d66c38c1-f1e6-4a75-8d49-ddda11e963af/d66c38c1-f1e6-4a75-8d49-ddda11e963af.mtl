@@ -1,0 +1,37 @@
+/*Material
+
+<?xml version="1.0" encoding="utf-16"?>
+<Material Name="Color_yellow" Require="DiffuseUV" Main="DoMaterial_d66c38c1_f1e6_4a75_8d49_ddda11e963af" Id="d66c38c1-f1e6-4a75-8d49-ddda11e963af">
+  <DefaultTechnique Name="DefaultTech" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" ZCmpFunc="LessEqual" HostMaterialId="d66c38c1-f1e6-4a75-8d49-ddda11e963af" Id="686e64b9-2e1f-4806-8cdd-ef765c8eca7b" AcceptDecal="0" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="4294967295" StencilWriteMask="4294967295" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace">
+    <ShaderVar>
+      <Texture_e24c4dda_11a2_4bdc_a068_62ff459cb280 Type="texture" Value="Texture\Assist\Color_yellow.dds" />
+    </ShaderVar>
+  </DefaultTechnique>
+</Material>
+*/
+
+
+texture Texture_e24c4dda_11a2_4bdc_a068_62ff459cb280;
+sampler2D Samp_Texture_e24c4dda_11a2_4bdc_a068_62ff459cb280 = sampler_state
+{
+	Texture = <Texture_e24c4dda_11a2_4bdc_a068_62ff459cb280>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_d66c38c1_f1e6_4a75_8d49_ddda11e963af(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    pssem.mDiffuseColor = vise_tex2D(Samp_Texture_e24c4dda_11a2_4bdc_a068_62ff459cb280,pssem.mDiffuseUV.xy);
+
+}

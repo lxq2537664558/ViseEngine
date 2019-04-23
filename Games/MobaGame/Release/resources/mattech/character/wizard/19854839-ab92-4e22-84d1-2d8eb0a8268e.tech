@@ -1,0 +1,10 @@
+<Technique Name="³á°ò" Ver="291" AlphaRef="150" CullMode="NONE" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyTest" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ae49cbd0-9eb2-4a63-83af-cc58a28c1a47" Id="19854839-ab92-4e22-84d1-2d8eb0a8268e" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_ffe859ac_efc3_4bc3_947c_abe7da0186c4 EditorType="Texture" Type="texture" Value="resources/texture/character/wizard/wings.png"/>
+		<ShaderVar_3842b58a_a327_49d8_b34b_6dc0875c7c16 EditorType="Texture" Type="texture" Value="resources/texture/character/wizard/wings_glowmask.png"/>
+		<ShaderVar_5aabb7fe_8c04_43b7_8196_1d496352a2f4 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_68508ff9_5677_4a08_b1c6_ebad963401f9 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/237.png"/>
+		<ShaderVar_8e9e5877_0e23_406d_a327_a3be2c8c28d8 EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+	</ShaderVar>
+</Technique>
+

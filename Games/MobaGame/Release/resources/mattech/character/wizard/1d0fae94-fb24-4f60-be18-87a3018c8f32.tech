@@ -1,0 +1,8 @@
+<Technique Name="³á°òÁ÷¹â" Ver="130" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="d6680a44-997f-407c-91d2-03c9862c383d" Id="1d0fae94-fb24-4f60-be18-87a3018c8f32" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_0f6c0f9f_eb68_404b_9cf8_d8c9895c2125 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+		<ShaderVar_63bd79b4_342f_4e99_ae2a_b4cd0f871453 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_8ce9b7da_7b64_4179_87f5_a20a34ece7e3 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/ppx_vein_01.png"/>
+	</ShaderVar>
+</Technique>
+

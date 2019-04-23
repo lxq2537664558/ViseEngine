@@ -1,0 +1,23 @@
+﻿<UserControl x:Name="userControl" x:Class="EffectEditor.ParticleShapeItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:WPG_Themes_TypeEditors="clr-namespace:WPG.Themes.TypeEditors;assembly=WPG"
+             mc:Ignorable="d" >
+	<UserControl.Resources>
+		<SolidColorBrush x:Key="ShapeNormalBackground" Color="#FF0E4D68" />
+		<SolidColorBrush x:Key="ShapeSelectedBackground" Color="#FF199CD4" />
+	</UserControl.Resources>
+    <Border x:Name="Border_Shape" BorderThickness="1" Background="{DynamicResource ShapeNormalBackground}" CornerRadius="3" MouseDown="Border_Shape_MouseDown">
+		<Grid Margin="0">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="0.592*"/>
+			</Grid.ColumnDefinitions>
+			<Rectangle Grid.ColumnSpan="2" />
+			<TextBlock Text="形状: " VerticalAlignment="Center" Margin="5,0,0,0"/>
+			<WPG_Themes_TypeEditors:EnumEditor Grid.Column="1" EnumObject="{Binding ShapeType, ElementName=userControl, Mode=TwoWay}" />
+		</Grid>
+	</Border>
+</UserControl>

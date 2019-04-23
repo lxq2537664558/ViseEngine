@@ -1,0 +1,54 @@
+/*Material
+
+<Material Name="石头地表2" Require="DiffuseUV" Main="DoMaterial_f73ebc71_c8e6_4c57_abb5_dc4a75a6b663" ExtendString="" Id="f73ebc71-c8e6-4c57-abb5-dc4a75a6b663" Ver="7">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="f73ebc71-c8e6-4c57-abb5-dc4a75a6b663" Id="9d63f0a3-62f6-4caf-98b8-6df5599688e5" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_GDiffuseTexture EditorType="Texture" Type="texture" Value="resources/texture/115/CityEntrance_roadtile_01.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../shader/function/Common.function"
+
+
+texture ShaderVar_GDiffuseTexture;
+sampler2D Samp_ShaderVar_GDiffuseTexture = sampler_state
+{
+	Texture = <ShaderVar_GDiffuseTexture>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_f73ebc71_c8e6_4c57_abb5_dc4a75a6b663(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 ShaderVar_GDiffuseTexture_2D = float4(0,0,0,0);
+    float2 ShaderVar_Scale = float2(0.5,0.5);
+    float1 ShaderVar_e8b3a59d_f314_4446_b218_62ed14f424c9 = 1.8;
+    float2 ShaderVar_9d4d1944_dd59_4650_9a2d_5efdf3dbac39 = float2(1,0.4);
+
+
+    float2 FuncTempValue_6c9b6ae7_c501_4677_a06d_8c8282af149e_4 = float2(0, 0);
+    Panner(pssem.mDiffuseUV,1,float2(0,0),ShaderVar_Scale,FuncTempValue_6c9b6ae7_c501_4677_a06d_8c8282af149e_4);
+    ShaderVar_GDiffuseTexture_2D = vise_tex2D(Samp_ShaderVar_GDiffuseTexture,FuncTempValue_6c9b6ae7_c501_4677_a06d_8c8282af149e_4.xy);
+    pssem.mDiffuseColor = ShaderVar_GDiffuseTexture_2D;
+    float FuncTempValue_a59e7b4a_893c_440f_a4f9_c5e3f4c9c704_1 = 0;
+    Luminance4(ShaderVar_GDiffuseTexture_2D,FuncTempValue_a59e7b4a_893c_440f_a4f9_c5e3f4c9c704_1);
+    float FuncTempValue_19d4c840_490d_495b_9d89_4dbe46d5d0c2_2 = 0;
+    Pow(FuncTempValue_a59e7b4a_893c_440f_a4f9_c5e3f4c9c704_1,ShaderVar_e8b3a59d_f314_4446_b218_62ed14f424c9,FuncTempValue_19d4c840_490d_495b_9d89_4dbe46d5d0c2_2);
+    pssem.mSpecularIntensity = (FuncTempValue_19d4c840_490d_495b_9d89_4dbe46d5d0c2_2 * ShaderVar_9d4d1944_dd59_4650_9a2d_5efdf3dbac39.x);
+    pssem.mSpecularPower = ShaderVar_9d4d1944_dd59_4650_9a2d_5efdf3dbac39.y;
+
+}

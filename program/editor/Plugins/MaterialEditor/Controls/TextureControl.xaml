@@ -1,0 +1,22 @@
+﻿<myTypes:BaseNodeControl x:Class="MaterialEditor.Controls.TextureControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:myTypes ="clr-namespace:CodeGenerateSystem.Base;assembly=CodeGenerateSystem"
+             mc:Ignorable="d" >
+    <Grid Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Label Name="TitleLabel"  HorizontalContentAlignment="Center" Background="DarkGray">贴图</Label>
+        <Image Grid.Row="1" Height="150" Name="image_Texture" Stretch="Fill" Width="150" Source="Images/DefaultDiffuse.dds">
+            <Image.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="加载贴图" Click="MenuItem_LoadTexture_Click" />
+                </ContextMenu>
+            </Image.ContextMenu>
+        </Image>
+    </Grid>
+</myTypes:BaseNodeControl>

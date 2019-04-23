@@ -1,0 +1,28 @@
+<CCore.Mesh.MeshTemplate Ver="0">
+	<NickName Type="mscorlib.dll@System.String" Value="À©É¢º®Æø"/>
+	<Ver Type="mscorlib.dll@System.UInt32" Value="4"/>
+	<MeshID Type="mscorlib.dll@System.Guid" Value="0a21fd92-95ef-4a2d-a24a-3dd37d2de1c6"/>
+	<NeedCalcFullSkeleton Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshInitList Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Mesh.MeshInitPart]]">
+		<Data Type="cscommon@CCore.Mesh.MeshInitPart" Value="null">
+			<MeshName Type="mscorlib.dll@System.String" Value="resources/meshsource/effect/smoke_spray_mesh.vms"/>
+			<Techs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+				<Data Type="mscorlib.dll@System.Guid" Value="ff088419-0d51-4f9b-8c45-2aa477bfca07"/>
+			</Techs>
+		</Data>
+	</MeshInitList>
+	<ActionName Type="mscorlib.dll@System.String" Value=""/>
+	<PlayRate Type="mscorlib.dll@System.Double" Value="1"/>
+	<ActionPercent Type="mscorlib.dll@System.Double" Value="0"/>
+	<Scale Type="mscorlib.dll@System.Single" Value="1"/>
+	<LayerName Type="mscorlib.dll@System.String" Value="Other"/>
+	<Layer Type="cscommon@CCore.RLayer" Value="RL_Translucent"/>
+	<SocketComponentInfoList Type="cscommon@CSUtility.Support.ConcurentObjManager`2[[mscorlib.dll@System.Guid][cscommon@CCore.Socket.ISocketComponentInfo]]"/>
+	<CastShadow Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<TickAllTime Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<MeshFadeType Type="cscommon@CCore.Mesh.MeshFadeType" Value="None"/>
+	<FadeInTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<FadeOutTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<IgnoreMouseLineCheckInGame Type="mscorlib.dll@System.Boolean" Value="False"/>
+</CCore.Mesh.MeshTemplate>
+

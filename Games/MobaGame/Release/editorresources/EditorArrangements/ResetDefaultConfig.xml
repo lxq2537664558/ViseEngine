@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="gb2312"?>
+<EditorLayout>
+  <DockWindow Type="MainEditor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|MainEditor.MainWindow" KeyValue="MainWindow" LeftRate="0.2" TopRate="0.2" WidthRate="0.6" HeightRate="0.6" ScreenIndex="0">
+    <WinContent Type="DockControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|DockControl.Controls.DockAbleContainerControl" GridRow="0" GridColumn="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+      <Element Type="DockControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|DockControl.Controls.DockAbleTabControl" GridRow="0" GridColumn="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Element Type="DockControl, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|DockControl.Controls.DockAbleTabItem" GridRow="0" GridColumn="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Header="资源浏览器">
+          <Element Type="MainEditor, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|MainEditor.PluginAssist.PluginControlContainer" GridRow="0" GridColumn="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" KeyValue="资源浏览器">
+            <Element Type="ResourcesBrowser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null|ResourcesBrowser.BrowserControl" GridRow="0" GridColumn="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Id="e3199aa6-fab5-4564-ab0d-e313323b909c"/>
+          </Element>
+        </Element>
+      </Element>
+    </WinContent>
+  </DockWindow>
+</EditorLayout>
+
+

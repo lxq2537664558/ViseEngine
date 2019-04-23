@@ -1,0 +1,7 @@
+<Technique Name="武器特效条带" Ver="3" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="1066e679-bbc7-4f59-93de-a0b897ba806b" Id="2f0f715e-cdb4-41dd-a6bf-e1ef5f0006cd" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_976c1d52_592e_4dbf_b34e_df2e5fbbffd4 EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/Trail4.png"/>
+		<ShaderVar_f5596b72_a3e3_4299_87b0_d99d31ecd641 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+	</ShaderVar>
+</Technique>
+

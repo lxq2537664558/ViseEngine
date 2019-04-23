@@ -1,0 +1,6 @@
+<Technique Name="mask395" Ver="67" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ff3675ed-cc79-4117-bb86-6c48dc2f9239" Id="97bfefea-4a2d-47cc-81d4-78f4131a1e68" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_1e033490_9fa6_4b59_95f9_e7a4d98449e8 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/Mask_395.png"/>
+	</ShaderVar>
+</Technique>
+

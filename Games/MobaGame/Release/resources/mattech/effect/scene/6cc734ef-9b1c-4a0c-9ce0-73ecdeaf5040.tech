@@ -1,0 +1,9 @@
+<Technique Name="Ë®µÀ" Ver="17" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="f57f3b4d-89b6-469e-96f6-16f2f74b5ddc" Id="6cc734ef-9b1c-4a0c-9ce0-73ecdeaf5040" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_898f7640_2769_406c_a745_3fa824ef06b8 EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+		<ShaderVar_7542ac91_4341_42ca_9561_f62347e4dbe2 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/Water_03f.png"/>
+		<ShaderVar_4d8bb13c_b8ba_4b70_a398_b193d69bd388 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/water_normal_01.png"/>
+		<ShaderVar_9d0e98f1_f20c_4698_8ad1_237d77f44729 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/Angra_Town_Water_02.png"/>
+	</ShaderVar>
+</Technique>
+

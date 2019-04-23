@@ -1,0 +1,22 @@
+<UISystem.UVAnim Ver="0">
+	<Id Type="mscorlib.dll@System.Guid" Value="12d63b94-6a92-4063-a65e-dfd4b70163ce"/>
+	<Path Type="mscorlib.dll@System.String" Value=""/>
+	<UVAnimName Type="mscorlib.dll@System.String" Value="法师技能2（正常）"/>
+	<Texture Type="mscorlib.dll@System.String" Value="resources/texture/UI/MianUI.png"/>
+	<Duration Type="mscorlib.dll@System.Single" Value="1"/>
+	<Frames Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@UISystem.UVFrame]]">
+		<Data Type="cscommon@UISystem.UVFrame" Value="null">
+			<U Type="mscorlib.dll@System.Single" Value="0.5898438"/>
+			<V Type="mscorlib.dll@System.Single" Value="0.3632813"/>
+			<SizeU Type="mscorlib.dll@System.Single" Value="0.1103516"/>
+			<SizeV Type="mscorlib.dll@System.Single" Value="0.1083984"/>
+			<Scale9Info Type="cscommon@CSUtility.Support.Thickness" Value="0,0,0,0"/>
+		</Data>
+	</Frames>
+	<TechId Type="mscorlib.dll@System.Guid" Value="f5335399-627b-472f-94c0-37e172f7ec12"/>
+	<Opacity Type="mscorlib.dll@System.Single" Value="1"/>
+	<PlayTimes Type="mscorlib.dll@System.Int32" Value="0"/>
+	<FadeoutWhenFrameFinish Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<FadeoutTime Type="mscorlib.dll@System.Int64" Value="1000"/>
+</UISystem.UVAnim>
+

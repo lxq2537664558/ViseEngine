@@ -1,0 +1,18 @@
+/*Material
+
+<Material Name="流光地面" Require="DiffuseColor|DiffuseUV" Main="DoMaterial_b80295d0_a68e_4086_81bf_a53f107e20a1" ExtendString="" Id="b80295d0-a68e-4086-81bf-a53f107e20a1" Ver="1">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="b80295d0-a68e-4086-81bf-a53f107e20a1" Id="42ac3ba8-63b0-419e-a728-d003f40fdfcf" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar/>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#ifdef ByLayerBased
+void DoMaterial_b80295d0_a68e_4086_81bf_a53f107e20a1(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{}

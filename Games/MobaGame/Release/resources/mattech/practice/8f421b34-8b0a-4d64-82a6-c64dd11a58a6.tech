@@ -1,0 +1,9 @@
+<Technique Name="暗色溶解条带" Ver="11" AlphaRef="35" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="RevSubtract" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="a1c6fd20-8b53-4006-a5d7-17858080df5c" Id="8f421b34-8b0a-4d64-82a6-c64dd11a58a6" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_b8cedb3e_3661_4b3e_8d5c_436662e25e09 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/xiaosan_mask_V.png"/>
+		<ShaderVar_e7b3925b_f8ff_4f70_8d74_9d22af51dd9e EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/c2bd23cc.png"/>
+		<ShaderVar_f07e12cb_e4ce_47c6_87cc_4c50a3667a34 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_6fb21c08_c2f2_43a1_81e7_740ad7479f1f EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+	</ShaderVar>
+</Technique>
+

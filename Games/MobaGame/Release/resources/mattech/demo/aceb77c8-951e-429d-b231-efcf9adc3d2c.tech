@@ -1,0 +1,12 @@
+<Technique Name="demo" Ver="936" AlphaRef="100" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyTest" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="a7c02600-8f8d-4de6-87f2-a47e16e8fabc" Id="aceb77c8-951e-429d-b231-efcf9adc3d2c" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_cd649ff4_d043_4dc6_9e76_8f0d3eee6873 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/GF_062.png"/>
+		<ShaderVar_1c8d602d_a50b_4a42_a818_b9b05b70de2a EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_311a25eb_544f_4266_8165_542f537025bf EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/237-v1.png"/>
+		<ShaderVar_19b23ca9_961e_4a76_9777_6c1e877ac592 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/fire_tornado_mask.png"/>
+		<ShaderVar_Color1 EditorType="Vector" Type="float3" Value="1.6,2,1.4"/>
+		<ShaderVar_Color2 EditorType="Vector" Type="float3" Value="1.6,0.4,0.2"/>
+		<ShaderVar_RimColor EditorType="Vector" Type="float4" Value="1.2,0.3,0.1,0.2"/>
+	</ShaderVar>
+</Technique>
+

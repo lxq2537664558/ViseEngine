@@ -1,0 +1,34 @@
+﻿<UserControl x:Name="userControl" x:Class="UIEditor.PropertyGrid.UIControlTemplateSetter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"	
+			 xmlns:WPG="clr-namespace:WPG"
+             mc:Ignorable="d"  >
+	<Grid Background="#FF333333">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition/>
+    		<ColumnDefinition Width="Auto"/>
+    	</Grid.ColumnDefinitions>
+
+        <TextBox Text="{Binding UIControlTemplateName, ElementName=userControl}" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="0" VerticalAlignment="Center" Background="#FF333333" Foreground="Black" CaretBrush="Black" IsReadOnly="True" Grid.Row="1"/>
+        <Grid Grid.Column="1" Margin="0" Grid.Row="1">
+        	<Grid.ColumnDefinitions>
+        		<ColumnDefinition Width="Auto"/>
+        		<ColumnDefinition Width="Auto"/>
+        		<ColumnDefinition Width="Auto"/>
+        	</Grid.ColumnDefinitions>
+        	<!--Button x:Name="Button_Search" Margin="1" Grid.Column="1" Click="Button_Search_Click" Width="25" Height="25">
+    			<Image Source="/ResourceLibrary;component/Icon/search.png" Margin="2"/>     	
+			</Button-->
+            <Button x:Name="Button_Set" Margin="1" Click="Button_Set_Click" Width="25" Height="25" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/set.png" Margin="1"/>     	
+			</Button>
+        	<!--Button x:Name="Button_Delete" Grid.Column="2" Margin="1" Click="Button_Delete_Click" Width="25" Height="25">
+    			<Image Source="/ResourceLibrary;component/Icon/File/delete.png"/>      	
+			</Button-->
+        </Grid>
+            
+    </Grid>
+</UserControl>

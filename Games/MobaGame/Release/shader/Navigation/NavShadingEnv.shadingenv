@@ -1,0 +1,89 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+#include "CommonDeferredShadingFunc.fxh"
+
+// 1 is terrain
+float		g_IsTerrain;
+float		gHitProxyID;
+int			gMeshCommitType;
+float2		g_TextureSize;
+
+VertexOutput vs_main( VertexInput Input )
+{
+	// VS 2 Semantic
+	VertexTrans vssem = (VertexTrans)0;
+	VertexTransInit ( Input, vssem );
+
+	// VS do
+	V3D_VS_Modifiers ( vssem );
+
+	// Save depth
+	vssem.mDiffuseUV.xy = vssem.mWorldPos.yy;
+
+	// Semantic 2 VS-Out
+	VertexOutput Output =(VertexOutput)0;
+	VertexTransToVertexOutput ( vssem, Output );
+	Output._Pos0.xy += float2(-1,1) / g_TextureSize;
+	//Output.mViewPos.xy = 0;
+	//Output.mPosProj.xy += float2(-1,1) / g_TextureSize;
+
+	return Output;
+}
+
+struct PSOut_LightDepth
+{
+    float4	Color	: COLOR0;
+	float4  Color2  : SV_Target1;
+};
+
+PSOut_LightDepth	ps_main(PixelInput Input)
+{
+	PSOut_LightDepth o = (PSOut_LightDepth)0;
+
+	float4 finalColor = float4(0,0,0,1);
+
+	o.Color2.rgba = 0;
+
+	// Depth Z Value
+	if(g_IsTerrain == 0)
+	{
+		// 模型
+		if(gMeshCommitType == 0)
+		{
+			o.Color2.rgba = gHitProxyID;
+			finalColor.g = 100;			
+		}
+		else if(gMeshCommitType > 0.5 && gMeshCommitType < 1.5)
+		{
+			finalColor.g = 10;
+		}
+		else
+		{
+			finalColor.g = 100;
+		}
+	}
+	else
+	{
+		// 地形
+		finalColor.r = Input.mDiffuseUV.x;
+
+		finalColor.g = 1;
+	}
+	
+	//o.Color2.rgba = gHitProxyID;
+	//o.Color2.a = 1;
+	o.Color = finalColor;
+
+	return o;
+}
+
+technique DepthMap
+{
+	pass pass_depthmap
+	{
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+

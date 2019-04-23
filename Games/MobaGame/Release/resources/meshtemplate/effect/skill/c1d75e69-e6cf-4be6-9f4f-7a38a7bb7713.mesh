@@ -1,0 +1,28 @@
+<CCore.Mesh.MeshTemplate Ver="0">
+	<NickName Type="mscorlib.dll@System.String" Value="µØÕðÊ¯¿é"/>
+	<Ver Type="mscorlib.dll@System.UInt32" Value="3"/>
+	<MeshID Type="mscorlib.dll@System.Guid" Value="c1d75e69-e6cf-4be6-9f4f-7a38a7bb7713"/>
+	<NeedCalcFullSkeleton Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshInitList Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Mesh.MeshInitPart]]">
+		<Data Type="cscommon@CCore.Mesh.MeshInitPart" Value="null">
+			<MeshName Type="mscorlib.dll@System.String" Value="resources/meshsource/effect/stone.vms"/>
+			<Techs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+				<Data Type="mscorlib.dll@System.Guid" Value="208f54f1-bf37-4ef6-99c2-134c285f9d99"/>
+			</Techs>
+		</Data>
+	</MeshInitList>
+	<ActionName Type="mscorlib.dll@System.String" Value=""/>
+	<PlayRate Type="mscorlib.dll@System.Double" Value="1"/>
+	<ActionPercent Type="mscorlib.dll@System.Double" Value="0"/>
+	<Scale Type="mscorlib.dll@System.Single" Value="1"/>
+	<LayerName Type="mscorlib.dll@System.String" Value="Other"/>
+	<Layer Type="cscommon@CCore.RLayer" Value="RL_Translucent"/>
+	<SocketComponentInfoList Type="cscommon@CSUtility.Support.ConcurentObjManager`2[[mscorlib.dll@System.Guid][cscommon@CCore.Socket.ISocketComponentInfo]]"/>
+	<CastShadow Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<TickAllTime Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<MeshFadeType Type="cscommon@CCore.Mesh.MeshFadeType" Value="None"/>
+	<FadeInTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<FadeOutTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<IgnoreMouseLineCheckInGame Type="mscorlib.dll@System.Boolean" Value="False"/>
+</CCore.Mesh.MeshTemplate>
+

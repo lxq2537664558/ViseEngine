@@ -1,0 +1,40 @@
+/*Material
+
+<?xml version="1.0" encoding="utf-16"?>
+<Material Name="DefaultMaterial" Require="DiffuseUV" Main="DoMaterial_Default" ExtendString="" Id="f1105eb0-c2e6-4c96-867b-1bb6caf1c9dd" Ver="11">
+  <DefaultTechnique Name="DefaultTech" Ver="10" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" HostMaterialId="f1105eb0-c2e6-4c96-867b-1bb6caf1c9dd" Id="6ef414a1-069c-4ac0-9892-445eb6d3a270" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="4294967295" StencilWriteMask="4294967295" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" DepthBias="0" SlopeScaleDepthBias="0">
+    <ShaderVar>
+      <diffuse_map Type="texture" Value="Texture\UVchecker.png" />
+      <color Type="float4" Value="1,1,1,1" />
+    </ShaderVar>
+  </DefaultTechnique>
+</Material>
+*/
+
+
+
+texture diffuse_map;
+sampler2D Samp_diffuse_map = sampler_state
+{
+	Texture = <diffuse_map>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+float4 color;
+
+#ifdef ByLayerBased
+void DoMaterial_Default(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    pssem.mDiffuseColor = (vise_tex2D(Samp_diffuse_map,pssem.mDiffuseUV.xy) * color);
+
+}

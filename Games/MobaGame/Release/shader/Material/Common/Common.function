@@ -1,0 +1,922 @@
+/*function
+<?xml version="1.0" encoding="utf-16"?>
+<Function>
+  <Func0 Name="Clamp">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="min"/>
+	<Param2 Type="float" Name="max"/>
+	<Param3 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func0>
+  <Func1 Name="FMod">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="y"/>
+	<Param2 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="FMod4D">
+    <Param>
+	<Param0 Type="float4" Name="x"/>
+	<Param1 Type="float4" Name="y"/>
+	<Param2 Type="float4" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="ModF">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ip" Attribute="out"/>
+	<Param2 Type="float" Name="fp" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="ACos">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="ASin">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="ATan">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="ATan2">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="y"/>
+	<Param2 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Ceil">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Cos">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Sin">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Tan">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="SinCos">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="sin" Attribute="out"/>
+	<Param2 Type="float" Name="cos" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Sqrt">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="RSqrt">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Reflect3D">
+    <Param>
+	<Param0 Type="float3" Name="v1"/>
+	<Param1 Type="float3" Name="v2"/>
+	<Param2 Type="float3" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Cross3D">
+    <Param>
+	<Param0 Type="float3" Name="v1"/>
+	<Param1 Type="float3" Name="v2"/>
+	<Param2 Type="float3" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Dot2D">
+    <Param>
+	<Param0 Type="float2" Name="v1"/>
+	<Param1 Type="float2" Name="v2"/>
+	<Param2 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Dot3D">
+    <Param>
+	<Param0 Type="float3" Name="v1"/>
+	<Param1 Type="float3" Name="v2"/>
+	<Param2 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Exp">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Exp2">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Floor">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Frac">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Pow">
+    <Param>
+	<Param0 Type="float" Name="v1"/>
+	<Param1 Type="float" Name="v2"/>
+	<Param2 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Lerp">
+    <Param>
+	<Param0 Type="float" Name="v1"/>
+	<Param1 Type="float" Name="v2"/>
+	<Param2 Type="float" Name="s"/>
+	<Param3 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Lerp2D">
+    <Param>
+	<Param0 Type="float2" Name="v1"/>
+	<Param1 Type="float2" Name="v2"/>
+	<Param2 Type="float" Name="s"/>
+	<Param3 Type="float2" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Lerp3D">
+    <Param>
+	<Param0 Type="float3" Name="v1"/>
+	<Param1 Type="float3" Name="v2"/>
+	<Param2 Type="float" Name="s"/>
+	<Param3 Type="float3" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Saturate">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="SmoothStep">
+    <Param>
+	<Param0 Type="float" Name="minvalue"/>
+	<Param1 Type="float" Name="maxvalue"/>
+	<Param2 Type="float" Name="s"/>
+	<Param3 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Luminance4">
+    <Param>
+	<Param0 Type="float4" Name="color"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Luminance3">
+    <Param>
+	<Param0 Type="float3" Name="color"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="SampSceneCapture1">
+  <Param>
+  <Param0 Type="float2" Name="uv"/>
+  <Param1 Type="float4" Name="color" Attribute="out"/>
+  </Param>
+  </Func1>
+  <Func1 Name="SampSceneCapture2">
+  <Param>
+  <Param0 Type="float2" Name="uv"/>
+  <Param1 Type="float4" Name="color" Attribute="out"/>
+  </Param>
+  </Func1>
+  <Func1 Name="SampSceneCapture3">
+  <Param>
+  <Param0 Type="float2" Name="uv"/>
+  <Param1 Type="float4" Name="color" Attribute="out"/>
+  </Param>
+  </Func1>
+	<Func1 Name="SampSceneCapture4">
+  <Param>
+  <Param0 Type="float2" Name="uv"/>
+  <Param1 Type="float4" Name="color" Attribute="out"/>
+  </Param>
+  </Func1>
+  <Func1 Name="SampSceneCapture5">
+  <Param>
+  <Param0 Type="float2" Name="uv"/>
+  <Param1 Type="float4" Name="color" Attribute="out"/>
+  </Param>
+  </Func1>
+  <Func1 Name="AnimateUV">
+    <Param>
+	<Param0 Type="float" Name="time"/>
+	<Param1 Type="float" Name="duration"/>
+	<Param2 Type="float2" Name="frameCount"/>
+	<Param3 Type="float2" Name="uv"/>
+	<Param4 Type="float2" Name="finalUV" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="SubUV">
+    <Param>
+	<Param0 Type="float" Name="index"/>
+	<Param1 Type="float" Name="frameCount"/>
+	<Param2 Type="float2" Name="uv"/>
+	<Param3 Type="float2" Name="finalUV" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="UnpackNormal">
+    <Param>
+	<Param0 Type="float4" Name="packedNormal"/>
+	<Param1 Type="float3" Name="normal" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="Distortion">
+    <Param>
+	<Param0 Type="float4" Name="localPos"/>
+	<Param1 Type="float4" Name="localNorm"/>
+	<Param2 Type="float4" Name="viewPos"/>
+	<Param3 Type="float4" Name="projPos"/>
+	<Param4 Type="float3" Name="localCameraPos"/>
+	<Param5 Type="float" Name="strength"/>
+	<Param6 Type="float" Name="transparency"/>
+	<Param7 Type="float" Name="distortionOffset"/>
+	<Param8 Type="float2" Name="distortionUV" Attribute="out"/>
+	<Param9 Type="float" Name="distortionAlpha" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="Distortion2">
+    <Param>
+	<Param0 Type="float4" Name="localPos"/>
+	<Param1 Type="float4" Name="localNorm"/>
+	<Param2 Type="float4" Name="viewPos"/>
+	<Param3 Type="float4" Name="projPos"/>
+	<Param4 Type="float" Name="strength"/>
+	<Param5 Type="float" Name="transparency"/>
+	<Param6 Type="float" Name="distortionOffset"/>
+	<Param7 Type="float4" Name="distortionColor" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="ScreenPos">
+    <Param>
+	<Param0 Type="float4" Name="projPos"/>
+	<Param1 Type="float2" Name="screenPos" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="PreFrameWorldYBias">
+    <Param>
+	<Param0 Type="float4" Name="projPos"/>
+	<Param2 Type="float" Name="worldYBias" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="PreFrameDepthBias">
+    <Param>
+	<Param0 Type="float4" Name="projPos"/>
+	<Param2 Type="float" Name="depthBias" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="ZDisableDepthBiasAlpha">
+    <Param>
+	<Param0 Type="float4" Name="projPos"/>
+	<Param1 Type="float" Name="alpha"/>
+	<Param1 Type="float" Name="dist"/>
+	<Param2 Type="float" Name="outAlpha" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="DepthBiasAlpha">
+    <Param>
+	<Param0 Type="float4" Name="projPos"/>
+	<Param1 Type="float" Name="alphaDistance"/>
+	<Param2 Type="float" Name="alpha" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="Rotator">
+  <Param>
+  <Param0 Type="float2" Name="uv"/>
+  <Param1 Type="float" Name="time"/>
+  <Param2 Type="float2" Name="center"/>
+  <Param3 Type="float2" Name="scale"/>
+  <Param4 Type="float" Name="speed"/>
+  <Param5 Type="float2" Name="outUV" Attribute="out"/>
+  </Param>
+  </Func1>
+  <Func1 Name="Panner">
+  <Param>
+  <Param0 Type="float2" Name="uv"/>
+  <Param1 Type="float" Name="time"/>
+  <Param2 Type="float2" Name="speed"/>
+  <Param3 Type="float2" Name="scale"/>
+  <Param4 Type="float2" Name="outUV" Attribute="out"/>
+  </Param>
+  </Func1>
+  <Func1 Name="RimLight">
+  <Param>
+  <Param0 Type="float3" Name="localPos"/>
+  <Param1 Type="float3" Name="localNormal"/>
+  <Param2 Type="float" Name="rimStart"/>
+  <Param3 Type="float" Name="rimEnd"/>
+  <Param4 Type="float4" Name="rimColor"/>
+  <Param5 Type="float" Name="rimMultiply"/>
+  <Param6 Type="float4" Name="outColor" Attribute="out"/>
+  </Param>
+  </Func1>
+  <Func1 Name="RimLightBloom">
+  <Param>
+  <Param0 Type="float3" Name="localPos"/>
+  <Param1 Type="float3" Name="localNormal"/>
+  <Param2 Type="float" Name="rimStart"/>
+  <Param3 Type="float" Name="rimEnd"/>
+  <Param4 Type="float4" Name="rimColor"/>
+  <Param5 Type="float" Name="rimMultiply"/>
+  <Param6 Type="float4" Name="objColor"/>
+  <Param7 Type="int" Name="isRimBloom"/>
+  <Param8 Type="float4" Name="outColor" Attribute="out"/>
+  <Param9 Type="float" Name="outBloom" Attribute="out"/>
+  </Param>
+  </Func1>
+  <Func1 Name="VecMultiplyQuat">
+  <Param>
+  <Param0 Type="float3" Name="vec"/>
+  <Param1 Type="float4" Name="quat"/>
+  <Param2 Type="float3" Name="outVector" Attribute="out"/>
+  </Param>
+  </Func1>
+  <Func1 Name="VecMulMatrix">
+  <Param>
+  <Param0 Type="float4" Name="vec"/>
+  <Param1 Type="float4x4" Name="mat"/>
+  <Param2 Type="float4" Name="outVector" Attribute="out"/>
+  </Param>
+  </Func1>
+  <Func1 Name="NormalMap">
+  <Param>
+  <Param0 Type="float3" Name="viewTangent"/>
+  <Param1 Type="float3" Name="viewNormal"/>
+  <Param2 Type="float3" Name="bump"/>
+  <Param3 Type="float4" Name="resultViewNormal" Attribute="out"/>
+  </Param>
+  </Func1>
+</Function>
+*/
+
+#ifndef _COMMON_FUNCTION_
+#define _COMMON_FUNCTION_
+
+#include "VInc.fxx"
+
+
+void Clamp( float x, float min, float max, out float ret )
+{
+	ret = clamp( x, min, max );
+}
+
+void FMod( float x, float y, out float ret )
+{
+	ret = fmod(x, y);
+}
+
+void FMod4D( float4 x, float4 y, out float4 ret )
+{
+	ret = fmod(x, y);
+}
+
+void ModF( float x, out float ip, out float fp )
+{
+	fp = modf(x, ip);
+}
+
+void ACos( float x, out float ret )
+{
+	ret = acos(x);
+}
+
+void ASin( float x, out float ret )
+{
+	ret = asin(x);
+}
+
+void ATan( float x, out float ret )
+{
+	ret = atan(x);
+}
+
+void ATan2( float x, float y, out float ret )
+{
+	ret = atan2(x, y);
+}
+
+void Ceil( float x, out float ret )
+{
+	ret = ceil(x);
+}
+
+void Cos( float x, out float ret )
+{
+	ret = cos(x);
+}
+
+void Sin( float x, out float ret )
+{
+	ret = sin(x);
+}
+
+void Tan( float x, out float ret )
+{
+	ret = tan(x);
+}
+
+void SinCos( float x, out float sin, out float cos )
+{
+	sincos(x,sin,cos);
+}
+
+void Sqrt( float x, out float ret )
+{
+	ret = sqrt(x);
+}
+
+void RSqrt( float x, out float ret )
+{
+	ret = rsqrt(x);
+}
+
+void Reflect3D( float3 v1, float3 v2, out float3 ret )
+{
+	ret = reflect(v1, v2);
+}
+
+void Cross3D( float3 v1, float3 v2, out float3 ret )
+{
+	ret = cross(v1, v2);
+}
+
+void Dot2D( float2 v1, float2 v2, out float ret )
+{
+	ret = dot(v1, v2);
+}
+
+void Dot3D( float3 v1, float3 v2, out float ret )
+{
+	ret = dot(v1, v2);
+}
+
+void Exp( float x, out float ret )
+{
+	ret = exp(x);
+}
+
+void Exp2( float x, out float ret )
+{
+	ret = exp2(x);
+}
+
+void Floor( float x, out float ret )
+{
+	ret = floor(x);
+}
+
+void Frac( float x, out float ret )
+{
+	ret = frac(x);
+}
+
+void Pow( float v1, float v2, out float ret )
+{
+	ret = pow(v1,v2);
+}
+
+void Lerp( float v1, float v2, float s , out float ret )
+{
+	ret = lerp(v1, v2,s);
+}
+
+void Lerp2D( float2 v1, float2 v2, float s , out float2 ret )
+{
+	ret = lerp(v1, v2,s);
+}
+
+void Lerp3D( float3 v1, float3 v2, float s , out float3 ret )
+{
+	ret = lerp(v1, v2,s);
+}
+
+void Saturate( float x, out float ret )
+{
+	ret = saturate(x);
+}
+
+void SmoothStep( float minvalue, float maxvalue, float s , out float ret )
+{
+	ret = smoothstep(minvalue, maxvalue,s);
+}
+
+void Luminance4( float4 color , out float ret  )
+{
+	const float3 RGB_TO_LUM = float3(0.2126f, 0.7152f, 0.0722f);
+	float3 color3 = color.rgb;
+	ret = dot(color3, RGB_TO_LUM);
+}
+
+void Luminance3( float3 color , out float ret  )
+{
+	const float3 RGB_TO_LUM = float3(0.2126f, 0.7152f, 0.0722f);
+	ret = dot(color, RGB_TO_LUM);
+}
+
+void SampSceneCapture1(float2 uv, out float4 color)
+{
+	color = vise_tex2D(Samp_g_SceneCapture1, uv);
+}
+
+void SampSceneCapture2(float2 uv, out float4 color)
+{
+	color = vise_tex2D(Samp_g_SceneCapture2, uv);
+}
+
+void SampSceneCapture3(float2 uv, out float4 color)
+{
+	color = vise_tex2D(Samp_g_SceneCapture3, uv);
+}
+void SampSceneCapture4(float2 uv, out float4 color)
+{
+	color = vise_tex2D(Samp_g_SceneCapture4, uv);
+}
+void SampSceneCapture5(float2 uv, out float4 color)
+{
+	color = vise_tex2D(Samp_g_SceneCapture5, uv);
+}
+
+void AnimateUV( float time, float duration , float2 frameCount, float2 uv, out float2 finalUV )
+{
+    float2 FrameStep = 1/frameCount;
+
+    float timeElapsedPercent = fmod((time/duration),1);
+//    float timeElapsedPercent = fmod(time, duration)/duration;
+	float2 currFrame;
+	float fCurrFrame = timeElapsedPercent * frameCount.x * frameCount.y;
+	currFrame.x = (int)( modf( fCurrFrame / frameCount.x, currFrame.y )*frameCount.x );
+	finalUV = (currFrame+uv) * FrameStep;
+}
+
+void SubUV( float index, float frameCount, float2 uv, out float2 finalUV )
+{
+    float FrameStep = 1/frameCount;
+
+	float currFrame;
+	float percent = index/frameCount;
+	float temp;
+	percent = modf( percent, temp ); 
+//	percent = fmod(index, frameCount);
+	currFrame = percent * frameCount;
+	finalUV.x = (currFrame+uv.x) * FrameStep;
+	finalUV.y = uv.y;
+}
+
+void UnpackNormal( float4 packedNormal, out float3 normal )
+{
+	float3 temp = packedNormal.xyz * 2 - 1;
+	// normalmap存储的法向量方向是朝向Z的， 这里转换成朝向y
+	normal = float3( temp.x, temp.z, temp.y );
+}
+
+void ScreenPos( float4 projPos, out float2 screenPos )
+{
+	screenPos = projPos.xy / projPos.w;
+	screenPos = (screenPos+1)*0.5;
+	screenPos.y = 1-screenPos.y;   // uv坐标相反
+
+	screenPos.x += 1.0f/g_ViewPortW*0.5f;
+	screenPos.y += 1.0f/g_ViewPortH*0.5f;
+}
+
+void Distortion( float4 localPos, float4 localNorm, float4 viewPos, float4 projPos, float3 localCameraPos, float strength, float transparency, float distortionOffset, out  float2 distortionUV, out float distortionAlpha) 
+{
+	float3 localViewDir = normalize(localCameraPos - localPos.xyz);
+	float NdotV = dot(localNorm.xyz, localViewDir);
+	float depth = viewPos.z + 1;
+
+	float distortion = abs((NdotV / depth)*strength);
+	distortionAlpha = distortion / transparency;
+
+	// 计算当前顶点在屏幕Texture上的uv坐标
+	float2 screenPos;
+	ScreenPos(projPos, screenPos);
+	distortionUV = screenPos + distortionOffset * distortion; // 扰动uv
+}
+
+void Distortion2( float4 localPos, float4 localNorm, float4 viewPos, float4 projPos, float strength, float transparency, float distortionOffset, out  float4 distortionColor) 
+{
+	float3 localViewDir = normalize(g_CameraPositionInModel - localPos.xyz);
+	float NdotV = dot(localNorm.xyz, localViewDir);
+	float depth = viewPos.z + 1;
+
+	float distortion = abs((NdotV / depth)*strength);
+
+	// 计算当前顶点在屏幕Texture上的uv坐标
+	float2 screenPos;
+	ScreenPos(projPos, screenPos);
+	float2 distortionUV = screenPos + distortionOffset * distortion; // 扰动uv
+
+	distortionColor.rgb = vise_tex2D(Samp_g_PreFrameBuffer, distortionUV).rgb;
+	distortionColor.a = distortion / transparency;
+
+}
+
+float4	CalcWorldPosition(float4 PosProj, float vDepth)
+{
+	// Position
+	float4 VPos = PosProj;
+	VPos.xy /= VPos.ww;
+	VPos.z = vDepth;
+	VPos.w = 1.0f;
+	// Inverse ViewProjection Matrix
+	VPos = mul(VPos, g_ViewProjectionInverse);
+	VPos.xyz /= VPos.www;
+	VPos.w = 1.0f;
+	return VPos;
+}
+
+void PreFrameWorldYBias(float4 projPos, out float worldYBias)
+{
+	float2 screenPos;
+	ScreenPos(projPos, screenPos);
+	float sceneDepth = vise_tex2D(Samp_g_PreFrameDepth, screenPos);
+
+	float3 worldPos1 = mul(projPos, g_ViewProjectionInverse);
+	float3 worldPos2 = CalcWorldPosition(projPos, sceneDepth);
+
+	worldYBias = worldPos1.y - worldPos2.y; // 当前顶点和场景的worldY差}
+}
+
+float4	CalcViewPosition(float4 PosProj, float vDepth)
+{
+	// Position
+	float4 VPos = PosProj;
+	VPos.xy /= VPos.ww;
+	VPos.z = vDepth;
+	VPos.w = 1.0f;
+	// Inverse Projection Matrix
+	VPos = mul(VPos, g_ProjectionInverse);
+	VPos.xyz /= VPos.www;
+	VPos.w = 1.0f;
+	return VPos;
+}
+
+void PreFrameDepthBias(float4 projPos, out float depthBias)
+{
+	float2 screenPos;
+	ScreenPos(projPos, screenPos);
+	float sceneDepth = vise_tex2D(Samp_g_PreFrameDepth, screenPos);
+
+	float3 viewPos1 = mul(projPos, g_ProjectionInverse);
+	float3 viewPos2 = CalcViewPosition(projPos, sceneDepth);
+
+	depthBias = viewPos1.z - viewPos2.z; // 当前顶点和场景的深度差}
+}
+
+void ZDisableDepthBiasAlpha(float4 projPos, float alpha, float dist, out float outAlpha)
+{
+	float depthBias = 0;
+	PreFrameDepthBias(projPos, depthBias);
+
+	outAlpha = 0;
+	if(depthBias<=dist)
+	{
+		outAlpha = alpha;
+	}
+}
+
+void DepthBiasAlpha( float4 projPos, float alphaDistance, out float alpha )
+{
+	/*
+	alpha = 1;
+	float depthBias = 0;
+	PreFrameDepthBias(projPos, depthBias);
+
+	if(depthBias>=0)
+	{
+		alpha = 1;
+	}
+	else
+	{
+		alpha = smoothstep(0, 1, abs(depthBias) / alphaDistance);
+	}
+	*/
+
+	float depthBias = 0;
+	PreFrameDepthBias(projPos, depthBias);
+	depthBias = abs(depthBias);
+	float s = alphaDistance - depthBias;
+	if( s <= 0 )
+	{
+		alpha = 1;
+	}
+	else
+	{
+		if(alphaDistance == 0)
+			alpha = 1;
+		else
+			alpha = lerp(0, 1, depthBias / alphaDistance);
+	}
+
+}
+
+void Panner(float2 uv, float time, float2 speed, float2 scale, out float2 outUV)
+{
+	float2 uvTrans = time * speed;
+
+	//matrix <float, 4, 4> scaleM = {
+	float4x4 scaleM = {
+		1.0f, 0.0f, 0.0f, 0.0f, // row 1
+		0.0f, 1.0f, 0.0f, 0.0f, // row 2
+		0.0f, 0.0f, 1.0f, 0.0f, // row 3
+		0.0f, 0.0f, 0.0f, 1.0f, // row 4
+	};
+
+	if(scale.x==0 || scale.y==0)
+	{
+		outUV = uv;
+	}
+	else
+	{
+
+		scaleM[0][0] = 1 / scale.x;
+		scaleM[1][1] = 1 / scale.y;
+		// Skip matrix concat since first matrix update
+		scaleM[3][0] = (-0.5f * scaleM[0][0]) + 0.5f;
+		scaleM[3][1] = (-0.5f * scaleM[1][1]) + 0.5f;
+
+		//matrix <float, 4, 4> trans = {
+		float4x4 trans = {
+			1.0f, 0.0f, 0.0f, 0.0f, // row 1
+			0.0f, 1.0f, 0.0f, 0.0f, // row 2
+			0.0f, 0.0f, 1.0f, 0.0f, // row 3
+			0.0f, 0.0f, 0.0f, 1.0f, // row 4
+		};
+
+		trans[3][0] = uvTrans.x;
+		trans[3][1] = uvTrans.y;
+
+		float4 inUV = { uv.x, uv.y, 1.0f, 1.0f };
+		inUV = mul(inUV, scaleM);
+		outUV = mul(inUV, trans);
+	}
+}
+
+void Rotator(float2 uv, float time, float2 center, float2 scale, float speed, out float2 outUV)
+{
+	float angle = time * speed;
+
+	//matrix <float, 4, 4> scaleM = {
+	float4x4 scaleM = {
+		1.0f, 0.0f, 0.0f, 0.0f, // row 1
+		0.0f, 1.0f, 0.0f, 0.0f, // row 2
+		0.0f, 0.0f, 1.0f, 0.0f, // row 3
+		0.0f, 0.0f, 0.0f, 1.0f, // row 4
+	};
+
+	scaleM[0][0] = 1 / scale.x;
+	scaleM[1][1] = 1 / scale.y;
+	// Skip matrix concat since first matrix update
+	scaleM[3][0] = (-0.5f * scaleM[0][0]) + 0.5f;
+	scaleM[3][1] = (-0.5f * scaleM[1][1]) + 0.5f;
+
+	//matrix <float, 4, 4> trans = {
+	float4x4 trans = {
+		1.0f, 0.0f, 0.0f, 0.0f, // row 1
+		0.0f, 1.0f, 0.0f, 0.0f, // row 2
+		0.0f, 0.0f, 1.0f, 0.0f, // row 3
+		0.0f, 0.0f, 0.0f, 1.0f, // row 4
+	};
+
+	trans[3][0] = center.x;
+	trans[3][1] = center.y;
+
+	//matrix <float, 4, 4> rot = { 
+	float4x4 rot = { 
+		1.0f, 0.0f, 0.0f, 0.0f, // row 1
+		0.0f, 1.0f, 0.0f, 0.0f, // row 2
+		0.0f, 0.0f, 1.0f, 0.0f, // row 3
+		0.0f, 0.0f, 0.0f, 1.0f, // row 4
+	};
+
+	float theta = radians(angle);
+	float cosTheta = cos(theta);
+	float sinTheta = sin(theta);
+
+
+	rot[0][0] = cosTheta;
+	rot[1][0] = -sinTheta;
+	rot[0][1] = sinTheta;
+	rot[1][1] = cosTheta;
+
+	rot[3][0] = 0.5f + ((-0.5f * cosTheta) - (-0.5f * sinTheta));
+	rot[3][1] = 0.5f + ((-0.5f * sinTheta) + (-0.5f * cosTheta));
+
+
+	float4 inUV = { uv.x, uv.y, 1.0f, 1.0f };
+	inUV = mul(inUV, scaleM);
+	inUV = mul(inUV, trans);
+	outUV = mul(inUV, rot);
+}
+
+void RimLight( float3 localPos, float3 localNormal, float rimStart, float rimEnd, float4 rimColor, float rimMultiply, out float4 outColor )
+{
+	float l = length(localNormal);
+	if(l==0)
+	{
+		outColor = float4(0,0,0,0);
+		return;
+	}
+    float3 N = normalize(localNormal);
+    float3 V = normalize(g_CameraPositionInModel - localPos);
+    float rim = smoothstep(rimStart, rimEnd, 1- dot(N,V));
+
+    outColor = rim* rimMultiply * rimColor;
+}
+
+void RimLightBloom( float3 localPos, float3 localNormal, float rimStart, float rimEnd, float4 rimColor, float rimMultiply, float4 objColor, int isRimBloom, out float4 outColor, out float outBloom )
+{
+	float l = length(localNormal);
+	float3 N = normalize(localNormal);
+    float3 V = normalize(g_CameraPositionInModel - localPos);
+    
+	float rim = smoothstep(rimStart, rimEnd, 1- dot(N,V));
+
+    float4 borderColor = rim* rimMultiply * rimColor;
+
+	outBloom = 0;
+	if(isRimBloom>0)
+	{
+		float lum = 0;
+		Luminance4( borderColor, lum );
+		outBloom = lum;
+
+		outColor = borderColor + objColor;
+	}
+	else
+	{
+		float objLum = 0;
+		Luminance4( objColor, objLum );
+		float t = objLum;
+		//if(t<0.07)
+		//	t = 0.07 + t;
+		outColor = borderColor * t + objColor;
+	}
+}
+
+void VecMultiplyQuat(float3 vec, float4 quat, out float3 outVector)
+{
+	float3 uv = cross(quat.xyz, vec);
+	float3 uuv = cross(quat.xyz, uv);
+	uv = uv * (2.0f * quat.w);
+	uuv *= 2.0f;
+	
+	outVector = vec + uv + uuv;
+}
+
+void VecMulMatrix(float4 vec, float4x4 mat, out float4 outVector)
+{
+	outVector = mul(vec, mat);
+}
+
+void NormalMap(float3 viewTangent, float3 viewNormal, float3 bump, out float4 resultViewNormal)
+{
+	float3 binormal = cross(viewTangent, viewNormal);
+    float3x3 tbn = float3x3(viewTangent, binormal, viewNormal);
+
+	bump = normalize( ( bump * 2.0f ) - 1.0f );
+	resultViewNormal = float4(mul(bump, tbn),1);
+}
+
+
+#endif

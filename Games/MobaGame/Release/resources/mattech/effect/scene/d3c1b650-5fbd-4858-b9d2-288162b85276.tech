@@ -1,0 +1,9 @@
+<Technique Name="ÈÛÑÒÊ¯¿é" Ver="204" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="e6f9e380-dfed-4e10-bee6-d565b09968b0" Id="d3c1b650-5fbd-4858-b9d2-288162b85276" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_4c147c0e_175d_4239_bbc3_db022bda5821 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/lava1.png"/>
+		<ShaderVar_716a906b_2f80_4705_ad8d_7675c59732a9 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/lava1_glowmask.png"/>
+		<ShaderVar_fe8213fc_47bf_404c_af46_25df1822e6d3 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/T_Rescue_Fire_Rolling.png"/>
+		<ShaderVar_03993fe8_ddee_4903_be87_af1dbd6618de EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+	</ShaderVar>
+</Technique>
+

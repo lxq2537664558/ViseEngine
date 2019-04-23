@@ -1,0 +1,28 @@
+<CCore.Mesh.MeshTemplate Ver="0">
+	<Ver Type="mscorlib.dll@System.UInt32" Value="6"/>
+	<TickAllTime Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<CastShadow Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshInitList Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Mesh.MeshInitPart]]">
+		<Data Type="cscommon@CCore.Mesh.MeshInitPart" Value="null">
+			<MeshName Type="mscorlib.dll@System.String" Value="resources/meshsource/scene/huaer3.vms"/>
+			<Techs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+				<Data Type="mscorlib.dll@System.Guid" Value="8547ac49-5699-4c29-9f77-080b5e07bdb0"/>
+			</Techs>
+		</Data>
+	</MeshInitList>
+	<NeedCalcFullSkeleton Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshID Type="mscorlib.dll@System.Guid" Value="2961bac9-44ed-45b9-a6b5-b2d99ffee9ba"/>
+	<FadeOutTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<Layer Type="cscommon@CCore.RLayer" Value="RL_DSBase"/>
+	<Scale Type="mscorlib.dll@System.Single" Value="1"/>
+	<ActionName Type="mscorlib.dll@System.String" Value=""/>
+	<SocketComponentInfoList Type="cscommon@CSUtility.Support.ConcurentObjManager`2[[mscorlib.dll@System.Guid][cscommon@CCore.Socket.ISocketComponentInfo]]"/>
+	<LayerName Type="mscorlib.dll@System.String" Value="Other"/>
+	<ActionPercent Type="mscorlib.dll@System.Double" Value="0"/>
+	<FadeInTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<PlayRate Type="mscorlib.dll@System.Double" Value="1"/>
+	<NickName Type="mscorlib.dll@System.String" Value="q»¨¶ù3"/>
+	<MeshFadeType Type="cscommon@CCore.Mesh.MeshFadeType" Value="None"/>
+	<IgnoreMouseLineCheckInGame Type="mscorlib.dll@System.Boolean" Value="True"/>
+</CCore.Mesh.MeshTemplate>
+

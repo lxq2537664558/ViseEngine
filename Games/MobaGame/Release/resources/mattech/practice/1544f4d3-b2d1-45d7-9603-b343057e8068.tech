@@ -1,0 +1,7 @@
+<Technique Name="50002" Ver="5" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ef84ada1-d751-48b7-99cc-20ccf3870359" Id="1544f4d3-b2d1-45d7-9603-b343057e8068" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_cf4a851f_e80f_4ff6_affd_1186185e9d81 EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/50002.png"/>
+		<ShaderVar_Alpha EditorType="Vector" Type="float1" Value="0.4"/>
+	</ShaderVar>
+</Technique>
+

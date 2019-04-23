@@ -1,0 +1,11 @@
+<Technique Name="ÑÒ½¬Ê¯Í·" Ver="9" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="80fceba6-9e6f-4e8c-84c8-0eab1740e177" Id="ca8c13a4-c6ab-436b-a3c6-0b5182f9611e" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_b8995c29_4be8_456b_ac57_4f786e95a88a EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/lava.png"/>
+		<ShaderVar_67151818_1613_4794_9476_6d0f1c2ab9f4 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/ashland.png"/>
+		<ShaderVar_0396cf05_9760_4904_83b7_2e7c28f26968 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_4561.png"/>
+		<ShaderVar_935370dc_82ec_46fe_a0b5_1d61d57c6dad EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/lava_mask.png"/>
+		<ShaderVar_9d284cbd_1358_481c_af28_7b95bbe5f0aa EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/GF_062.png"/>
+		<ShaderVar_e2cb58ef_4d84_4057_b545_839dbd0675b2 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,157 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+#include "CommonDeferredShadingFunc.fxh"
+
+float2		g_InvScreenSize;
+float2		g_ScreenSize;
+
+texture MRT_Depth;
+sampler2D Samp_MRT_Depth = sampler_state
+{
+	Texture = <MRT_Depth>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+    AddressU = WRAP;			// 此处用WRAP。CLAMP模式会导致边缘采样的时候的遮蔽信息一致，从而产生黑边。
+    AddressV = WRAP;
+    SRGBTexture = FALSE;
+};
+
+texture MRT_NormalBloomSpecular;
+sampler2D Samp_MRT_NormalBloomSpecular = sampler_state
+{
+	Texture = <MRT_NormalBloomSpecular>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+    SRGBTexture = FALSE;
+};
+
+float g_RandomSize;
+texture T_Random;
+sampler2D Samp_T_Random = sampler_state
+{
+	Texture = <T_Random>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+    AddressU = WRAP;
+    AddressV = WRAP;
+    SRGBTexture = FALSE;
+};
+
+float g_SampleRad;
+float g_Intensity;
+float g_Scale;
+float g_Bias;
+float g_ZFar;
+
+struct VSInput
+{
+	float3 Pos		: LOCALPOS;
+	float2 UV		: DIFFUSEUV;
+};
+VSInput dummyVSIn;
+
+struct VSOutput
+{
+    float4 Pos		: POSITION;
+    float2 UV		: TEXCOORD0;
+	float4 PosProj : TEXCOORD8;
+};
+struct PSOutput
+{
+    float4	Color	: COLOR0;
+};
+
+float3 getPosition(in float2 uv, float4 posProj)
+{
+	float			vZ			= vise_tex2D(Samp_MRT_Depth, uv).x;
+	float3	vPos		= UnwrapViewPosition( posProj, vZ ).xyz;
+	return vPos;
+}
+float2 getRandom(in float2 uv)
+{
+	return normalize(vise_tex2D(Samp_T_Random, g_ScreenSize * uv / g_RandomSize).xy * 2.0f - 1.0f);
+}
+
+float doAmbientOcclusion(in float2 tcoord,in float2 uv, in float3 p, in float3 cnorm, float4 posProj)
+{
+	// 计算出纹理坐标为tcoord + uv时的posProj
+	float2 posOffset = uv;
+	posOffset.y = -posOffset.y;
+	posOffset = (posOffset)*2;
+	float4 newPosProj = float4(posProj.xy + posOffset, 0, 1);
+
+	// 根据两个点的位置，计算遮挡关系 
+	float3 diff = getPosition(tcoord + uv, newPosProj) - p;
+	const float3 v = normalize(diff);
+	const float d = length(diff)*g_Scale;
+	return max(0.0,dot(cnorm,v)-g_Bias)*(1.0/(1.0+d))*g_Intensity;
+}
+
+
+VSOutput vs_main( VSInput Input )
+{
+	VSOutput o=(VSOutput)0;
+	o.Pos	= float4(Input.Pos,1);
+	o.Pos.xy += float2(-1,1) * g_InvScreenSize;
+	o.PosProj	= float4(Input.Pos,1);
+	o.PosProj.xy += float2(-1,1) * g_InvScreenSize;
+	o.UV		= Input.UV * float2(g_ViewPortW*g_InvScreenSize.x, g_ViewPortH*g_InvScreenSize.y) + float2(g_ViewPortX*g_InvScreenSize.x, g_ViewPortY*g_InvScreenSize.y);
+    return o;
+}
+
+PSOutput	ps_main( VSOutput Input )
+{
+	PSOutput o = (PSOutput)0;
+
+	// float2 uv = Input.UV + 0.5*g_InvScreenSize;
+	float2 uv = Input.UV;
+
+	const float2 vec[4] = {float2(1,0),float2(-1,0),
+				float2(0,1),float2(0,-1)};
+
+	// Deferred Shading Surface Infomations
+	float			vZ			= vise_tex2D(Samp_MRT_Depth, uv).x;
+	float4		nbs = vise_tex2D(Samp_MRT_NormalBloomSpecular, uv);
+	float3	    vNorm = DecodeNormal(nbs.xy);
+	// Unpack ViewSpace Position
+	float4	vPos		= UnwrapViewPosition( Input.PosProj, vZ );
+
+	float2 rand = getRandom(Input.UV);
+
+	float ao = 0.0f;
+	float rad = g_SampleRad/vPos.z;
+
+	//**SSAO Calculation**//
+	int iterations = 2;
+	// int iterations = lerp(6,1,vPos.z/g_ZFar);
+	for (int j = 0; j < iterations; ++j)
+	{
+		float2 coord1 = reflect(vec[j],rand)*rad;
+		float2 coord2 = float2(coord1.x*0.707 - coord1.y*0.707,
+					coord1.x*0.707 + coord1.y*0.707);
+  
+		ao += doAmbientOcclusion(uv, coord1*0.25, vPos, vNorm, Input.PosProj);
+		ao += doAmbientOcclusion(uv, coord2*0.5, vPos, vNorm, Input.PosProj);
+		ao += doAmbientOcclusion(uv, coord1*0.75, vPos, vNorm, Input.PosProj);
+		ao += doAmbientOcclusion(uv, coord2, vPos, vNorm, Input.PosProj);
+	}
+	ao/=(float)iterations*4.0;
+
+	o.Color = ao;
+
+	return o;
+}
+
+technique SSAO
+{
+   pass p0
+   {
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}

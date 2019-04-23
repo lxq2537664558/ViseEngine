@@ -1,0 +1,9 @@
+<Technique Name="小花生长" Ver="20" AlphaRef="50" CullMode="NONE" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="d65f4924-23db-457b-9dee-4363a43f5d67" Id="949b3693-9227-4084-9cf1-9c7ed73c349c" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_544dc947_581e_43a9_9f38_1ef889651d58 EditorType="Texture" Type="texture" Value="resources/texture/scene/Flower3.png"/>
+		<ShaderVar_81c1db1f_487f_4108_9235_1bde3275364a EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/flower_mask.png"/>
+		<ShaderVar_8b044862_daad_4bab_819e_a59242bc0066 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_8ee31d0e_102c_496c_99af_e78e415e00b8 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/237-v3.png"/>
+	</ShaderVar>
+</Technique>
+

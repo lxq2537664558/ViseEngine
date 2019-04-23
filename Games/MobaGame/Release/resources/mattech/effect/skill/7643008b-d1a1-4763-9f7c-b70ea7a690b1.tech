@@ -1,0 +1,9 @@
+<Technique Name="手中的风" Ver="26" AlphaRef="40" CullMode="NONE" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="e06825cf-e319-461e-aae3-8a300deed994" Id="7643008b-d1a1-4763-9f7c-b70ea7a690b1" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_c585c328_4081_49ed_810f_3ab582a99474 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/spiderWeb_boneyClouds_diffAlpha.png"/>
+		<ShaderVar_36b74b6f_4ea2_4d5a_a57f_d193d31979c1 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_53921724_e1e1_464c_8252_1614c24813e5 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/windMask3.png"/>
+		<ShaderVar_c3eed8c0_0d42_45bb_96f1_7599219bc24c EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_4562.png"/>
+	</ShaderVar>
+</Technique>
+

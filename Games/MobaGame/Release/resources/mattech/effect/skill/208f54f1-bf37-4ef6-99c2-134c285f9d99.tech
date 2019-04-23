@@ -1,0 +1,9 @@
+<Technique Name="µØÕðËéÊ¯" Ver="10" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="af553cb7-ab2c-4db1-9df1-2806c0bb29c3" Id="208f54f1-bf37-4ef6-99c2-134c285f9d99" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_7d31071f_4b61_44a1_a82f_0105711b4fe6 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/lava.png"/>
+		<ShaderVar_2f5b9b79_b52b_48fd_868f_fc350cd14d36 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/lava_mask.png"/>
+		<ShaderVar_b4ba2d89_20d6_4c0a_b3a4_e03e9b4787ae EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/D_Sun_FireTex001_Emis.png"/>
+		<ShaderVar_d18b345f_af05_4f84_a368_e6aff050aec4 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+	</ShaderVar>
+</Technique>
+

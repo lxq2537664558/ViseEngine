@@ -1,0 +1,32 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="ValueTypeTitleBackground" Color="#FFCE6C3E" />
+    <SolidColorBrush x:Key="MethodTypeTitleBackground" Color="#FF9B12DE" />
+    <SolidColorBrush x:Key="NormalControlBackground" Color="#FF404040" />
+	<SolidColorBrush x:Key="Link_ValueBrush" Color="#FFF392F3" />
+	<SolidColorBrush x:Key="Link_MethodBrush" Color="#FF8282D8" />
+	<LinearGradientBrush x:Key="LinkNode_Method_Background" EndPoint="1,0.5" StartPoint="0,0.5">
+		<GradientStop Color="#FF8282D8" Offset="0"/>
+		<GradientStop Color="#FF262641" Offset="1"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="LinkNode_Operation_Background" EndPoint="1,0.5" StartPoint="0,0.5">
+		<GradientStop Color="#FF8154D4" Offset="0"/>
+		<GradientStop Color="#FF2F1F4D" Offset="1"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="LinkNode_MethodControl_Background" EndPoint="1,0.5" StartPoint="0,0.5">
+		<GradientStop Color="#FF3EB2DA" Offset="0"/>
+		<GradientStop Color="#FF06232D" Offset="1"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="LinkNode_Value_Background" EndPoint="1,0.5" StartPoint="0,0.5">
+		<GradientStop Color="#FFF392F3" Offset="0"/>
+		<GradientStop Color="#FF3D223D" Offset="1"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="LinkNode_Debugger_Background" EndPoint="1,0.5" StartPoint="0,0.5">
+		<GradientStop Color="Red" Offset="0"/>
+		<GradientStop Color="#FF3B0000" Offset="1"/>
+	</LinearGradientBrush>
+	<LinearGradientBrush x:Key="LinkNode_Action_Background" EndPoint="1,0.5" StartPoint="0,0.5">
+		<GradientStop Color="#FFBDB72F" Offset="0"/>
+		<GradientStop Color="#FF2E2D07" Offset="1"/>
+	</LinearGradientBrush>
+</ResourceDictionary>

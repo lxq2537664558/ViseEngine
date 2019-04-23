@@ -1,0 +1,27 @@
+/*Material
+
+<Material Name="È¡ÉÏÒ»Ö¡ÆÁÄ»" Require="DiffuseUV|ProjPos" Main="DoMaterial_46baa6bc_18da_459e_9278_a6e5db6d7701" ExtendString="" Id="46baa6bc-18da-459e-9278-a6e5db6d7701" Ver="6">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="46baa6bc-18da-459e-9278-a6e5db6d7701" Id="e67d647b-4903-407d-b612-3e75d52c2fbb" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar/>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../shader/function/Common.function"
+
+
+texture PreFrameBuffer_5ac92937_bafd_485a_b8cb_bcf949ac2a64 : PreFrameBuffer;
+
+#ifdef ByLayerBased
+void DoMaterial_46baa6bc_18da_459e_9278_a6e5db6d7701(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+
+}

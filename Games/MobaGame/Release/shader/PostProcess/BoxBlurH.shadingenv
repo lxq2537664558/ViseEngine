@@ -1,0 +1,147 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+float2		g_InvScreenSize;
+texture 		RT_SRC;
+sampler2D Samp_RT_SRC = sampler_state
+{
+	Texture = <RT_SRC>;
+    MipFilter = POINT;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = Border;
+    AddressV = Border;
+//    AddressU = CLAMP;
+//    AddressV = CLAMP;
+};
+
+float				g_BlurType;
+float				g_BlurAmount;
+
+float			g_BlurScale = 1;
+float			g_BlurStrength = 1;
+/// <summary>
+/// Gets the Gaussian value in the first dimension.
+/// </summary>
+/// <param name="x">Distance from origin on the x-axis.</param>
+/// <param name="deviation">Standard deviation.</param>
+/// <returns>The gaussian value on the x-axis.</returns>
+float Gaussian (float x, float deviation)
+{
+	return (1.0 / sqrt(2.0 * 3.141592 * deviation)) * exp(-((x * x) / (2.0 * deviation)));	
+}
+static const half curve[7] = { 0.0205, 0.0855, 0.232, 0.324, 0.232, 0.0855, 0.0205 };  // gauss'ish blur weights
+
+struct VSInput
+{
+	float3 Pos		: LOCALPOS;
+	float2 UV		: DIFFUSEUV;
+};
+VSInput dummyVSIn;
+
+struct VSOutput
+{
+    float4 Pos		: POSITION;
+    float2 UV		: TEXCOORD0;
+};
+struct PSOutput
+{
+    float4	Color	: COLOR0;
+};
+
+VSOutput vs_main( VSInput Input )
+{
+	VSOutput o=(VSOutput)0;
+	o.Pos	= float4(Input.Pos ,1);
+	o.UV		= Input.UV;
+
+	o.Pos.xy += float2(-1,1) * g_InvScreenSize;
+#ifdef D3D_EFFECT
+#else
+	o.Pos.xy -= float2(-1,1) * g_InvScreenSize;
+	o.UV.y = 1 - o.UV.y;
+#endif
+
+    return o;
+}
+
+PSOutput	ps_main( VSOutput Input )
+{
+	PSOutput o = (PSOutput)0;
+
+	float2 uv = Input.UV;
+
+/*	
+	float halfBlur = float(g_BlurAmount) * 0.5;
+	float4 colour;
+
+	o.Color=float4(0,0,0,0);
+	
+	// Blur horizontal
+	float sampleOffset = g_InvScreenSize.x;
+	
+	for (int i = 0; i < 7; ++i)
+	{
+		if ( i >= g_BlurAmount )
+			break;
+			
+		float offset = float(i) - halfBlur;
+		if(g_BlurType>0)
+		{							
+			o.Color += vise_tex2D(Samp_RT_SRC,uv+float2(offset * sampleOffset * g_BlurScale,0.0f)) * curve[max(0,3+offset)] * g_BlurStrength;
+		}
+		else
+		{
+			o.Color += vise_tex2D(Samp_RT_SRC, uv + float2(offset * sampleOffset * g_BlurScale,0));
+		}
+	}
+
+	if(g_BlurType>0)
+	{
+//		o.Color *= g_BlurStrength;
+	}
+	else
+	{
+		o.Color /= g_BlurAmount;
+		o.Color *= g_BlurStrength;
+	}	
+*/
+
+	o.Color=float4(0,0,0,0);
+	float halfBlur = float(g_BlurAmount) * 0.5;
+	float sampleOffset = g_InvScreenSize.x*g_BlurScale;
+
+/*
+	for (int i = 0; i < 7; ++i)
+	{
+		if ( i >= g_BlurAmount )
+			break;
+		float offset = float(i) - halfBlur;
+		if(g_BlurType>0)
+		{
+			o.Color += vise_tex2D(Samp_RT_SRC,uv+float2(offset * sampleOffset * g_BlurScale,0.0f)) * curve[i] * g_BlurStrength;
+		}
+	}
+*/
+
+	o.Color += tex2D(Samp_RT_SRC,uv+float2(-3*sampleOffset,0)) * curve[0] * g_BlurStrength;
+	o.Color += tex2D(Samp_RT_SRC,uv+float2(-2*sampleOffset,0)) * curve[1] * g_BlurStrength;
+	o.Color += tex2D(Samp_RT_SRC,uv+float2(-1*sampleOffset,0)) * curve[2] * g_BlurStrength;
+	o.Color += tex2D(Samp_RT_SRC,uv+float2(0*sampleOffset,0)) * curve[3] * g_BlurStrength;
+	o.Color += tex2D(Samp_RT_SRC,uv+float2(1*sampleOffset,0)) * curve[4] * g_BlurStrength;
+	o.Color += tex2D(Samp_RT_SRC,uv+float2(2*sampleOffset,0)) * curve[5] * g_BlurStrength;
+	o.Color += tex2D(Samp_RT_SRC,uv+float2(3*sampleOffset,0)) * curve[6] * g_BlurStrength;
+
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique Blur
+{
+   pass p0
+   {
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

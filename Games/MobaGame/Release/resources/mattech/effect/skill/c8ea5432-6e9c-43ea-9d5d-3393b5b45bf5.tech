@@ -1,0 +1,12 @@
+<Technique Name="Å¤ÇúÍÏÎ²µ¶¹â" Ver="7" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcColor" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="70bf3f5b-7a1d-48fd-bdbf-477f99a00be4" Id="c8ea5432-6e9c-43ea-9d5d-3393b5b45bf5" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_4a04e46a_9b31_4658_9bab_edfd4cfa7e97 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_815c9e82_a41c_487c_af86_2a5f2814e6c0 EditorType="Texture" Type="texture" Value="resources/texture/effect/weapontrail/Mask_480.png"/>
+		<ShaderVar_distortion EditorType="Vector" Type="float2" Value="-0.5,0.55"/>
+		<ShaderVar_location EditorType="Vector" Type="float2" Value="10,-5"/>
+		<ShaderVar_position EditorType="Vector" Type="float2" Value="0.1,0"/>
+		<ShaderVar_scale EditorType="Vector" Type="float2" Value="2.2,1.35"/>
+		<ShaderVar_65ac5fb7_5743_4db9_bcf6_b48b0225f560 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_4563.png"/>
+	</ShaderVar>
+</Technique>
+

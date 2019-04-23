@@ -1,0 +1,23 @@
+<cscommon TypeName="UISystem.WinForm" Id="8c5ff3db-c1d6-42f2-a8f3-6861d4899bb9" Width="0" Width_Auto="True" Height="0" Height_Auto="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+	<WinState UVAnim="d9addd3d-6010-467f-8eb1-58c7f7378842"/>
+	<cscommon TypeName="UISystem.Container.Grid.Grid" Id="2ec96f55-17ac-47f4-bb44-4e577756f3ed" Width="0" Width_Auto="True" Height="0" Height_Auto="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<WinState/>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="400*"/>
+			<ColumnDefinition Width="180*"/>
+			<ColumnDefinition Width="400*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="450*"/>
+			<RowDefinition Height="70*"/>
+			<RowDefinition Height="100*"/>
+		</Grid.RowDefinitions>
+		<cscommon TypeName="UISystem.Button" Id="d0a1552e-4e85-437d-89b2-190f3af5301a" Width="0" Width_Auto="True" Height="0" Height_Auto="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridColumn="1" GridRow="1" WinButtonClick="game@Client.UI.MainUIManager|OnStartGame">
+			<NormalState UVAnim="b2c6fa31-d80b-46ad-9312-171726454ac0"/>
+			<LightState UVAnim="b2c6fa31-d80b-46ad-9312-171726454ac0" TextOffset="-1,-1"/>
+			<PressState UVAnim="b2c6fa31-d80b-46ad-9312-171726454ac0" TextOffset="1,1"/>
+			<DisableState UVAnim="b2c6fa31-d80b-46ad-9312-171726454ac0"/>
+		</cscommon>
+	</cscommon>
+</cscommon>
+

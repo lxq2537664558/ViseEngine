@@ -1,0 +1,44 @@
+/*Material
+
+<Material Name="»·ÈÆ²ÄÖÊ" Require="DiffuseUV|VertexColor0" Main="DoMaterial_c980279a_d692_4a9c_b286_0a01251aa19c" ExtendString="" Id="c980279a-d692-4a9c-b286-0a01251aa19c" Ver="11">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="c980279a-d692-4a9c-b286-0a01251aa19c" Id="48f1d54e-42d8-4e45-b24b-17c73085e86e" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_0f4febed_c4be_4526_a45e_30142b3fbac7 EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../Shader/function/Common.function"
+
+
+texture ShaderVar_0f4febed_c4be_4526_a45e_30142b3fbac7;
+sampler2D Samp_ShaderVar_0f4febed_c4be_4526_a45e_30142b3fbac7 = sampler_state
+{
+	Texture = <ShaderVar_0f4febed_c4be_4526_a45e_30142b3fbac7>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+float Time_b377dde0_288d_460d_9865_bb3e0b54c6d5 : Time;
+
+#ifdef ByLayerBased
+void DoMaterial_c980279a_d692_4a9c_b286_0a01251aa19c(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    float2 FuncTempValue_83bfe3b1_17f5_49b5_8a87_da4b9f051d44_4 = float2(0, 0);
+    Panner(pssem.mDiffuseUV,Time_b377dde0_288d_460d_9865_bb3e0b54c6d5,float2(0,0),float2(0.5,1),FuncTempValue_83bfe3b1_17f5_49b5_8a87_da4b9f051d44_4);
+    pssem.mDiffuseColor = ((vise_tex2D(Samp_ShaderVar_0f4febed_c4be_4526_a45e_30142b3fbac7,FuncTempValue_83bfe3b1_17f5_49b5_8a87_da4b9f051d44_4.xy) * pssem.mVertexColor0) * pssem.mVertexColor0.a);
+
+}

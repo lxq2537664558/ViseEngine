@@ -1,0 +1,27 @@
+/*Material
+
+<?xml version="1.0" encoding="utf-16"?>
+<Material Name="捕获场景2" Require="DiffuseUV" Main="DoMaterial_04a7be2c_a5b6_48b7_a2b0_cef8688db371" ExtendString="" Id="04a7be2c-a5b6-48b7-a2b0-cef8688db371" Ver="3">
+  <DefaultTechnique Name="DefaultTech" Ver="4" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" HostMaterialId="04a7be2c-a5b6-48b7-a2b0-cef8688db371" Id="73aceed0-4f28-4963-bc4c-1c42aaf44a66" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="0" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace">
+    <ShaderVar />
+  </DefaultTechnique>
+</Material>
+*/
+
+#include "../Shader/Material/Common/Common.function"
+
+
+
+#ifdef ByLayerBased
+void DoMaterial_04a7be2c_a5b6_48b7_a2b0_cef8688db371(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    float4 FuncTempValue_22fc7ac2_1d4e_4903_b3d6_29a408b296e0_1 = float4(0, 0, 0, 0);
+    SampSceneCapture2(pssem.mDiffuseUV,FuncTempValue_22fc7ac2_1d4e_4903_b3d6_29a408b296e0_1);
+    pssem.mDiffuseColor = FuncTempValue_22fc7ac2_1d4e_4903_b3d6_29a408b296e0_1;
+
+}

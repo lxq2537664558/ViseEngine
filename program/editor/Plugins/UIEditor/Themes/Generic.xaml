@@ -1,0 +1,9 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:UIEditor">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/UIEditor;component/Themes/ResourceDictionary_TreeView.xaml" />
+        <ResourceDictionary Source="/UIEditor;component/Themes/ResourceDictionary_DataTemplate.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

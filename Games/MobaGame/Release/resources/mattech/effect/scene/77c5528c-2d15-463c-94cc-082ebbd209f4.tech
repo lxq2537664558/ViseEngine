@@ -1,0 +1,13 @@
+<Technique Name="Á÷¹â±Ú_À¶" Ver="22" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="973b8570-5c21-4169-b9f7-963daf00ca44" Id="77c5528c-2d15-463c-94cc-082ebbd209f4" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_3aa658be_a159_4655_a11e_f7a0386b4f70 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/flow_vein.png"/>
+		<ShaderVar_0505ad1e_3a8e_4ddd_8eb0_4b3404b34956 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_4562.png"/>
+		<ShaderVar_23d66183_b6a6_40f5_9527_ab4286f07cc7 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/mask_yougunang2.png"/>
+		<ShaderVar_0b626269_2e36_45fd_8f71_f797b53d0f4c EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/FX_SparkCluster01.png"/>
+		<ShaderVar_Color1 EditorType="Vector" Type="float3" Value="0.2,1.8,1.1"/>
+		<ShaderVar_Color2 EditorType="Vector" Type="float3" Value="0.3,0.6,1.8"/>
+		<ShaderVar_Color3 EditorType="Vector" Type="float3" Value="1.1,0.48,1.8"/>
+		<ShaderVar_Color4 EditorType="Vector" Type="float3" Value="0.2,0.75,1.5"/>
+	</ShaderVar>
+</Technique>
+

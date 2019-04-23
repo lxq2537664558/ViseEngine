@@ -1,0 +1,241 @@
+<cscommon TypeName="UISystem.WinForm" Id="1cc4c8e4-5373-4f8d-8e14-475eb699a061" Width_Auto="True" Height_Auto="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+	<WinState/>
+	<cscommon TypeName="UISystem.Container.Grid.Grid" Id="baa2f3c6-b168-447c-8cca-614956c39ad6" Width_Auto="True" Height_Auto="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<WinState/>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="1*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="1*"/>
+			<RowDefinition Height="1.2*"/>
+		</Grid.RowDefinitions>
+		<cscommon TypeName="UISystem.Container.Grid.Grid" Id="168e1031-9434-46f0-bc52-c915e4f0e9e0" Width_Auto="True" Height="418" Height_Auto="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridColumnSpan="2" GridRow="1">
+			<WinState/>
+			<cscommon TypeName="UISystem.Container.Grid.Grid" Id="b1d8afd3-a979-4926-9219-13a9f1099b30" Width="451" Width_Auto="True" Height="418" Height_Auto="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" GridColumn="1">
+				<WinState/>
+				<cscommon TypeName="UISystem.Container.Grid.Grid" Id="8d40c4bd-a621-4431-93b6-a459f93fbab0" Width="451" Width_Auto="True" Height="418" Height_Auto="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" GridColumn="1">
+					<WinState/>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="75"/>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="0.5*"/>
+						<RowDefinition Height="4.7*"/>
+						<RowDefinition Height="1.5*"/>
+						<RowDefinition Height="0.3*"/>
+						<RowDefinition Height="2.8*"/>
+						<RowDefinition Height="1.6*"/>
+						<RowDefinition Height="1.8*"/>
+						<RowDefinition Height="2*"/>
+						<RowDefinition Height="3.5*"/>
+						<RowDefinition Height="1*"/>
+					</Grid.RowDefinitions>
+					<cscommon TypeName="UISystem.Button" Id="6f8d38ae-5839-405e-8181-c2967897d574" WinName="SkillButton1" Width="133" Height="133" Height_Auto="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" GridColumn="2" GridColumnSpan="2" GridRow="7" GridRowSpan="3" WinButtonClick="game@Client.UI.MainUIManager|OnFireSkillButtonClick">
+						<NormalState UVAnim="3fba62cf-1b1d-4de0-9925-f585d43afe19"/>
+						<LightState TextOffset="-1,-1"/>
+						<PressState UVAnim="a3649010-7b24-4521-b38f-5ed814790068" TextOffset="1,1"/>
+						<DisableState UVAnim="6306bc82-35cb-40bf-aec8-698332021cda"/>
+						<PropertyBind>
+							<BindInfo Property="Width">
+								<ControlBind Value="6f8d38ae-5839-405e-8181-c2967897d574|Height|OneWay"/>
+							</BindInfo>
+						</PropertyBind>
+					</cscommon>
+					<cscommon TypeName="UISystem.Container.Grid.Grid" Id="6dd947c4-2901-473e-9f6f-47a9c07db4c4" WinName="0" Width="171" Height="171" Height_Auto="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="0,0,0,5" GridColumn="4" GridColumnSpan="4" GridRow="6" GridRowSpan="4">
+						<WinState/>
+						<PropertyBind>
+							<BindInfo Property="Width">
+								<ControlBind Value="6dd947c4-2901-473e-9f6f-47a9c07db4c4|Height|OneWay"/>
+							</BindInfo>
+						</PropertyBind>
+						<cscommon TypeName="UISystem.Button" Id="25b1813a-984c-416d-ae08-563b163593db" WinName="SkillButton0" Width="151" Height="151" Height_Auto="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="0,10,0,10" WinButtonClick="game@Client.UI.MainUIManager|OnFireSkillButtonClick">
+							<NormalState UVAnim="8c34f202-3295-428d-8a14-30d2627e770a"/>
+							<LightState TextOffset="-1,-1"/>
+							<PressState UVAnim="4e3d6942-482c-483f-9953-b08349e6c4ee" TextOffset="1,1"/>
+							<DisableState/>
+							<PropertyBind>
+								<BindInfo Property="Width">
+									<ControlBind Value="25b1813a-984c-416d-ae08-563b163593db|Height|OneWay"/>
+								</BindInfo>
+							</PropertyBind>
+						</cscommon>
+					</cscommon>
+					<cscommon TypeName="UISystem.Button" Id="95b62161-e479-4985-947c-402abe1ded08" WinName="SkillButton2" Width="131" Height="131" Height_Auto="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" GridColumn="3" GridColumnSpan="3" GridRow="2" GridRowSpan="4" WinButtonClick="game@Client.UI.MainUIManager|OnFireSkillButtonClick">
+						<NormalState UVAnim="9340a65f-f46c-41c4-ba70-56501060b5c4"/>
+						<LightState TextOffset="-1,-1"/>
+						<PressState UVAnim="262e3e07-2887-4d79-af1c-3dca9f102bdb" TextOffset="1,1"/>
+						<DisableState UVAnim="d580e777-f990-4422-b5ce-b30eb394412c"/>
+						<PropertyBind>
+							<BindInfo Property="Width">
+								<ControlBind Value="95b62161-e479-4985-947c-402abe1ded08|Height|OneWay"/>
+							</BindInfo>
+						</PropertyBind>
+					</cscommon>
+					<cscommon TypeName="UISystem.Button" Id="eae997f2-0e76-49de-8e14-49a2e54b90d5" WinName="SkillButton3" Width="138" Height="138" Height_Auto="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" GridColumn="7" GridRow="1" GridRowSpan="3" WinButtonClick="game@Client.UI.MainUIManager|OnFireSkillButtonClick">
+						<NormalState UVAnim="764692a0-3797-4864-9dd8-915f6a89f8b3"/>
+						<LightState TextOffset="-1,-1"/>
+						<PressState UVAnim="c45ae445-3442-4589-9101-9ec3c44a83dd" TextOffset="1,1"/>
+						<DisableState UVAnim="86d3d559-60a6-442c-83fc-a39a47da856c"/>
+						<PropertyBind>
+							<BindInfo Property="Width">
+								<ControlBind Value="eae997f2-0e76-49de-8e14-49a2e54b90d5|Height|OneWay"/>
+							</BindInfo>
+						</PropertyBind>
+					</cscommon>
+					<cscommon TypeName="UISystem.Container.Grid.Grid" Id="1ddfb4eb-a07a-4cde-8a79-660882c66545" Width="38" Width_Auto="True" Height="38" Height_Auto="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" GridColumn="1" GridRow="6">
+						<WinState/>
+						<cscommon TypeName="UISystem.Button" Id="04968761-d9f5-4461-b84b-2a13b3f6b0cd" WinName="SkillLvUpButton1" Width="38" Height="38" Height_Auto="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" Visibility="Hidden" GridColumn="1" GridRow="6" WinButtonClick="game@Client.UI.MainUIManager|SkillLevelUpClick">
+							<NormalState UVAnim="46fc50f0-ef85-4781-809c-0fe598677e8f"/>
+							<LightState TextOffset="-1,-1"/>
+							<PressState UVAnim="5a947ca0-aa14-4045-bab0-47d7a771b779" TextOffset="1,1"/>
+							<DisableState/>
+							<PropertyBind>
+								<BindInfo Property="Width">
+									<ControlBind Value="04968761-d9f5-4461-b84b-2a13b3f6b0cd|Height|OneWay"/>
+								</BindInfo>
+							</PropertyBind>
+						</cscommon>
+					</cscommon>
+					<cscommon TypeName="UISystem.Container.Grid.Grid" Id="69084993-b730-4a96-ab96-b2d34ece6099" Width="103" Width_Auto="True" Height="99" Height_Auto="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridColumn="3" GridRow="1">
+						<WinState/>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="1*"/>
+							<RowDefinition Height="0.6*"/>
+						</Grid.RowDefinitions>
+						<cscommon TypeName="UISystem.Button" Id="e377298f-9dcd-4283-880c-5dc285414c6d" WinName="SkillLvUpButton2" Width="37" Height="37" Height_Auto="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" Visibility="Hidden" GridRow="1" WinButtonClick="game@Client.UI.MainUIManager|SkillLevelUpClick">
+							<NormalState UVAnim="46fc50f0-ef85-4781-809c-0fe598677e8f"/>
+							<LightState TextOffset="-1,-1"/>
+							<PressState UVAnim="5a947ca0-aa14-4045-bab0-47d7a771b779" TextOffset="1,1"/>
+							<DisableState/>
+							<PropertyBind>
+								<BindInfo Property="Width">
+									<ControlBind Value="e377298f-9dcd-4283-880c-5dc285414c6d|Height|OneWay"/>
+								</BindInfo>
+							</PropertyBind>
+						</cscommon>
+					</cscommon>
+					<cscommon TypeName="UISystem.Container.Grid.Grid" Id="d7e43848-7caf-4ca4-adbe-5673181d7985" Width="62" Width_Auto="True" Height="99" Height_Auto="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridColumn="4" GridColumnSpan="2" GridRow="1">
+						<WinState/>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="0.6*"/>
+							<RowDefinition Height="1*"/>
+						</Grid.RowDefinitions>
+						<cscommon TypeName="UISystem.Button" Id="92909019-eade-43ba-80cc-4ed4bb44a15b" WinName="SkillLvUpButton3" Width="37" Height="37" Height_Auto="True" HorizontalAlignment="Center" VerticalAlignment="Stretch" Visibility="Hidden" WinButtonClick="game@Client.UI.MainUIManager|SkillLevelUpClick">
+							<NormalState UVAnim="46fc50f0-ef85-4781-809c-0fe598677e8f"/>
+							<LightState TextOffset="-1,-1"/>
+							<PressState UVAnim="5a947ca0-aa14-4045-bab0-47d7a771b779" TextOffset="1,1"/>
+							<DisableState/>
+							<PropertyBind>
+								<BindInfo Property="Width">
+									<ControlBind Value="92909019-eade-43ba-80cc-4ed4bb44a15b|Height|OneWay"/>
+								</BindInfo>
+							</PropertyBind>
+						</cscommon>
+					</cscommon>
+					<cscommon TypeName="UISystem.Image" Id="079256d6-b2fe-4391-8777-8c67f67077fd" WinName="SkillCDImage2" Width="131" Height="131" Height_Auto="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" GridColumn="3" GridColumnSpan="3" GridRow="2" GridRowSpan="4" HitTestVisible="False">
+						<WinState UVAnim="f5889f72-7b21-48df-ba5b-640c820f8f6d"/>
+						<PropertyBind>
+							<BindInfo Property="Width">
+								<ControlBind Value="079256d6-b2fe-4391-8777-8c67f67077fd|Height|OneWay"/>
+							</BindInfo>
+						</PropertyBind>
+					</cscommon>
+					<cscommon TypeName="UISystem.Image" Id="6688723c-c418-4856-9e02-d8bc07836de6" WinName="SkillCDImage1" Width="138" Height="138" Height_Auto="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" GridColumn="2" GridColumnSpan="2" GridRow="7" GridRowSpan="3" HitTestVisible="False">
+						<WinState UVAnim="f5889f72-7b21-48df-ba5b-640c820f8f6d"/>
+						<PropertyBind>
+							<BindInfo Property="Width">
+								<ControlBind Value="6688723c-c418-4856-9e02-d8bc07836de6|Height|OneWay"/>
+							</BindInfo>
+						</PropertyBind>
+					</cscommon>
+					<cscommon TypeName="UISystem.Image" Id="8bd82fb0-c8a1-4c56-b164-37439c95b20e" WinName="SkillCDImage3" Width="138" Height="138" Height_Auto="True" HorizontalAlignment="Right" VerticalAlignment="Stretch" GridColumn="7" GridRow="1" GridRowSpan="3" HitTestVisible="False">
+						<WinState UVAnim="f5889f72-7b21-48df-ba5b-640c820f8f6d"/>
+						<PropertyBind>
+							<BindInfo Property="Width">
+								<ControlBind Value="8bd82fb0-c8a1-4c56-b164-37439c95b20e|Height|OneWay"/>
+							</BindInfo>
+						</PropertyBind>
+					</cscommon>
+					<cscommon TypeName="UISystem.Container.Grid.Grid" Id="b7d7d2f6-4545-4584-a6e9-1ba529cfc08e" Width="25" Height="25" HorizontalAlignment="Right" VerticalAlignment="Bottom" GridColumn="2" GridColumnSpan="2" GridRow="7" GridRowSpan="3" HitTestVisible="False">
+						<WinState UVAnim="e0073260-cac2-49cd-88b7-adc8584b4fc7"/>
+						<cscommon TypeName="UISystem.TextBlock" Id="911f895f-a688-4ab9-a9a5-e55787b82902" WinName="SkillLevelText1" Width="9" Width_Auto="True" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0" Text="5" FontSize="16">
+							<WinState/>
+							<FontRenderParams>
+								<0 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="None" OutlineThickness="0"/>
+							</FontRenderParams>
+						</cscommon>
+					</cscommon>
+					<cscommon TypeName="UISystem.Container.Grid.Grid" Id="307beb76-da30-4b20-8aec-b5d799ba736d" Width="25" Height="25" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Right" VerticalAlignment="Bottom" GridColumn="3" GridColumnSpan="3" GridRow="2" GridRowSpan="4" HitTestVisible="False">
+						<WinState UVAnim="e0073260-cac2-49cd-88b7-adc8584b4fc7"/>
+						<cscommon TypeName="UISystem.TextBlock" Id="3c678f0b-0720-4be6-9182-b94c5f67e652" WinName="SkillLevelText2" Width="9" Width_Auto="True" Height="18" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0" Text="5" FontSize="16">
+							<WinState/>
+							<FontRenderParams>
+								<0 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="None" OutlineThickness="0"/>
+							</FontRenderParams>
+						</cscommon>
+					</cscommon>
+					<cscommon TypeName="UISystem.Container.Grid.Grid" Id="caa7721c-42da-47f1-8eec-279d840cbdf4" Width="25" Height="25" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Right" VerticalAlignment="Bottom" GridColumn="7" GridRow="1" GridRowSpan="3" HitTestVisible="False">
+						<WinState UVAnim="e0073260-cac2-49cd-88b7-adc8584b4fc7"/>
+						<cscommon TypeName="UISystem.TextBlock" Id="337e144a-fc1c-4c1f-bcd1-d81cf85a9eea" WinName="SkillLevelText3" Width="9" Width_Auto="True" Height="18" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,2,0,0" Text="5" FontSize="16">
+							<WinState/>
+							<FontRenderParams>
+								<0 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="None" OutlineThickness="0"/>
+							</FontRenderParams>
+						</cscommon>
+					</cscommon>
+					<cscommon TypeName="UISystem.TextBlock" Id="ee00688b-33ad-4c6e-9e20-5709520cc867" WinName="SkillCDText1" Width="28" Width_Auto="True" Height="25" HorizontalAlignment="Center" VerticalAlignment="Center" GridColumn="2" GridColumnSpan="2" GridRow="7" GridRowSpan="3" HitTestVisible="False" Text="15" FontSize="25">
+						<WinState/>
+						<FontRenderParams>
+							<0 BLColor="FF474747" BRColor="FF474747" TLColor="FF474747" TRColor="FF474747" OutlineType="Inner" OutlineThickness="0.8"/>
+							<1 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="Inner" OutlineThickness="0.5"/>
+						</FontRenderParams>
+					</cscommon>
+					<cscommon TypeName="UISystem.TextBlock" Id="474092c3-3b3d-44df-842d-8701b76b9fe9" WinName="SkillCDText2" Width="28" Width_Auto="True" Height="25" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="33,0,0,0" GridColumn="3" GridColumnSpan="3" GridRow="2" GridRowSpan="4" HitTestVisible="False" Text="15" FontSize="25">
+						<WinState/>
+						<FontRenderParams>
+							<0 BLColor="FF474747" BRColor="FF474747" TLColor="FF474747" TRColor="FF474747" OutlineType="Inner" OutlineThickness="0.8"/>
+							<1 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="Inner" OutlineThickness="0.5"/>
+						</FontRenderParams>
+					</cscommon>
+					<cscommon TypeName="UISystem.TextBlock" Id="540e4cd4-6b91-4788-a536-d6490d0d1d68" WinName="SkillCDText3" Width="28" Width_Auto="True" Height="25" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Center" VerticalAlignment="Center" GridColumn="7" GridRow="1" GridRowSpan="3" HitTestVisible="False" Text="15" FontSize="25">
+						<WinState/>
+						<FontRenderParams>
+							<0 BLColor="FF474747" BRColor="FF474747" TLColor="FF474747" TRColor="FF474747" OutlineType="Inner" OutlineThickness="0.8"/>
+							<1 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="Inner" OutlineThickness="0.5"/>
+						</FontRenderParams>
+					</cscommon>
+				</cscommon>
+			</cscommon>
+			<cscommon TypeName="UISystem.Container.Grid.Grid" Id="3465cb18-dd39-4433-8f85-0129a3be3314" Width="319" Width_Auto="True" Height="418" Height_Auto="True" VerticalAlignment="Stretch">
+				<WinState/>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="1*"/>
+					<RowDefinition Height="1.8*"/>
+				</Grid.RowDefinitions>
+				<cscommon TypeName="UISystem.Joysticks.Joysticks" Id="43057541-b854-447a-9057-99053d15e8a4" WinName="Joysticks" Width="269" Height="269" Height_Auto="True" VerticalAlignment="Stretch" Margin="50,0,0,0" GridColumn="1" GridRow="1" RockerRatio="0.4" OnValueChanged="game@Client.UI.MainUIManager|Move" OnValueChangedLeave="game@Client.UI.MainUIManager|StopMove">
+					<RockerNormalState UVAnim="3c57aac5-0448-4fc9-bc80-60f1d993f0cb"/>
+					<RockerLightState UVAnim="3c57aac5-0448-4fc9-bc80-60f1d993f0cb"/>
+					<RockerPressState UVAnim="3c57aac5-0448-4fc9-bc80-60f1d993f0cb"/>
+					<JoysticksNormalState UVAnim="e0073260-cac2-49cd-88b7-adc8584b4fc7"/>
+					<PropertyBind>
+						<BindInfo Property="Width">
+							<ControlBind Value="43057541-b854-447a-9057-99053d15e8a4|Height|OneWay"/>
+						</BindInfo>
+					</PropertyBind>
+				</cscommon>
+			</cscommon>
+		</cscommon>
+	</cscommon>
+</cscommon>
+

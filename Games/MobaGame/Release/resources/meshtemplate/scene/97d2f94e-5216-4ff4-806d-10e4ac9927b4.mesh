@@ -1,0 +1,46 @@
+<CCore.Mesh.MeshTemplate Ver="0">
+	<Ver Type="mscorlib.dll@System.UInt32" Value="21"/>
+	<TickAllTime Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<CastShadow Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshInitList Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Mesh.MeshInitPart]]">
+		<Data Type="cscommon@CCore.Mesh.MeshInitPart" Value="null">
+			<MeshName Type="mscorlib.dll@System.String" Value="resources/meshsource/scene/Triton_Statue_03.vms"/>
+			<Techs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+				<Data Type="mscorlib.dll@System.Guid" Value="968319f9-06a3-4534-a62e-41ab25db9c50"/>
+			</Techs>
+		</Data>
+	</MeshInitList>
+	<NeedCalcFullSkeleton Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshID Type="mscorlib.dll@System.Guid" Value="97d2f94e-5216-4ff4-806d-10e4ac9927b4"/>
+	<FadeOutTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<Layer Type="cscommon@CCore.RLayer" Value="RL_DSBase"/>
+	<Scale Type="mscorlib.dll@System.Single" Value="1"/>
+	<ActionName Type="mscorlib.dll@System.String" Value=""/>
+	<SocketComponentInfoList Type="cscommon@CSUtility.Support.ConcurentObjManager`2[[mscorlib.dll@System.Guid][cscommon@CCore.Socket.ISocketComponentInfo]]">
+		<Data>
+			<Key Type="mscorlib.dll@System.Guid" Value="e551312e-b2db-410b-b0d3-3714f97c9882"/>
+			<Value Type="cscommon@CCore.Component.EffectVisualInit" Value="null">
+				<SocketName Type="mscorlib.dll@System.String" Value="hp_effect"/>
+				<Pos Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+				<Scale Type="cscommon@SlimDX.Vector3" Value="1,1,1"/>
+				<Description Type="mscorlib.dll@System.String" Value=""/>
+				<Rotate Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+				<SocketComponentInfoId Type="mscorlib.dll@System.Guid" Value="e551312e-b2db-410b-b0d3-3714f97c9882"/>
+				<InheritSocketRotate Type="mscorlib.dll@System.Boolean" Value="True"/>
+				<EffectTemplateID Type="mscorlib.dll@System.Guid" Value="1b925b14-90ce-46ce-a405-f557b8363452"/>
+				<InheritRotateWhenBorn Type="mscorlib.dll@System.Boolean" Value="False"/>
+				<InheritRotate Type="mscorlib.dll@System.Boolean" Value="True"/>
+				<CanHitProxy Type="mscorlib.dll@System.Boolean" Value="True"/>
+				<InheritScale Type="mscorlib.dll@System.Boolean" Value="True"/>
+			</Value>
+		</Data>
+	</SocketComponentInfoList>
+	<LayerName Type="mscorlib.dll@System.String" Value="Other"/>
+	<ActionPercent Type="mscorlib.dll@System.Double" Value="0"/>
+	<FadeInTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<PlayRate Type="mscorlib.dll@System.Double" Value="1"/>
+	<NickName Type="mscorlib.dll@System.String" Value="¶ñÄ§"/>
+	<MeshFadeType Type="cscommon@CCore.Mesh.MeshFadeType" Value="None"/>
+	<IgnoreMouseLineCheckInGame Type="mscorlib.dll@System.Boolean" Value="True"/>
+</CCore.Mesh.MeshTemplate>
+

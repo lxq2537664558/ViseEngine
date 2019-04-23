@@ -1,0 +1,125 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" 
+			 xmlns:UIEditor_Panel_ControlsTreeView="clr-namespace:UIEditor.Panel.ControlsTreeView"
+			 xmlns:UISystem="clr-namespace:UISystem;assembly=ClientCommon"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero" x:Name="userControl" x:Class="UIEditor.Panel.ControlsTreeView.UIControlsContainer"
+             mc:Ignorable="d" 
+             d:DesignHeight="442" d:DesignWidth="331">
+    <UserControl.Resources>
+    	<ResourceDictionary>
+	    	<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/UIEditor;component/Themes/Generic.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>    	
+    </UserControl.Resources>
+    <Grid x:Name="Grid_Main">
+        <TreeView  x:Name="TreeView_UIControls"	ItemContainerStyle="{DynamicResource CustomTreeViewItemStyle}"	TreeViewItem.Selected="TreeView_UIControls_Item_Selected"
+				 Foreground="White" MouseLeftButtonDown="TreeView_UIControls_MouseLeftButtonDown" 
+                 Style="{DynamicResource {ComponentResourceKey ResourceId=TreeViewStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+        <TreeView.ItemTemplate >
+                <HierarchicalDataTemplate DataType="{x:Type UISystem:WinBase}" ItemsSource="{Binding LogicChildren}" >
+                    <Grid d:DesignWidth="182.813" d:DesignHeight="18" Height="{Binding TreeViewItemHeight, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MouseDown="TreeViewItem_MouseDown" Background="{Binding TreeViewItemBackground}" MouseMove="TreeViewItem_MouseMove" MouseEnter="TreeViewItem_MouseEnter" MouseLeave="TreeViewItem_MouseLeave" MouseUp="TreeViewItem_MouseUp" >
+		        	<Grid.ColumnDefinitions>
+		        		<ColumnDefinition Width="0.812*"/>
+		        		<ColumnDefinition Width="Auto"/>
+		        		<ColumnDefinition Width="Auto"/>
+		        	</Grid.ColumnDefinitions>
+		        	<StackPanel Margin="0" Orientation="Horizontal" Grid.ColumnSpan="2">
+                        <Image Source="{Binding Icon}" MaxWidth="16" MaxHeight="16" Margin="1"/>
+                        <TextBlock Margin="0" TextWrapping="Wrap" d:LayoutOverrides="Width" Foreground="{Binding TreeViewItemForeground}" IsHitTestVisible="False" Text="{Binding NameInEditor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+		        	</StackPanel>
+		        	<Path x:Name="Path_InsertUp" Data="M2.25,0.875 L56.416699,0.875" Fill="{x:Null}" Height="1" Stretch="Fill" Stroke="Yellow" VerticalAlignment="Top" d:LayoutOverrides="Width" Grid.ColumnSpan="3" Visibility="{Binding UpInsertLineVisible}" IsHitTestVisible="False"/>
+		        	<ed:RegularPolygon x:Name="RegularPolygon_InsertUp_Left" Fill="Yellow" HorizontalAlignment="Left" Height="11.996" InnerRadius="1" Margin="-6.546,-5.496,0,0" PointCount="3" Stretch="Fill" Stroke="{x:Null}" VerticalAlignment="Top" Width="5.999" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="VerticalAlignment" Visibility="{Binding UpInsertLineVisible}" IsHitTestVisible="False">
+		        		<ed:RegularPolygon.RenderTransform>
+		        			<TransformGroup>
+		        				<ScaleTransform/>
+		        				<SkewTransform/>
+		        				<RotateTransform Angle="90"/>
+		        				<TranslateTransform/>
+		        			</TransformGroup>
+		        		</ed:RegularPolygon.RenderTransform>
+		        	</ed:RegularPolygon>
+		        	<ed:RegularPolygon x:Name="RegularPolygon_InsertUp_Right" Fill="Yellow" HorizontalAlignment="Right" Height="11.996" InnerRadius="1" Margin="0,-5.496,0,0" PointCount="3" Stretch="Fill" Stroke="{x:Null}" VerticalAlignment="Top" Width="5.999" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="VerticalAlignment" Grid.Column="2" Visibility="{Binding UpInsertLineVisible}" IsHitTestVisible="False">
+		        		<ed:RegularPolygon.RenderTransform>
+		        			<TransformGroup>
+		        				<ScaleTransform/>
+		        				<SkewTransform/>
+		        				<RotateTransform Angle="-90"/>
+		        				<TranslateTransform/>
+		        			</TransformGroup>
+		        		</ed:RegularPolygon.RenderTransform>
+		        	</ed:RegularPolygon>
+		        	<Path x:Name="Path_InsertDown" Data="M2.25,0.875 L56.416699,0.875" Fill="{x:Null}" Height="1" Stretch="Fill" Stroke="Yellow" VerticalAlignment="Bottom" Grid.ColumnSpan="3" d:LayoutOverrides="Width" Visibility="{Binding DownInsertLineVisible}" IsHitTestVisible="False"/>
+		        	<ed:RegularPolygon x:Name="RegularPolygon_InsertDown_Left" Fill="Yellow" HorizontalAlignment="Left" Height="11.992" InnerRadius="1" Margin="-6.546,0,0,-5.496" PointCount="3" Stretch="Fill" Stroke="{x:Null}" VerticalAlignment="Bottom" Width="5.999" RenderTransformOrigin="0.5,0.5" d:LayoutOverrides="VerticalAlignment" Visibility="{Binding DownInsertLineVisible}" IsHitTestVisible="False">
+		        		<ed:RegularPolygon.RenderTransform>
+		        			<TransformGroup>
+		        				<ScaleTransform/>
+		        				<SkewTransform/>
+		        				<RotateTransform Angle="90"/>
+		        				<TranslateTransform/>
+		        			</TransformGroup>
+		        		</ed:RegularPolygon.RenderTransform>
+		        	</ed:RegularPolygon>
+		        	<ed:RegularPolygon x:Name="RegularPolygon_InsertDown_Right" Fill="Yellow" HorizontalAlignment="Right" Height="11.992" InnerRadius="1" Margin="0,0,0,-5.496" PointCount="3" Stretch="Fill" Stroke="{x:Null}" VerticalAlignment="Bottom" Width="5.999" RenderTransformOrigin="0.5,0.5" Grid.Column="2" d:LayoutOverrides="VerticalAlignment" Visibility="{Binding DownInsertLineVisible}" IsHitTestVisible="False">
+		        		<ed:RegularPolygon.RenderTransform>
+		        			<TransformGroup>
+		        				<ScaleTransform/>
+		        				<SkewTransform/>
+		        				<RotateTransform Angle="-90"/>
+		        				<TranslateTransform/>
+		        			</TransformGroup>
+		        		</ed:RegularPolygon.RenderTransform>
+		        	</ed:RegularPolygon>
+		        	<Path x:Name="Path_InsertChild" Data="M2.25,0.875 L56.416699,0.875" Fill="{x:Null}" Height="1" Stretch="Fill" Stroke="Yellow" VerticalAlignment="Bottom" Grid.ColumnSpan="3" IsHitTestVisible="False" d:LayoutOverrides="Width" Margin="18,0,0,0" Visibility="{Binding ChildInsertLineVisible}"/>
+		        	<ed:RegularPolygon x:Name="RegularPolygon_InsertChild_Left" Fill="Yellow" HorizontalAlignment="Left" Height="11.992" InnerRadius="1" Margin="20.5,0,0,-5.496" PointCount="3" Stretch="Fill" Stroke="{x:Null}" VerticalAlignment="Bottom" Width="5.999" RenderTransformOrigin="0.5,0.5" IsHitTestVisible="False" d:LayoutOverrides="VerticalAlignment" Visibility="{Binding ChildInsertLineVisible}">
+		        		<ed:RegularPolygon.RenderTransform>
+		        			<TransformGroup>
+		        				<ScaleTransform/>
+		        				<SkewTransform/>
+		        				<RotateTransform Angle="90"/>
+		        				<TranslateTransform/>
+		        			</TransformGroup>
+		        		</ed:RegularPolygon.RenderTransform>
+		        	</ed:RegularPolygon>
+		        	<ed:RegularPolygon x:Name="RegularPolygon_InsertChild_Right" Fill="Yellow" HorizontalAlignment="Right" Height="11.992" InnerRadius="1" Margin="0,0,0,-5.496" PointCount="3" Stretch="Fill" Stroke="{x:Null}" VerticalAlignment="Bottom" Width="5.999" RenderTransformOrigin="0.5,0.5" Grid.Column="2" IsHitTestVisible="False" d:LayoutOverrides="VerticalAlignment" Visibility="{Binding ChildInsertLineVisible}">
+		        		<ed:RegularPolygon.RenderTransform>
+		        			<TransformGroup>
+		        				<ScaleTransform/>
+		        				<SkewTransform/>
+		        				<RotateTransform Angle="-90"/>
+		        				<TranslateTransform/>
+		        			</TransformGroup>
+		        		</ed:RegularPolygon.RenderTransform>
+		        	</ed:RegularPolygon>
+                    <ToggleButton Grid.Column="1" IsChecked="{Binding IsVisibleInEditor, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2" Style="{DynamicResource {x:Static res:CustomResources.ToggleButtonStyle}}" ToolTip="显示/隐藏">
+                        <Image Source="/ResourceLibrary;component/Icon/preview.png" />
+					</ToggleButton>
+                        <ToggleButton Grid.Column="2" IsChecked="{Binding IgnoreSaver, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="2" Style="{DynamicResource {x:Static res:CustomResources.ToggleButtonStyle}}" ToolTip="不保存">
+						<Image Source="/UIEditor;component/Source/Icons/ignoreSave.png" />
+					</ToggleButton>
+				</Grid>
+		    </HierarchicalDataTemplate>      
+		</TreeView.ItemTemplate>
+		</TreeView>
+    	<TextBlock x:Name="TextBlock_MouseTips" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Background="#B2000000" IsHitTestVisible="False" Padding="3" Visibility="Hidden"/>
+    	<!--TreeView Margin="0" UIEditor_Panel_ControlsTreeView:TreeViewExtensions.EnableMultiSelect="true" UIEditor_Panel_ControlsTreeView:TreeViewExtensions.SelectedItems="{Binding SelectedTreeNodes}" ItemContainerStyle="{DynamicResource UIControlsTreeViewItemStyle}" >
+    		<TreeViewItem Header="0">
+    			<TreeViewItem Header="0" />
+				<TreeViewItem Header="0" /> 	
+				<TreeViewItem Header="0" /> 
+				<TreeViewItem Header="0" /> 	
+			</TreeViewItem>  	
+			<TreeViewItem Header="0">
+				<TreeViewItem Header="0" /> 	
+				<TreeViewItem Header="0" /> 
+				<TreeViewItem Header="0" /> 	
+			</TreeViewItem>
+		</TreeView-->
+            
+    </Grid>
+</UserControl>

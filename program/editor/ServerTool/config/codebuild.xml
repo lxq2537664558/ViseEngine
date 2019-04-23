@@ -1,0 +1,24 @@
+<ProjectConfig>
+  <MobaGame>
+    <ProjectName>MobaGame</ProjectName>
+    <ServerModuleName>..\..\..\Games\MobaGame\Release\server\Server.dll;..\..\..\program\bin\DllWindow\ServerCommon.dll</ServerModuleName>
+    <ClientModuleName>..\..\..\Games\MobaGame\Release\binary\Client.dll;..\..\..\program\bin\DllWindow\ClientCommon.dll</ClientModuleName>
+    <ClientCallerModuleName>..\..\..\Games\MobaGame\Release\binary\Client.dll</ClientCallerModuleName>
+    <ServerCallerModuleName>..\..\..\Games\MobaGame\Release\server\Server.dll</ServerCallerModuleName>
+    <ServerCaller>..\..\..\Games\MobaGame\Program\ZeusData\Caller\ServerCaller.cs</ServerCaller>
+    <ServerCallee>..\..\..\Games\MobaGame\Program\ZeusServer\Callee\ServerCallee.cs</ServerCallee>
+    <ClientCaller>..\..\..\Games\MobaGame\Program\ZeusData\Caller\ClientCaller.cs</ClientCaller>
+    <ClientCallee>..\..\..\Games\MobaGame\Program\ZeusClient\Callee\ClientCallee.cs</ClientCallee>
+  </MobaGame>
+  <Project_ViseEngine>
+    <ProjectName>Project_ViseEngine</ProjectName>
+    <ServerModuleName>..\..\..\ViseEngineServer\ViseEngineServerDll.dll</ServerModuleName>
+    <ClientModuleName>..\..\..\ViseEngine\ViseEngineDll.dll</ClientModuleName>
+    <ClientCallerModuleName>..\..\..\ViseEngine\ViseEngineDll.dll</ClientCallerModuleName>
+    <ServerCallerModuleName>..\..\..\ViseEngineServer\ViseEngineServerDll.dll</ServerCallerModuleName>
+    <ServerCaller>..\..\..\program\ViseEngine\Common\Caller\ServerCaller.cs</ServerCaller>
+    <ServerCallee>..\..\..\program\ViseEngine\ViseEngineServerDll\Callee\ServerCallee.cs</ServerCallee>
+    <ClientCaller>..\..\..\program\ViseEngine\Common\Caller\ClientCaller.cs</ClientCaller>
+    <ClientCallee>..\..\..\program\ViseEngine\ViseEngineDll\Callee\ClientCallee.cs</ClientCallee>
+  </Project_ViseEngine>
+</ProjectConfig>

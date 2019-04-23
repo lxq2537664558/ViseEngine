@@ -1,0 +1,11 @@
+<Technique Name="»ð" Ver="53" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcColor" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="338d0249-b51d-4f4b-89da-721aeb95de22" Id="5de0db8d-486c-47d9-a2ed-f16c227da4f3" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_534bc525_5e1b_430c_ad12_3983150a7d6d EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/fire_ball32.png"/>
+		<ShaderVar_258bba66_99f0_45a3_ab60_92ab15c63a15 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_32fd8932_42d2_4789_9dcd_30aa414a11b2 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/GF_062.png"/>
+		<ShaderVar_5f344c59_d9df_4f0d_84f4_86da5a6256b7 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/D_Sun_FireTex006_Emis.png"/>
+		<ShaderVar_f333e870_a57a_409a_b6c2_c566d1b65aaa EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/ice_vein_mask.png"/>
+		<ShaderVar_cf37cffb_6f74_4360_9360_d88e8568f8b3 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/mask_spray.png"/>
+	</ShaderVar>
+</Technique>
+

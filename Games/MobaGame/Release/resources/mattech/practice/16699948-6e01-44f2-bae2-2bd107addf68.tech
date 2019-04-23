@@ -1,0 +1,7 @@
+<Technique Name="ตุมั" Ver="7" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="4113ab74-3bfb-41db-ac6b-956759c40d43" Id="16699948-6e01-44f2-bae2-2bd107addf68" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_bbe7f344_66ca_434f_a092_791030488e30 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/groundBurn.png"/>
+		<ShaderVar_5882de9a_6ad9_4e53_a8b9_28ac4a0cf2d7 EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/glow_linear_uncompressed.png"/>
+	</ShaderVar>
+</Technique>
+

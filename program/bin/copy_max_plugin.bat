@@ -1,0 +1,7 @@
+copy "D:\wise3d\development\program\bin\Win32\Debug\Vise3DMaxExporter.dlu" "d:\Program Files (x86)\Autodesk\3ds Max 2013\stdplugs"
+copy "D:\wise3d\development\program\bin\Win32\DebugNoNew\core.Windows_UNNEW.dll" "d:\Program Files (x86)\Autodesk\3ds Max 2013"
+copy "D:\wise3d\development\Games\ZeusGame\Release\binary\fmod.dll" "d:\Program Files (x86)\Autodesk\3ds Max 2013"
+copy "D:\wise3d\development\Games\ZeusGame\Release\binary\libEGL.dll" "d:\Program Files (x86)\Autodesk\3ds Max 2013"
+copy "D:\wise3d\development\Games\ZeusGame\Release\binary\libGLESv2.dll" "d:\Program Files (x86)\Autodesk\3ds Max 2013"
+copy "D:\wise3d\development\Games\ZeusGame\Release\binary\libMaliEmulator.dll" "d:\Program Files (x86)\Autodesk\3ds Max 2013"
+copy "D:\wise3d\development\Games\ZeusGame\Release\binary\log4cplus.dll" "d:\Program Files (x86)\Autodesk\3ds Max 2013"

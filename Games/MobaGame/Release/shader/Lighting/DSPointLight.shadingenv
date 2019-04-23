@@ -1,0 +1,159 @@
+#include "VInc.fxx"
+
+#include "CommonDeferredShadingFunc.fxh"
+
+#include "CommonLightFunc.fxh"
+
+#include "inport.dummy"
+
+float			g_Intensity; 
+float			g_SpecularIntensity;
+float4		g_LightingDiffuse;
+float4  		g_LightingAmbient;
+float4		g_LightingSpecular;
+float3       g_LightingPos;
+float			g_Radius;
+float3		g_Attenuation;
+float2		g_TextureSize;
+float			g_InnerPercent;
+int				g_LightingMode;
+
+texture MRT_Albedo;
+sampler2D Samp_MRT_Albedo = sampler_state
+{
+	Texture = <MRT_Albedo>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+};
+
+texture MRT_Depth;
+sampler2D Samp_MRT_Depth = sampler_state
+{
+	Texture = <MRT_Depth>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+};
+
+texture MRT_NormalBloomSpecular;
+sampler2D Samp_MRT_NormalBloomSpecular = sampler_state
+{
+	Texture = <MRT_NormalBloomSpecular>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+};
+
+struct PSOut_PointLight
+{
+    float4	Color	: COLOR0;
+};
+
+VertexOutput vs_main( VertexInput Input )
+{
+	// VS 2 Semantic
+	VertexTrans vssem = (VertexTrans)0;
+	VertexTransInit ( Input, vssem );
+
+	// VS do
+	V3D_VS_Modifiers ( vssem );
+
+	// Semantic 2 VS-Out
+	VertexOutput Output =(VertexOutput)0;
+	VertexTransToVertexOutput ( vssem, Output );
+	//Output.mDiffuseUV.xy	= Input.mDiffuseUV.xy;
+	//Output.mDiffuseUV.xy		= Input.mDiffuseUV.xy * float2(g_ViewPortW/g_TextureSize.x, g_ViewPortH/g_TextureSize.y) + float2(g_ViewPortX/g_TextureSize.x, g_ViewPortY/g_TextureSize.y);
+
+#ifdef D3D_EFFECT
+	Output.mProjPos.xy += float2(-1,1) / g_TextureSize;
+#else
+//	Output.mDiffuseUV.y = 1 - Output.mDiffuseUV.y;
+#endif
+
+	return Output;
+}
+
+PSOut_PointLight	ps_main( PixelInput Input )
+{
+	PSOut_PointLight o = (PSOut_PointLight)0;
+
+	float2 UV = (Input.mProjPos.xy/Input.mProjPos.w + 1)/2;
+//	UV = UV+0.5/g_TextureSize.x;
+
+#ifdef D3D_EFFECT
+	UV.y = 1 - UV.y;
+#else
+#endif
+
+	//half4			Albedo		= tex2D(Samp_MRT_Albedo, UV);
+
+	// Deferred Shading Surface Infomations
+	float			vZ			= tex2D(Samp_MRT_Depth, UV).x;
+	float4		nbs = tex2D(Samp_MRT_NormalBloomSpecular, UV);
+	float3	    Norm = DecodeNormal(nbs.xy);
+
+	float			SpecularIntensity = nbs.w;
+	half2			BloomShininess = DecodeBloomShininess(nbs.z);
+	float			Shininiess = BloomShininess.y*256;
+
+
+	// ViewSpace LightPos
+	float3   LightPos = mul( float4(g_LightingPos,1), g_View ).xyz;
+
+	// Unpack ViewSpace Position
+#ifdef D3D_EFFECT
+#else
+	vZ = vZ * 2 - 1;
+#endif
+	float4	Pos		= UnwrapViewPosition( Input.mProjPos, vZ );
+	
+	float3   ViewDir		= normalize(Pos.xyz);
+
+
+	// 如果不在点光源球体内，直接返回0
+	float Atten = AttenuationTerm( LightPos, Pos, g_Radius, g_Attenuation );
+	if(Atten==0)
+	{
+		o.Color = 0;
+	}
+	else
+	{
+		float3 LightDiff = float3(0,0,0);
+		float3 LightSpec = float3(0,0,0);
+		float3 L = normalize( LightPos - Pos );
+		float3 V = -ViewDir;
+		SimpleDirLight_Pixel_Phong( LightDiff, LightSpec, L, V, Norm, g_LightingDiffuse.xyz, g_LightingSpecular.xyz*SpecularIntensity, Shininiess);
+
+		float dist = distance(Pos,LightPos);
+		float halfShadow = smoothstep(g_Radius, g_InnerPercent*g_Radius, dist);
+
+		float3	    LightColor = ((LightDiff + g_LightingAmbient.xyz)*g_Intensity + LightSpec*g_SpecularIntensity)*halfShadow*Atten;
+		float4		Albedo		= tex2D(Samp_MRT_Albedo, UV);
+
+		if(g_LightingMode==0)
+		{
+			o.Color.xyz = LightColor*Albedo.xyz;		
+		}
+		else
+		{
+			o.Color.xyz = LightColor*0.3;
+		}
+
+		o.Color.a = 0;
+	}
+
+
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique tech
+{
+	pass p0
+	{
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

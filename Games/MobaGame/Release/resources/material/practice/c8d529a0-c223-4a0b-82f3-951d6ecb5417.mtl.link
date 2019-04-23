@@ -1,0 +1,518 @@
+<Nodes SetValueMatCtrlID="776fc56b-afa1-4478-ad51-5ede1f5c055d" ViewBoxMain_X="-304.215972900391" ViewBoxMain_Y="10.3726806640625" ViewBoxMain_Width="596.529541015625" GUID="00000000-0000-0000-0000-000000000000">
+	<OrigionCtrls/>
+	<ChildNodesCtrls>
+		<MaterialControl ID="776fc56b-afa1-4478-ad51-5ede1f5c055d" Type="MaterialEditor.dll@MaterialEditor.Controls.MaterialControl" X="2255.20849609375" Y="341.094421386719" Params="false" IsDeleteable="False" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="e5b8c789-210c-44a5-96ad-84dee9fc9481">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="d4bd0292-30b1-4ae4-9ed2-47c6251f5b09">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="8942954d-7c6c-47f7-bb99-6ff2becd31f9">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="cd7b8475-2076-45d7-a953-e2e1a10ca062">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="ca08a7b2-046d-4c88-bf1a-1f025901e5e7">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="9f860042-5ca2-431c-8554-f9cf4f897e37">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="fe3b49d1-b41d-46f4-bc79-d9674200557b">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="66c3949b-2e82-4e12-b998-f33c2231eb14">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="c3f7dc11-83f3-4837-9b3d-06b0b332a30f">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="ff77fe00-c7b3-40a2-8a1a-3d0ad77858d0">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="da682a9f-6457-40b1-a635-5c04b80d09af">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="b7650cfc-6445-4583-af59-db406ff54b38">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="51d42015-5069-4ac8-b118-f54de5dbc353">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="89f9728b-63e5-4f21-9c3b-c0ff57f206ae">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="52b6af5a-9b79-47a8-a5af-f41d92d8a22d">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="a1da941e-f999-495d-a735-ab81f40a88ed">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="ceed6ca8-cb81-4cf9-88bd-c8edfc1ffaa9">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="0c3b8807-cdd4-4dc8-9184-94c0d83b095a">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="fa193d57-0a32-47a5-a2db-4447ef7a3cbd">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="5eaed3cc-fd0f-46ff-bfd7-dd34e9e3fc74">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="9a45a671-6a3b-4a85-b6a9-720f25780006">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="b54c5f29-df5a-458a-849c-634209f7c43b">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="4d4bff6c-169f-4f15-9f68-dd39400f701e">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="61de9c78-f574-4abc-8842-7252b458c253">
+					<Link LinkFrom="ab580878-b35d-4179-8b14-d58ac2cb9717" LinkTo="61de9c78-f574-4abc-8842-7252b458c253"/>
+				</LinkObject>
+				<LinkObject ID="f0cef3c3-cc38-45f4-8145-068b37acd453">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="6343df82-6366-43fd-86e2-beb08f153171">
+					<Link LinkFrom="a23f33bc-f940-4d79-b29a-2a6a11ea9635" LinkTo="6343df82-6366-43fd-86e2-beb08f153171"/>
+				</LinkObject>
+				<LinkObject ID="b661fc5b-8f48-4aeb-abe6-fdfa63c62263">
+					<Link LinkFrom="cb746156-02e4-40fb-b2d1-b4de88f58b6f" LinkTo="b661fc5b-8f48-4aeb-abe6-fdfa63c62263"/>
+				</LinkObject>
+				<LinkObject ID="897a0a1f-1129-4e45-ada3-b68ef7a3c168">
+					<Link LinkFrom="5a3b4920-c1e9-48f9-97f2-a5b757eb4f7e" LinkTo="897a0a1f-1129-4e45-ada3-b68ef7a3c168"/>
+				</LinkObject>
+			</LinkObjects>
+		</MaterialControl>
+		<TextureControl TexPath="resources/texture/effect/object/bone_spear.png" MipFilter="2" MinFilter="1" MagFilter="1" AddressU="0" AddressV="0" SRGBTexture="1" TexName="" ID="5cd035f6-7c34-4834-8f74-e106fb47dab1" Type="MaterialEditor.dll@MaterialEditor.Controls.TextureControl" X="180.80126953125" Y="-53.1869812011719" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="69ac0bd8-28d0-440b-944e-e2d2b8ecc818">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="0e421230-19c1-47ce-ad4c-ad5acdee0d46">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="de83e615-921e-4a63-b808-6e1f51679edd">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="235ce587-6408-4d9e-b29c-5e08ce26a8a9">
+					<Link LinkFrom="235ce587-6408-4d9e-b29c-5e08ce26a8a9" LinkTo="a4f32b04-2561-44b3-99c2-6d63c8b3daee"/>
+				</LinkObject>
+				<LinkObject ID="e15569bb-2ea6-469e-923d-3ba484e6403a">
+					<Link LinkFrom="e15569bb-2ea6-469e-923d-3ba484e6403a" LinkTo="36195d45-a896-4af1-b791-3f50f9726502"/>
+				</LinkObject>
+				<LinkObject ID="1896f0f3-2b88-4537-8140-7f7952b9944d">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="a509fd66-4332-4954-99ad-e43fe63994a0">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="7b7f9a54-87c4-4e57-827c-fa3ee32e0faf">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="9d604bca-ea74-49c9-82d9-335f08090ab3">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="b7795e95-d53b-4e68-9644-812714ce0395">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</TextureControl>
+		<TextureControl TexPath="resources/texture/effect/dilie/ashland.png" MipFilter="2" MinFilter="1" MagFilter="1" AddressU="0" AddressV="0" SRGBTexture="1" TexName="" ID="b61163c9-7b39-4dcc-b6f3-e96f498cd86b" Type="MaterialEditor.dll@MaterialEditor.Controls.TextureControl" X="272.066711425781" Y="216.940551757813" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="1851a277-37a8-4c14-8396-ada19bf1fcd3">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="8b90318f-cbae-4cf7-b098-36ee3dce7285">
+					<Link LinkFrom="64dd4819-111e-4b30-9885-52da79d661a3" LinkTo="8b90318f-cbae-4cf7-b098-36ee3dce7285"/>
+				</LinkObject>
+				<LinkObject ID="a53fdab9-f6ed-409f-b024-40e7ebb894c8">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="4cf31b52-e67e-4df8-90f9-4ce8ae407730">
+					<Link LinkFrom="4cf31b52-e67e-4df8-90f9-4ce8ae407730" LinkTo="db269066-d5e2-470f-9296-08ce9b2cd58e"/>
+				</LinkObject>
+				<LinkObject ID="5937657a-a747-4f09-be6d-0a98cfd3baa9">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="ef259034-05b3-43b0-9206-91f0983514bc">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="4374226f-1cbd-4281-a9e1-ed4165793683">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="e02f3341-c100-4d33-ac01-e2d74bc815f0">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="f1810ce5-dcd3-42b5-8aba-00d1452d6ee2">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="0e6df71c-2311-44db-a925-c647c387f3e5">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</TextureControl>
+		<Function ID="3373c9b8-d29f-477f-b395-747b834aa45c" Type="MaterialEditor.dll@MaterialEditor.Controls.Operation.Function" X="825.183898925781" Y="182.882415771484" Params='../shader/function/Common.function|&lt;Func1 Name="Lerp3D" Description="返回在v1和v2中按照s的值线性插值" Path="函数.Lerp3D"&gt;&lt;Param&gt;&lt;Param0 Type="float3" Name="v1" /&gt;&lt;Param1 Type="float3" Name="v2" /&gt;&lt;Param2 Type="float" Name="s" /&gt;&lt;Param3 Type="float3" Name="ret" Attribute="out" /&gt;&lt;/Param&gt;&lt;/Func1&gt;' IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<v1 Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+				<v2 Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+				<s Type="mscorlib.dll@System.Single" Value="0"/>
+			</DefaultParamValue>
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="767f3bdc-6b6e-4b91-ae41-7d416c41bfd0">
+					<Link LinkFrom="4df6f2bb-b963-4854-b031-6afb8ee0ac9e" LinkTo="767f3bdc-6b6e-4b91-ae41-7d416c41bfd0"/>
+				</LinkObject>
+				<LinkObject ID="a4f32b04-2561-44b3-99c2-6d63c8b3daee">
+					<Link LinkFrom="235ce587-6408-4d9e-b29c-5e08ce26a8a9" LinkTo="a4f32b04-2561-44b3-99c2-6d63c8b3daee"/>
+				</LinkObject>
+				<LinkObject ID="1357dc76-27c4-498e-b3f8-cd39382b28a5">
+					<Link LinkFrom="cb746156-02e4-40fb-b2d1-b4de88f58b6f" LinkTo="1357dc76-27c4-498e-b3f8-cd39382b28a5"/>
+				</LinkObject>
+				<LinkObject ID="0d596f08-0801-4ce8-93a9-7983a7ea7a3f">
+					<Link LinkFrom="0d596f08-0801-4ce8-93a9-7983a7ea7a3f" LinkTo="f0af6221-3f4f-4aba-8574-99e546c59248"/>
+				</LinkObject>
+			</LinkObjects>
+		</Function>
+		<CommonValueControl ValueName="" IsGeneric="False" Value0="0" Value1="0" Value2="0" ID="36c4b2c8-9477-46d4-b32a-ff3651027933" Type="MaterialEditor.dll@MaterialEditor.Controls.CommonValueControl" X="1020.63079833984" Y="230.088180541992" Params="float3" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="4f011813-3e82-45f6-a3cc-5aa414709898">
+					<Link LinkFrom="4474b670-9958-44d9-841e-caa7aad8bdf5" LinkTo="4f011813-3e82-45f6-a3cc-5aa414709898"/>
+				</LinkObject>
+				<LinkObject ID="42ba3f2c-604e-44ee-a1da-fa7c536bdbce">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="98ce17a3-7fb2-403e-9aac-66a57ccb3f48">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="d1fd418e-b2a9-4102-bd6e-03fdc72a98df">
+					<Link LinkFrom="d1fd418e-b2a9-4102-bd6e-03fdc72a98df" LinkTo="adda16be-e4c5-4918-a090-ce176e30c862"/>
+				</LinkObject>
+				<LinkObject ID="b8d6196e-d86d-4ef4-b22e-2f5aa3f41688">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="209fc72e-421e-40fd-985e-2e46a23a7f39">
+					<Link LinkFrom="209fc72e-421e-40fd-985e-2e46a23a7f39" LinkTo="1d4aaf40-c0e0-433c-944f-94180a6afb57"/>
+				</LinkObject>
+				<LinkObject ID="4f400755-57cb-4396-b097-65307d65a9fb">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="af95c95c-bde4-4d06-ade0-c26074e86a70">
+					<Link LinkFrom="af95c95c-bde4-4d06-ade0-c26074e86a70" LinkTo="3d975246-4383-45be-9afc-a8d65ed39eaa"/>
+				</LinkObject>
+			</LinkObjects>
+		</CommonValueControl>
+		<CommonValueControl ValueName="" IsGeneric="False" Value0="0" Value1="0" Value2="0" Value3="1" ID="1b95c04c-3f28-4cb6-b337-65e447867165" Type="MaterialEditor.dll@MaterialEditor.Controls.CommonValueControl" X="1227.01513671875" Y="193.008102416992" Params="float4" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="821cb48e-d664-47c5-b106-a5961e74152d">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="b9c71423-1e83-442d-9975-60bbb2ca36a9">
+					<Link LinkFrom="b9c71423-1e83-442d-9975-60bbb2ca36a9" LinkTo="4f22ba4a-c706-4f10-ba17-c9dcceb19c36"/>
+				</LinkObject>
+				<LinkObject ID="adda16be-e4c5-4918-a090-ce176e30c862">
+					<Link LinkFrom="d1fd418e-b2a9-4102-bd6e-03fdc72a98df" LinkTo="adda16be-e4c5-4918-a090-ce176e30c862"/>
+				</LinkObject>
+				<LinkObject ID="9c8613d9-ec4e-4c9d-840f-38a22601990e">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="1d4aaf40-c0e0-433c-944f-94180a6afb57">
+					<Link LinkFrom="209fc72e-421e-40fd-985e-2e46a23a7f39" LinkTo="1d4aaf40-c0e0-433c-944f-94180a6afb57"/>
+				</LinkObject>
+				<LinkObject ID="165ddce2-5879-4edc-b0ea-aec7554854a3">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="3d975246-4383-45be-9afc-a8d65ed39eaa">
+					<Link LinkFrom="af95c95c-bde4-4d06-ade0-c26074e86a70" LinkTo="3d975246-4383-45be-9afc-a8d65ed39eaa"/>
+				</LinkObject>
+				<LinkObject ID="70519744-ab56-4df3-aa46-33a214e5d4b5">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="3799e27d-35fc-46b7-b3a4-d37bd332961f">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="fd8d9158-9906-47bd-82eb-bddd2d6e2d89">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</CommonValueControl>
+		<Function ID="a7a1535b-f263-454a-8ade-44ead130d19d" Type="MaterialEditor.dll@MaterialEditor.Controls.Operation.Function" X="68.5075988769531" Y="343.891662597656" Params='../shader/function/Common.function|&lt;Func1 Name="Panner" Description="给贴图一个位移。&apos;speed&apos;位移的速度；&apos;scale&apos;贴图的缩放比。" Path="函数.Panner"&gt;&lt;Param&gt;&lt;Param0 Type="float2" Name="uv" /&gt;&lt;Param1 Type="float" Name="time" /&gt;&lt;Param2 Type="float2" Name="speed" /&gt;&lt;Param3 Type="float2" Name="scale" /&gt;&lt;Param4 Type="float2" Name="outUV" Attribute="out" /&gt;&lt;/Param&gt;&lt;/Func1&gt;' IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<uv Type="cscommon@SlimDX.Vector2" Value="0,0"/>
+				<time Type="mscorlib.dll@System.Single" Value="1"/>
+				<speed Type="cscommon@SlimDX.Vector2" Value="0.35,0.125"/>
+				<scale Type="cscommon@SlimDX.Vector2" Value="2,2"/>
+			</DefaultParamValue>
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="71cf4fe3-b09f-4cdb-81ae-bb00646fd741">
+					<Link LinkFrom="a1154e7f-9b42-4344-83c2-1e6162ac4a8d" LinkTo="71cf4fe3-b09f-4cdb-81ae-bb00646fd741"/>
+				</LinkObject>
+				<LinkObject ID="b6aca3ff-91aa-4340-aa97-b1fc0f9cb2b2">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="aa9a0624-d368-4423-ba0d-67223444125f">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="e7940bcc-6f30-43fa-a56e-b5c1c3706a95">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="64dd4819-111e-4b30-9885-52da79d661a3">
+					<Link LinkFrom="64dd4819-111e-4b30-9885-52da79d661a3" LinkTo="8b90318f-cbae-4cf7-b098-36ee3dce7285"/>
+				</LinkObject>
+			</LinkObjects>
+		</Function>
+		<PixelMaterialData ID="bf71aa30-7c50-4ebf-88c6-2dd427f3d4b7" Type="MaterialEditor.dll@MaterialEditor.Controls.Value.PixelMaterialData" X="-111.082397460938" Y="356.067016601563" Params="float2,mDiffuseUV," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="a1154e7f-9b42-4344-83c2-1e6162ac4a8d">
+					<Link LinkFrom="a1154e7f-9b42-4344-83c2-1e6162ac4a8d" LinkTo="71cf4fe3-b09f-4cdb-81ae-bb00646fd741"/>
+					<Link LinkFrom="a1154e7f-9b42-4344-83c2-1e6162ac4a8d" LinkTo="c1060b74-d0b6-45b6-a7c7-85e5d6d2e562"/>
+					<Link LinkFrom="a1154e7f-9b42-4344-83c2-1e6162ac4a8d" LinkTo="c00f85b4-3b59-49bd-9c77-cb9e8f72b38b"/>
+				</LinkObject>
+			</LinkObjects>
+		</PixelMaterialData>
+		<TextureControl TexPath="resources/texture/effect/dilie/ashland.png" MipFilter="2" MinFilter="1" MagFilter="1" AddressU="0" AddressV="0" SRGBTexture="1" TexName="" ID="2d685588-7665-4019-b712-c68e828427a4" Type="MaterialEditor.dll@MaterialEditor.Controls.TextureControl" X="377.502288818359" Y="599.835083007813" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="b3a61f59-d9a9-405a-95ca-c170ff932609">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="cfb5d762-1266-43c0-b030-b2b95d3014ed">
+					<Link LinkFrom="b11b3102-c0ef-49a3-bfb0-2ddb11af9dff" LinkTo="cfb5d762-1266-43c0-b030-b2b95d3014ed"/>
+				</LinkObject>
+				<LinkObject ID="ddddc182-5ae4-4224-b9f7-0969103c8d97">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="016d82fe-1542-47af-8dbf-e9d54d18e87a">
+					<Link LinkFrom="016d82fe-1542-47af-8dbf-e9d54d18e87a" LinkTo="0bafa19e-6afe-4b17-a686-9c50d744d9a7"/>
+				</LinkObject>
+				<LinkObject ID="4c3367f0-e0a4-4d3e-8da6-5d19c6538e7c">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="b64d7d98-029f-4ed5-8294-dc3bbc5c2fdd">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="3fc04f97-0646-4f46-89a2-deefbbfbd09a">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="74e5a9e9-091c-47d5-a8f4-b2b5cdf7dcb3">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="4e92d28a-93a2-455d-9953-a429286f53dd">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="5aa234f8-58c2-40b8-8c1d-c85c24bbc8a1">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</TextureControl>
+		<Function ID="dff04990-10de-4e2e-a361-c5aa5ca5fa1a" Type="MaterialEditor.dll@MaterialEditor.Controls.Operation.Function" X="84.852783203125" Y="666.753173828125" Params='../shader/function/Common.function|&lt;Func1 Name="Panner" Description="给贴图一个位移。&apos;speed&apos;位移的速度；&apos;scale&apos;贴图的缩放比。" Path="函数.Panner"&gt;&lt;Param&gt;&lt;Param0 Type="float2" Name="uv" /&gt;&lt;Param1 Type="float" Name="time" /&gt;&lt;Param2 Type="float2" Name="speed" /&gt;&lt;Param3 Type="float2" Name="scale" /&gt;&lt;Param4 Type="float2" Name="outUV" Attribute="out" /&gt;&lt;/Param&gt;&lt;/Func1&gt;' IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<uv Type="cscommon@SlimDX.Vector2" Value="0,0"/>
+				<time Type="mscorlib.dll@System.Single" Value="1"/>
+				<speed Type="cscommon@SlimDX.Vector2" Value="0.35,0.125"/>
+				<scale Type="cscommon@SlimDX.Vector2" Value="0.72,0.62"/>
+			</DefaultParamValue>
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="c1060b74-d0b6-45b6-a7c7-85e5d6d2e562">
+					<Link LinkFrom="a1154e7f-9b42-4344-83c2-1e6162ac4a8d" LinkTo="c1060b74-d0b6-45b6-a7c7-85e5d6d2e562"/>
+				</LinkObject>
+				<LinkObject ID="687fc7fe-c29e-41fc-bfa0-7d2734cae1bf">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="0f14e74b-0653-4271-b1d9-a2901cac7f70">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="d08c5749-a2e6-4aeb-91b0-26cedef74416">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="b11b3102-c0ef-49a3-bfb0-2ddb11af9dff">
+					<Link LinkFrom="b11b3102-c0ef-49a3-bfb0-2ddb11af9dff" LinkTo="cfb5d762-1266-43c0-b030-b2b95d3014ed"/>
+				</LinkObject>
+			</LinkObjects>
+		</Function>
+		<TextureControl TexPath="resources/texture/effect/mask/lava_bone_mask.png" MipFilter="2" MinFilter="1" MagFilter="1" AddressU="0" AddressV="0" SRGBTexture="0" TexName="" ID="13d7e84e-2ae7-4a5d-9053-417cff327ea4" Type="MaterialEditor.dll@MaterialEditor.Controls.TextureControl" X="393.577545166016" Y="907.013488769531" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="f9a1188d-1c67-4331-a73f-b31a73aca52c">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="0ce4c86f-5340-49ed-9672-6641f3900038">
+					<Link LinkFrom="b523ad5f-9454-44e7-bd3e-3e4716d650b6" LinkTo="0ce4c86f-5340-49ed-9672-6641f3900038"/>
+				</LinkObject>
+				<LinkObject ID="f9aa7f9a-27f8-494c-97ce-0ca9243bae94">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="9c91a8ab-c473-451c-8ffe-3359e41725c0">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="8d8e3659-8e0e-46b5-a769-63cae76f3487">
+					<Link LinkFrom="8d8e3659-8e0e-46b5-a769-63cae76f3487" LinkTo="19adcba2-2ab7-44a1-8935-3a222f727a3d"/>
+				</LinkObject>
+				<LinkObject ID="f8ea8413-7e5e-4d14-a197-e20ea3dc34bd">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="4f9537e7-5f56-436c-9e3c-93a7d8c2ecc3">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="06d094c1-8e6f-4008-bb1c-473a42b280fd">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="524c8ffa-34d3-417f-8d24-80ca4aba5724">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="4ee6eb48-d7cf-4fa3-bcb7-c98e44f9a09b">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</TextureControl>
+		<Function ID="cf3a77a6-30ff-4c35-b27d-88b5e3a0d245" Type="MaterialEditor.dll@MaterialEditor.Controls.Operation.Function" X="792.372253417969" Y="731.351867675781" Params='../shader/function/Common.function|&lt;Func1 Name="Lerp3D" Description="返回在v1和v2中按照s的值线性插值" Path="函数.Lerp3D"&gt;&lt;Param&gt;&lt;Param0 Type="float3" Name="v1" /&gt;&lt;Param1 Type="float3" Name="v2" /&gt;&lt;Param2 Type="float" Name="s" /&gt;&lt;Param3 Type="float3" Name="ret" Attribute="out" /&gt;&lt;/Param&gt;&lt;/Func1&gt;' IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<v1 Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+				<v2 Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+				<s Type="mscorlib.dll@System.Single" Value="0"/>
+			</DefaultParamValue>
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="f0af6221-3f4f-4aba-8574-99e546c59248">
+					<Link LinkFrom="0d596f08-0801-4ce8-93a9-7983a7ea7a3f" LinkTo="f0af6221-3f4f-4aba-8574-99e546c59248"/>
+				</LinkObject>
+				<LinkObject ID="0bafa19e-6afe-4b17-a686-9c50d744d9a7">
+					<Link LinkFrom="016d82fe-1542-47af-8dbf-e9d54d18e87a" LinkTo="0bafa19e-6afe-4b17-a686-9c50d744d9a7"/>
+				</LinkObject>
+				<LinkObject ID="19adcba2-2ab7-44a1-8935-3a222f727a3d">
+					<Link LinkFrom="8d8e3659-8e0e-46b5-a769-63cae76f3487" LinkTo="19adcba2-2ab7-44a1-8935-3a222f727a3d"/>
+				</LinkObject>
+				<LinkObject ID="4474b670-9958-44d9-841e-caa7aad8bdf5">
+					<Link LinkFrom="4474b670-9958-44d9-841e-caa7aad8bdf5" LinkTo="4f011813-3e82-45f6-a3cc-5aa414709898"/>
+				</LinkObject>
+			</LinkObjects>
+		</Function>
+		<Function ID="8cf70670-b37e-4a32-9b86-b1860018dd4b" Type="MaterialEditor.dll@MaterialEditor.Controls.Operation.Function" X="150.310729980469" Y="1001.83728027344" Params='../shader/function/Common.function|&lt;Func1 Name="Panner" Description="给贴图一个位移。&apos;speed&apos;位移的速度；&apos;scale&apos;贴图的缩放比。" Path="函数.Panner"&gt;&lt;Param&gt;&lt;Param0 Type="float2" Name="uv" /&gt;&lt;Param1 Type="float" Name="time" /&gt;&lt;Param2 Type="float2" Name="speed" /&gt;&lt;Param3 Type="float2" Name="scale" /&gt;&lt;Param4 Type="float2" Name="outUV" Attribute="out" /&gt;&lt;/Param&gt;&lt;/Func1&gt;' IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<uv Type="cscommon@SlimDX.Vector2" Value="0,0"/>
+				<time Type="mscorlib.dll@System.Single" Value="1"/>
+				<speed Type="cscommon@SlimDX.Vector2" Value="0,0"/>
+				<scale Type="cscommon@SlimDX.Vector2" Value="1,1"/>
+			</DefaultParamValue>
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="c00f85b4-3b59-49bd-9c77-cb9e8f72b38b">
+					<Link LinkFrom="a1154e7f-9b42-4344-83c2-1e6162ac4a8d" LinkTo="c00f85b4-3b59-49bd-9c77-cb9e8f72b38b"/>
+				</LinkObject>
+				<LinkObject ID="4812d8be-f5e2-4e31-a251-c632bed415da">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="33c479a3-e2b7-40bd-9110-a3067b322124">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="10e2dcfa-09ae-4355-b926-7f07c069169e">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="b523ad5f-9454-44e7-bd3e-3e4716d650b6">
+					<Link LinkFrom="b523ad5f-9454-44e7-bd3e-3e4716d650b6" LinkTo="0ce4c86f-5340-49ed-9672-6641f3900038"/>
+				</LinkObject>
+			</LinkObjects>
+		</Function>
+		<Arithmetic ID="a6a985c9-8c75-4d55-8d8c-2be5f5fa1314" Type="MaterialEditor.dll@MaterialEditor.Controls.Operation.Arithmetic" X="724.468872070313" Y="-12.0932922363281" Params="×" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="3c6760a6-bd67-4015-8ded-df72947a44c3">
+					<Link LinkFrom="9d22324b-9b50-4b68-96da-87bc43b7db3f" LinkTo="3c6760a6-bd67-4015-8ded-df72947a44c3"/>
+				</LinkObject>
+				<LinkObject ID="36195d45-a896-4af1-b791-3f50f9726502">
+					<Link LinkFrom="e15569bb-2ea6-469e-923d-3ba484e6403a" LinkTo="36195d45-a896-4af1-b791-3f50f9726502"/>
+				</LinkObject>
+				<LinkObject ID="cb746156-02e4-40fb-b2d1-b4de88f58b6f">
+					<Link LinkFrom="cb746156-02e4-40fb-b2d1-b4de88f58b6f" LinkTo="b661fc5b-8f48-4aeb-abe6-fdfa63c62263"/>
+					<Link LinkFrom="cb746156-02e4-40fb-b2d1-b4de88f58b6f" LinkTo="1357dc76-27c4-498e-b3f8-cd39382b28a5"/>
+				</LinkObject>
+			</LinkObjects>
+		</Arithmetic>
+		<CommonValueControl ValueName="" IsGeneric="False" Value0="3" ID="456e4bc7-e211-4f6a-941b-6eeaae4fe219" Type="MaterialEditor.dll@MaterialEditor.Controls.CommonValueControl" X="520.181640625" Y="-78.7568054199219" Params="float1" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="dd4f850d-998a-4ebe-a2c9-68d2316163be">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="59fa1341-e4d5-4025-ae57-39a71b8f4733">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="a7aeed9a-9c1a-4eaf-a6ea-80af55cc9b4f">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="9d22324b-9b50-4b68-96da-87bc43b7db3f">
+					<Link LinkFrom="9d22324b-9b50-4b68-96da-87bc43b7db3f" LinkTo="3c6760a6-bd67-4015-8ded-df72947a44c3"/>
+				</LinkObject>
+			</LinkObjects>
+		</CommonValueControl>
+		<CommonValueControl ValueName="" IsGeneric="False" Value0="1.3" Value1="1.2" Value2="1.6" ID="610a64ae-e628-4b3f-ab2b-a77c6765cc30" Type="MaterialEditor.dll@MaterialEditor.Controls.CommonValueControl" X="478.177612304688" Y="435.616394042969" Params="float3" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="7c9205eb-62bc-44d4-acda-69a4eaa0cdc7">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="86a21f98-30b3-48d4-86dd-ef53586e0ada">
+					<Link LinkFrom="86a21f98-30b3-48d4-86dd-ef53586e0ada" LinkTo="fba17263-c0d3-461b-bb74-8b8debe1647b"/>
+				</LinkObject>
+				<LinkObject ID="5bac9902-5ebb-4171-a5a5-c08facaac7ab">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="321dcabd-94c6-481b-bd9f-f41bc2998b38">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="92982ef0-b9f3-4e1a-a41d-037bd502c36d">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="16beffca-60ec-4c06-8eca-67c5fea6eb91">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="2eda232b-1b0a-4ffd-84c6-c5c505fe8bf0">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="30e6601a-790d-4e04-88e6-bc2d635ae295">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</CommonValueControl>
+		<Arithmetic ID="a3ea5332-157b-4311-8585-22a1fdd11684" Type="MaterialEditor.dll@MaterialEditor.Controls.Operation.Arithmetic" X="672.927001953125" Y="334.2060546875" Params="×" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="db269066-d5e2-470f-9296-08ce9b2cd58e">
+					<Link LinkFrom="4cf31b52-e67e-4df8-90f9-4ce8ae407730" LinkTo="db269066-d5e2-470f-9296-08ce9b2cd58e"/>
+				</LinkObject>
+				<LinkObject ID="fba17263-c0d3-461b-bb74-8b8debe1647b">
+					<Link LinkFrom="86a21f98-30b3-48d4-86dd-ef53586e0ada" LinkTo="fba17263-c0d3-461b-bb74-8b8debe1647b"/>
+				</LinkObject>
+				<LinkObject ID="4df6f2bb-b963-4854-b031-6afb8ee0ac9e">
+					<Link LinkFrom="4df6f2bb-b963-4854-b031-6afb8ee0ac9e" LinkTo="767f3bdc-6b6e-4b91-ae41-7d416c41bfd0"/>
+				</LinkObject>
+			</LinkObjects>
+		</Arithmetic>
+		<CommonValueControl ValueName="" IsGeneric="False" Value0="0.12" ID="c24ae2c5-7f97-49c8-a4cb-b0b7bdc76c16" Type="MaterialEditor.dll@MaterialEditor.Controls.CommonValueControl" X="1416.95007324219" Y="438.499816894531" Params="float1" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="36a65dfc-c1b5-486d-9e90-e66f1c010fe8">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="8b5400d2-df63-4778-a6df-1c7064cb7098">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="85945174-64a8-4ba1-8def-7ebbd7f3c5a4">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="5a3b4920-c1e9-48f9-97f2-a5b757eb4f7e">
+					<Link LinkFrom="5a3b4920-c1e9-48f9-97f2-a5b757eb4f7e" LinkTo="897a0a1f-1129-4e45-ada3-b68ef7a3c168"/>
+				</LinkObject>
+			</LinkObjects>
+		</CommonValueControl>
+		<CommonValueControl ValueName="" IsGeneric="False" Value0="0.55" ID="844fa478-9d27-419e-b32d-a4a322ca5e66" Type="MaterialEditor.dll@MaterialEditor.Controls.CommonValueControl" X="1438.30834960938" Y="319.868804931641" Params="float1" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="5427ab77-2628-4e6b-8834-f86acf4ed47b">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="17b03338-6fc3-4aa4-911d-f2590fb2ed15">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="5b9feb81-d754-468c-8c47-91c1c2a70e52">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="a23f33bc-f940-4d79-b29a-2a6a11ea9635">
+					<Link LinkFrom="a23f33bc-f940-4d79-b29a-2a6a11ea9635" LinkTo="6343df82-6366-43fd-86e2-beb08f153171"/>
+				</LinkObject>
+			</LinkObjects>
+		</CommonValueControl>
+		<Function ID="ef5ea290-6729-44aa-b462-248ec46ef228" Type="MaterialEditor.dll@MaterialEditor.Controls.Operation.Function" X="1537.94067382813" Y="563.579956054688" Params='../shader/function/Common.function|&lt;Func1 Name="RimLight" Description="给模型添加一个从边缘到中心衰减的光，&apos;rimStart&apos;-最中心的alpha值；&apos;rimEnd&apos;边缘的alpha值；&apos;rimColor&apos;透明颜色的输入值；" Path="函数.RimLight"&gt;&lt;Param&gt;&lt;Param0 Type="float3" Name="localPos" /&gt;&lt;Param1 Type="float3" Name="localNormal" /&gt;&lt;Param2 Type="float" Name="rimStart" /&gt;&lt;Param3 Type="float" Name="rimEnd" /&gt;&lt;Param4 Type="float4" Name="rimColor" /&gt;&lt;Param5 Type="float" Name="rimMultiply" /&gt;&lt;Param6 Type="float4" Name="outColor" Attribute="out" /&gt;&lt;/Param&gt;&lt;/Func1&gt;' IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<localPos Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+				<localNormal Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+				<rimStart Type="mscorlib.dll@System.Single" Value="0"/>
+				<rimEnd Type="mscorlib.dll@System.Single" Value="0"/>
+				<rimColor Type="cscommon@SlimDX.Vector4" Value="0,0,0,0"/>
+				<rimMultiply Type="mscorlib.dll@System.Single" Value="0"/>
+			</DefaultParamValue>
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="96868eff-cc14-48e1-8044-66cc1a107b73">
+					<Link LinkFrom="d639d47b-9f10-40d4-b822-41942a35f502" LinkTo="96868eff-cc14-48e1-8044-66cc1a107b73"/>
+				</LinkObject>
+				<LinkObject ID="8832fa3b-42d6-4349-a876-3d5872037a92">
+					<Link LinkFrom="199891c4-630a-4be9-a1f9-14d66d58757c" LinkTo="8832fa3b-42d6-4349-a876-3d5872037a92"/>
+				</LinkObject>
+				<LinkObject ID="f6ebb87a-fc15-4dec-b72a-45f014e5a580">
+					<Link LinkFrom="d1c4b943-1efb-4369-b22e-ce9c9b75c148" LinkTo="f6ebb87a-fc15-4dec-b72a-45f014e5a580"/>
+				</LinkObject>
+				<LinkObject ID="5c12b004-4db9-4caf-85ed-f047e06907af">
+					<Link LinkFrom="2a646a08-e63b-45cc-9093-64c14fe8eef3" LinkTo="5c12b004-4db9-4caf-85ed-f047e06907af"/>
+				</LinkObject>
+				<LinkObject ID="b8b3528e-69f2-4dba-80ae-89e9928017b0">
+					<Link LinkFrom="bfbbbbba-4960-41a0-b0c6-3659f560c65d" LinkTo="b8b3528e-69f2-4dba-80ae-89e9928017b0"/>
+				</LinkObject>
+				<LinkObject ID="c4cec2ff-d09a-47e2-b257-e26eacacabd6">
+					<Link LinkFrom="190efe81-4ffc-486b-bfd9-7ff0a02089d3" LinkTo="c4cec2ff-d09a-47e2-b257-e26eacacabd6"/>
+				</LinkObject>
+				<LinkObject ID="2d49330c-f437-42bf-8363-e587451eccca">
+					<Link LinkFrom="2d49330c-f437-42bf-8363-e587451eccca" LinkTo="38a51f98-c9e4-4cda-ba88-0c877aa20f5d"/>
+				</LinkObject>
+			</LinkObjects>
+		</Function>
+		<PixelMaterialData ID="46aa12a2-15f3-4a85-b81c-d795a7fe0418" Type="MaterialEditor.dll@MaterialEditor.Controls.Value.PixelMaterialData" X="1211.54956054688" Y="533.73779296875" Params="float4,mLocalPos,," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="d639d47b-9f10-40d4-b822-41942a35f502">
+					<Link LinkFrom="d639d47b-9f10-40d4-b822-41942a35f502" LinkTo="96868eff-cc14-48e1-8044-66cc1a107b73"/>
+				</LinkObject>
+			</LinkObjects>
+		</PixelMaterialData>
+		<PixelMaterialData ID="44b4aa6c-538e-4578-b905-5faf8d33d575" Type="MaterialEditor.dll@MaterialEditor.Controls.Value.PixelMaterialData" X="1270.29382324219" Y="569.175415039063" Params="float4,mLocalNorm," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="199891c4-630a-4be9-a1f9-14d66d58757c">
+					<Link LinkFrom="199891c4-630a-4be9-a1f9-14d66d58757c" LinkTo="8832fa3b-42d6-4349-a876-3d5872037a92"/>
+				</LinkObject>
+			</LinkObjects>
+		</PixelMaterialData>
+		<CommonValueControl ValueName="" IsGeneric="False" Value0="0.4" Value1="1.25" ID="95b6e592-e98d-4e08-bd70-56673219dd9a" Type="MaterialEditor.dll@MaterialEditor.Controls.CommonValueControl" X="1182" Y="599.084106445313" Params="float2" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="991eb233-edfc-4ba2-b19a-f3300e6af963">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="0d96d2d6-5329-4e9b-97a7-a34497596126">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="2e9e4f66-c94c-43fa-b99d-815570e055bf">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="d1c4b943-1efb-4369-b22e-ce9c9b75c148">
+					<Link LinkFrom="d1c4b943-1efb-4369-b22e-ce9c9b75c148" LinkTo="f6ebb87a-fc15-4dec-b72a-45f014e5a580"/>
+				</LinkObject>
+				<LinkObject ID="04563522-c7cb-4b71-84a2-a7e50e0fe34f">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="2a646a08-e63b-45cc-9093-64c14fe8eef3">
+					<Link LinkFrom="2a646a08-e63b-45cc-9093-64c14fe8eef3" LinkTo="5c12b004-4db9-4caf-85ed-f047e06907af"/>
+				</LinkObject>
+			</LinkObjects>
+		</CommonValueControl>
+		<CommonValueControl ValueName="" IsGeneric="False" Value0="1.3" Value1="0.65" Value2="0.4" Value3="1" ID="7cf5d7d2-3b09-4b3f-814d-e7c232a4fef1" Type="MaterialEditor.dll@MaterialEditor.Controls.CommonValueControl" X="1189.65307617188" Y="737.56982421875" Params="float4" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="566e9dd1-5b51-4f08-99fd-de1c67084c3f">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="bfbbbbba-4960-41a0-b0c6-3659f560c65d">
+					<Link LinkFrom="bfbbbbba-4960-41a0-b0c6-3659f560c65d" LinkTo="b8b3528e-69f2-4dba-80ae-89e9928017b0"/>
+				</LinkObject>
+				<LinkObject ID="cc4a6225-0c01-40a3-b127-e606cd462515">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="2297799f-b355-44c3-8c7c-28cb0e8a4a18">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="8da4b4da-1268-4a1e-b141-82cae402c829">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="b1bf80f1-cc09-4895-8c25-7ed61d55224c">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="6cf09d5a-281b-44cf-919d-4933f6073aab">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="9c98659f-1e50-4101-9897-cb9b10b1b305">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="0ee28f97-1511-46f3-a3ef-6892a05b94c2">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="69f0eaab-2b9b-461c-87ba-ae7514432f12">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</CommonValueControl>
+		<CommonValueControl ValueName="" IsGeneric="False" Value0="1" ID="b56bee82-34a9-4679-8853-dd50d9f035d2" Type="MaterialEditor.dll@MaterialEditor.Controls.CommonValueControl" X="1384.79992675781" Y="734.255981445313" Params="float1" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="656acb28-862b-4f9c-aec3-8b5b244cd3f1">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="121fa12c-9107-4ca3-8794-8ed3848cd029">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="ab1a3fcb-b6f2-4095-8b56-a3f78ba17a7e">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="190efe81-4ffc-486b-bfd9-7ff0a02089d3">
+					<Link LinkFrom="190efe81-4ffc-486b-bfd9-7ff0a02089d3" LinkTo="c4cec2ff-d09a-47e2-b257-e26eacacabd6"/>
+				</LinkObject>
+			</LinkObjects>
+		</CommonValueControl>
+		<Arithmetic ID="76ebc228-54af-4d62-9ece-232cacf1d2ef" Type="MaterialEditor.dll@MaterialEditor.Controls.Operation.Arithmetic" X="2041.31640625" Y="549.938598632813" Params="＋" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="4f22ba4a-c706-4f10-ba17-c9dcceb19c36">
+					<Link LinkFrom="b9c71423-1e83-442d-9975-60bbb2ca36a9" LinkTo="4f22ba4a-c706-4f10-ba17-c9dcceb19c36"/>
+				</LinkObject>
+				<LinkObject ID="beb57086-2930-4ed9-b8c1-bad4faa33ffe">
+					<Link LinkFrom="64831229-6780-4aa8-9008-c4289a0405e2" LinkTo="beb57086-2930-4ed9-b8c1-bad4faa33ffe"/>
+				</LinkObject>
+				<LinkObject ID="ab580878-b35d-4179-8b14-d58ac2cb9717">
+					<Link LinkFrom="ab580878-b35d-4179-8b14-d58ac2cb9717" LinkTo="61de9c78-f574-4abc-8842-7252b458c253"/>
+				</LinkObject>
+			</LinkObjects>
+		</Arithmetic>
+		<Arithmetic ID="5f5b3818-d44d-4ee7-97ea-e11233e3bc4b" Type="MaterialEditor.dll@MaterialEditor.Controls.Operation.Arithmetic" X="1865.38391113281" Y="624.73193359375" Params="×" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="38a51f98-c9e4-4cda-ba88-0c877aa20f5d">
+					<Link LinkFrom="2d49330c-f437-42bf-8363-e587451eccca" LinkTo="38a51f98-c9e4-4cda-ba88-0c877aa20f5d"/>
+				</LinkObject>
+				<LinkObject ID="684ebf70-a795-4770-a01c-32a251e5a8be">
+					<Link LinkFrom="50c7cf5c-d810-4216-b219-5f09b22d52a7" LinkTo="684ebf70-a795-4770-a01c-32a251e5a8be"/>
+				</LinkObject>
+				<LinkObject ID="64831229-6780-4aa8-9008-c4289a0405e2">
+					<Link LinkFrom="64831229-6780-4aa8-9008-c4289a0405e2" LinkTo="beb57086-2930-4ed9-b8c1-bad4faa33ffe"/>
+				</LinkObject>
+			</LinkObjects>
+		</Arithmetic>
+		<CommonValueControl ValueName="" IsGeneric="False" Value0="1" ID="678a70ce-4d57-4f19-ba16-b2a88a537f77" Type="MaterialEditor.dll@MaterialEditor.Controls.CommonValueControl" X="1685.49365234375" Y="712.361511230469" Params="float1" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="9f5d6600-d077-4c97-80cf-c84ba77764b8">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="b837eba3-d52b-480e-8361-9fc90509c48c">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="9dca4f95-c324-4aa1-8a40-55bcf89a948d">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="50c7cf5c-d810-4216-b219-5f09b22d52a7">
+					<Link LinkFrom="50c7cf5c-d810-4216-b219-5f09b22d52a7" LinkTo="684ebf70-a795-4770-a01c-32a251e5a8be"/>
+				</LinkObject>
+			</LinkObjects>
+		</CommonValueControl>
+	</ChildNodesCtrls>
+</Nodes>
+

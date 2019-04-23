@@ -1,0 +1,9 @@
+<Technique Name="ÄÜÁ¿×è¸ô_ºì" Ver="11" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="4cbf0292-af21-4d7b-ba17-7bb20cf7274b" Id="eb2ba186-6c15-4ae4-814b-ed1328347fa4" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_fc6bcc3e_9ec4_42a3_97d1_8b0a8d19521c EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/Energyflow2.png"/>
+		<ShaderVar_c002822a_f01e_46fd_8651_00cc7a347b5b EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_30a89cae_91c1_4c84_8668_1fa708fab55c EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+		<ShaderVar_Color EditorType="Vector" Type="float4" Value="1.2,0.75,0.6,1"/>
+	</ShaderVar>
+</Technique>
+

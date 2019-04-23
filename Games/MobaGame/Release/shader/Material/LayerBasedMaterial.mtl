@@ -1,0 +1,192 @@
+/*Material
+<Tex2DMaterial Name="Tex2DMaterial.mtl" Require="DiffuseUV" Main="DoMaterial">
+	<Technique0 Name="Tech0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" AlphaType="Disable">
+		<ShaderVar>
+		</ShaderVar>
+	</Technique0>
+</Tex2DMaterial>
+*/
+
+#ifdef TERR_LAYER_NUM
+
+#if TERR_LAYER_NUM > 1
+texture GTexLayerBlend0;
+sampler2D Samp_GTexLayerBlend0 = sampler_state{ Texture = <GTexLayerBlend0>; 
+					MipFilter = LINEAR;
+					MinFilter = LINEAR;
+					MagFilter = LINEAR;
+					AddressU = Clamp;
+					AddressV = Clamp;};
+	#if TERR_LAYER_NUM > 5
+	texture GTexLayerBlend1;
+	sampler2D Samp_GTexLayerBlend1 = sampler_state{ Texture = <GTexLayerBlend1>; 
+						MipFilter = LINEAR;
+						MinFilter = LINEAR;
+						MagFilter = LINEAR;
+						AddressU = Clamp;
+						AddressV = Clamp;};
+		#if TERR_LAYER_NUM > 9
+		texture GTexLayerBlend2;
+		sampler2D Samp_GTexLayerBlend2 = sampler_state{ Texture = <GTexLayerBlend2>; 
+							MipFilter = LINEAR;
+							MinFilter = LINEAR;
+							MagFilter = LINEAR;
+							AddressU = Clamp;
+							AddressV = Clamp;};
+		#endif // TERR_LAYER_NUM
+	#endif // TERR_LAYER_NUM
+#endif // TERR_LAYER_NUM
+
+
+void	Blend(inout PixelMaterialTrans pssem, in PixelMaterialTrans temp, float a)
+{
+    // pssem: final mix
+	// temp: current layer
+	// a: current layer alpha
+
+    float alpha = temp.mDiffuseColor.a * a;
+	pssem.mDiffuseColor	= pssem.mDiffuseColor*(1-alpha) + temp.mDiffuseColor*alpha;
+	//pssem.mEmissiveColor	= pssem.mEmissiveColor*(1-alpha) + temp.mEmissiveColor*alpha;
+	//pssem.mSpecularColor = pssem.mSpecularColor*(1-alpha) + temp.mSpecularColor*alpha;
+	pssem.mBloom = pssem.mBloom*(1-alpha) + temp.mBloom*alpha;
+	//if(temp.mSpecularIntensity*alpha>pssem.mSpecularIntensity)
+	//	pssem.mSpecularIntensity = temp.mSpecularIntensity*alpha;
+	pssem.mSpecularIntensity = pssem.mSpecularIntensity*(1-alpha) + temp.mSpecularIntensity*alpha;
+	//pssem.mSpecularIntensity += temp.mSpecularIntensity*alpha;
+
+	//if(temp.mSpecularPower>pssem.mSpecularPower)
+		//pssem.mSpecularPower = temp.mSpecularPower*alpha;
+	pssem.mSpecularPower = pssem.mSpecularPower*(1-alpha) + temp.mSpecularPower*alpha;
+	//pssem.mSpecularPower += temp.mSpecularPower*alpha;
+}
+
+void 	DoNull(inout PixelMaterialTrans pssem)
+{
+}
+
+void	DoMaterial(inout PixelMaterialTrans pssem)
+{
+	// Layers Blend
+	float4 alphas0 = float4(0,0,0,0);
+	float4 alphas1 = float4(0,0,0,0);
+	float4 alphas2 = float4(0,0,0,0);
+
+#if TERR_LAYER_NUM > 1
+	alphas0 = tex2D(Samp_GTexLayerBlend0, pssem.mDiffuseUV.xy);//vise_tex2D(Samp_GTexLayerBlend0, pssem.mDiffuseUV.xy);
+#if TERR_LAYER_NUM > 5
+	alphas1 = tex2D(Samp_GTexLayerBlend1, pssem.mDiffuseUV.xy);
+#if TERR_LAYER_NUM > 9
+	alphas2 = tex2D(Samp_GTexLayerBlend2, pssem.mDiffuseUV.xy);
+#endif // TERR_LAYER_NUM
+#endif // TERR_LAYER_NUM
+#endif // TERR_LAYER_NUM
+
+#if TERR_LAYER_NUM >= 1
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER0(temp);
+		Blend(pssem, temp, 1.0f);
+	}
+#if TERR_LAYER_NUM >= 2
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER1(temp);
+		Blend(pssem, temp, alphas0.a);
+	}
+#if TERR_LAYER_NUM >= 3
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER2(temp);
+		Blend(pssem, temp, alphas0.r);
+	}
+#if TERR_LAYER_NUM >= 4
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER3(temp);
+		Blend(pssem, temp, alphas0.g);
+	}
+#if TERR_LAYER_NUM >= 5
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER4(temp);
+		Blend(pssem, temp, alphas0.b);
+	}
+#if TERR_LAYER_NUM >= 6
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER5(temp);
+		Blend(pssem, temp, alphas1.a);
+	}
+#if TERR_LAYER_NUM >= 7
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER6(temp);
+		Blend(pssem, temp, alphas1.r);
+	}
+#if TERR_LAYER_NUM >= 8
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER7(temp);
+		Blend(pssem, temp, alphas1.g);
+	}
+#if TERR_LAYER_NUM >= 9
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER8(temp);
+		Blend(pssem, temp, alphas1.b);
+	}
+#if TERR_LAYER_NUM >= 10
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER9(temp);
+		Blend(pssem, temp, alphas2.a);
+	}
+#if TERR_LAYER_NUM >= 11
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER10(temp);
+		Blend(pssem, temp, alphas2.r);
+	}
+#if TERR_LAYER_NUM >= 12
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER11(temp);
+		Blend(pssem, temp, alphas2.g);
+	}
+#if TERR_LAYER_NUM >= 13
+	{
+		PixelMaterialTrans temp = pssem;
+		DOMAT_LAYER12(temp);
+		Blend(pssem, temp, alphas2.b);
+	}
+#endif // TERR_LAYER_NUM13
+#endif // TERR_LAYER_NUM12
+#endif // TERR_LAYER_NUM11
+#endif // TERR_LAYER_NUM10
+#endif // TERR_LAYER_NUM9
+#endif // TERR_LAYER_NUM8
+#endif // TERR_LAYER_NUM7
+#endif // TERR_LAYER_NUM6
+#endif // TERR_LAYER_NUM5
+#endif // TERR_LAYER_NUM4
+#endif // TERR_LAYER_NUM3
+#endif // TERR_LAYER_NUM2
+#endif // TERR_LAYER_NUM1
+
+	//pssem.mDiffuseColor	= float4(0,0,0,0);
+	//pssem.mSpecularColor	= float4(0,0,0,0);
+
+	pssem.mSpecularIntensity = saturate(pssem.mSpecularIntensity);
+	pssem.mSpecularPower = saturate(pssem.mSpecularPower);
+
+}
+
+
+#else
+
+void	DoMaterial(inout PixelMaterialTrans pssem)
+{
+	pssem.mDiffuseColor = float4(1,0,0,1);
+}
+
+#endif

@@ -1,0 +1,11 @@
+<Technique Name="Ë®¾§±¬Õ¨Ìõ´ø2" Ver="99" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="8e429d2d-b794-4b59-b5ca-48c7abae7386" Id="eaaa2b14-1291-4847-873f-abae2ebad198" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_356f4f2d_3c05_41ef_8c7c_5fe2564fe54c EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/B_ShineMap023_emis.png"/>
+		<ShaderVar_afd023a8_6529_449d_add4_4304b4aae103 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/FX_SparkCluster01.png"/>
+		<ShaderVar_372b26a5_caa5_42a5_8790_f426f55f25b7 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/pulse_mask6.png"/>
+		<ShaderVar_4d84397f_2d3e_4763_9b36_cb08f87febfe EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_c0532c3b_2c31_422a_a771_2c427a44a7b1 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/Mummy_Handeffect_Mask.png"/>
+		<ShaderVar_6c970e3f_61f2_4f57_9dfc_8b35b44b7c46 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+	</ShaderVar>
+</Technique>
+

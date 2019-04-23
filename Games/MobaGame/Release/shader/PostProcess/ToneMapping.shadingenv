@@ -1,0 +1,187 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+#include "CommonDeferredShadingFunc.fxh"
+
+int				g_LensEffectsEnable;
+
+float2		g_InvScreenSize;
+float2		g_ScreenSize;
+texture 		RT_SRC;
+sampler2D Samp_RT_SRC = sampler_state
+{
+	Texture = <RT_SRC>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+};
+
+texture 		RT_LUM;
+sampler2D Samp_RT_LUM = sampler_state
+{
+	Texture = <RT_LUM>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+};
+
+texture 		RT_BLOOM;
+sampler2D Samp_RT_BLOOM = sampler_state
+{
+	Texture = <RT_BLOOM>;
+    MipFilter = POINT;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+};
+
+float		g_A = 0.22f;
+float		g_B = 0.30f;
+float		g_C = 0.10f;
+float		g_D = 0.20f;
+float		g_E = 0.01f;
+float		g_F = 0.30f;
+float		g_W = 1.0f;
+
+float		g_PreA = 0.22f;
+float		g_PreB = 0.30f;
+float		g_PreC = 0.10f;
+float		g_PreD = 0.20f;
+float		g_PreE = 0.01f;
+float		g_PreF = 0.30f;
+float		g_PreW = 1.0f;
+
+int			g_DoLerp=0;
+float			g_LerpValue=0;
+
+struct VSInput
+{
+	float3 Pos		: LOCALPOS;
+	float2 UV		: DIFFUSEUV;
+};
+VSInput dummyVSIn;
+
+struct VSOutput
+{
+    float4 Pos		: POSITION;
+    float2 UV		: TEXCOORD0;
+};
+struct PSOutput
+{
+    float4	Color	: COLOR0;
+};
+
+VSOutput vs_main( VSInput Input )
+{
+	VSOutput o=(VSOutput)0;
+	o.Pos	= float4(Input.Pos,1);
+//	o.UV		= Input.UV;
+	o.UV		= Input.UV * float2(g_ViewPortW*g_InvScreenSize.x, g_ViewPortH*g_InvScreenSize.y) + float2(g_ViewPortX*g_InvScreenSize.x, g_ViewPortY*g_InvScreenSize.y);
+
+#ifdef D3D_EFFECT
+	o.Pos.xy += float2(-1,1) * g_InvScreenSize;
+#else
+	//o.UV.y = 1 - o.UV.y;
+#endif
+
+    return o;
+}
+
+
+float EyeAdaption(float lum)
+{
+	return lerp(0.2f, lum, 0.5f);
+}
+float3 F(float3 x)
+{
+	if(g_DoLerp>0)
+	{
+		const float A =  lerp(g_PreA, g_A, g_LerpValue);
+		const float B =  lerp(g_PreB, g_B, g_LerpValue);
+		const float C = lerp(g_PreC, g_C, g_LerpValue);
+		const float D = lerp(g_PreD, g_D, g_LerpValue);
+		const float E =  lerp(g_PreE, g_E, g_LerpValue);
+		const float F =  lerp(g_PreF, g_F, g_LerpValue);
+	
+		return ((x * (A * x + C * B) + D * E) / (x * (A * x + B) + D * F)) - E / F;
+	}
+	else
+	{
+		const float A =  g_A;
+		const float B =  g_B;
+		const float C = g_C;
+		const float D = g_D;
+		const float E =  g_E;
+		const float F =  g_F;
+	
+		return ((x * (A * x + C * B) + D * E) / (x * (A * x + B) + D * F)) - E / F;
+	}
+}
+float3 ToneMapping(float3 color, float3 blur, float adapted_lum)
+{
+	const float3 BLUE_SHIFT = float3(0.4f, 0.4f, 0.7f);
+	const float3 RGB_TO_LUM = float3(0.2126f, 0.7152f, 0.0722f);
+
+	color += blur * 0.25f;
+	
+	float lum = dot(color, RGB_TO_LUM);
+
+	// martin's modified blue shift
+	color = lerp(lum * BLUE_SHIFT, color, saturate(16.0f * lum));
+
+	float adapted_lum_dest = 3 / (max(0.1f, 1 + 10 * EyeAdaption(adapted_lum)));
+
+	// Filmic Tonemapping from Unchart 2
+	float3 finalColor;
+	if(g_DoLerp>0)
+	{
+		const float White = lerp(g_PreW, g_W, g_LerpValue);;
+		finalColor = F(1.6f * adapted_lum_dest * color) / F(White);
+	}
+	else
+	{
+		const float White = g_W;
+		finalColor = F(1.6f * adapted_lum_dest * color) / F(White);
+	}
+
+	return finalColor;
+}
+
+PSOutput	ps_main( VSOutput Input )
+{
+	PSOutput o = (PSOutput)0;
+	float2 uv = Input.UV;
+	const float3 RGB_TO_LUM = float3(0.2126f, 0.7152f, 0.0722f);
+
+	float3 blur = float3(0,0,0);
+	if(g_LensEffectsEnable==1)
+	{
+		blur = vise_tex2D(Samp_RT_BLOOM, uv).rgb;
+	}
+	float4 srcColor = vise_tex2D(Samp_RT_SRC, uv);
+	float adapted_lum = max(0.001f,  tex2D(Samp_RT_LUM, float2(0.5f,0.5f)).r);
+	float3 ldr_rgb = saturate(ToneMapping(srcColor.rgb, blur, adapted_lum));
+
+//	o.Color = exp(tex2D(Samp_RT_LUM, uv*2.0f).x);
+//	o.Color = adapted_lum;
+	o.Color.w = 1.0f; 
+	o.Color = float4(ldr_rgb, dot(ldr_rgb, RGB_TO_LUM));
+//	o.Color = float4(ldr_rgb, srcColor.a); // use green to luminance
+
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique FilmToneMapping
+{
+   pass p0
+   {
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

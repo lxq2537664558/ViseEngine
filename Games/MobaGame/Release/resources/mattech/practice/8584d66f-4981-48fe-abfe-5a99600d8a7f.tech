@@ -1,0 +1,7 @@
+<Technique Name="AlphaÑÌ" Ver="10" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="RevSubtract" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="92ff86e7-6a1e-473c-be9c-0f1785e492e6" Id="8584d66f-4981-48fe-abfe-5a99600d8a7f" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_b6d59528_6842_4c0b_9b6b_da86ad526454 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_7592b961_0a8c_48d8_b097_38c11a0c63a1 EditorType="Texture" Type="texture" Value="resources/texture/effect/smoke/T_FX_Smokeball.png"/>
+	</ShaderVar>
+</Technique>
+

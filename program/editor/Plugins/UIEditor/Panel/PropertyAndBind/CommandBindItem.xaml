@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="UIEditor.Panel.PropertyAndBind.CommandBindItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             mc:Ignorable="d" 
+			 d:DesignWidth="414">
+    <Grid>
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="0.384*"/>
+    		<ColumnDefinition Width="0.616*"/>
+    	</Grid.ColumnDefinitions>
+        <ComboBox x:Name="ComboBox_Methods" Grid.Column="1" Margin="2" VerticalAlignment="Center" SelectionChanged="ComboBox_Methods_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        <ComboBox x:Name="ComboBox_Controls" Margin="2" VerticalAlignment="Center" SelectionChanged="ComboBox_Controls_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>            
+    </Grid>
+</UserControl>

@@ -1,0 +1,34 @@
+<CCore.Mesh.MeshTemplate Ver="0">
+	<Ver Type="mscorlib.dll@System.UInt32" Value="17"/>
+	<TickAllTime Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<CastShadow Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshInitList Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Mesh.MeshInitPart]]">
+		<Data Type="cscommon@CCore.Mesh.MeshInitPart" Value="null">
+			<MeshName Type="mscorlib.dll@System.String" Value="resources/meshsource/scene/bls_plant_grass006_a.vms"/>
+			<Techs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+				<Data Type="mscorlib.dll@System.Guid" Value="2e16d30c-1f69-4c99-964b-1a6314528fac"/>
+			</Techs>
+		</Data>
+		<Data Type="cscommon@CCore.Mesh.MeshInitPart" Value="null">
+			<MeshName Type="mscorlib.dll@System.String" Value="resources/meshsource/scene/leaf.vms"/>
+			<Techs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+				<Data Type="mscorlib.dll@System.Guid" Value="e0e6d637-7470-44cb-b290-46eb8703f16c"/>
+			</Techs>
+		</Data>
+	</MeshInitList>
+	<NeedCalcFullSkeleton Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshID Type="mscorlib.dll@System.Guid" Value="292b47ce-6141-4a5b-880a-66035ef66343"/>
+	<FadeOutTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<Layer Type="cscommon@CCore.RLayer" Value="RL_DSBase"/>
+	<Scale Type="mscorlib.dll@System.Single" Value="1"/>
+	<ActionName Type="mscorlib.dll@System.String" Value=""/>
+	<SocketComponentInfoList Type="cscommon@CSUtility.Support.ConcurentObjManager`2[[mscorlib.dll@System.Guid][cscommon@CCore.Socket.ISocketComponentInfo]]"/>
+	<LayerName Type="mscorlib.dll@System.String" Value="Other"/>
+	<ActionPercent Type="mscorlib.dll@System.Double" Value="0"/>
+	<FadeInTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<PlayRate Type="mscorlib.dll@System.Double" Value="1"/>
+	<NickName Type="mscorlib.dll@System.String" Value="Ê÷Ä¾2"/>
+	<MeshFadeType Type="cscommon@CCore.Mesh.MeshFadeType" Value="None"/>
+	<IgnoreMouseLineCheckInGame Type="mscorlib.dll@System.Boolean" Value="True"/>
+</CCore.Mesh.MeshTemplate>
+

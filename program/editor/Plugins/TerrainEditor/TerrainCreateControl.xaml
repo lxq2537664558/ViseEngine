@@ -1,0 +1,107 @@
+﻿<UserControl x:Name="userControl" x:Class="TerrainEditor.TerrainCreateControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:WPG="clr-namespace:WPG;assembly=WPG"
+             mc:Ignorable="d" d:DesignWidth="235.293">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="0.782*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock TextWrapping="Wrap" Text="高度图:" d:LayoutOverrides="Width" Margin="2" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+            <Grid Margin="0" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Rectangle x:Name="Rectangle_DragDropPlaceHeightMap" Margin="2" Fill="#02000000" DragEnter="Rectangle_DragDropPlaceHeightMap_DragEnter" DragLeave="Rectangle_DragDropPlaceHeightMap_DragLeave" DragOver="Rectangle_DragDropPlaceHeightMap_DragOver" Drop="Rectangle_DragDropPlaceHeightMap_Drop" AllowDrop="True" ToolTip="拖动模型资源到这里来设置模型" />
+                <TextBox Text="{Binding HeightMapName, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=Explicit}" KeyDown="TextBox_KeyDown" TextWrapping="Wrap" d:LayoutOverrides="Width, Height" Margin="2" VerticalAlignment="Center" Foreground="White" CaretBrush="White" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBoxStyle_Default}}" IsHitTestVisible="False"/>
+                <Button Content=" ... " Grid.Column="1" Margin="2" d:LayoutOverrides="Height" Foreground="White" Click="Button_OpenHeightMapClick" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}"/>
+            </Grid>
+            <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="最大高度:" d:LayoutOverrides="Width" Margin="2" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+            <TextBox Text="{Binding UnitHeight, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=Explicit}" KeyDown="TextBox_KeyDown" TextWrapping="Wrap" d:LayoutOverrides="Width, Height" Margin="2" VerticalAlignment="Center" Foreground="White" CaretBrush="White" Grid.Column="1" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBoxStyle_Default}}"/>
+            <!--         <TextBlock Margin="2" TextWrapping="Wrap" Text="Level数量" d:LayoutOverrides="Width, Height" VerticalAlignment="Center" Grid.Row="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/> -->
+            <!-- 		<Grid Grid.Column="1" Margin="0" Grid.Row="2"> -->
+            <!-- 			<Grid.RowDefinitions> -->
+            <!-- 				<RowDefinition Height="0.684*"/> -->
+            <!-- 				<RowDefinition Height="0.316*"/> -->
+            <!-- 			</Grid.RowDefinitions> -->
+            <!-- 			<Grid.ColumnDefinitions> -->
+            <!-- 				<ColumnDefinition Width="Auto"/> -->
+            <!-- 				<ColumnDefinition Width="1*"/> -->
+            <!-- 				<ColumnDefinition Width="Auto"/> -->
+            <!-- 			</Grid.ColumnDefinitions> -->
+            <!--             <TextBlock Margin="2" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Text="X" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/> -->
+            <!--             <TextBox Margin="2" TextWrapping="Wrap" Text="{Binding TerrainSizeX, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Foreground="White" CaretBrush="White" Grid.Column="1" KeyDown="TextBox_KeyDown" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBoxStyle_Default}}"/> -->
+            <!--             <TextBlock Margin="2" TextWrapping="Wrap" Text="{Binding TerrainSizeInfoX, ElementName=userControl}" d:LayoutOverrides="Width, Height" Grid.Column="3" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/> -->
+            <!--             <TextBlock Margin="2" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Center" Text="Z" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/> -->
+            <!--             <TextBox Margin="2" TextWrapping="Wrap" Text="{Binding TerrainSizeY, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Grid.Column="1" Foreground="White" CaretBrush="White" Grid.Row="1" KeyDown="TextBox_KeyDown" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBoxStyle_Default}}"/> -->
+            <!--             <TextBlock Margin="2" TextWrapping="Wrap" Text="{Binding TerrainSizeInfoY, ElementName=userControl}" Grid.Column="3" VerticalAlignment="Center" d:LayoutOverrides="Width" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/> -->
+            <!-- 		</Grid> -->
+            <!--         <TextBlock Margin="2" Text="每个Level边长" Grid.Row="3" VerticalAlignment="Center" d:LayoutOverrides="GridBox" ToolTip="渲染单元（此值表示每个Level有2^X个渲染单元）"  Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/> -->
+            <!-- 		<Grid Margin="0" Grid.Row="3" Grid.Column="1"> -->
+            <!-- 			<Grid.ColumnDefinitions> -->
+            <!-- 				<ColumnDefinition Width="0.838*"/> -->
+            <!-- 				<ColumnDefinition Width="Auto"/> -->
+            <!-- 				<ColumnDefinition Width="Auto"/> -->
+            <!-- 			</Grid.ColumnDefinitions> -->
+            <!--             <Slider x:Name="Slider_PatchPerLevel" Margin="2" VerticalAlignment="Center" Grid.Row="1" Minimum="1" Maximum="5" Value="{Binding PatchPerLevel, ElementName=userControl, Mode=TwoWay}" d:LayoutOverrides="Width" SmallChange="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=SliderStyle_Default}}"/> -->
+            <!--             <TextBox Margin="2" TextWrapping="Wrap" Text="{Binding Value, ElementName=Slider_PatchPerLevel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Grid.Column="1" Foreground="White" CaretBrush="White" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBoxStyle_Default}}"/> -->
+            <!--             <TextBlock HorizontalAlignment="Left" Margin="2" TextWrapping="Wrap" Text="{Binding PatchPerLevelInfo, ElementName=userControl}" Grid.Column="2" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/> -->
+            <!-- 		</Grid> -->
+            <!--         <TextBlock x:Name="TextBlock_Tessellation" Margin="2" Text="Tessellation" Grid.Row="4" VerticalAlignment="Center" ToolTip="格子（此值表示每个Patch有2^X个格子）" d:LayoutOverrides="GridBox" Visibility="Visible" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/> -->
+            <!-- 		<Grid Margin="0" Grid.Row="4" Grid.Column="1" Visibility="{Binding Visibility, ElementName=TextBlock_Tessellation}"> -->
+            <!-- 			<Grid.ColumnDefinitions> -->
+            <!-- 				<ColumnDefinition Width="0.838*"/> -->
+            <!-- 				<ColumnDefinition Width="Auto"/> -->
+            <!-- 				<ColumnDefinition Width="Auto"/> -->
+            <!-- 			</Grid.ColumnDefinitions> -->
+            <!--             <Slider x:Name="Slider_Tessellation" Margin="2" VerticalAlignment="Center" Grid.Row="1" Minimum="1" Maximum="5" Value="{Binding Tessellation, ElementName=userControl, Mode=TwoWay}" d:LayoutOverrides="Width" SmallChange="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=SliderStyle_Default}}"/> -->
+            <!--             <TextBox Margin="2" TextWrapping="Wrap" Text="{Binding Value, ElementName=Slider_Tessellation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Grid.Column="1" Foreground="White" CaretBrush="White" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBoxStyle_Default}}"/> -->
+            <!--             <TextBlock HorizontalAlignment="Left" Margin="2" TextWrapping="Wrap" Text="{Binding TessellationInfo, ElementName=userControl}" d:LayoutOverrides="Height" Grid.Column="2" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/> -->
+            <!-- 		</Grid> -->
+            <TextBlock Margin="2" Text="底层材质" Grid.Row="5" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+            <Grid Grid.Row="5" Grid.Column="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.695*"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <!-- <Rectangle x:Name="Rectangle_DragDropPlaceMaterial" Fill="#02000000" DragEnter="Rectangle_DragDropPlaceMaterial_DragEnter" DragLeave="Rectangle_DragDropPlaceMaterial_DragLeave" DragOver="Rectangle_DragDropPlaceMaterial_DragOver" Drop="Rectangle_DragDropPlaceMaterial_Drop" AllowDrop="True" ToolTip="拖动模型资源到这里来设置模型" /> -->
+                <Grid IsHitTestVisible="False">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="0.695*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Margin="1" Width="32" Height="32" Source="{Binding Image, ElementName=userControl}"/>
+                    <TextBlock Grid.Column="1" Margin="1" VerticalAlignment="Center" Text="{Binding BaseMaterialName, ElementName=userControl}" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+                </Grid>
+                <Button Grid.Column="1" Foreground="White" Margin="1,5" Click="Button_SetBaseMaterial_Click"  Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Image Source="/ResourceLibrary;component/Icon/set.png" Width="16" Height="16" />
+                </Button>
+                <Button Grid.Column="2" Foreground="White" Margin="1,5" Click="Button_SearchMaterialClick" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Image Source="/ResourceLibrary;component/Icon/search.png" Width="16" Height="16" />
+                </Button>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <WPG:PropertyGrid x:Name="ProGrid" Margin="0" d:LayoutOverrides="Width"/>
+        </Grid>
+    </Grid>
+</UserControl>

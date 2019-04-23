@@ -1,0 +1,102 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+#include "CommonDeferredShadingFunc.fxh"
+
+float2		g_InvScreenSize;
+float2		g_InvSrcTexSize;
+texture 		RT_SRC;
+sampler2D Samp_RT_SRC = sampler_state
+{
+	Texture = <RT_SRC>;
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = Border;
+    AddressV = Border;
+//    AddressU = CLAMP;
+//    AddressV = CLAMP;
+};
+
+float g_BrightFactor;
+
+struct VSInput
+{
+	float3 Pos		: LOCALPOS;
+	float2 UV		: DIFFUSEUV;
+};
+VSInput dummyVSIn;
+
+struct VSOutput
+{
+    float4 Pos		: POSITION;
+    float2 UV0	: TEXCOORD0;
+    float2 UV1	: TEXCOORD1;
+    float2 UV2	: TEXCOORD2;
+    float2 UV3	: TEXCOORD3;
+};
+struct PSOutput
+{
+    float4	Color	: COLOR0;
+};
+
+VSOutput vs_main( VSInput Input )
+{
+	VSOutput o=(VSOutput)0;
+	o.Pos	= float4(Input.Pos,1);
+    o.UV0 = Input.UV + g_InvSrcTexSize * half2(0.5,0.5);					
+	o.UV1 = Input.UV + g_InvSrcTexSize * half2(-0.5,0.5);
+	o.UV2 = Input.UV + g_InvSrcTexSize * half2(-0.5,-0.5);
+	o.UV3 = Input.UV + g_InvSrcTexSize * half2(0.5,-0.5);
+
+#ifdef D3D_EFFECT
+	o.Pos.xy += float2(-1,1) * g_InvScreenSize;
+#else
+//	o.UV0.y = 1 - o.UV0.y;
+//	o.UV1.y = 1 - o.UV1.y;
+//	o.UV2.y = 1 - o.UV2.y;
+//	o.UV3.y = 1 - o.UV3.y;
+#endif
+
+    return o;
+}
+
+PSOutput	ps_main( VSOutput Input )
+{
+	PSOutput o = (PSOutput)0;
+
+/*  Sqr Light
+
+	float4 clr = vise_tex2D(Samp_RT_SRC, uv);
+	o.Color = clamp(clr * (clr / 3), 0, 32);
+*/
+
+
+	float3 LUM_WEIGHT = float3(0.2126f, 0.7152f, 0.0722f);
+
+	float4 clr = 0;
+	clr += vise_tex2D(Samp_RT_SRC, Input.UV0);
+	clr += vise_tex2D(Samp_RT_SRC, Input.UV1);
+	clr += vise_tex2D(Samp_RT_SRC, Input.UV2);
+	clr += vise_tex2D(Samp_RT_SRC, Input.UV3);
+	clr /= 4;
+
+	float lum = dot(clr.xyz, LUM_WEIGHT);
+
+	if (lum < g_BrightFactor)
+	{
+		clr.xyz = 0;
+	}
+	o.Color = clamp(clr, 0, 32);
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique BrightPS
+{
+   pass p0
+   {
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

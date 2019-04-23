@@ -1,0 +1,41 @@
+/*Material
+
+<Material Name="ฒÝตุ3" Require="DiffuseUV" Main="DoMaterial_a8f3b7eb_3f9b_4cfa_978d_6e7d28b91c3a" ExtendString="" Id="a8f3b7eb-3f9b-4cfa-978d-6e7d28b91c3a" Ver="5">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="a8f3b7eb-3f9b-4cfa-978d-6e7d28b91c3a" Id="7b092307-5c10-48f0-beaa-448e8fbcaf55" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_c9049ca9_e8c7_4d7d_9c42_70dcc79ddf43 EditorType="Texture" Type="texture" Value="resources/texture/scene/Forest_tileset_09.Out.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+texture ShaderVar_c9049ca9_e8c7_4d7d_9c42_70dcc79ddf43;
+sampler2D Samp_ShaderVar_c9049ca9_e8c7_4d7d_9c42_70dcc79ddf43 = sampler_state
+{
+	Texture = <ShaderVar_c9049ca9_e8c7_4d7d_9c42_70dcc79ddf43>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_a8f3b7eb_3f9b_4cfa_978d_6e7d28b91c3a(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float2 ShaderVar_1cd91155_a1c5_4eba_9e06_94e714cb21a7 = float2(1.5,1.5);
+
+
+    pssem.mDiffuseColor = vise_tex2D(Samp_ShaderVar_c9049ca9_e8c7_4d7d_9c42_70dcc79ddf43,(pssem.mDiffuseUV * ShaderVar_1cd91155_a1c5_4eba_9e06_94e714cb21a7).xy);
+
+}

@@ -1,0 +1,10 @@
+<Technique Name="ตุมั" Ver="16" AlphaRef="20" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyTest" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="78f7b781-0fcc-4d3d-85b6-18aa6a4b6252" Id="668ca8bf-016e-479b-8b5a-1fab604be7ac" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_2239d3d8_cf2b_4b54_8433_3b832a3fbd89 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/p_difenga01.png"/>
+		<ShaderVar_ec98f928_4480_4772_9c25_5a4b1aacf090 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/DemonHunter_MoltenArrow_groundBurn2.png"/>
+		<ShaderVar_932a577f_724e_4110_9497_bda28866d638 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/DemonHunter_MoltenArrow_groundBurn2.png"/>
+		<ShaderVar_d8933070_7946_4269_9ae9_0c060260e958 EditorType="Vector" Type="float2" Value="1,1"/>
+		<ShaderVar_location EditorType="Vector" Type="float2" Value="0,0"/>
+	</ShaderVar>
+</Technique>
+

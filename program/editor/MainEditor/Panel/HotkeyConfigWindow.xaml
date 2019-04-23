@@ -1,0 +1,683 @@
+﻿<DockControls:DockAbleWindowBase x:Name="dockAbleWindowBase"
+        x:Class="MainEditor.Panel.HotkeyConfigWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MainEditor.Panel"
+        xmlns:DockControls="clr-namespace:DockControl.Controls;assembly=DockControl"
+        xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+        mc:Ignorable="d"
+        Title="快捷键设置" Height="874" Width="1136"
+        Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=DefaultWindowStyle}}" WindowStartupLocation="CenterScreen" Loaded="DockAbleWindowBase_Loaded" KeyDown="DockAbleWindowBase_KeyDown" KeyUp="DockAbleWindowBase_KeyUp">
+    <DockControls:DockAbleWindowBase.Resources>
+        <ResourceDictionary Source="/MainEditor;component/Themes/Generic.xaml"/>
+    </DockControls:DockAbleWindowBase.Resources>
+    <Grid Background="{DynamicResource {ComponentResourceKey ResourceId=ControlBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="快捷键预设:" VerticalAlignment="Center" Margin="5" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+            <ComboBox x:Name="comboBox_Preset" Grid.Column="1" Margin="5" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ComboBoxStyle_Default}}" SelectionChanged="ComboBox_SelectionChanged" Loaded="ComboBox_Loaded"/>
+            <Button Grid.Column="2" Margin="5" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Content="新建" Click="Button_Click_New"/>
+            <Button Grid.Column="3" Margin="5" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Content="删除" Click="Button_Click_Del"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="278*"/>
+                <ColumnDefinition Width="556*"/>
+                <ColumnDefinition Width="75*"/>
+                <ColumnDefinition Width="203*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Top" Text="快捷键组:" ToolTip="同组的快捷键会同时使用，按键不能冲突" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="8,8,8,0"/>
+            <ListBox x:Name="ListBox_Groups" Margin="8,28,8,8" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" SelectionChanged="ListBox_Groups_SelectionChanged"/>
+            <TextBlock VerticalAlignment="Top" Text="命令:" ToolTip="同组的快捷键会同时使用，按键不能冲突" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="8,8,8,0" Grid.Column="1"/>
+            <ListView x:Name="ListBox_Commands" Margin="8,28,8,8" Style="{DynamicResource {ComponentResourceKey ResourceId=ListViewStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Column="1" SelectionChanged="ListBox_Commands_SelectionChanged">
+                <ListView.View>
+                    <GridView ColumnHeaderContainerStyle="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=GridViewColumnHeaderStyle_Default}}">
+                        <GridView.Columns>
+                            <GridViewColumn Header="名称" DisplayMemberBinding="{Binding CommandName}" />
+                            <GridViewColumn Header="快捷键" DisplayMemberBinding="{Binding HotkeyString}" />
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <Grid Grid.Column="2" Grid.ColumnSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock VerticalAlignment="Top" Text="说明:" ToolTip="同组的快捷键会同时使用，按键不能冲突" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="8"/>
+                <TextBlock x:Name="TextBlock_Description" Grid.Row="1" TextWrapping="Wrap" Margin="0,0,8,0" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}" VerticalAlignment="Stretch"/>
+                <Grid Grid.Row="2" Margin="0,0,0,8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="快捷键:" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="8" />
+                    <TextBlock x:Name="TextBlock_Hotkey" Grid.Column="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+                    <Button Grid.Column="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Content="设置" Width="40" Height="Auto" Margin="5" Click="Button_ResetHotkey_Click" ToolTip="开始设置后请点击下方键盘及鼠标来设置快捷键"/>
+                    <Button Grid.Column="3" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Content="清除" Width="40" Height="Auto" Margin="2,5,8,5" Click="Button_ClearHotkey_Click"/>
+                </Grid>
+            </Grid>
+        </Grid>
+        <Border x:Name="Border_SettingHotkey" Background="#99000000" CornerRadius="5" Grid.RowSpan="2" Visibility="Collapsed">
+            <Grid HorizontalAlignment="Center">
+                <StackPanel>
+                    <TextBlock Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="10" FontSize="20" FontWeight="Bold"></TextBlock>
+                </StackPanel>
+                <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal">
+                    <TextBlock Text="点击下方的键盘或鼠标来设置快捷键" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="10" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Button Grid.Column="1" Content="取消" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Click="Button_CancelEditHotkey_Click"/>
+                </StackPanel>
+                    
+            </Grid>
+        </Border>
+        <Viewbox Grid.Row="2" >
+            <StackPanel Orientation="Horizontal">
+                <Canvas Width="916" Height="243" Margin="8" >
+                    <local:KeyButton x:Name="Btn_F1" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="63.713" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False" >
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="1" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F2" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="103.573" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="2" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F3" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="143.586" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="3" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F4" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="183.599" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="4" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F5" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="223.766" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="5" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F6" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="263.606" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="6" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F7" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="303.77" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="7" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F8" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="343.826" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="8" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F9" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="383.774" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="9" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F10" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="423.83" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="10" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F11" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="463.562" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="11" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F12" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="503.726" Canvas.Top="1.846" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="12" FontSize="10.667" FontWeight="Bold" VerticalAlignment="Bottom" Margin="0,0,0,1.1" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Oem3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="0.811" Canvas.Top="45.714" Height="36.436" Width="37.491" HorizontalAlignment="Center" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="~" FontWeight="Bold" >
+                            </TextBlock>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="`" FontWeight="Bold" >
+                            </TextBlock>
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_D1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="40.327" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="!" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="1" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_D2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="80.815" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="@" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="2" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_D3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="120.655" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="#" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="3" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_D4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="160.603" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="$" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="4" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_D5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="200.767" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="%" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="5" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_D6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="240.823" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="^" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="6" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_D7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="280.771" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="&amp;" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="7" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_D8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="320.611" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="*" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="8" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_D9" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="360.775" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="(" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="9" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_D0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="400.723" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text=")" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="0" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_OemMinus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="440.779" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="_" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="-" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_OemPlus" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="480.835" Canvas.Top="45.714" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="+" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="=" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Q" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="56.837" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Q" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_W" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="96.7" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="W" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_E" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="136.864" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="E" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_R" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="176.704" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="R" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_T" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="216.868" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="T" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Y" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="256.546" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Y" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_U" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="296.548" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="U" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_I" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="336.712" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="I" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_O" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="376.788" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="O" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_P" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="416.628" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="P" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_A" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="73.68" Canvas.Top="125.743" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="A" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_S" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="113.844" Canvas.Top="125.743" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="S" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_D" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="153.684" Canvas.Top="125.743" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="D" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_F" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="193.848" Canvas.Top="125.743" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="F" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_G" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="233.85" Canvas.Top="125.743" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="G" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_H" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="273.852" Canvas.Top="125.743" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="H" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_J" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="313.692" Canvas.Top="125.743" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="J" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_K" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="353.856" Canvas.Top="125.743" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="K" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_L" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="393.696" Canvas.Top="125.743" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="L" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Z" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="89.87" Canvas.Top="165.741" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Z" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_X" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="129.818" Canvas.Top="165.741" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="X" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_C" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="169.658" Canvas.Top="165.741" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="C" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_V" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="209.606" Canvas.Top="165.741" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="V" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_B" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="249.77" Canvas.Top="165.741" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="B" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_N" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="289.61" Canvas.Top="165.741" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="N" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_M" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="329.666" Canvas.Top="165.741" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="M" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_LeftAlt" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="109.681" Canvas.Top="205.902" Height="36.274" Width="56.439" IsEnabled="False" OnButtonStateChanged="ToggleButton_KeyAlt_StateChanged">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Alt" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_RightAlt" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" Padding="2,2.5,5,1" Canvas.Left="411.904" Canvas.Top="205.902" Height="36.22" Width="56.278" IsEnabled="False" ButtonState="{Binding ButtonState, ElementName=Btn_LeftAlt, Mode=TwoWay}" >
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Alt" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_LeftCtrl" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="2.793" Canvas.Top="205.902" Height="36.274" Width="66.48" IsEnabled="False" OnButtonStateChanged="ToggleButton_KeyCtrl_StateChanged">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Ctrl" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_RightCtrl" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" Padding="2,2.5,5,1" Canvas.Left="504.196" Canvas.Top="205.902" Height="36.274" Width="66.48" IsEnabled="False" ButtonState="{Binding ButtonState, ElementName=Btn_LeftCtrl, Mode=TwoWay}" >
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Ctrl" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_LeftShift" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="3.918" Canvas.Top="165.886" Height="36.274" Width="83.323" IsEnabled="False" OnButtonStateChanged="ToggleButton_KeyShift_StateChanged">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Shift" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_RightShift" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" Padding="2,2.5,5,1" Canvas.Left="489.774" Canvas.Top="165.886" Height="36.274" Width="83.323" IsEnabled="False" ButtonState="{Binding ButtonState, ElementName=Btn_LeftShift, Mode=TwoWay}" >
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Shift" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_CapsLock" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="4.714" Canvas.Top="125.79" Height="36.274" Width="66.48" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Caps" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Tab" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="1.839" Canvas.Top="85.95" Height="36.274" Width="52.39" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Tab" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Enter" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" Padding="5,2.5,5,1" Canvas.Left="513.703" Canvas.Top="125.853" Height="36.274" Width="76.442" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Enter" FontSize="14.667" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Space" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="5,2.5,2,1" Canvas.Left="170.658" Canvas.Top="205.902" Height="36.274" Width="236.206"  OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False"/>
+                    <local:KeyButton x:Name="Btn_Oem4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="456.716" Canvas.Top="85.795" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="{}{" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="[" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Oem6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="496.664" Canvas.Top="85.795" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="}" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="]" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Oem5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="536.72" Canvas.Top="85.795" Height="36.436" Width="48.504" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="|" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="\" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Oem1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="433.719" Canvas.Top="125.743" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text=":" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text=";" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Oem7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="473.775" Canvas.Top="125.743" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="&quot;" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="'" FontWeight="Bold" HorizontalAlignment="Center" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_OemComma" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="369.586" Canvas.Top="165.774" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="&lt;" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="," FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_OemPeriod" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="409.642" Canvas.Top="165.774" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="&gt;" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="." FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Oem2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="449.806" Canvas.Top="165.774" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="?" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="/" FontWeight="Bold" HorizontalAlignment="Center" FontSize="10.667" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Delete" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="3,2.5,2,1" Canvas.Left="611.777" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Del" FontSize="9.333" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_End" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="3,2.5,2,1" Canvas.Left="652.552" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="End" FontSize="9.333" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_PageDown" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="3,2.5,2,1" Canvas.Left="693.688" Canvas.Top="85.737" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="PgDn" FontSize="9.333" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Insert" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="3,2.5,2,1" Canvas.Left="611.777" Canvas.Top="46.059" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Insert" FontSize="9.333" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Home" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="3,2.5,2,1" Canvas.Left="652.552" Canvas.Top="46.059" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Home" FontSize="9.333" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_PageUp" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="3,2.5,2,1" Canvas.Left="693.688" Canvas.Top="46.059" Height="36.436" Width="37.491" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="PgUp" FontSize="9.333" FontWeight="Bold" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Back" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" Padding="2,5,5,1" Canvas.Left="520.708" Canvas.Top="45.806" Height="36.436" Width="70.53" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 46.652429,9.6876412 46.652429,14.016472 33.480438,14.016472 33.480438,18.489312 z" Fill="#FFF4F4F5" Height="14.217" Stretch="Fill" Stroke="Black" Width="29.367" StrokeThickness="0"/>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="612.432" Canvas.Top="205.662" Height="36.436" Width="36.844" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 46.652429,9.6876412 46.652429,13.943257 33.480438,13.943257 33.480438,18.489312 z" Fill="#FFF4F4F5" Height="15" Stretch="Fill" Stroke="Black" Width="20" StrokeThickness="0"/>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Down" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="652.957" Canvas.Top="205.662" Height="36.436" Width="36.844" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 46.652429,9.6876412 46.652429,13.943257 33.480438,13.943257 33.480438,18.489312 z" Fill="#FFF4F4F5" Height="15" Stretch="Fill" Stroke="Black" Width="20" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="-90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Right" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="694.093" Canvas.Top="205.662" Height="36.436" Width="36.844" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 46.652429,9.6876412 46.652429,13.943257 33.480438,13.943257 33.480438,18.489312 z" Fill="#FFF4F4F5" Height="15" Stretch="Fill" Stroke="Black" Width="20" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="180"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Up" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="652.958" Canvas.Top="165.715" Height="36.436" Width="36.844" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 46.652429,9.6876412 46.652429,13.943257 33.480438,13.943257 33.480438,18.489312 z" Fill="#FFF4F4F5" Height="15" Stretch="Fill" Stroke="Black" Width="20" StrokeThickness="0" RenderTransformOrigin="0.5,0.5">
+                            <Path.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform/>
+                                    <SkewTransform/>
+                                    <RotateTransform Angle="90"/>
+                                    <TranslateTransform/>
+                                </TransformGroup>
+                            </Path.RenderTransform>
+                        </Path>
+
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_NumLock" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" Padding="3,2,0,0" Canvas.Left="754.582" Canvas.Top="45.714" Height="36.436" Width="37.492" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Num Lock" FontWeight="Bold" HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="9.333" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Divide" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="795.656" Canvas.Top="45.714" Height="36.436" Width="37.49" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="/" FontWeight="Bold" HorizontalAlignment="Center" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Multiply" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="836.517" Canvas.Top="45.714" Height="36.436" Width="37.49" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="*" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Subtract" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="877.643" Canvas.Top="45.714" Height="36.436" Width="37.49" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="-" FontWeight="Bold" HorizontalAlignment="Center" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_NumPad7" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="754.582" Canvas.Top="85.679" Height="36.436" Width="37.492" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="7" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Home" FontWeight="Bold" HorizontalAlignment="Center" FontSize="8" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_NumPad8" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="795.656" Canvas.Top="85.679" Height="36.436" Width="37.49" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="8" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 46.652429,9.6876412 46.652429,13.943257 33.480438,13.943257 33.480438,18.489312 z" Fill="#FFF4F4F5" Height="8" Stretch="Fill" Stroke="Black" Width="10" StrokeThickness="0" RenderTransformOrigin="0.5,0.5" Margin="0,2,0,0">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_NumPad9" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="836.517" Canvas.Top="85.679" Height="36.436" Width="37.49" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="9" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="PgUp" FontWeight="Bold" HorizontalAlignment="Center" FontSize="8" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_NumPad4" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="754.582" Canvas.Top="125.843" Height="36.436" Width="37.492" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="4" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 46.652429,9.6876412 46.652429,13.943257 33.480438,13.943257 33.480438,18.489312 z" Fill="#FFF4F4F5" Height="8" Stretch="Fill" Stroke="Black" Width="10" StrokeThickness="0" Margin="0,2,0,0"/>
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_NumPad5" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Padding="0,2.5,0,0" Canvas.Left="795.656" Canvas.Top="125.843" Height="36.436" Width="37.49" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="5" FontWeight="Bold" HorizontalAlignment="Center" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_NumPad6" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="836.517" Canvas.Top="125.843" Height="36.436" Width="37.49" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="6" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 46.652429,9.6876412 46.652429,13.943257 33.480438,13.943257 33.480438,18.489312 z" Fill="#FFF4F4F5" Height="8" Stretch="Fill" Stroke="Black" Width="10" StrokeThickness="0" RenderTransformOrigin="0.5,0.5" Margin="0,2,0,0">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="180"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_NumPad1" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="754.582" Canvas.Top="165.72" Height="36.436" Width="37.492" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="1" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="End" FontWeight="Bold" HorizontalAlignment="Center" FontSize="8" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_NumPad2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="795.656" Canvas.Top="165.72" Height="36.436" Width="37.49" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="2" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 46.652429,9.6876412 46.652429,13.943257 33.480438,13.943257 33.480438,18.489312 z" Fill="#FFF4F4F5" Height="8" Stretch="Fill" Stroke="Black" Width="10" StrokeThickness="0" RenderTransformOrigin="0.5,0.5" Margin="0,2,0,0">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_NumPad3" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="836.517" Canvas.Top="165.72" Height="36.436" Width="37.49" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="3" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="PgDn" FontWeight="Bold" HorizontalAlignment="Center" FontSize="8" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Decimal" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="836.517" Canvas.Top="205.56" Height="36.436" Width="37.49" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="." FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Del" FontWeight="Bold" HorizontalAlignment="Center" FontSize="8" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_NumPad0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="0" Canvas.Left="754.677" Canvas.Top="205.56" Height="36.436" Width="78.518" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <StackPanel>
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="0" FontWeight="Bold" HorizontalAlignment="Center" />
+                            <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Insert" FontWeight="Bold" HorizontalAlignment="Center" FontSize="8" />
+                        </StackPanel>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_Add" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Padding="0,8,0,0" Canvas.Left="877.643" Canvas.Top="85.637" Height="76.708" Width="37.49" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="+" FontWeight="Bold" HorizontalAlignment="Center" />
+                    </local:KeyButton>
+                    <local:KeyButton HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Padding="0,8,0,0" Canvas.Left="877.643" Canvas.Top="165.566" Height="76.708" Width="37.49" ButtonState="{Binding ButtonState, ElementName=Btn_Enter, Mode=TwoWay}" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="{Binding IsEnabled, ElementName=Btn_Enter}">
+                        <TextBlock Foreground="{Binding Foreground, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Text="Enter" FontWeight="Bold" HorizontalAlignment="Center" FontSize="9.333" />
+                    </local:KeyButton>
+                    <Grid Height="37.177" Width="335.873" Canvas.Left="566.258" Canvas.Top="2.055" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Rectangle Fill="{DynamicResource OccupancyBackground}" Stroke="{DynamicResource OccupancyBorderBrush}" Margin="2" RadiusX="5" RadiusY="5" Grid.Row="1" />
+                        <TextBlock Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}" Text="占用" Margin="2" HorizontalAlignment="Center"/>
+                        <Rectangle Fill="{DynamicResource SelectedBackground}" Stroke="{DynamicResource SelectedBorderBrush}" Margin="2" Grid.Column="1" RadiusX="5" RadiusY="5" Grid.Row="1" />
+                        <TextBlock Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}" Grid.Column="1" Text="选中" Margin="2" HorizontalAlignment="Center"/>
+                        <Rectangle Fill="{DynamicResource AssinBackground}" Stroke="{DynamicResource AssinBorderBrush}" Margin="2" Grid.Column="2" RadiusX="5" RadiusY="5" Grid.Row="1" />
+                        <TextBlock Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}" Grid.Column="2" Text="设置" Margin="2" HorizontalAlignment="Center"/>
+                        <Rectangle Fill="{DynamicResource NormalBackground}" Stroke="{DynamicResource NormalBorderBrush}" Margin="2" Grid.Column="3" RadiusX="5" RadiusY="5" Grid.Row="1" />
+                        <TextBlock Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}" Grid.Column="3" Text="可设置" Margin="2" HorizontalAlignment="Center"/>
+                    </Grid>
+                </Canvas>
+                <Canvas Width="149" Height="275" Margin="8,8,15,8" >
+                    <Canvas.Effect>
+                        <DropShadowEffect BlurRadius="4" ShadowDepth="0.5" Opacity="0.35" Direction="-90"/>
+                    </Canvas.Effect>
+                    <local:KeyButton x:Name="Btn_LButton" Height="99.83" Canvas.Left="4.59" Canvas.Top="2.229" Width="68.633" Style="{DynamicResource ToggleButtonStyle_MouseKey}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0" OnButtonStateChanged="ToggleButton_Key_StateChanged" IsEnabled="False">
+                        <Path Data="M73.101064,2.3510638 L58.542465,2.2287871 C58.542465,2.2287871 31.996179,1.0024404 18.538937,14.244926 5.1924248,27.378449 4.5919158,46.125117 4.5919158,46.125117 L4.5919158,102.28408 73.223468,102.28408 73.223468,81.602247 C73.223468,81.602247 69.227881,81.377473 66.98464,79.497327 64.242381,77.198934 64.170869,74.204375 64.170869,74.204375 L64.170869,30.552844 C64.170869,30.552844 63.997907,27.988197 67.148125,24.830822 69.78195,22.191012 73.223869,22.214911 73.223869,22.214911 z" Fill="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Stretch="Fill" Stroke="{DynamicResource NormalMouseBorderBrush}" StrokeThickness="0" Margin="0,-0.029,0,0" HorizontalAlignment="Left" Width="69"/>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_RButton" Height="99.707" Canvas.Left="75.609" Canvas.Top="2.29" Width="69.701" Style="{DynamicResource ToggleButtonStyle_MouseKey}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0" IsEnabled="False" OnButtonStateChanged="ToggleButton_Key_StateChanged" >
+                        <Path Data="M75.609043,2.2898936 L75.609043,22.170103 C75.609043,22.170103 79.208701,22.208776 82.291927,25.243558 84.886408,27.797274 84.967537,30.611601 84.967537,30.611601 L84.967537,74.000496 C84.967537,74.000496 85.090306,77.017957 82.174582,79.301348 79.380957,81.489121 75.914928,81.482881 75.914928,81.482881 L75.914928,101.99498 145.28087,101.99498 145.28087,46.698506 C145.28087,46.698506 146.46319,28.204941 133.35279,15.094506 118.84288,0.58456204 86.619623,2.3509563 86.619623,2.3509563 z" Fill="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Stretch="Fill" Stroke="{DynamicResource NormalMouseBorderBrush}" StrokeThickness="0" Margin="0,-0.007,0,0" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_MButton" Height="50.699" Canvas.Left="67.718" Canvas.Top="26.621" Width="13.407" Style="{DynamicResource ToggleButtonStyle_MouseKey}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0" IsEnabled="False" OnButtonStateChanged="ToggleButton_Key_StateChanged" >
+                        <Path Data="M72,26.635638 C72,26.635638 70.111624,26.755783 68.951615,28.164533 67.742886,29.63245 67.717305,30.794565 67.717305,30.794565 L67.717305,72.756797 C67.717305,72.756797 67.720376,74.745611 68.956279,76.136377 70.057385,77.375454 71.174304,77.314128 71.174304,77.314128 L77.383849,77.314128 C77.383849,77.314128 78.960299,77.468335 80.060475,76.259124 81.315268,74.879972 81.115931,72.69598 81.115931,72.69598 L81.115931,30.85598 C81.115931,30.85598 80.812527,29.27185 79.862084,28.149177 78.85255,26.956705 76.981418,26.620494 76.981418,26.620494 z" Fill="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Stretch="Fill" Stroke="{DynamicResource NormalMouseBorderBrush}" StrokeThickness="0" />
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_MouseMove" Height="164.18" Canvas.Left="4.63" Canvas.Top="104.628" Width="140.759" Style="{DynamicResource ToggleButtonStyle_MouseKey}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0" ToolTip="鼠标移动" IsEnabled="False" OnButtonStateChanged="ToggleButton_MouseMove_StateChanged" BorderThickness="0" >
+                        <Grid>
+                            <Path Data="M4.6312055,104.62766 L145.3231,104.62766 145.3231,203.96775 C145.3231,203.96775 147.1556,234.18771 130.88658,250.45723 114.86023,266.48406 96.712946,268.80783 74.936416,268.80783 53.159887,268.80783 39.580061,266.48389 23.798217,250.70194 4.1017007,231.00529 4.6316099,203.96785 4.6316099,203.96785" Fill="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Height="164.18" Canvas.Left="4.63" Stretch="Fill" Stroke="{DynamicResource NormalMouseBorderBrush}" StrokeThickness="0" Canvas.Top="104.628" Width="140.759"/>
+
+                            <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 39.044958,9.6876412 39.044958,13.943257 33.480438,13.943257 33.480438,18.489312 z" Height="32" Stretch="Fill" 
+                                  Stroke="{DynamicResource {ComponentResourceKey ResourceId=ControlBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}" 
+                                  Width="24.832" StrokeThickness="3" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,50" StrokeLineJoin="Round">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="90"/>
+                                        <TranslateTransform X="0.5" Y="0.5"/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 39.044958,9.6876412 39.044958,13.943257 33.480438,13.943257 33.480438,18.489312 z" Stretch="Fill" 
+                                  Stroke="{DynamicResource {ComponentResourceKey ResourceId=ControlBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}" 
+                                  Width="24.833" StrokeThickness="3" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" Margin="0,0,50,0" VerticalAlignment="Center" Height="32" StrokeLineJoin="Round"/>
+                            <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 39.044958,9.6876412 39.044958,13.943257 33.480438,13.943257 33.480438,18.489312 z" Height="32" Stretch="Fill" 
+                                  Stroke="{DynamicResource {ComponentResourceKey ResourceId=ControlBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}" 
+                                  Width="24.832" StrokeThickness="3" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,50,0,0" StrokeLineJoin="Round">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform X="0.5" Y="0.5"/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 39.044958,9.6876412 39.044958,13.943257 33.480438,13.943257 33.480438,18.489312 z" Height="32" Stretch="Fill" 
+                                  Stroke="{DynamicResource {ComponentResourceKey ResourceId=ControlBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}" 
+                                  Width="24.832" StrokeThickness="3" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="50,0,0,0" StrokeLineJoin="Round">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="180"/>
+                                        <TranslateTransform X="0.5" Y="0.5"/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+                    </local:KeyButton>
+                    <local:KeyButton x:Name="Btn_MouseWheel" Height="90.775" Canvas.Left="55.337" Canvas.Top="6.756" Width="38.156" Style="{DynamicResource ToggleButtonStyle_MouseKey}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Padding="0" BorderBrush="#FF545454" ToolTip="鼠标滚轮滚动" IsEnabled="False" OnButtonStateChanged="ToggleButton_MouseWheel_StateChanged" >
+                        <Grid>
+                            <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.480438,13.943257 33.480438,18.489312 z" 
+                                  Fill="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}"
+                                  Height="30.766" Stretch="Fill" 
+                                  Stroke="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Width="16" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="5.874,-4.997,16.282,0" StrokeThickness="3" StrokeLineJoin="Round">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleY="0.91" ScaleX="1.099"/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="90"/>
+                                        <TranslateTransform X="5.2034999999999982" Y="-5.2034999999999991"/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                            <Path Data="M22.604588,11.873503 L33.48051,5.2217474 33.48051,9.6876412 33.480438,13.943257 33.480438,18.489312 z" 
+                                  Fill="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" 
+                                  Height="30.765" Stretch="Fill" 
+                                  Stroke="{Binding BorderBrush, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:KeyButton}}}" Width="16" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5.874,0,16.282,-4.996" StrokeThickness="3" StrokeLineJoin="Round">
+                                <Path.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform ScaleY="0.91" ScaleX="1.099"/>
+                                        <SkewTransform/>
+                                        <RotateTransform Angle="-90"/>
+                                        <TranslateTransform X="5.2035" Y="5.2034999999999982"/>
+                                    </TransformGroup>
+                                </Path.RenderTransform>
+                            </Path>
+                        </Grid>
+
+                    </local:KeyButton>
+
+                </Canvas>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</DockControls:DockAbleWindowBase>

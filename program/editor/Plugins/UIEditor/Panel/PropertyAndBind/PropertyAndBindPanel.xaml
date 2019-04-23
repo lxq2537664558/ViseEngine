@@ -1,0 +1,77 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:WPG="clr-namespace:WPG;assembly=WPG" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:property="clr-namespace:UIEditor.PropertyGrid"
+             x:Name="userControl" 
+             x:Class="UIEditor.PropertyAndBindPanel" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="#FF595959">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="0.87*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0.85*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Margin="2,5,5,2" TextWrapping="Wrap" Text="名称" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        <TextBox x:Name="TextBox_Name" Grid.Column="1" Margin="2,5,5,2" VerticalAlignment="Center"  CaretBrush="White" KeyDown="TextBox_Name_KeyDown" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        <TextBlock Margin="2,2,5,2" TextWrapping="Wrap" Text="类型" Grid.Row="1" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        <TextBlock x:Name="TextBlock_Type" Margin="2,2,5,2" TextWrapping="Wrap" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        <TextBlock x:Name="TextBlock_TargetType" Grid.Row="2" Text="目标类型" Margin="2,2,5,5" Foreground="White" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        <property:UIControlTypesSelector x:Name="UITypeSelector" Grid.Column="1" Margin="2,2,5,5" Grid.Row="2" VerticalAlignment="Center"/>
+        <Path Grid.ColumnSpan="2" Data="M8,76.51 L276.49607,76.51" Height="1" Margin="0" Grid.Row="2" Stretch="Fill" Stroke="#FF444444" VerticalAlignment="Bottom"/>
+        <Path Grid.ColumnSpan="2" Data="M8,76.51 L276.49607,76.51" Height="1" Margin="0" Stretch="Fill" Stroke="#FF444444" VerticalAlignment="Top"/>
+        <TabControl Margin="2" Grid.Row="3" Grid.ColumnSpan="2" Style="{DynamicResource {ComponentResourceKey ResourceId=TabControlStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+            <TabItem Header="属性" Foreground="White">
+                <Grid Background="#FF595959">
+                    <WPG:PropertyGrid x:Name="UIPropertyGrid" Margin="0" ShowHeadline="False"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="事件" Foreground="White">
+                <Grid Background="#FF595959">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="0.845*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="0.906*"/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" Style="{DynamicResource {ComponentResourceKey ResourceId=ScrollViewerStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                        <StackPanel x:Name="StackPanel_Events"/>
+                    </ScrollViewer>
+                    <TextBox Margin="2,5,5,5" TextWrapping="Wrap" Grid.Column="1" Text="{Binding EventFilterString, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <TextBlock Margin="2,5,5,5" TextWrapping="Wrap" Text="筛选" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <Path Grid.ColumnSpan="2" Data="M9,29.496667 L258.39756,29.496667" Height="1" Margin="0" Stretch="Fill" Stroke="#FF444444" VerticalAlignment="Bottom"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="命令" Foreground="White">
+                <Grid Background="#FF595959">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="0.845*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="0.906*"/>
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2" Style="{DynamicResource {ComponentResourceKey ResourceId=ScrollViewerStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                        <StackPanel x:Name="StackPanel_Commandes"/>
+                    </ScrollViewer>
+                    <TextBox Margin="2,5,5,5" TextWrapping="Wrap" Grid.Column="1" Text="{Binding EventFilterString, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="21.837" VerticalAlignment="Top" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <TextBlock Margin="2,5,5,5" TextWrapping="Wrap" Text="筛选" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <Path Grid.ColumnSpan="2" Data="M9,29.496667 L258.39756,29.496667" Height="1" Margin="0" Stretch="Fill" Stroke="#FF444444" VerticalAlignment="Bottom"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</UserControl>

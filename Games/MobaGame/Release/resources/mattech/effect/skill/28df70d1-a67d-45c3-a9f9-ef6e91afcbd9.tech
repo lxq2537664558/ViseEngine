@@ -1,0 +1,7 @@
+<Technique Name="°µÉ«µã" Ver="7" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="RevSubtract" BlendSrc="SrcColor" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ea60b8d1-6426-4768-827f-74d8d2dae646" Id="28df70d1-a67d-45c3-a9f9-ef6e91afcbd9" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_14c195b1_b1c8_4541_a52d_dde18a7de938 EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/gf474.png"/>
+		<ShaderVar_depth EditorType="Vector" Type="float1" Value="0.4"/>
+	</ShaderVar>
+</Technique>
+

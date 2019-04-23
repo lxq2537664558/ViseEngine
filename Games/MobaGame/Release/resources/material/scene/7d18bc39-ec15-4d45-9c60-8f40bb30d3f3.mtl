@@ -1,0 +1,41 @@
+/*Material
+
+<Material Name="ɽʯ1" Require="DiffuseUV" Main="DoMaterial_7d18bc39_ec15_4d45_9c60_8f40bb30d3f3" ExtendString="" Id="7d18bc39-ec15-4d45-9c60-8f40bb30d3f3" Ver="3">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="7d18bc39-ec15-4d45-9c60-8f40bb30d3f3" Id="a3101713-5730-4814-9e76-b9cbd9860fdc" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_aaa4fd98_9e0c_46e5_9286_1ffdefc2fded EditorType="Texture" Type="texture" Value="resources/texture/scene/mountain_normal_C_01.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+texture ShaderVar_aaa4fd98_9e0c_46e5_9286_1ffdefc2fded;
+sampler2D Samp_ShaderVar_aaa4fd98_9e0c_46e5_9286_1ffdefc2fded = sampler_state
+{
+	Texture = <ShaderVar_aaa4fd98_9e0c_46e5_9286_1ffdefc2fded>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_7d18bc39_ec15_4d45_9c60_8f40bb30d3f3(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float2 ShaderVar_4a5e96db_ac69_4765_8a9e_968432a762ca = float2(3.2,3.2);
+
+
+    pssem.mDiffuseColor = vise_tex2D(Samp_ShaderVar_aaa4fd98_9e0c_46e5_9286_1ffdefc2fded,(pssem.mDiffuseUV * ShaderVar_4a5e96db_ac69_4765_8a9e_968432a762ca).xy);
+
+}

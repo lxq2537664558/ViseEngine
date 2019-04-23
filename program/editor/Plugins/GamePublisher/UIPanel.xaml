@@ -1,0 +1,45 @@
+﻿<UserControl x:Name="userControl" x:Class="GamePublisher.UIPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             mc:Ignorable="d" >
+    <Grid>
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+    		<RowDefinition Height="1*"/>
+    	</Grid.RowDefinitions>
+        <ToolBar Margin="0" d:LayoutOverrides="Height" Style="{DynamicResource {ComponentResourceKey ResourceId=ToolBarStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+            <Button Content="删除" Click="Button_Del_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>  	
+		</ToolBar>
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="1*"/>
+			</Grid.ColumnDefinitions>
+            <TextBlock Text="筛选:" Margin="5,2" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            <TextBox Grid.Column="1" Margin="2" VerticalAlignment="Center" Text="{Binding FilterString, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" />
+		</Grid>
+        <ListBox x:Name="ListBox_UIs" AllowDrop="True" Grid.Row="2" Margin="1" SelectionMode="Extended" Drop="ListBox_Drop" DragEnter="ListBox_UIs_DragEnter" ItemsSource="{Binding UIFiles, ElementName=userControl, Mode=TwoWay}" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+    		<ListBox.ItemTemplate>
+    			<DataTemplate>
+                    <Border BorderBrush="Black" BorderThickness="1" CornerRadius="5">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                <GradientStop Color="#4C000000" Offset="0.709"/>
+                                <GradientStop Color="#4C474747"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <StackPanel Orientation="Horizontal" Visibility="{Binding Visible}">
+                            <Image Source="{Binding Snapshot}" Width="128" Height="128"></Image>
+                            <TextBlock Text="{Binding FileName}" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate> 		
+			</ListBox.ItemTemplate>  	
+		</ListBox>
+        <TextBlock Text="拖动UI目录或文件到此来添加需要发布的UI" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="2" Foreground="#FFABABAB" FontSize="16" IsHitTestVisible="False" Visibility="{Binding InfoVisible, ElementName=userControl}"/>            
+    </Grid>
+</UserControl>

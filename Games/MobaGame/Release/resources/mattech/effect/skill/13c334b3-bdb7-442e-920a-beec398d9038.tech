@@ -1,0 +1,10 @@
+<Technique Name="±ùÁú¾í" Ver="27" AlphaRef="50" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ac5ed371-7fbc-4ed6-b63b-0a92a0bd29dd" Id="13c334b3-bdb7-442e-920a-beec398d9038" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_de0b4d55_dca2_4d97_a076_5a7df0ca245a EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/smokeRing_diff.png"/>
+		<ShaderVar_905b8832_2b2f_4ca3_8239_04c43ea2eba5 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/fire_tornado_mask.png"/>
+		<ShaderVar_671ff109_e380_418c_ba0a_675b449ecf9d EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_783d87b4_06e6_4b33_a461_a5c7ddf9a1d6 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/GF_052.png"/>
+		<ShaderVar_ba1717a0_8835_4b87_9aad_16b257dbce7c EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_4563.png"/>
+	</ShaderVar>
+</Technique>
+

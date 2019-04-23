@@ -1,0 +1,9 @@
+<Technique Name="ÄÏ¹ÏÎäÆ÷ÍÏÎ²" Ver="7" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="216cb7c2-77b8-4df3-a02e-d3fabb8ac4d8" Id="c6d10a94-2da2-46d9-b487-c615e3685676" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_15290b8f_322d_4c6b_a1ce_b875a2a4014c EditorType="Texture" Type="texture" Value="resources/texture/effect/weapontrail/GF_401.png"/>
+		<ShaderVar_rotation EditorType="Vector" Type="float1" Value="180"/>
+		<ShaderVar_color EditorType="Vector" Type="float4" Value="0.55,0.25,1,1"/>
+		<ShaderVar_Scale EditorType="Vector" Type="float2" Value="1,1"/>
+	</ShaderVar>
+</Technique>
+

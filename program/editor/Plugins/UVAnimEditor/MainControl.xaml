@@ -1,0 +1,60 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:WPG="clr-namespace:WPG;assembly=WPG" 
+             xmlns:local="clr-namespace:UVAnimEditor" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             x:Name="userControl" x:Class="UVAnimEditor.MainControl" 
+             mc:Ignorable="d" 
+             d:DesignHeight="605" d:DesignWidth="770">
+    <UserControl.Resources>
+        <ResourceDictionary Source="/UVAnimEditor;component/Themes/Generic.xaml"/>
+    </UserControl.Resources>
+    <Grid x:Name="Grid_Main">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="0.3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="2" Margin="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.218*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="0.444*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="0.316*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="UVAnim" Grid.Row="2" Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                <WPG:PropertyGrid x:Name="Property_UVAnim" Margin="0" ShowHeadline="False"/>
+            </GroupBox>
+            <GridSplitter HorizontalAlignment="Stretch" Grid.Row="3" Height="5" ShowsPreview="True" Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            <GroupBox Header="关键帧" Grid.Row="4" Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                <Grid Margin="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="Auto" MinHeight="22.246"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="0.587*"/>
+                    </Grid.ColumnDefinitions>
+                    <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Width="5" Grid.RowSpan="2" Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <WPG:PropertyGrid x:Name="Property_Frame" Grid.Column="2" Margin="0" ShowHeadline="False" Grid.RowSpan="2"/>
+                    <ListBox x:Name="ListBox_Frames" Margin="0,1,0,21" SelectionChanged="ListBox_Frames_SelectionChanged" Grid.RowSpan="2" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <Button x:Name="Button_Add" Foreground="White" Content="+" Margin="0" Grid.Row="1" HorizontalAlignment="Left" Padding="1" Click="Button_Add_Click" Width="20" Height="20" Visibility="{Binding EditorVisible, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <Button x:Name="Button_Del" Foreground="White" Content="-" Margin="0" Grid.Row="1" HorizontalAlignment="Right" Padding="1" Click="Button_Del_Click" Width="20" Height="20" Visibility="{Binding EditorVisible, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                </Grid>
+            </GroupBox>
+            <GridSplitter HorizontalAlignment="Stretch" Grid.Row="1" Height="5" ShowsPreview="True" Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            <local:PreViewPanel x:Name="PreView"  Margin="0"/>
+        </Grid>
+
+        <local:ImageOperationPanel x:Name="ImagePanel" Margin="0" Visibility="{Binding EditorVisible, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <GridSplitter x:Name="GridSplitter_Editor" Grid.Column="1" HorizontalAlignment="Stretch" Width="5" Visibility="{Binding EditorVisible, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ShowsPreview="True" Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+
+    </Grid>
+</UserControl>

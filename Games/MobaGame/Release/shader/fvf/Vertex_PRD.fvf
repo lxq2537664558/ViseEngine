@@ -1,0 +1,49 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+float2 gViewPortHW : ViewPort_WH;
+
+struct V3D_VS_IN
+{
+	float4	Pos : POSITION;
+	float4	DifColor : COLOR;
+};
+
+struct V3D_VS_OUT
+{
+	float4 Pos : POSITION;
+	float4 DifColor : Color;
+};
+
+struct V3D_PS_OUT
+{
+	float4	Color	: COLOR0;
+};
+
+V3D_VS_OUT vs_main( V3D_VS_IN Input )
+{
+	V3D_VS_OUT vsOut;
+	vsOut.Pos.w = 1;
+	vsOut.Pos.z = Input.Pos.z;
+	vsOut.Pos.x = -1 + Input.Pos.x*2/gViewPortHW.x;
+	vsOut.Pos.y = 1 - Input.Pos.y*2/gViewPortHW.y;
+	vsOut.Pos.xy += float2(-1,1) / gViewPortHW;
+	vsOut.DifColor = Input.DifColor;
+	return vsOut;
+}
+
+V3D_PS_OUT	ps_main( V3D_VS_OUT Input )
+{
+	V3D_PS_OUT psOut;
+	psOut.Color = Input.DifColor;
+	return psOut;
+}
+
+technique tech
+{
+	pass p0
+	{
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}

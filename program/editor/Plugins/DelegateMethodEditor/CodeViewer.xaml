@@ -1,0 +1,93 @@
+﻿<UserControl
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit"
+        xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+        xmlns:DockControls="clr-namespace:DockControl.Controls;assembly=DockControl"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="DelegateMethodEditor.CodeViewer"
+        d:DesignWidth="800.773" d:DesignHeight="395.909">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/DelegateMethodEditor;Component/Themes/Generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Margin="0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.67*"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="Auto" MaxHeight="768"/>
+        </Grid.RowDefinitions>
+
+        <Rectangle Fill="#FFF4F4F5" Stroke="Black"/>
+
+        <avalonedit:TextEditor x:Name="TextEditor_Code" SyntaxHighlighting="C#" Background="White"/>
+        <GridSplitter HorizontalAlignment="Stretch" Margin="0" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        <!--ScrollViewer Grid.Row="2" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"-->
+        <ListView x:Name="ListView_Errors" Margin="0" VerticalAlignment="Top" VerticalContentAlignment="Top" Style="{DynamicResource {ComponentResourceKey ResourceId=ListViewStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Row="2">
+            <ListView.View>
+                <GridView ColumnHeaderContainerStyle="{DynamicResource {ComponentResourceKey ResourceId=GridViewColumnHeaderStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                    <GridViewColumn Header="错误说明">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding ErrorText}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <GridViewColumn Header="行数">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Line}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--/-->
+
+    </Grid>
+    <!--TabControl Style="{DynamicResource {ComponentResourceKey ResourceId=TabControlStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+        <TabItem Header="客户端" >
+
+        </TabItem>
+        <TabItem Header="服务器端">
+            <Grid Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.67*"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="Auto" MaxHeight="768"/>
+                </Grid.RowDefinitions>
+
+                <Rectangle Fill="#FFF4F4F5" Stroke="Black"/>
+
+                <avalonedit:TextEditor x:Name="TextEditor_Code_Server" SyntaxHighlighting="C#" Background="White"/>
+                <GridSplitter HorizontalAlignment="Stretch" Margin="0" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                <ScrollViewer Grid.Row="2" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <ListView x:Name="ListView_Errors_Server" Margin="0" VerticalAlignment="Top" VerticalContentAlignment="Top" Style="{DynamicResource {ComponentResourceKey ResourceId=ListViewStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                        <ListView.View>
+                            <GridView ColumnHeaderContainerStyle="{DynamicResource {ComponentResourceKey ResourceId=GridViewColumnHeaderStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                                <GridViewColumn Header="错误说明">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding ErrorText}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="行数">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Line}"/>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </ScrollViewer>
+
+            </Grid>
+        </TabItem>
+    </-->
+</UserControl>

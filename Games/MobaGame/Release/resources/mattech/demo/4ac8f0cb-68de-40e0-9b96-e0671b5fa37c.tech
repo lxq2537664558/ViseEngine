@@ -1,0 +1,11 @@
+<Technique Name="Áú¾í·çÄÚ²ã" Ver="120" AlphaRef="100" CullMode="CW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyTest" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="d31a5a15-6598-489a-99e5-81288da9fe3b" Id="4ac8f0cb-68de-40e0-9b96-e0671b5fa37c" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_76e4f841_55b1_4d4e_9cbe_b175502558b2 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/3788371711548769713.png"/>
+		<ShaderVar_1e68a21f_8525_47b7_8c88_8ce4ddf0cffc EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_dee5b0e0_8483_4dff_9a4d_7c57941178d2 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/spiderWeb_boneyClouds_diffAlpha.png"/>
+		<ShaderVar_Color1 EditorType="Vector" Type="float3" Value="1.6,2,1.4"/>
+		<ShaderVar_Color2 EditorType="Vector" Type="float3" Value="1.6,0.4,0.2"/>
+		<ShaderVar_23c9ba06_8977_4ff3_a326_8bb373a09802 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/fire_tornado_mask.png"/>
+	</ShaderVar>
+</Technique>
+

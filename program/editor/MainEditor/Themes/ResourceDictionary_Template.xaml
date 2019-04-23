@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:MainEditor.PropertyGrid"
+                    xmlns:Bind="clr-namespace:EditorControlLib.Bind;assembly=EditorControlLib">
+    <DataTemplate x:Key="ActorSetter">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <local:ActorSetter ActorId="{Binding Path=Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" BindProperty="{Binding PGProperty}" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
+            <Bind:BindButton Margin="5,0,0,0" BindInstance="{Binding Instance}" BindProperty="{Binding PGProperty}" Grid.Column="1"/>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

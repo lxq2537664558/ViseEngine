@@ -1,0 +1,32 @@
+<CCore.Mesh.MeshTemplate Ver="0">
+	<NickName Type="mscorlib.dll@System.String" Value="·¿×Ó02"/>
+	<Ver Type="mscorlib.dll@System.UInt32" Value="3"/>
+	<MeshID Type="mscorlib.dll@System.Guid" Value="4bdf8269-15ff-4fdb-8af0-ff94473aadf0"/>
+	<NeedCalcFullSkeleton Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshInitList Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Mesh.MeshInitPart]]">
+		<Data Type="cscommon@CCore.Mesh.MeshInitPart" Value="null">
+			<MeshName Type="mscorlib.dll@System.String" Value="resources/meshsource/1_15/house/shire_house_tile_wood_c_01_001.vms"/>
+			<Techs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+				<Data Type="mscorlib.dll@System.Guid" Value="99944544-6bed-4496-a454-3e7e48252bac"/>
+				<Data Type="mscorlib.dll@System.Guid" Value="533f13b8-3804-48cc-a285-a32de12a3eae"/>
+				<Data Type="mscorlib.dll@System.Guid" Value="a0e24751-afce-4b64-bfa2-81ab9f1b4415"/>
+				<Data Type="mscorlib.dll@System.Guid" Value="a5f2938c-3a49-446f-8b41-6c4224dda39a"/>
+				<Data Type="mscorlib.dll@System.Guid" Value="50bcbdbe-597c-4733-8ec1-cd525e15f168"/>
+			</Techs>
+		</Data>
+	</MeshInitList>
+	<ActionName Type="mscorlib.dll@System.String" Value=""/>
+	<PlayRate Type="mscorlib.dll@System.Double" Value="1"/>
+	<ActionPercent Type="mscorlib.dll@System.Double" Value="0"/>
+	<Scale Type="mscorlib.dll@System.Single" Value="1"/>
+	<LayerName Type="mscorlib.dll@System.String" Value="Other"/>
+	<Layer Type="cscommon@CCore.RLayer" Value="RL_DSBase"/>
+	<SocketComponentInfoList Type="cscommon@CSUtility.Support.ConcurentObjManager`2[[mscorlib.dll@System.Guid][cscommon@CCore.Socket.ISocketComponentInfo]]"/>
+	<CastShadow Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<TickAllTime Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<MeshFadeType Type="cscommon@CCore.Mesh.MeshFadeType" Value="None"/>
+	<FadeInTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<FadeOutTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<IgnoreMouseLineCheckInGame Type="mscorlib.dll@System.Boolean" Value="False"/>
+</CCore.Mesh.MeshTemplate>
+

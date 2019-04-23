@@ -1,0 +1,45 @@
+/*Material
+
+<Material Name="µã²ÉÑù²âÊÔ" Require="DiffuseUV" Main="DoMaterial_816c725e_e4fc_4d8a_bd1d_3817aeb4a98b" ExtendString="" Id="816c725e-e4fc-4d8a-bd1d-3817aeb4a98b" Ver="3">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="816c725e-e4fc-4d8a-bd1d-3817aeb4a98b" Id="d86e8fa4-a61e-415d-beab-84693061b694" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_593fa298_e1ab_4297_bb74_9e0b6af75421 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/237-v311.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../shader/function/Common.function"
+
+
+texture ShaderVar_593fa298_e1ab_4297_bb74_9e0b6af75421;
+sampler2D Samp_ShaderVar_593fa298_e1ab_4297_bb74_9e0b6af75421 = sampler_state
+{
+	Texture = <ShaderVar_593fa298_e1ab_4297_bb74_9e0b6af75421>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_816c725e_e4fc_4d8a_bd1d_3817aeb4a98b(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 ShaderVar_593fa298_e1ab_4297_bb74_9e0b6af75421_2D = float4(0,0,0,0);
+
+
+    float2 FuncTempValue_b5893f5a_f63a_49a8_8c14_cf87b56aa1f6_4 = float2(0, 0);
+    Panner(pssem.mDiffuseUV,1,float2(0,0),float2(20,20),FuncTempValue_b5893f5a_f63a_49a8_8c14_cf87b56aa1f6_4);
+    ShaderVar_593fa298_e1ab_4297_bb74_9e0b6af75421_2D = vise_tex2D(Samp_ShaderVar_593fa298_e1ab_4297_bb74_9e0b6af75421,FuncTempValue_b5893f5a_f63a_49a8_8c14_cf87b56aa1f6_4.xy);
+    pssem.mDiffuseColor = ShaderVar_593fa298_e1ab_4297_bb74_9e0b6af75421_2D;
+
+}

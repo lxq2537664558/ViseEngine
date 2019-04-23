@@ -1,0 +1,7 @@
+<Technique Name="能量中心点" Ver="707" AlphaRef="0" CullMode="CCW" ZDisable="1" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="020be314-0170-4a6e-8ca8-7dae0fb9d3f2" Id="8cac371d-193c-47d8-b8e0-da0fba199813" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_46f072a2_5345_4125_a31f_edd9ef898222 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/237.png"/>
+		<ShaderVar_ee8e403d_c224_4e2e_9b12_b14a792c1772 EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/glow.png"/>
+	</ShaderVar>
+</Technique>
+

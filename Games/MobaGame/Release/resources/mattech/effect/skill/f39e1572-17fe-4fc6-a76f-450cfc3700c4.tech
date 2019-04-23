@@ -1,0 +1,8 @@
+<Technique Name="序列火" Ver="3" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="21a63e4d-3e1e-4676-950c-412188b5a952" Id="f39e1572-17fe-4fc6-a76f-450cfc3700c4" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_aca86dc4_54da_4c83_baaa_36dea1d90d4c EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/GF_193.png"/>
+		<ShaderVar_周期 EditorType="Vector" Type="float1" Value="1"/>
+		<ShaderVar_帧数 EditorType="Vector" Type="float2" Value="4,4"/>
+	</ShaderVar>
+</Technique>
+

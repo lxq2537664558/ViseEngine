@@ -1,0 +1,14 @@
+<CCore.Modifier.ParticleModifier ClassType="cscommon@CCore.Modifier.ParticleModifier" Ver="0">
+	<Class HashCode="-1151045241" LastUseTime="2015/12/15 15:18:00">
+		<Property HashCode="-1435760916" Type="cscommon@CCore.Performance.EParticleDensity" Name="ParticleDensity"/>
+		<Property HashCode="1053662723" Type="mscorlib.dll@System.Guid" Name="MeshTemplateId"/>
+		<Property HashCode="1134229836" Type="cscommon@CCore.Modifier.ParticleModifier+enBillboardType" Name="BillboardType"/>
+		<Property HashCode="882280497" Type="cscommon@CCore.Particle.CoordinateSpaceCN" Name="Space"/>
+		<Property HashCode="2035838313" Type="mscorlib.dll@System.Int32" Name="ParticlePoolSize"/>
+		<Property HashCode="1157310521" Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Particle.ParticleEmitter]]" Name="Emitters"/>
+		<Property HashCode="-843545170" Type="mscorlib.dll@System.String" Name="ParticleModifierName"/>
+		<Property HashCode="354058088" Type="mscorlib.dll@System.Guid" Name="Id"/>
+		<Property HashCode="-828944741" Type="mscorlib.dll@System.Boolean" Name="DelayDead"/>
+	</Class>
+</CCore.Modifier.ParticleModifier>
+

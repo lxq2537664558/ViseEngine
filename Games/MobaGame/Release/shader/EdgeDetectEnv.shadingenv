@@ -1,0 +1,89 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+texture 		T_EdgeDetect;
+sampler2D Samp_T_EdgeDetec = sampler_state
+{
+	Texture = <T_EdgeDetect>;
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    SRGBTexture = FALSE;
+};
+
+float4 g_EdgeDetectColor;
+
+struct V3D_PS_OUT
+{
+    float4	Color	: COLOR0;
+};
+
+VertexOutput vs_main( VertexInput Input )
+{
+	// VS 2 Semantic
+	VertexTrans vssem = (VertexTrans)0;
+	VertexTransInit ( Input, vssem );
+
+	// VS do
+	V3D_VS_Modifiers ( vssem );
+
+	// Semantic 2 VS-Out
+	VertexOutput Output =(VertexOutput)0;
+	VertexTransToVertexOutput ( vssem, Output );
+
+#ifndef D3D_EFFECT
+	//Output.mDiffuseUV.y = 1 - Output.mDiffuseUV.y;
+#endif
+
+	return Output;
+}
+
+
+void EdgeRimLight( float3 localPos, float3 localNormal, float rimStart, float rimEnd, float4 rimColor, float rimMultiply, out float4 outColor )
+{
+    float3 N = normalize(localNormal);
+    float3 V = normalize(g_CameraPositionInModel - localPos);
+    float rim = smoothstep(rimStart, rimEnd, 1- dot(N,V));
+
+    outColor = rim* rimMultiply * rimColor;
+}
+
+V3D_PS_OUT	ps_main( PixelInput Input )
+{
+	PixelMaterialTrans pssem = (PixelMaterialTrans)0;
+	PixelInputToMaterial( Input, pssem );
+
+	V3D_PS_OUT o = (V3D_PS_OUT)0;
+
+	DoMaterial(pssem);
+	if(g_AlphaTest.x==1)
+	{
+		if(pssem.mDiffuseColor.a < g_AlphaTest.y)
+			discard;
+	}
+
+	/*
+	float4 rimColor = 0;
+	EdgeRimLight( pssem.mLocalPos, pssem.mLocalNorm, 0.9, 1, g_EdgeDetectColor, 5, rimColor );
+	o.Color = rimColor;
+	*/
+
+//	o.Color = g_EdgeDetectColor;
+//	o.Color.a = pssem.mDiffuseColor.a * g_EdgeDetectColor.a;
+
+	o.Color.xyz = lerp(o.Color.xyz, g_EdgeDetectColor.xyz, g_EdgeDetectColor.a);
+	o.Color.a = pssem.mDiffuseColor.a;
+
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique tech
+{
+	pass p0
+	{
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

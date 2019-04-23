@@ -1,0 +1,6 @@
+<Technique Name="地面上冲光" Ver="6" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="fe89563a-6689-465e-946d-b707276a10c7" Id="cfdd6f45-2de6-4a6e-badf-e892d4c77c9d" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_cd524d41_2e9c_422d_a5ae_9073c1dc89d7 EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/circle_glow.png"/>
+	</ShaderVar>
+</Technique>
+

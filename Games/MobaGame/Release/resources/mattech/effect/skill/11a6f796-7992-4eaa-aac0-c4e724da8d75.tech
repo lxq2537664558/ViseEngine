@@ -1,0 +1,8 @@
+<Technique Name="CD2" Ver="9" AlphaRef="0" CullMode="CCW" ZDisable="1" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="47674948-3b12-4b94-a8f0-58d05d107944" Id="11a6f796-7992-4eaa-aac0-c4e724da8d75" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_GDiffuseTexture EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/bomb_mask.png"/>
+		<ShaderVar_time EditorType="Vector" Type="float1" Value=" 0"/>
+		<ShaderVar_600493cb_aa09_4cd2_906f_bbb86da117f5 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/Circle_mask.png"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,23 @@
+<CCore.Mesh.MeshTemplate ClassType="cscommon@CCore.Mesh.MeshTemplate" Ver="0">
+	<Class HashCode="-257858505" LastUseTime="2016/2/26 11:16:50">
+		<Property HashCode="641932480" Type="mscorlib.dll@System.UInt32" Name="Ver"/>
+		<Property HashCode="793031540" Type="mscorlib.dll@System.Boolean" Name="TickAllTime"/>
+		<Property HashCode="1792181964" Type="mscorlib.dll@System.Boolean" Name="CastShadow"/>
+		<Property HashCode="1258263167" Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Mesh.MeshInitPart]]" Name="MeshInitList"/>
+		<Property HashCode="620340442" Type="mscorlib.dll@System.Boolean" Name="NeedCalcFullSkeleton"/>
+		<Property HashCode="-398659682" Type="mscorlib.dll@System.Guid" Name="MeshID"/>
+		<Property HashCode="-1857946858" Type="mscorlib.dll@System.UInt32" Name="FadeOutTime"/>
+		<Property HashCode="-2070320666" Type="cscommon@CCore.RLayer" Name="Layer"/>
+		<Property HashCode="-473393427" Type="mscorlib.dll@System.Single" Name="Scale"/>
+		<Property HashCode="1272950415" Type="mscorlib.dll@System.String" Name="ActionName"/>
+		<Property HashCode="-586734575" Type="cscommon@CSUtility.Support.ConcurentObjManager`2[[mscorlib.dll@System.Guid][cscommon@CCore.Socket.ISocketComponentInfo]]" Name="SocketComponentInfoList"/>
+		<Property HashCode="1025428693" Type="mscorlib.dll@System.String" Name="LayerName"/>
+		<Property HashCode="35517452" Type="mscorlib.dll@System.Double" Name="ActionPercent"/>
+		<Property HashCode="-1057747210" Type="mscorlib.dll@System.UInt32" Name="FadeInTime"/>
+		<Property HashCode="-2012009751" Type="mscorlib.dll@System.Double" Name="PlayRate"/>
+		<Property HashCode="959135269" Type="mscorlib.dll@System.String" Name="NickName"/>
+		<Property HashCode="1244557507" Type="cscommon@CCore.Mesh.MeshFadeType" Name="MeshFadeType"/>
+		<Property HashCode="1234031731" Type="mscorlib.dll@System.Boolean" Name="IgnoreMouseLineCheckInGame"/>
+	</Class>
+</CCore.Mesh.MeshTemplate>
+

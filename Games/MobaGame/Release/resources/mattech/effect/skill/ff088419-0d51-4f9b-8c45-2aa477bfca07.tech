@@ -1,0 +1,10 @@
+<Technique Name="À©É¢º®Æø" Ver="40" AlphaRef="10" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="dc268018-c628-434b-86bf-a3e3b0be83bc" Id="ff088419-0d51-4f9b-8c45-2aa477bfca07" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_2bef2fae_049e_4784_92c5_8d82d0fc30d8 EditorType="Texture" Type="texture" Value="resources/texture/effect/smoke/smoke_uv.png"/>
+		<ShaderVar_dc54654c_f951_4826_962f_96e80d414120 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/mask_dust.png"/>
+		<ShaderVar_49e75c55_3b7a_4bb6_ac34_f927ae5eb64f EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_d4126591_58ce_4164_b743_7d7e1539aa66 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/GF_328.png"/>
+		<ShaderVar_6b81da5a_21a5_44a4_a626_7d79a4d21acd EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_4561.png"/>
+	</ShaderVar>
+</Technique>
+

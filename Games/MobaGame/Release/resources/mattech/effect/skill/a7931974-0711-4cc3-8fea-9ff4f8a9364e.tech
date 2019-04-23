@@ -1,0 +1,9 @@
+<Technique Name="¾íÇúµÄ·ç" Ver="23" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="b48345ee-549b-48e5-a593-927f2e008bd8" Id="a7931974-0711-4cc3-8fea-9ff4f8a9364e" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_9addaa9e_4d14_4d87_8b19_c37ddd0193da EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/ppx_vein_01.png"/>
+		<ShaderVar_20e62296_9e10_47ef_b30b_bbfa5a3a5f3e EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_f4467cf0_cc13_4c1c_a860_2039d1a21c73 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/wavemask.png"/>
+		<ShaderVar_edcbea5a_775a_4cd2_8dcd_bc47e43eca37 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/windMask3.png"/>
+	</ShaderVar>
+</Technique>
+

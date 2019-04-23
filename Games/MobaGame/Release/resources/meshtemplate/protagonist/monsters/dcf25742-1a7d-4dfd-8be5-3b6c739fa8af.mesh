@@ -1,0 +1,43 @@
+<CCore.Mesh.MeshTemplate Ver="0">
+	<Ver Type="mscorlib.dll@System.UInt32" Value="17"/>
+	<TickAllTime Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<CastShadow Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshInitList Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Mesh.MeshInitPart]]">
+		<Data Type="cscommon@CCore.Mesh.MeshInitPart" Value="null">
+			<MeshName Type="mscorlib.dll@System.String" Value="resources/meshsource/protagonist/monsters/Pixie_skel.vms"/>
+			<Techs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+				<Data Type="mscorlib.dll@System.Guid" Value="69028d75-6575-4463-9e9c-b0741e8b17b7"/>
+				<Data Type="mscorlib.dll@System.Guid" Value="6e9998be-0fda-4c6c-a4b0-582e2008c7d3"/>
+			</Techs>
+		</Data>
+	</MeshInitList>
+	<NeedCalcFullSkeleton Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshID Type="mscorlib.dll@System.Guid" Value="dcf25742-1a7d-4dfd-8be5-3b6c739fa8af"/>
+	<FadeOutTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<Layer Type="cscommon@CCore.RLayer" Value="RL_DSBase"/>
+	<Scale Type="mscorlib.dll@System.Single" Value="1"/>
+	<ActionName Type="mscorlib.dll@System.String" Value="resources/action/monsters/jingling/idle.vma"/>
+	<SocketComponentInfoList Type="cscommon@CSUtility.Support.ConcurentObjManager`2[[mscorlib.dll@System.Guid][cscommon@CCore.Socket.ISocketComponentInfo]]">
+		<Data>
+			<Key Type="mscorlib.dll@System.Guid" Value="85bbee37-11ce-492b-be30-964d2648529a"/>
+			<Value Type="cscommon@CCore.Component.TrailInfo" Value="null">
+				<SocketName Type="mscorlib.dll@System.String" Value="point002"/>
+				<Description Type="mscorlib.dll@System.String" Value=""/>
+				<SocketComponentInfoId Type="mscorlib.dll@System.Guid" Value="85bbee37-11ce-492b-be30-964d2648529a"/>
+				<TechId Type="mscorlib.dll@System.Guid" Value="77f7d356-12f7-47da-b1e9-7e31cbee149b"/>
+				<TargetSocketName Type="mscorlib.dll@System.String" Value="point001"/>
+				<TrailLifeTime Type="mscorlib.dll@System.Single" Value="0.22"/>
+				<TrailEmitInterval Type="mscorlib.dll@System.Single" Value="0.002"/>
+				<TrailMinDistance Type="mscorlib.dll@System.Single" Value="0.001"/>
+			</Value>
+		</Data>
+	</SocketComponentInfoList>
+	<LayerName Type="mscorlib.dll@System.String" Value="Other"/>
+	<ActionPercent Type="mscorlib.dll@System.Double" Value="0"/>
+	<FadeInTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<PlayRate Type="mscorlib.dll@System.Double" Value="1"/>
+	<NickName Type="mscorlib.dll@System.String" Value="Ð¡Ñý¾«Ô¶³Ì1"/>
+	<MeshFadeType Type="cscommon@CCore.Mesh.MeshFadeType" Value="None"/>
+	<IgnoreMouseLineCheckInGame Type="mscorlib.dll@System.Boolean" Value="True"/>
+</CCore.Mesh.MeshTemplate>
+

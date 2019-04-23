@@ -1,0 +1,64 @@
+﻿<UserControl
+        x:Class="MeshSourceEditor.MainControl"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+	    xmlns:local="clr-namespace:MeshSourceEditor"
+	    xmlns:WPG="clr-namespace:WPG;assembly=WPG"
+        xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+        xmlns:D3DViewer="clr-namespace:D3DViewer;assembly=EditorControlLib"
+        x:Name="userControl"
+        mc:Ignorable="d" 
+        d:DesignHeight="457" d:DesignWidth="698">
+    <Grid x:Name="mainGrid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.222*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="0.479*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="0.222*"/>
+        </Grid.ColumnDefinitions>
+        <GridSplitter Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=GridSplitterStyle_Default}}" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0" Width="3" Grid.Row="1" d:LayoutOverrides="Width" ShowsPreview="True" />
+        <GridSplitter Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=GridSplitterStyle_Default}}" Grid.Column="3" HorizontalAlignment="Stretch" Margin="0" Width="3" Grid.Row="1" d:LayoutOverrides="Width" ShowsPreview="True" />
+        <Grid Grid.Column="4">
+            <WPG:PropertyGrid x:Name="ProGrid" Grid.Column="0" Headline="MeshSource Properties" Alphabetical="False" />
+        </Grid>
+        <Grid Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.806*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <D3DViewer:D3DViewerControl x:Name="D3DViewer" />
+        </Grid>
+        <ToolBar x:Name="toolBar" Style="{DynamicResource {ComponentResourceKey ResourceId=ToolBarStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Visibility="Collapsed">
+            <ToggleButton IsChecked="{Binding ShowPathMesh, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource {ComponentResourceKey ResourceId=ToolBarToggleButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" ToolTip="显示寻路模型" Width="24" Height="24" >
+                <Image Source="/ResourceLibrary;component/Icon/Mesh/model_path.png"/>
+            </ToggleButton>
+            <ToggleButton IsChecked="{Binding ShowSimplateMesh, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource {ComponentResourceKey ResourceId=ToolBarToggleButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" ToolTip="显示碰撞模型" Width="24" Height="24" >
+                <Image Source="/ResourceLibrary;component/Icon/Mesh/model_collision.png"/>
+            </ToggleButton>
+            <ToggleButton IsChecked="{Binding ShowMainMesh, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource {ComponentResourceKey ResourceId=ToolBarToggleButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" ToolTip="显示主模型" Width="24" Height="24" >
+                <Image Source="/ResourceLibrary;component/Icon/Mesh/model_main.png"/>
+            </ToggleButton>
+            <Separator />
+            <ToggleButton ToolTip="生成碰撞" Width="24" Height="24" x:Name="collisionBtn">
+                <Grid>
+                    <Image Source="/ResourceLibrary;component/Icon/Mesh/model_collision.png"/>
+                    <Popup StaysOpen="False" PopupAnimation="Fade" Placement="Bottom" IsOpen="{Binding IsChecked,ElementName=collisionBtn}">
+                        <local:SimpleMeshConvertControl x:Name="SimMeshCtrl"></local:SimpleMeshConvertControl>
+                    </Popup>
+                </Grid>
+            </ToggleButton>
+            <!--<Button ToolTip="物理" Click="Button_Physic_Click" Width="24" Height="24">
+                <Grid>
+                    <Image Source="/ResourceLibrary;component/Icon/Mesh/model_collision.png"/>
+                    <Popup x:Name="popupPhysic" StaysOpen="False" PopupAnimation="Fade" Placement="Left">
+                        <local:PhysConvertControl></local:PhysConvertControl>
+                    </Popup>
+                </Grid>
+            </Button>-->
+        </ToolBar>
+    </Grid>
+</UserControl>

@@ -1,0 +1,15 @@
+<Technique Name="decalÈÛÑÒ" Ver="25" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcColor" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Equal" StencilRef="0" StencilMask="15" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Keep" HostMaterialId="cc0a3efc-b35a-45dc-b9b8-020a4686cb22" Id="859c35a4-ef8d-4300-a0e6-d0a119094eef" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_75087bb2_7ef9_4d99_b2a7_37de8398e0d3 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/GF_062.png"/>
+		<ShaderVar_48e5442f_1633_4175_8425_c95f4b30aa5f EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/mask_141.png"/>
+		<ShaderVar_041ad090_b7f5_44e3_8b91_6a822332ae66 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_daae8846_4a3f_4764_9e82_66d9496741fa EditorType="Texture" Type="texture" Value="resources/texture/effect/smoke/smoke_uv.png"/>
+		<ShaderVar_2e9c35dd_a3cc_40cf_b69d_58a5e7df9c34 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/mask_dust.png"/>
+		<ShaderVar_sp2 EditorType="Vector" Type="float2" Value="0,-0.035"/>
+		<ShaderVar_sp1 EditorType="Vector" Type="float2" Value="-0.05,0"/>
+		<ShaderVar_0b6d4739_d4c4_4c69_be97_bd3ee8d15555 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/lavamask22.png"/>
+		<ShaderVar_8510f722_443b_4c97_9228_1d98db45d6f8 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469_2.png"/>
+		<ShaderVar_scale EditorType="Vector" Type="float2" Value="1.8,1.5"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,39 @@
+<Method ViewBoxMain_X="231.915374755859" ViewBoxMain_Y="-92.642822265625" ViewBoxMain_Width="1438.64611816406" GUID="00000000-0000-0000-0000-000000000000">
+	<OrigionCtrls>
+		<OrigionCtrl Id="8a3530e8-d48f-4698-98a2-9d2ffda43e78"/>
+	</OrigionCtrls>
+	<ChildNodesCtrls>
+		<MethodNode TargetState="" ChangeToState="" MethodEditType="Default" Useable="False" OverrideAble="True" CallBasePosition="None" UseBaseVisibility="Visible" IsStatic="False" ID="8a3530e8-d48f-4698-98a2-9d2ffda43e78" Type="AIEditor.dll@AIEditor.LinkSystem.MethodNode" X="0" Y="0" Params="OnExitState,,mscorlib.dll@System.Void,game@Server.Hall.ServerStates.Idle,true,false" IsDeleteable="False" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="db50b1a5-d93d-4131-95da-83759ca36e83">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="3a84be28-e72d-4960-8d1b-f9b755ea29e4">
+					<Link LinkFrom="3a84be28-e72d-4960-8d1b-f9b755ea29e4" LinkTo="18c31985-bd87-4493-bfcf-759d7eff178b"/>
+				</LinkObject>
+			</LinkObjects>
+		</MethodNode>
+		<MethodInvokeNode ID="752908ab-35bf-43b5-be5b-f6925af02d65" Type="AIEditor.dll@CodeDomNode.MethodInvokeNode" X="52.5007019042969" Y="218.389526367188" Params="AI×´Ì¬.ÒÆ³ý¼ÆÊ±Æ÷,game@Server.Hall.ServerStates.Idle,RemoveLogicTimer,name:mscorlib.dll@System.String,mscorlib.dll@System.Void,Server;This,Server.Hall.ServerStates.Idle,null,null" IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<name Type="mscorlib.dll@System.String" Value=""/>
+			</DefaultParamValue>
+			<ChildNodes>
+				<MethodInvokeParameterControl ID="43765731-27b6-429f-854e-1ee5ebc62fc6" Type="AIEditor.dll@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="name:mscorlib.dll@System.String" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="716e39d6-8cce-4ebb-b658-6a43a7789e57">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="18c31985-bd87-4493-bfcf-759d7eff178b">
+					<Link LinkFrom="3a84be28-e72d-4960-8d1b-f9b755ea29e4" LinkTo="18c31985-bd87-4493-bfcf-759d7eff178b"/>
+				</LinkObject>
+				<LinkObject ID="b187aeef-5ab8-4b27-a3f1-ecbe25f66014">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</MethodInvokeNode>
+	</ChildNodesCtrls>
+</Method>
+

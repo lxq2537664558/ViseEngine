@@ -1,0 +1,28 @@
+<CCore.Graphics.PostProcess_SSAO ClassType="cscommon@CCore.Graphics.PostProcess_SSAO" Ver="0">
+	<Class HashCode="767532189" LastUseTime="2015/12/15 15:18:00">
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-156466383" Type="mscorlib.dll@System.Single" Name="Bias"/>
+		<Property HashCode="-1951456053" Type="mscorlib.dll@System.Single" Name="SampleRad"/>
+		<Property HashCode="1770479844" Type="mscorlib.dll@System.Boolean" Name="DoBlur"/>
+		<Property HashCode="1770076888" Type="mscorlib.dll@System.Boolean" Name="DoLerp"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="-473393427" Type="mscorlib.dll@System.Single" Name="Scale"/>
+		<Property HashCode="-2001596071" Type="mscorlib.dll@System.Single" Name="LerpValue"/>
+		<Property HashCode="1700083043" Type="mscorlib.dll@System.String" Name="RandomNormalTexName"/>
+		<Property HashCode="-1395761605" Type="mscorlib.dll@System.Single" Name="Intensity"/>
+	</Class>
+	<Class HashCode="-518374377" LastUseTime="2016/3/22 17:24:34">
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-156466383" Type="mscorlib.dll@System.Single" Name="Bias"/>
+		<Property HashCode="-1951456053" Type="mscorlib.dll@System.Single" Name="SampleRad"/>
+		<Property HashCode="1770479844" Type="mscorlib.dll@System.Boolean" Name="DoBlur"/>
+		<Property HashCode="1770076888" Type="mscorlib.dll@System.Boolean" Name="DoLerp"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="-473393427" Type="mscorlib.dll@System.Single" Name="Scale"/>
+		<Property HashCode="-2001596071" Type="mscorlib.dll@System.Single" Name="LerpValue"/>
+		<Property HashCode="-1427472567" Type="cscommon@CCore.Performance.ESSAO" Name="SSAOQuality"/>
+		<Property HashCode="1700083043" Type="mscorlib.dll@System.String" Name="RandomNormalTexName"/>
+		<Property HashCode="-1395761605" Type="mscorlib.dll@System.Single" Name="Intensity"/>
+	</Class>
+</CCore.Graphics.PostProcess_SSAO>
+

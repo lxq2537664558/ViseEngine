@@ -1,0 +1,31 @@
+<cscommon TypeName="UISystem.WinForm" Id="fbe9aa52-bd55-4594-bffe-9eacef860f75" Width_Auto="True" Height_Auto="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="-1,0,1,0">
+	<WinState UVAnim="cc44c94a-1319-4bac-afc8-52edb9e8b13c"/>
+	<cscommon TypeName="UISystem.Container.Grid.Grid" Id="2251eadb-5e46-4297-8305-64ce6bc74e20" Width_Auto="True" Height_Auto="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<WinState/>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="10*"/>
+			<ColumnDefinition Width="18*"/>
+			<ColumnDefinition Width="8*"/>
+			<ColumnDefinition Width="18*"/>
+			<ColumnDefinition Width="10*"/>
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="4*"/>
+			<RowDefinition Height="20*"/>
+			<RowDefinition Height="7*"/>
+		</Grid.RowDefinitions>
+		<cscommon TypeName="UISystem.Button" Id="a10c795f-9979-4a65-9a87-369eb3a8a429" WinName="Role1" Width="288" Width_Auto="True" Height="495" Height_Auto="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridColumn="1" GridRow="1" WinButtonClick="game@Client.UI.MainUIManager|OnSelectRole">
+			<NormalState UVAnim="488cf283-9d25-4205-a1f0-8ca800dff358"/>
+			<LightState UVAnim="7dcaca37-6ddc-4e82-b96c-3043f355fd77" TextOffset="-1,-1"/>
+			<PressState UVAnim="7dcaca37-6ddc-4e82-b96c-3043f355fd77" TextOffset="1,1"/>
+			<DisableState/>
+		</cscommon>
+		<cscommon TypeName="UISystem.Button" Id="b77414e1-6b7a-46ff-af11-300d3a96a984" WinName="Role2" Width="288" Width_Auto="True" Height="495" Height_Auto="True" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridColumn="3" GridRow="1" WinButtonClick="game@Client.UI.MainUIManager|OnSelectRole">
+			<NormalState UVAnim="017358e2-adb4-4a84-8f07-a57bb4daac07"/>
+			<LightState UVAnim="681944c0-b648-4d39-b0c4-db72ce4040e2" TextOffset="-1,-1"/>
+			<PressState UVAnim="681944c0-b648-4d39-b0c4-db72ce4040e2" TextOffset="1,1"/>
+			<DisableState/>
+		</cscommon>
+	</cscommon>
+</cscommon>
+

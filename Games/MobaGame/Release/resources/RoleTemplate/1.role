@@ -1,0 +1,113 @@
+<GameData.Role.RoleTemplate Ver="0">
+	<LockOnRadius Type="mscorlib.dll@System.Single" Value="4"/>
+	<Radius Type="mscorlib.dll@System.Single" Value="0.5"/>
+	<OnCollision Type="mscorlib.dll@System.Guid" Value="00000000-0000-0000-0000-000000000000"/>
+	<RoleName Type="mscorlib.dll@System.String" Value="alis"/>
+	<RoleSkillList Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.UInt16]]">
+		<Data Type="mscorlib.dll@System.UInt16" Value="10000"/>
+		<Data Type="mscorlib.dll@System.UInt16" Value="10011"/>
+		<Data Type="mscorlib.dll@System.UInt16" Value="10012"/>
+		<Data Type="mscorlib.dll@System.UInt16" Value="10010"/>
+	</RoleSkillList>
+	<SkillInfos Type="mscorlib.dll@System.Collections.Generic.List`1[[game@GameData.Skill.SkillInfo]]"/>
+	<MoveSpeed Type="mscorlib.dll@System.Single" Value="2"/>
+	<RunMoveSpeed Type="mscorlib.dll@System.Single" Value="3"/>
+	<OiHp Type="mscorlib.dll@System.Int32" Value="200"/>
+	<OiMp Type="mscorlib.dll@System.Int32" Value="25"/>
+	<BaseDamage Type="mscorlib.dll@System.Int32" Value="50"/>
+	<BaseDefend Type="mscorlib.dll@System.Int32" Value="2"/>
+	<SlerpRotation Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<IsRotate Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<OriginPosition Type="cscommon@SlimDX.Vector3" Value="23,0,59"/>
+	<OriginRotation Type="mscorlib.dll@System.Int32" Value="164"/>
+	<CastShadow Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<FactionId Type="mscorlib.dll@System.Int32" Value="1"/>
+	<HalfHeight Type="mscorlib.dll@System.Single" Value="1"/>
+	<AIGuid Type="mscorlib.dll@System.Guid" Value="dfd962c0-1a16-4974-b9d1-a4c3e65ce6ef"/>
+	<Reborn Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<RebornElapsed Type="mscorlib.dll@System.Int64" Value="0"/>
+	<OnRoleDeath Type="mscorlib.dll@System.Guid" Value="00000000-0000-0000-0000-000000000000"/>
+	<DeathExp Type="mscorlib.dll@System.Int32" Value="0"/>
+	<FixedHeight Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<CalCollission Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<MonsterType Type="game@GameData.Role.MonsterType" Value="Normal"/>
+	<PosOffset Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+	<PrimaryRole Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<BloodReturn Type="mscorlib.dll@System.UInt16" Value="1"/>
+	<BloodReturnTimes Type="mscorlib.dll@System.Int64" Value="1000"/>
+	<Version Type="mscorlib.dll@System.UInt32" Value="1421"/>
+	<NickName Type="mscorlib.dll@System.String" Value="alis"/>
+	<Scale Type="mscorlib.dll@System.Single" Value="1"/>
+	<MeshFixAngle Type="mscorlib.dll@System.Single" Value="1.73"/>
+	<Id Type="mscorlib.dll@System.UInt16" Value="1"/>
+	<Actions Type="mscorlib.dll@System.Collections.Generic.Dictionary`2[[mscorlib.dll@System.String][cscommon@CSUtility.Data.ActionNamePair]]">
+		<Data Type="mscorlib.dll@System.Collections.Generic.KeyValuePair`2[[mscorlib.dll@System.String][cscommon@CSUtility.Data.ActionNamePair]]">
+			<Key Type="mscorlib.dll@System.String" Value="Idle"/>
+			<Value Type="cscommon@CSUtility.Data.ActionNamePair" Value="null">
+				<Name Type="mscorlib.dll@System.String" Value="Idle"/>
+				<ActionFile Type="mscorlib.dll@System.String" Value="resources/action/Warrior/1h_idle.vma"/>
+				<PlayRate Type="mscorlib.dll@System.Single" Value="1"/>
+			</Value>
+		</Data>
+		<Data Type="mscorlib.dll@System.Collections.Generic.KeyValuePair`2[[mscorlib.dll@System.String][cscommon@CSUtility.Data.ActionNamePair]]">
+			<Key Type="mscorlib.dll@System.String" Value="Walk"/>
+			<Value Type="cscommon@CSUtility.Data.ActionNamePair" Value="null">
+				<Name Type="mscorlib.dll@System.String" Value="Walk"/>
+				<ActionFile Type="mscorlib.dll@System.String" Value="resources/action/Warrior/warrior_run.vma"/>
+				<PlayRate Type="mscorlib.dll@System.Single" Value="1"/>
+			</Value>
+		</Data>
+		<Data Type="mscorlib.dll@System.Collections.Generic.KeyValuePair`2[[mscorlib.dll@System.String][cscommon@CSUtility.Data.ActionNamePair]]">
+			<Key Type="mscorlib.dll@System.String" Value="Run"/>
+			<Value Type="cscommon@CSUtility.Data.ActionNamePair" Value="null">
+				<Name Type="mscorlib.dll@System.String" Value="Run"/>
+				<ActionFile Type="mscorlib.dll@System.String" Value="resources/action/Warrior/warrior_run.vma"/>
+				<PlayRate Type="mscorlib.dll@System.Single" Value="1"/>
+			</Value>
+		</Data>
+		<Data Type="mscorlib.dll@System.Collections.Generic.KeyValuePair`2[[mscorlib.dll@System.String][cscommon@CSUtility.Data.ActionNamePair]]">
+			<Key Type="mscorlib.dll@System.String" Value="DefaultAttack_1"/>
+			<Value Type="cscommon@CSUtility.Data.ActionNamePair" Value="null">
+				<Name Type="mscorlib.dll@System.String" Value="DefaultAttack_1"/>
+				<ActionFile Type="mscorlib.dll@System.String" Value="resources/action/Warrior/warrior_attack.vma"/>
+				<PlayRate Type="mscorlib.dll@System.Single" Value="1"/>
+			</Value>
+		</Data>
+		<Data Type="mscorlib.dll@System.Collections.Generic.KeyValuePair`2[[mscorlib.dll@System.String][cscommon@CSUtility.Data.ActionNamePair]]">
+			<Key Type="mscorlib.dll@System.String" Value="Skill001"/>
+			<Value Type="cscommon@CSUtility.Data.ActionNamePair" Value="null">
+				<Name Type="mscorlib.dll@System.String" Value="Skill001"/>
+				<ActionFile Type="mscorlib.dll@System.String" Value="resources/action/Warrior/warrior_skill_01.vma"/>
+				<PlayRate Type="mscorlib.dll@System.Single" Value="1"/>
+			</Value>
+		</Data>
+		<Data Type="mscorlib.dll@System.Collections.Generic.KeyValuePair`2[[mscorlib.dll@System.String][cscommon@CSUtility.Data.ActionNamePair]]">
+			<Key Type="mscorlib.dll@System.String" Value="Skill002"/>
+			<Value Type="cscommon@CSUtility.Data.ActionNamePair" Value="null">
+				<Name Type="mscorlib.dll@System.String" Value="Skill002"/>
+				<ActionFile Type="mscorlib.dll@System.String" Value="resources/action/Warrior/warrior_skill_02.vma"/>
+				<PlayRate Type="mscorlib.dll@System.Single" Value="1"/>
+			</Value>
+		</Data>
+		<Data Type="mscorlib.dll@System.Collections.Generic.KeyValuePair`2[[mscorlib.dll@System.String][cscommon@CSUtility.Data.ActionNamePair]]">
+			<Key Type="mscorlib.dll@System.String" Value="Skill003"/>
+			<Value Type="cscommon@CSUtility.Data.ActionNamePair" Value="null">
+				<Name Type="mscorlib.dll@System.String" Value="Skill003"/>
+				<ActionFile Type="mscorlib.dll@System.String" Value="resources/action/Warrior/warrior_skill_03.vma"/>
+				<PlayRate Type="mscorlib.dll@System.Single" Value="1"/>
+			</Value>
+		</Data>
+		<Data Type="mscorlib.dll@System.Collections.Generic.KeyValuePair`2[[mscorlib.dll@System.String][cscommon@CSUtility.Data.ActionNamePair]]">
+			<Key Type="mscorlib.dll@System.String" Value="Death"/>
+			<Value Type="cscommon@CSUtility.Data.ActionNamePair" Value="null">
+				<Name Type="mscorlib.dll@System.String" Value="Death"/>
+				<ActionFile Type="mscorlib.dll@System.String" Value="resources/action/Warrior/warrior_dead.vma"/>
+				<PlayRate Type="mscorlib.dll@System.Single" Value="1"/>
+			</Value>
+		</Data>
+	</Actions>
+	<DefaultMeshs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+		<Data Type="mscorlib.dll@System.Guid" Value="860114d3-08a8-4803-909e-7a649fed2a6b"/>
+	</DefaultMeshs>
+</GameData.Role.RoleTemplate>
+

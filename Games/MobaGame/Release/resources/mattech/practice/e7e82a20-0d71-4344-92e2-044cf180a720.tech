@@ -1,0 +1,9 @@
+<Technique Name="µØ´Ìµ¶ÈÐ" Ver="13" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="c10a1027-43f9-4182-9013-7e267c5c2cb0" Id="e7e82a20-0d71-4344-92e2-044cf180a720" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_dee8cff1_5e14_407b_9119_ce712098d643 EditorType="Texture" Type="texture" Value="resources/texture/effect/object/Stick_Edge.png"/>
+		<ShaderVar_61934c75_278b_4f75_b264_6057e8876f5a EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/ashland.png"/>
+		<ShaderVar_4feddd6b_d25d_43ef_833e_ef1ce34a0603 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_4561.png"/>
+		<ShaderVar_37b61260_c0b8_4494_b494_d74b95b2c259 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/D_Sun_FireTex006_Emis.png"/>
+	</ShaderVar>
+</Technique>
+

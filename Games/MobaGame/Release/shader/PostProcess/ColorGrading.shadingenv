@@ -1,0 +1,248 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+#define FXAA_PC 1
+#define FXAA_HLSL_3 1
+#define FXAA_QUALITY__PRESET 12
+#define FXAA_GREEN_AS_LUMA 1
+#include "Fxaa3_11.h"
+
+int				g_EnableFXAA;
+int 			g_EnableColorGrading;
+float2		g_InvScreenSize;
+texture 		RT_SRC;
+
+int			g_DoLerp;
+float			g_LerpValue;
+
+texture MRT_Albedo;
+sampler2D Samp_MRT_Albedo = sampler_state
+{
+	Texture = <MRT_Albedo>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+    SRGBTexture = FALSE;
+};
+
+sampler2D Samp_RT_SRC = sampler_state
+{
+	Texture = <RT_SRC>;
+    MipFilter = NONE;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+//	SRGBTexture = False;
+	SRGBTexture = True;
+};
+
+texture RT_FSBlur;
+sampler2D Samp_RT_FSBlur = sampler_state
+{
+	Texture = <RT_FSBlur>;
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+    SRGBTexture = FALSE;
+};
+
+texture 		T_ColorGrading;
+sampler2D Samp_T_ColorGrading = sampler_state
+{
+	Texture = <T_ColorGrading>;
+    MipFilter = Linear;
+    MinFilter = Linear;
+    MagFilter = Linear;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+/*
+sampler3D Samp_T_ColorGrading = sampler_state
+{
+	Texture = <T_ColorGrading>;
+    MipFilter = Point;
+    MinFilter = Linear;
+    MagFilter = Linear;
+    AddressU = Clamp;
+    AddressV = Clamp;
+    AddressW = Clamp;
+};
+*/
+
+texture 		T_SrcColorGrading;
+sampler2D Samp_T_SrcColorGrading = sampler_state
+{
+	Texture = <T_SrcColorGrading>;
+    MipFilter = Linear;
+    MinFilter = Linear;
+    MagFilter = Linear;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct VSInput
+{
+	float3 Pos		: LOCALPOS;
+	float2 UV		: DIFFUSEUV;
+};
+VSInput dummyVSIn;
+
+struct VSOutput
+{
+    float4 Pos		: POSITION;
+    float2 UV		: TEXCOORD0;
+	float4 PosProj	: TEXCOORD8;			// todo: 去掉
+};
+/*
+struct PSOutput
+{
+    float4	Color	: COLOR0;
+};
+*/
+
+
+float3 ColorGrading(float3 rgb, sampler2D samp)
+{
+	rgb = saturate(rgb);
+	
+	const float DIM = 16;
+
+	// 3d texture
+	// return tex3D(samp, (rgb * (DIM - 1) + 0.5f) / DIM).xyz;
+	
+	rgb.xy = (rgb.xy * (DIM - 1) + 0.5f) / DIM;
+	float slice = rgb.z * (DIM - 1);
+	float s = frac(slice);
+	slice -= s;
+	rgb.x = (rgb.x + slice) / DIM;
+
+	float3 col0 = vise_tex2D(samp, rgb.xy).xyz;
+	float2 uv2 = float2(rgb.x+ 1.0f / DIM, rgb.y);
+ 	float3 col1 = vise_tex2D(samp, uv2).xyz;
+
+	return lerp(col0, col1, s);
+}
+
+
+
+VSOutput vs_main( VSInput Input )
+{
+	VSOutput o=(VSOutput)0;
+	o.Pos	= float4(Input.Pos,1);
+	o.PosProj	= float4(Input.Pos,1);
+	o.UV		= Input.UV;
+	o.UV		= Input.UV * float2(g_ViewPortW*g_InvScreenSize.x, g_ViewPortH*g_InvScreenSize.y) + float2(g_ViewPortX*g_InvScreenSize.x, g_ViewPortY*g_InvScreenSize.y);
+
+#ifdef D3D_EFFECT
+	o.Pos.xy += float2(-1,1) * g_InvScreenSize;
+#else
+	//o.UV.y = 1 - o.UV.y;
+#endif
+
+    return o;
+}
+
+float3 linear_to_srgb(float3 rgb)
+{
+	const float ALPHA = 0.055f;
+	return rgb < 0.0031308f ? 12.92f * rgb : (1 + ALPHA) * pow(rgb, 1 / 2.4f) - ALPHA;
+}
+float3 SRGBCorrection(float3 rgb)
+{
+	return linear_to_srgb(max(rgb, 1e-6f));
+}
+
+float4	ps_main( VSOutput Input ) : COLOR0
+{
+	float2 uv = Input.UV;
+
+	float3 rgb;
+	rgb = vise_tex2D(Samp_RT_SRC, uv).xyz;	
+
+/*
+	if(g_EnableFXAA>0)
+	{
+		float4 temp4 = float4(0,0,0,0);
+		float2 temp2 = float2(0,0);
+		rgb = FxaaPixelShader(
+							uv,
+							//Input.UV,
+							0,
+							Samp_RT_SRC,
+							Samp_RT_SRC,
+							Samp_RT_SRC,
+							g_InvScreenSize,
+							temp4,
+							temp4,
+							temp4,
+							0.75f,
+							0.166,
+							0.0833,
+							8.0, //fxaaConsoleEdgeSharpness
+							0.125, //fxaaConsoleEdgeThreshold
+							0.05, //fxaaConsoleEdgeThresholdMin
+							0 //fxaaConsole360ConstDir
+							);
+	}
+
+	if(g_EnableColorGrading>0)
+	{
+		if(g_DoLerp>0)
+		{
+			float3 rgbSrc = ColorGrading(rgb, Samp_T_SrcColorGrading);
+			rgb = ColorGrading(rgb, Samp_T_ColorGrading);
+
+			rgb = lerp(rgbSrc, rgb, g_LerpValue);
+		}
+		else
+		{
+			rgb = ColorGrading(rgb, Samp_T_ColorGrading);
+		}
+	}
+*/
+/*
+		float4 temp4 = float4(0,0,0,0);
+		float2 temp2 = float2(0,0);
+		rgb = FxaaPixelShader(
+							uv,
+							//Input.UV,
+							0,
+							Samp_RT_SRC,
+							Samp_RT_SRC,
+							Samp_RT_SRC,
+							g_InvScreenSize,
+							temp4,
+							temp4,
+							temp4,
+							0.75f,
+							0.166,
+							0.0833,
+							8.0, //fxaaConsoleEdgeSharpness
+							0.125, //fxaaConsoleEdgeThreshold
+							0.05, //fxaaConsoleEdgeThresholdMin
+							0 //fxaaConsole360ConstDir
+							);
+*/
+	rgb = ColorGrading(rgb, Samp_T_ColorGrading);
+	
+	
+#ifndef D3D_EFFECT
+	rgb = linear_to_srgb(rgb);
+#endif
+	
+	return float4(rgb,vise_tex2D(Samp_MRT_Albedo, uv).a);
+}
+
+#ifdef D3D_EFFECT
+technique CGTech
+{
+   pass p0
+   {
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

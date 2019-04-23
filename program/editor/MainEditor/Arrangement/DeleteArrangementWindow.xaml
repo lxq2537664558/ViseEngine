@@ -1,0 +1,27 @@
+﻿<DockControls:DockAbleWindowBase
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+        xmlns:DockControls="clr-namespace:DockControl.Controls;assembly=DockControl"
+        xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+        mc:Ignorable="d" x:Class="MainEditor.Arrangement.DeleteArrangementWindow"
+        Title="删除布局" WindowStartupLocation="CenterScreen" SizeToContent="Height" Width="320" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ToolWindowStyle}}">
+    <DockControls:DockAbleWindowBase.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/MainEditor;component/Themes/Generic.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</DockControls:DockAbleWindowBase.Resources>
+    <Grid Margin="8">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition Width="0.683*"/>
+    		<ColumnDefinition Width="Auto"/>
+    	</Grid.ColumnDefinitions>
+        <ComboBox x:Name="ComboBox_Arrangements" Margin="2" VerticalAlignment="Center" MinWidth="130" Height="22" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+
+        <Button Content="删除" Grid.Column="1" Margin="2" Width="75" d:LayoutOverrides="Height" Click="Button_Delete_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        
+    </Grid>
+</DockControls:DockAbleWindowBase>

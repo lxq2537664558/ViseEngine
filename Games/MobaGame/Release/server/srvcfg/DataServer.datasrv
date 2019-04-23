@@ -1,0 +1,13 @@
+<Server.DataServerParameter Ver="4">
+	<DateBaseIP Type="mscorlib.dll@System.String" Value="192.168.1.139"/>
+	<LogDBIP Type="mscorlib.dll@System.String" Value="192.168.1.139"/>
+	<RegServerIP Type="mscorlib.dll@System.String" Value="127.0.0.1"/>
+	<RegServerPort Type="mscorlib.dll@System.UInt16" Value="8888"/>
+	<ListenIP Type="mscorlib.dll@System.String" Value="127.0.0.1"/>
+	<ListenPort Type="mscorlib.dll@System.UInt16" Value="23000"/>
+	<ServerId Type="mscorlib.dll@System.Guid" Value="cf82dedc-a7c6-411a-b8a0-600b6750a7ad"/>
+	<SaveThreadNumber Type="mscorlib.dll@System.UInt16" Value="2"/>
+	<DBName Type="mscorlib.dll@System.String" Value="zeus"/>
+	<LogDBName Type="mscorlib.dll@System.String" Value="log_zeus"/>
+	<LoadAllItemTemplate Type="mscorlib.dll@System.Boolean" Value="True"/>
+</Server.DataServerParameter>

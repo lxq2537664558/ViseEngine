@@ -1,0 +1,27 @@
+﻿<UserControl x:Name="userControl" x:Class="MeshTemplateEditor.PropertyGrid.MeshSocketSetControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"	
+             mc:Ignorable="d"  d:DesignWidth="300">
+    <Grid x:Name="LayoutRoot" Background="#02000000" AllowDrop="True" DragEnter="Grid_DragEnter" DragLeave="Grid_DragLeave" DragOver="Grid_DragOver" Drop="Grid_Drop">
+    	<Grid.ColumnDefinitions>
+    		<ColumnDefinition/>
+    		<ColumnDefinition Width="Auto"/>
+    	</Grid.ColumnDefinitions>
+        <TextBox Margin="2" Text="{Binding SocketName,ElementName=userControl, Mode=TwoWay}" VerticalAlignment="Center" CaretBrush="Black" IsReadOnly="True" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBoxStyle_Default}}" IsHitTestVisible="False"/>
+		<Grid Grid.Column="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+            <Button Margin="1" Padding="0" VerticalAlignment="Center" Click="Button_Set_Click" Width="24" Height="24" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/set.png" />
+			</Button>
+            <Button Margin="1" Padding="0" VerticalAlignment="Center" Click="Button_Del_Click" Grid.Column="1" Width="24" Height="24" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/File/delete.png" />
+			</Button>
+		</Grid>        
+    </Grid>
+</UserControl>

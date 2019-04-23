@@ -1,0 +1,12 @@
+<Technique Name="±ù³å»÷" Ver="30" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="7a17fb68-d822-404d-b3d8-204f84b3da3c" Id="8e88b0c9-c0c5-4304-a47b-50a3b13cdb14" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_7a08b089_e55a_4a7c_a96c_53953317c4ee EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_2834763f_dd08_41c8_a705_6f10b89456a2 EditorType="Texture" Type="texture" Value="resources/texture/effect/ice/ruin_frost_01_ice.png"/>
+		<ShaderVar_a0e6059b_1787_40af_bed2_3e07bfcd2d57 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/ice_vein_mask.png"/>
+		<ShaderVar_5d5e1359_e15b_4832_ac14_00107f292042 EditorType="Texture" Type="texture" Value="resources/texture/effect/ice/iceroad.png"/>
+		<ShaderVar_d42f397c_320b_43dd_bc92_bdd0ee7d6496 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/mask_dust.png"/>
+		<ShaderVar_79be6d82_b6f6_4959_88d3_7e125df29d35 EditorType="Texture" Type="texture" Value="resources/texture/effect/ice/ice_flower.png"/>
+		<ShaderVar_87607739_81e7_4208_85de_610852c8d48f EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/twistedCloud.png"/>
+	</ShaderVar>
+</Technique>
+

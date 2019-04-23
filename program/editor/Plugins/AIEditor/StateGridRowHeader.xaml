@@ -1,0 +1,156 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AIEditor" 
+			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+			 xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+			 xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+			 x:Name="userControl" x:Class="AIEditor.StateGridRowHeader" 
+			 mc:Ignorable="d" 
+			 d:DesignWidth="320">
+	<UserControl.Resources>
+		<SolidColorBrush x:Key="NormalStateColor" Color="White" />
+		<SolidColorBrush x:Key="DefaultStateColor" Color="#FF75FF75" />
+		<Image x:Key="DeactiveValueLinksImage" Source="Source/treeValue_D.png"/>
+		<Image x:Key="ActiveValueLinksImage" Source="Source/treeValue.png"/>
+		<Image x:Key="DeactiveMethodLinksImage" Source="Source/tree_D.png"/>
+		<Image x:Key="ActiveMethodLinksImage" Source="Source/tree.png"/>
+		<Storyboard x:Key="Del_OnMouseEnter">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Grid_Del">
+				<EasingColorKeyFrame KeyTime="0" Value="#02000000"/>
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FFBABABA"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="Del_OnMouseLeave">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Grid_Del">
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#02000000"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="Methods_OnMouseEnter">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Grid_Methods">
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FFBABABA"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="Methods_OnMouseLeave">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Grid_Methods">
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#02000000"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="Popup_Close_OnMouseEnter"/>
+		<Storyboard x:Key="Popup_Close_OnMouseLeave"/>
+		<Storyboard x:Key="Values_OnMouseEnter" >
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Grid_Values">
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#FFBABABA"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="Values_OnMouseLeave">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background).(SolidColorBrush.Color)" Storyboard.TargetName="Grid_Values">
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#02000000"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="OnMouseLeftButtonUp_TextBlock_NickName">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="TextBox_NickName">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="OnLostFocus_TextBox_NickName">
+			<ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="TextBox_NickName">
+				<DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
+			</ObjectAnimationUsingKeyFrames>
+		</Storyboard>
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Grid_Del">
+			<BeginStoryboard x:Name="Del_OnMouseEnter_BeginStoryboard" Storyboard="{StaticResource Del_OnMouseEnter}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Grid_Del">
+			<BeginStoryboard x:Name="Del_OnMouseLeave_BeginStoryboard" Storyboard="{StaticResource Del_OnMouseLeave}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Grid_Methods">
+			<BeginStoryboard x:Name="Methods_OnMouseEnter_BeginStoryboard" Storyboard="{StaticResource Methods_OnMouseEnter}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Grid_Methods">
+			<BeginStoryboard x:Name="Methods_OnMouseLeave_BeginStoryboard" Storyboard="{StaticResource Methods_OnMouseLeave}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter" SourceName="Grid_Values">
+			<BeginStoryboard x:Name="Values_OnMouseEnter_BeginStoryboard" Storyboard="{StaticResource Values_OnMouseEnter}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave" SourceName="Grid_Values">
+			<BeginStoryboard x:Name="Values_OnMouseLeave_BeginStoryboard" Storyboard="{StaticResource Values_OnMouseLeave}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+	<Border BorderBrush="White" BorderThickness="1">
+		<Grid Background="#02000000">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="0.913*"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+			</Grid.ColumnDefinitions>
+			<Grid.ContextMenu>
+				<ContextMenu>
+					<MenuItem Header="设置为默认状态" Click="MenuItem_SetDefaultState_Click" />
+				</ContextMenu>
+			</Grid.ContextMenu>
+			<Grid HorizontalAlignment="Left">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+					<ColumnDefinition Width="Auto"/>
+				</Grid.ColumnDefinitions>
+				<TextBlock x:Name="TextBox_StateName" FontSize="21.333" VerticalAlignment="Center" Margin="5,5,0,5" Text="{Binding StateName, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="White" ToolTip="状态实例名称，在状态机中唯一，创建后不允许修改" />
+				<TextBlock x:Name="TextBlock_C" Text="(" Grid.Column="1" Margin="5,0,0,0" VerticalAlignment="Center" Foreground="White" FontSize="16" />
+				<TextBlock x:Name="TextBlock_NickName" HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding NickName, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Foreground="White" Margin="1,0" FontSize="16" Grid.Column="2" ToolTip="状态助记名称，允许修改" MinWidth="10" MouseLeftButtonUp="TextBlock_NickName_MouseLeftButtonUp"/>
+				<TextBox x:Name="TextBox_NickName" Margin="1,0" TextWrapping="Wrap" Text="{Binding Text, ElementName=TextBlock_NickName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" d:LayoutOverrides="Width, Height" Grid.Column="2" VerticalAlignment="Center" Visibility="Collapsed" Foreground="White" CaretBrush="White" LostFocus="TextBox_NickName_LostFocus"/>
+				<TextBlock x:Name="TextBlock_D" Text=")" Grid.Column="3" VerticalAlignment="Center" Foreground="White" FontSize="16" />
+			</Grid>
+			<Grid x:Name="Grid_Del" Margin="2.5,6.578,5,6.578" Height="15" Background="#02000000" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Grid.Column="3" ToolTip="删除当前状态" Width="15">
+				<Path Data="M0,0 L18.708333,18.833333" Margin="3" Stretch="Fill" Stroke="Red"/>
+				<Path Data="M20,0 L0.75,19.125" Margin="3" Stretch="Fill" Stroke="Red"/>
+			</Grid>
+			<Grid x:Name="Grid_Methods" Grid.Column="2" Margin="2.5,6.578" Background="#02000000" Width="15" Height="15" ToolTip="显示函数列表" MouseLeftButtonUp="Grid_Methods_MouseLeftButtonUp" >
+				<Image x:Name="Image_Methods" Source="Source/tree_D.png" />
+			</Grid>
+			<Grid x:Name="Grid_Values" Grid.Column="1" Margin="5,6.578,2.5,6.578" Width="15" Height="15" MouseLeftButtonUp="Grid_Values_MouseLeftButtonUp" Background="#02000000">
+				<Image x:Name="Image_Values" Source="Source/treeValue_D.png"/>
+				<Popup x:Name="StatementValueSet" StaysOpen="False">
+					<Grid >
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="1*"/>
+							<ColumnDefinition Width="1*"/>
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="Auto"/>
+							<RowDefinition Height="0.898*"/>
+						</Grid.RowDefinitions>
+						<Rectangle Margin="0" Grid.ColumnSpan="2" Fill="#FF595959"/>
+						<TextBlock Margin="3" TextWrapping="Wrap" Text="状态成员变量设置" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+						<Button Content="添加变量" Grid.Row="1" Margin="3" Foreground="White" Click="Button_AddProperty_Click" MinHeight="25" MinWidth="78" />
+						<Button Content="删除变量" Grid.Row="1" Grid.Column="1" Margin="3" Foreground="White" Click="Button_DelProperty_Click" MinHeight="25" MinWidth="78" />
+						<Grid Grid.ColumnSpan="2" Grid.Row="2" >
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto"/>
+								<RowDefinition Height="Auto"/>
+							</Grid.RowDefinitions>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="1*"/>
+								<ColumnDefinition Width="3"/>
+								<ColumnDefinition Width="1*"/>
+							</Grid.ColumnDefinitions>
+							<TextBlock Text="类型" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="3" />
+							<TextBlock Text="名称" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="3" Grid.Column="2" />
+							<GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" Margin="0" Grid.RowSpan="2"/>
+							<StackPanel Grid.Row="1" />
+							<StackPanel Grid.Row="1" Grid.Column="2" />
+							<Path Data="M4.5,17.836667 L59.009174,17.836667" Height="1" Margin="0" Stretch="Fill" Stroke="#FFEEEEEE" VerticalAlignment="Bottom" Grid.ColumnSpan="3"/>
+						</Grid>
+					</Grid>
+				</Popup>
+			</Grid>    
+		</Grid>
+	</Border>
+</UserControl>

@@ -1,0 +1,10 @@
+<Technique Name="Á÷¶¯À©É¢µÄÑÌ" Ver="20" AlphaRef="20" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="1297a0fa-7606-4e74-be32-9a3fc6ee786b" Id="a9210c54-800d-4410-a1ea-4eb2df8ca323" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_3435b797_581d_4ef1_987a_cda2feb56d86 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/noise028.png"/>
+		<ShaderVar_7f7f0749_f435_4a84_a4fa_7b10c9063ada EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_acba4bd8_7559_4e65_b442_f0519d3a99b3 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+		<ShaderVar_9608a987_7492_4cc2_b2d4_a044a3723947 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/crash_vein_mask.png"/>
+		<ShaderVar_a998c056_8f9b_42aa_80ae_7909d8cf4ac3 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/xiaosan_mask2.png"/>
+	</ShaderVar>
+</Technique>
+

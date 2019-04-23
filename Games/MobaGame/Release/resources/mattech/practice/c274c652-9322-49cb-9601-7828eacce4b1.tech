@@ -1,0 +1,8 @@
+<Technique Name="²¨ÀËÓ¿³ö²ÄÖÊ" Ver="7" AlphaRef="30" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="e4070015-e5b7-40a1-8fd0-94e4a8e3c0c1" Id="c274c652-9322-49cb-9601-7828eacce4b1" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_98e264fd_696b_4a40_9ce9_5ecbbaed3783 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/water_05A.png"/>
+		<ShaderVar_d67b0639_fb8a_4138_b64f_cc9896abc4dc EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_d7e21c52_5f11_4ee2_b98f_cb7af57b427b EditorType="Texture" Type="texture" Value="resources/texture/effect/water/water_wave_03_D_tile.png"/>
+	</ShaderVar>
+</Technique>
+

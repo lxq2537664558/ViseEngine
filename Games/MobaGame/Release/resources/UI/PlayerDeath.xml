@@ -1,0 +1,15 @@
+<cscommon TypeName="UISystem.WinForm" Id="4af4dd85-cd6e-4f3b-a8c0-70a7cdf7e1ca" Width="1023" Width_Auto="True" Height_Auto="True" BackColor="8B0F0C09" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="1,0,0,0">
+	<WinState/>
+	<cscommon TypeName="UISystem.TextBlock" Id="7af5bde8-366d-4306-9838-1cc63bc8fc4c" Width="100" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" Text="15" FontSize="35">
+		<WinState/>
+		<FontRenderParams>
+			<0 BLColor="FFABD3D2" BRColor="FFABD3D2" TLColor="FFABD3D2" TRColor="FFABD3D2" OutlineType="None" OutlineThickness="0"/>
+		</FontRenderParams>
+		<PropertyBind>
+			<BindInfo Property="Text">
+				<ClassBind Value="game@Client.UI.MainUIManager|RelifeTimeStr|OneWay"/>
+			</BindInfo>
+		</PropertyBind>
+	</cscommon>
+</cscommon>
+

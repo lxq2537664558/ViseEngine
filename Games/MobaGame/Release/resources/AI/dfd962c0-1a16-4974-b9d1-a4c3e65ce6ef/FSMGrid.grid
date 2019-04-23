@@ -1,0 +1,74 @@
+<FSMGrid Name="Ö÷½Ç">
+	<DefaultState Type="Idle"/>
+	<State Type="Idle" NickName="Idle" BaseType="CSUtility.AISystem.States.Idle">
+		<StatePropertys/>
+	</State>
+	<State Type="Walk" NickName="Walk" BaseType="CSUtility.AISystem.States.Walk">
+		<StatePropertys/>
+	</State>
+	<State Type="Death" NickName="Death" BaseType="CSUtility.AISystem.States.Death">
+		<StatePropertys/>
+	</State>
+	<State Type="BeAttack" NickName="BeAttack" BaseType="CSUtility.AISystem.States.BeAttack">
+		<StatePropertys/>
+	</State>
+	<State Type="Dance" NickName="Dance" BaseType="CSUtility.AISystem.States.SpecialAction">
+		<StatePropertys/>
+	</State>
+	<State Type="StayAttack" NickName="StayAttack" BaseType="CSUtility.AISystem.States.StayAttack">
+		<StatePropertys/>
+	</State>
+	<State Type="MoveAttack" NickName="MoveAttack" BaseType="CSUtility.AISystem.States.MoveAttack">
+		<StatePropertys/>
+	</State>
+	<StateSwitch FromState="Idle" ToState="Idle" NewCurrentState="Idle" NewTargetState=""/>
+	<StateSwitch FromState="Walk" ToState="Idle" NewCurrentState="Idle" NewTargetState=""/>
+	<StateSwitch FromState="Idle" ToState="Walk" NewCurrentState="Walk" NewTargetState=""/>
+	<StateSwitch FromState="Walk" ToState="Walk" NewCurrentState="Walk" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="Dance" NewCurrentState="" NewTargetState=""/>
+	<StateSwitch FromState="BeAttack" ToState="BeAttack" NewCurrentState="BeAttack" NewTargetState=""/>
+	<StateSwitch FromState="Dance" ToState="BeAttack" NewCurrentState="BeAttack" NewTargetState=""/>
+	<StateSwitch FromState="Dance" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+	<StateSwitch FromState="BeAttack" ToState="Dance" NewCurrentState="Dance" NewTargetState=""/>
+	<StateSwitch FromState="StayAttack" ToState="Idle" NewCurrentState="Idle" NewTargetState=""/>
+	<StateSwitch FromState="Idle" ToState="StayAttack" NewCurrentState="StayAttack" NewTargetState=""/>
+	<StateSwitch FromState="StayAttack" ToState="Walk" NewCurrentState="Walk" NewTargetState=""/>
+	<StateSwitch FromState="Walk" ToState="StayAttack" NewCurrentState="StayAttack" NewTargetState=""/>
+	<StateSwitch FromState="MoveAttack" ToState="BeAttack" NewCurrentState="BeAttack" NewTargetState=""/>
+	<StateSwitch FromState="BeAttack" ToState="MoveAttack" NewCurrentState="MoveAttack" NewTargetState=""/>
+	<StateSwitch FromState="StayAttack" ToState="StayAttack" NewCurrentState="StayAttack" NewTargetState=""/>
+	<StateSwitch FromState="MoveAttack" ToState="Idle" NewCurrentState="Idle" NewTargetState=""/>
+	<StateSwitch FromState="Idle" ToState="MoveAttack" NewCurrentState="MoveAttack" NewTargetState=""/>
+	<StateSwitch FromState="MoveAttack" ToState="Walk" NewCurrentState="Walk" NewTargetState=""/>
+	<StateSwitch FromState="Walk" ToState="MoveAttack" NewCurrentState="MoveAttack" NewTargetState=""/>
+	<StateSwitch FromState="StayAttack" ToState="BeAttack" NewCurrentState="BeAttack" NewTargetState=""/>
+	<StateSwitch FromState="BeAttack" ToState="StayAttack" NewCurrentState="StayAttack" NewTargetState=""/>
+	<StateSwitch FromState="MoveAttack" ToState="StayAttack" NewCurrentState="StayAttack" NewTargetState=""/>
+	<StateSwitch FromState="StayAttack" ToState="MoveAttack" NewCurrentState="MoveAttack" NewTargetState=""/>
+	<StateSwitch FromState="MoveAttack" ToState="MoveAttack" NewCurrentState="MoveAttack" NewTargetState=""/>
+	<StateSwitch FromState="Dance" ToState="Idle" NewCurrentState="Idle" NewTargetState=""/>
+	<StateSwitch FromState="Idle" ToState="Dance" NewCurrentState="Dance" NewTargetState=""/>
+	<StateSwitch FromState="Dance" ToState="Walk" NewCurrentState="Walk" NewTargetState=""/>
+	<StateSwitch FromState="Walk" ToState="Dance" NewCurrentState="Dance" NewTargetState=""/>
+	<StateSwitch FromState="Walk" ToState="BeAttack" NewCurrentState="BeAttack" NewTargetState=""/>
+	<StateSwitch FromState="BeAttack" ToState="Walk" NewCurrentState="Walk" NewTargetState=""/>
+	<StateSwitch FromState="Dance" ToState="StayAttack" NewCurrentState="StayAttack" NewTargetState=""/>
+	<StateSwitch FromState="StayAttack" ToState="Dance" NewCurrentState="Dance" NewTargetState=""/>
+	<StateSwitch FromState="Dance" ToState="MoveAttack" NewCurrentState="MoveAttack" NewTargetState=""/>
+	<StateSwitch FromState="MoveAttack" ToState="Dance" NewCurrentState="Dance" NewTargetState=""/>
+	<StateSwitch FromState="Dance" ToState="Dance" NewCurrentState="Dance" NewTargetState=""/>
+	<StateSwitch FromState="MoveAttack" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+	<StateSwitch FromState="StayAttack" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="MoveAttack" NewCurrentState="" NewTargetState=""/>
+	<StateSwitch FromState="Idle" ToState="BeAttack" NewCurrentState="BeAttack" NewTargetState=""/>
+	<StateSwitch FromState="BeAttack" ToState="Idle" NewCurrentState="Idle" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="Walk" NewCurrentState="" NewTargetState=""/>
+	<StateSwitch FromState="Walk" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="Idle" NewCurrentState="" NewTargetState=""/>
+	<StateSwitch FromState="Idle" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="BeAttack" NewCurrentState="" NewTargetState=""/>
+	<StateSwitch FromState="BeAttack" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="StayAttack" NewCurrentState="" NewTargetState=""/>
+</FSMGrid>
+

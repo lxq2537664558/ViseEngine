@@ -1,0 +1,6 @@
+<Technique Name="角色创建_天空球" Ver="8" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="240" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="4afe0fce-e7ef-495e-a5ed-2d303c03cb65" Id="5e178e7b-b38a-40db-ba04-601df8a3c6b2" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<diffTexture Type="texture" Value="Texture/Assist/2531170_112900396000_2.dds"/>
+	</ShaderVar>
+</Technique>
+

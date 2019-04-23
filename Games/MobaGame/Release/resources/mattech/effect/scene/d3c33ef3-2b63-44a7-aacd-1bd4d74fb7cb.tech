@@ -1,0 +1,19 @@
+<Technique Name="ÈÛÑÒ¶ÏÁ÷" Ver="49" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcColor" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ac3db30c-f1ff-44c2-88a1-ab1f58795178" Id="d3c33ef3-2b63-44a7-aacd-1bd4d74fb7cb" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_5fc91724_904d_40aa_aaf2_d4f845f89902 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/GF_062.png"/>
+		<ShaderVar_4492311a_c206_47df_a640_6be6d3d109ac EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/mask_141.png"/>
+		<ShaderVar_5be02f93_0276_484e_afed_84ffe0f8e38e EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_ee3b0ca6_0a3d_4f76_aa51_b9aa75628c1e EditorType="Texture" Type="texture" Value="resources/texture/effect/smoke/smoke_uv.png"/>
+		<ShaderVar_ad79e199_6024_4bde_b449_cd7a1dfc280a EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/beam_fire_01.png"/>
+		<ShaderVar_310b39c8_9fb0_482a_a0fa_b5c9331f1645 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/arrowmask.png"/>
+		<ShaderVar_sp2 EditorType="Vector" Type="float2" Value="0,-0.088"/>
+		<ShaderVar_sp1 EditorType="Vector" Type="float2" Value="-0.095,0"/>
+		<ShaderVar_sp3 EditorType="Vector" Type="float2" Value="0,-0.075"/>
+		<ShaderVar_lavaColor EditorType="Vector" Type="float3" Value="1,1.1,1"/>
+		<ShaderVar_144ae25b_e785_4848_8bc5_e0c522164f06 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/bomb_mask.png"/>
+		<ShaderVar_loc EditorType="Vector" Type="float2" Value="0,-1"/>
+		<ShaderVar_Rot EditorType="Vector" Type="float1" Value="0"/>
+		<ShaderVar_dustpow EditorType="Vector" Type="float1" Value="2"/>
+	</ShaderVar>
+</Technique>
+

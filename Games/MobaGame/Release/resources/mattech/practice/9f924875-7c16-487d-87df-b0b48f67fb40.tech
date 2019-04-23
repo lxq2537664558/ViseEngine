@@ -1,0 +1,8 @@
+<Technique Name="ÎüÊÕÎÆÀí²ÄÖÊ" Ver="4" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="e117ee58-9200-4778-bcc3-acd5c1950060" Id="9f924875-7c16-487d-87df-b0b48f67fb40" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_5ce61478_dee1_4b03_a596_f27e12eb4ed7 EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+		<ShaderVar_43372886_6368_4016_b80e_92321b76c4ea EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/piaodai2.png"/>
+		<ShaderVar_14ba6e34_0954_4173_85c6_972201e3c02e EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_4561.png"/>
+	</ShaderVar>
+</Technique>
+

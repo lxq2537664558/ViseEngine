@@ -1,0 +1,12 @@
+<Technique Name="µØÓüÅØÏøµØÁÑ" Ver="4" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcColor" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="cc6c1972-451e-4790-b86f-20af2734664f" Id="cf6d4ff7-1347-4ffe-8e4f-1a3ba0b2049b" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_518e9095_6538_4dde_b25c_9a3e71c203d9 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/dark_earth.png"/>
+		<ShaderVar_895097d9_48e8_4ffa_9742_5aaadcfdbcaa EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/equake.png"/>
+		<ShaderVar_cd81fac8_5af5_44f5_88e6_edb03164dc6d EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/spiderWeb_boneyClouds_diffAlpha.png"/>
+		<ShaderVar_b34eee4c_1416_41c8_8f03_40065512e165 EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/glow_linear_uncompressed.png"/>
+		<ShaderVar_1b0141da_7c5b_441c_bb36_6f5921631b5e EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_f7b0b347_3645_478d_b7b4_acec7bd8b47b EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/D_Sun_FireTex001_Emis.png"/>
+		<ShaderVar_379da738_5800_4451_b853_9fc1b11a9431 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_005_mask.png"/>
+	</ShaderVar>
+</Technique>
+

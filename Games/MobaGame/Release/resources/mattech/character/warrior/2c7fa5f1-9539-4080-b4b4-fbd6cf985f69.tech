@@ -1,0 +1,14 @@
+<Technique Name="Ë«ÊÖ½£ÎäÆ÷" Ver="217" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="e409e507-081b-4aab-be63-2667af46f620" Id="2c7fa5f1-9539-4080-b4b4-fbd6cf985f69" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_4abf2c66_5339_4661_b8f2_8d456510da78 EditorType="Texture" Type="texture" Value="resources/texture/character/warrior/2H_Greatsword_03_d.png"/>
+		<ShaderVar_83cde9ef_555c_435d_93eb_1bdaaf8fdd83 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_d3b9bb78_09aa_4d07_9b3c_b4414ba587f9 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/mask_136.png"/>
+		<ShaderVar_3634be1e_3409_419b_a79a_9c6af4b7cbdc EditorType="Texture" Type="texture" Value="resources/texture/character/warrior/2H_Greatsword_03_glowmask.png"/>
+		<ShaderVar_scale2 EditorType="Vector" Type="float2" Value="1.2,0.8"/>
+		<ShaderVar_speed2 EditorType="Vector" Type="float2" Value="-0.15,-0.15"/>
+		<ShaderVar_scale1 EditorType="Vector" Type="float2" Value="0.9,1.1"/>
+		<ShaderVar_speed1 EditorType="Vector" Type="float2" Value="0.08,0.09"/>
+		<ShaderVar_Color EditorType="Vector" Type="float4" Value="1.5,0.75,0.4,1"/>
+	</ShaderVar>
+</Technique>
+

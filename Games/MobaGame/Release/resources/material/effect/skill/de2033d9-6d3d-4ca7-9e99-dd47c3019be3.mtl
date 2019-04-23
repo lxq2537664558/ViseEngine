@@ -1,0 +1,45 @@
+/*Material
+
+<Material Name="Ëæ»úÁ£×Ó" Require="DiffuseUV|LocalTangent|VertexColor0" Main="DoMaterial_de2033d9_6d3d_4ca7_9e99_dd47c3019be3" ExtendString="" Id="de2033d9-6d3d-4ca7-9e99-dd47c3019be3" Ver="3">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="de2033d9-6d3d-4ca7-9e99-dd47c3019be3" Id="64ad1e15-f6dd-496f-95dc-1ad7f0eec74c" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_2ecfdc5a_13c7_4714_bb45_975f95801caa EditorType="Texture" Type="texture" Value="resources/texture/effect/ice/Gameart8.com67.png"/>
+			<ShaderVar_framecount EditorType="Vector" Type="float1" Value="2"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../Shader/function/Common.function"
+
+
+texture ShaderVar_2ecfdc5a_13c7_4714_bb45_975f95801caa;
+sampler2D Samp_ShaderVar_2ecfdc5a_13c7_4714_bb45_975f95801caa = sampler_state
+{
+	Texture = <ShaderVar_2ecfdc5a_13c7_4714_bb45_975f95801caa>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+float1 ShaderVar_framecount;
+
+#ifdef ByLayerBased
+void DoMaterial_de2033d9_6d3d_4ca7_9e99_dd47c3019be3(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    float2 FuncTempValue_30547a08_6cde_44ca_9056_d3f94a0db34c_3 = float2(0, 0);
+    SubUV(pssem.mLocalTangent.w,ShaderVar_framecount,pssem.mDiffuseUV,FuncTempValue_30547a08_6cde_44ca_9056_d3f94a0db34c_3);
+    pssem.mDiffuseColor = ((vise_tex2D(Samp_ShaderVar_2ecfdc5a_13c7_4714_bb45_975f95801caa,FuncTempValue_30547a08_6cde_44ca_9056_d3f94a0db34c_3.xy) * pssem.mVertexColor0) * pssem.mVertexColor0.a);
+
+}

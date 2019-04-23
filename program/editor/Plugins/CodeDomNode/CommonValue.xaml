@@ -1,0 +1,46 @@
+﻿<myTypes:BaseNodeControl x:Class="CodeDomNode.CommonValue"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+			 xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             xmlns:baseCtrl="clr-namespace:CodeGenerateSystem.Controls;assembly=CodeGenerateSystem"
+			 xmlns:myTypes ="clr-namespace:CodeGenerateSystem.Base;assembly=CodeGenerateSystem"
+             mc:Ignorable="d" >
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CodeGenerateSystem;Component/Themes/Generic.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+	<theme:SystemDropShadowChrome>
+        <Border Background="{DynamicResource NormalControlBackground}" CornerRadius="5">
+	        <Grid Name="ValueGrid">
+	            <Grid.RowDefinitions>
+	                <RowDefinition Height="Auto" />
+	                <RowDefinition Height="Auto" />
+	                <RowDefinition Height="Auto" />
+	                <RowDefinition Height="Auto" />
+	            </Grid.RowDefinitions>
+	            <Rectangle x:Name="RectangleTitle" Fill="{DynamicResource LinkNode_Value_Background}" Margin="-3,0" RadiusX="5" RadiusY="5"/>
+                <TextBlock x:Name="TitleLabel" Text="数值" HorizontalAlignment="Center" Margin="0,2" Foreground="{DynamicResource TextForeground}" IsHitTestVisible="False" FontSize="18.667" />
+                <baseCtrl:LinkOutControl x:Name="ValueLinkHandle"  Margin="0,0,-12,0" Width="10" Height="10" BackBrush="{DynamicResource Link_ValueBrush}" HorizontalAlignment="Right" Grid.RowSpan="3" Direction="Right"/>
+                <baseCtrl:LinkInControl x:Name="SetValueLinkHandle" Visibility="Hidden" Margin="-12,0,-12,0" Width="10" Height="10" BackBrush="#FFF392F3" HorizontalAlignment="Left" Grid.RowSpan="3" />
+	    	    <StackPanel Grid.Row="1" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Margin="5,0" Foreground="{DynamicResource TextForeground}"><Run Text="参数名称"/></TextBlock>
+                    <TextBox x:Name="ValueNameTextBox" MinWidth="50" HorizontalContentAlignment="Center" AllowDrop="False" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" VerticalAlignment="Center" Margin="3" />
+	    	    </StackPanel>
+                <TextBox x:Name="ValueTextBox" Grid.Row="2" HorizontalContentAlignment="Center" AllowDrop="False" Text="{Binding mStrValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="3" />
+	            <!--Rectangle Name="ClassFieldLinkHandle" Margin="0,-13,0,0" Width="10" Height="10" Fill="#FF9302D0" Stroke="Black" VerticalAlignment="Top" HorizontalAlignment="Center" /-->
+	            <!--<StackPanel Grid.Row="3" Orientation="Horizontal" HorizontalAlignment="Stretch">
+	                <Ellipse Width="10" Height="10" Fill="#FFF392F3" Stroke="Black" Margin="-15,0,0,0" />
+	                <Label>赋值</Label>
+	                <Label HorizontalAlignment="Right">函数挂点</Label>
+	                <Rectangle Width="10" Height="10" Fill="#FF8282D8" Stroke="Black" HorizontalAlignment="Right" Margin="0,0,-15,0" />
+	            </StackPanel>-->
+	        </Grid>
+        </Border>
+    </theme:SystemDropShadowChrome>
+</myTypes:BaseNodeControl>

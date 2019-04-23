@@ -1,0 +1,7 @@
+<Technique Name="Magenta" Ver="17" AlphaRef="0" CullMode="CCW" ZDisable="1" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="0" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="688ac911-e3ff-439e-8f1e-242a8deff1ac" Id="adae6530-1007-4de1-850a-a84accdf6ce3" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<Value_35221e29_5b5f_4300_b37e_84ef23551197 Type="float4" Value="1,0,1,1"/>
+		<DiffTexture Type="texture" Value="Texture/UVchecker.dds"/>
+	</ShaderVar>
+</Technique>
+

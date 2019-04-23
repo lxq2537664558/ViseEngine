@@ -1,0 +1,1 @@
+xcopy /s EngineResources\*.* ..\..\Games\MobaGame\Release\resources\default\*.*

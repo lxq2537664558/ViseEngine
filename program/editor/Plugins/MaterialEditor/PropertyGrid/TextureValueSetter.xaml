@@ -1,0 +1,46 @@
+﻿<UserControl x:Name="userControl" x:Class="MaterialEditor.PropertyGrid.TextureValueSetter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             mc:Ignorable="d" >
+	<Border BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+        <Grid x:Name="MainGrid" DragEnter="Rectangle_DragEnter" DragLeave="Rectangle_DragLeave" DragOver="Rectangle_DragOver" Drop="Rectangle_Drop" AllowDrop="True">
+	    	<Grid.RowDefinitions>
+	    		<RowDefinition Height="Auto"/>
+	    		<RowDefinition Height="Auto"/>
+	    		<RowDefinition Height="Auto"/>
+	    	</Grid.RowDefinitions>
+	    	<Grid.ColumnDefinitions>
+	    		<ColumnDefinition Width="1*"/>
+	    		<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+	    	</Grid.ColumnDefinitions>
+			<Grid Grid.Row="1" Grid.ColumnSpan="4" Margin="2">
+				<Image x:Name="Image_PreView" MaxHeight="128" RenderTransformOrigin="0.5,0.5" Margin="3" >
+					<Image.Effect>
+						<DropShadowEffect ShadowDepth="0" BlurRadius="10"/>
+					</Image.Effect>
+					<Image.ToolTip>
+		                <ToolTip DataContext="{Binding Path=PlacementTarget, RelativeSource={x:Static RelativeSource.Self}}" Background="#80000000">
+		                    <Image x:Name="ImgTip" Source="{Binding Source}" MinHeight="256" MinWidth="256"/>
+		                </ToolTip>
+					</Image.ToolTip>
+				</Image>
+			</Grid>
+            <TextBox x:Name="TextBlock_TexturePath" Margin="1" TextWrapping="NoWrap" VerticalAlignment="Center" MinWidth="100" Grid.Row="2" IsReadOnly="True" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"  Text="{Binding TexturePath, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Grid.Column="1" Margin="1,0" VerticalAlignment="Center" Padding="0" Click="Button_Set_Click" Grid.Row="2" Height="{Binding ActualHeight, ElementName=TextBlock_TexturePath}" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/set.png" Margin="0" />
+            </Button>
+            <Button Grid.Column="2" Margin="1,0" VerticalAlignment="Center" Padding="0" Click="Button_Search_Click" Grid.Row="2" Height="{Binding ActualHeight, ElementName=TextBlock_TexturePath}" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/search.png" Margin="0" />
+            </Button>
+            <Button Grid.Column="3" Margin="1,0" VerticalAlignment="Center" Padding="0" Click="Button_Del_Click" Grid.Row="2" Height="{Binding ActualHeight, ElementName=TextBlock_TexturePath}" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" BorderThickness="0" BorderBrush="{x:Null}" Background="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/File/delete.png" Margin="0" />
+            </Button>
+            <TextBlock x:Name="Label_Name" Grid.ColumnSpan="4" Margin="3,1,1,1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+	    </Grid>
+	</Border>
+</UserControl>

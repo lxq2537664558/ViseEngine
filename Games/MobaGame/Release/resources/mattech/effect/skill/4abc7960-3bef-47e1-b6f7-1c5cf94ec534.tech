@@ -1,0 +1,9 @@
+<Technique Name="风的条带" Ver="15" AlphaRef="40" CullMode="NONE" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="522fd9fe-cf59-4d90-9576-daf3ad05ec44" Id="4abc7960-3bef-47e1-b6f7-1c5cf94ec534" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_vein EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/c2bd23cc.png"/>
+		<ShaderVar_fcc81fa2_13db_4288_ae2f_80dc4ae13a09 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_b2dbdf9d_7a41_41ea_be87_2fa8552ea81c EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/mask_dust5.png"/>
+		<ShaderVar_14e979f3_b611_434f_a0af_d5a3ce5fa1bd EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/arrowmask.png"/>
+	</ShaderVar>
+</Technique>
+

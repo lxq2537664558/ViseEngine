@@ -1,0 +1,32 @@
+<cscommon TypeName="UISystem.WinForm" Id="c92a8773-7dc5-4265-b8a9-be7617ff3848" Width="148" Width_Auto="True" Height="28" Height_Auto="True">
+	<WinState/>
+	<cscommon TypeName="UISystem.Container.Grid.Grid" Id="df8c0479-86e1-4dbb-a86b-52fdf4794386" Width="148" Width_Auto="True" Height="28" Height_Auto="True" BackColor="FFFFFF">
+		<WinState/>
+		<cscommon TypeName="UISystem.Container.Grid.Grid" Id="08fb40b1-2fe9-483d-8fb8-6844bf6f31f9" WinName="LevelBackGrid" Width="24" Height="24" BackColor="FFAA8911" Margin="3,2,0,0">
+			<WinState UVAnim="5cd0aaee-1ca7-4268-8deb-497b0f06c14d"/>
+			<cscommon TypeName="UISystem.TextBlock" Id="4fd021a8-b627-4326-a792-59ad8ce15ef5" WinName="RoleLevelText" Width="9" Width_Auto="True" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center" Text="1" FontSize="16">
+				<WinState/>
+				<FontRenderParams>
+					<0 BLColor="FF7F7F7F" BRColor="FF7F7F7F" TLColor="FF7F7F7F" TRColor="FF7F7F7F" OutlineType="Inner" OutlineThickness="0.6"/>
+					<1 BLColor="FFEFEFEF" BRColor="FFEFEFEF" TLColor="FFEFEFEF" TRColor="FFEFEFEF" OutlineType="Inner" OutlineThickness="0.1"/>
+				</FontRenderParams>
+			</cscommon>
+		</cscommon>
+		<cscommon TypeName="UISystem.Container.Grid.Grid" Id="82deb3da-7d87-43bf-9f2d-46606b94db26" Width="117" Height="10" Margin="28,4,0,0">
+			<WinState UVAnim="d2b62590-1558-4279-b03f-5e5fd154068f"/>
+			<cscommon TypeName="UISystem.Progress.ProgressBar" Id="cebb6b66-9096-4bff-bc5a-0f2645c84239" WinName="Hp" Width="117" Width_Auto="True" Height="10" Height_Auto="True" BackColor="FFE81E1E" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+				<WinState UVAnim="d2b62590-1558-4279-b03f-5e5fd154068f"/>
+			</cscommon>
+		</cscommon>
+		<cscommon TypeName="UISystem.Container.Grid.Grid" Id="1643b277-b105-4d8e-a6e9-ee0156faa24d" Width="117" Height="4" Margin="27,14,0,0">
+			<WinState UVAnim="d2b62590-1558-4279-b03f-5e5fd154068f"/>
+			<cscommon TypeName="UISystem.Progress.ProgressBar" Id="970d5270-c476-4fe0-9c8a-6632ce1270fe" WinName="Mp" Width="117" Width_Auto="True" Height="4" Height_Auto="True" BackColor="FF3740EF" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+				<WinState UVAnim="d2b62590-1558-4279-b03f-5e5fd154068f"/>
+			</cscommon>
+		</cscommon>
+		<cscommon TypeName="UISystem.Image" Id="2cfc3b59-f23f-49b8-beaa-f3b7fc71672d" Width="148" Height="28">
+			<WinState UVAnim="48b80a1e-55e0-4dc6-a857-6872dcd03f5b"/>
+		</cscommon>
+	</cscommon>
+</cscommon>
+

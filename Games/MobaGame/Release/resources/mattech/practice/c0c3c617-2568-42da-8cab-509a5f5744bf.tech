@@ -1,0 +1,9 @@
+<Technique Name="±¬Õ¨ÄÜÁ¿Çò" Ver="14" AlphaRef="30" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="d4f883fd-ade3-4740-852b-a2ad2b8c6d12" Id="c0c3c617-2568-42da-8cab-509a5f5744bf" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_5fb28651_a4c1_43d4_a310_db5a24af9986 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_2709e150_8bf3_492c_bc14_4e01cf27106c EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/client-vfx-mgc-1003-4.png"/>
+		<ShaderVar_0b73602a_991f_4913_a558_dff17cc110e1 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_453_3.png"/>
+		<ShaderVar_1140a964_72ec_4203_9a26_67d06d816bbc EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/energy_bomb_mask.png"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,53 @@
+﻿<UserControl x:Name="userControl" x:Class="UIEditor.UIControlsBrowser"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:ctrlLib="clr-namespace:EditorControlLib;assembly=EditorControlLib"
+             xmlns:SearchBox="clr-namespace:SearchBox;assembly=EditorControlLib"
+             xmlns:local="clr-namespace:UIEditor"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Background="#FF333333">
+    <UserControl.Resources>
+        <HierarchicalDataTemplate ItemsSource="{Binding Children}" DataType="{x:Type local:UIControlViewModel}">
+            <Grid PreviewMouseDown="TreeViewItem_MouseDown" MouseMove="TreeViewItem_MouseMove" MouseUp="TreeViewItem_MouseUp">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}" MaxWidth="16" MaxHeight="16" Margin="1"/>
+                <ctrlLib:CustomTextBlock Text="{Binding ControlName}" HighLightString="{Binding HighLightString}" Grid.Column="1" FontSize="12" VerticalAlignment="Center" />
+            </Grid>
+        </HierarchicalDataTemplate>
+        <HierarchicalDataTemplate ItemsSource="{Binding Children}" DataType="{x:Type local:UIControlViewModelParent}">
+            <Grid>
+                <ctrlLib:CustomTextBlock Text="{Binding ControlName}" HighLightString="{Binding HighLightString}" Grid.Column="1" FontSize="14" />
+            </Grid>
+        </HierarchicalDataTemplate>
+
+    </UserControl.Resources>
+    <ScrollViewer Margin="0" VerticalScrollBarVisibility="Auto" Style="{DynamicResource {ComponentResourceKey ResourceId=ScrollViewerStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}">
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="1*"/>
+			</Grid.RowDefinitions>
+            <SearchBox:SearchBox SearchText="{Binding FilterString, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="24" VerticalAlignment="Center" Margin="2"/>
+            <TreeView x:Name="TreeView_Items" Margin="2"
+				Style="{DynamicResource {ComponentResourceKey ResourceId=TreeViewStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Row="1" >
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type TreeViewItem}">
+                        <Setter Property="Padding" Value="1,0,0,0"/>
+                        <Setter Property="Foreground" Value="{DynamicResource {ComponentResourceKey ResourceId=TreeViewItemNormalForeground, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                        <Setter Property="Template" Value="{DynamicResource {ComponentResourceKey ResourceId=TreeViewItemTemplate_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" />
+
+                        <Setter Property="Visibility" Value="{Binding Visibility, Mode=TwoWay}" />
+                        <Setter Property="IsExpanded" Value="{Binding IsExpanded, Mode=TwoWay}" />
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+                </TreeView.ItemContainerStyle>
+            </TreeView>
+		</Grid>
+	</ScrollViewer>
+</UserControl>

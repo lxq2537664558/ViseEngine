@@ -1,0 +1,59 @@
+<Hotkey>
+	<PresetGroup Name="默认设置" Default="True">
+		<Group GroupName="游戏窗口操作">
+			<Command CommandName="打开编辑器" Description="打开编辑器" Hotkey="F12" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="760482873"/>
+			<Command CommandName="转动摄像机" Description="转动场景中的视口摄像机" Hotkey="LButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="476092433"/>
+			<Command CommandName="按水平面移动摄像机" Description="按照水平面移动场景中的视口摄像机" Hotkey="MButton" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseMove" HashCode="131794671"/>
+			<Command CommandName="按视平面移动摄像机" Description="按照视平面移动场景中的视口摄像机" Hotkey="MButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="961481345"/>
+			<Command CommandName="轴向移动摄像机" Description="沿摄像机方向移动场景中的视口摄像机" Hotkey="RButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="-511043564"/>
+			<Command CommandName="轴向移动摄像机 " Description="沿摄像机方向移动场景中的视口摄像机" Hotkey="None" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseWheel" HashCode="-98592914"/>
+			<Command CommandName="选择对象" Description="游戏窗口中选择对象" Hotkey="LButton" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="614122295"/>
+			<Command CommandName="多选对象" Description="游戏窗口中多重选择对象" Hotkey="LButton" WithCtrl="True" WithShift="False" WithAlt="False" MouseType="None" HashCode="247935713"/>
+			<Command CommandName="操作坐标轴" Description="游戏窗口中平移、旋转或缩放坐标轴" Hotkey="LButton" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseMove" HashCode="1519644120"/>
+			<Command CommandName="选择模式" Description="游戏窗口中选择对象模式" Hotkey="Z" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="-1754318447"/>
+			<Command CommandName="移动模式" Description="游戏窗口中选择移动模式" Hotkey="X" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="1110089913"/>
+			<Command CommandName="旋转模式" Description="游戏窗口中选择旋转模式" Hotkey="C" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="-1504727520"/>
+			<Command CommandName="缩放模式" Description="游戏窗口中选择缩放模式" Hotkey="V" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="-600239018"/>
+		</Group>
+		<Group GroupName="地形编辑操作">
+			<Command CommandName="地形编辑_转动摄像机" Description="转动场景中的视口摄像机" Hotkey="LButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="12785228"/>
+			<Command CommandName="地形编辑_按视平面移动摄像机" Description="按照视平面移动场景中的视口摄像机" Hotkey="MButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="230349614"/>
+			<Command CommandName="地形编辑_按水平面移动摄像机" Description="按照水平面移动场景中的视口摄像机" Hotkey="MButton" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseMove" HashCode="-2138170613"/>
+			<Command CommandName="地形编辑_轴向移动摄像机" Description="沿摄像机方向移动场景中的视口摄像机" Hotkey="RButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="423456052"/>
+			<Command CommandName="地形编辑_轴向移动摄像机 " Description="沿摄像机方向移动场景中的视口摄像机" Hotkey="None" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseWheel" HashCode="818825062"/>
+			<Command CommandName="地形编辑_笔刷尺寸变小" Description="笔刷逐渐变小" Hotkey="Oem4" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="-1387538003"/>
+			<Command CommandName="地形编辑_笔刷尺寸变大" Description="笔刷逐渐变大" Hotkey="Oem6" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="-1742879886"/>
+			<Command CommandName="地形编辑_更新地形刷" Description="刷新地形刷的坐标" Hotkey="None" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseMove" HashCode="-1084742673"/>
+			<Command CommandName="地形编辑_刷地形" Description="在地面上移动鼠标刷地形" Hotkey="LButton" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseMove" HashCode="324691890"/>
+		</Group>
+	</PresetGroup>
+	<PresetGroup Name="设置1" Default="False">
+		<Group GroupName="游戏窗口操作">
+			<Command CommandName="打开编辑器" Description="打开编辑器" Hotkey="F2" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="760482873"/>
+			<Command CommandName="转动摄像机" Description="转动场景中的视口摄像机" Hotkey="LButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="476092433"/>
+			<Command CommandName="按水平面移动摄像机" Description="按照水平面移动场景中的视口摄像机" Hotkey="MButton" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseMove" HashCode="131794671"/>
+			<Command CommandName="按视平面移动摄像机" Description="按照视平面移动场景中的视口摄像机" Hotkey="MButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="961481345"/>
+			<Command CommandName="轴向移动摄像机" Description="沿摄像机方向移动场景中的视口摄像机" Hotkey="RButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="-511043564"/>
+			<Command CommandName="轴向移动摄像机 " Description="沿摄像机方向移动场景中的视口摄像机" Hotkey="None" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseWheel" HashCode="-98592914"/>
+			<Command CommandName="选择对象" Description="游戏窗口中选择对象" Hotkey="LButton" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="614122295"/>
+			<Command CommandName="多选对象" Description="游戏窗口中多重选择对象" Hotkey="LButton" WithCtrl="True" WithShift="False" WithAlt="False" MouseType="None" HashCode="247935713"/>
+			<Command CommandName="操作坐标轴" Description="游戏窗口中平移、旋转或缩放坐标轴" Hotkey="LButton" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseMove" HashCode="1519644120"/>
+			<Command CommandName="选择模式" Description="游戏窗口中选择对象模式" Hotkey="Z" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="-1754318447"/>
+			<Command CommandName="移动模式" Description="游戏窗口中选择移动模式" Hotkey="X" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="1110089913"/>
+			<Command CommandName="旋转模式" Description="游戏窗口中选择旋转模式" Hotkey="C" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="-1504727520"/>
+			<Command CommandName="缩放模式" Description="游戏窗口中选择缩放模式" Hotkey="V" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="-600239018"/>
+		</Group>
+		<Group GroupName="地形编辑操作">
+			<Command CommandName="地形编辑_转动摄像机" Description="转动场景中的视口摄像机" Hotkey="LButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="12785228"/>
+			<Command CommandName="地形编辑_按视平面移动摄像机" Description="按照视平面移动场景中的视口摄像机" Hotkey="MButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="230349614"/>
+			<Command CommandName="地形编辑_按水平面移动摄像机" Description="按照水平面移动场景中的视口摄像机" Hotkey="MButton" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseMove" HashCode="-2138170613"/>
+			<Command CommandName="地形编辑_轴向移动摄像机" Description="沿摄像机方向移动场景中的视口摄像机" Hotkey="RButton" WithCtrl="False" WithShift="False" WithAlt="True" MouseType="MouseMove" HashCode="423456052"/>
+			<Command CommandName="地形编辑_轴向移动摄像机 " Description="沿摄像机方向移动场景中的视口摄像机" Hotkey="None" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseWheel" HashCode="818825062"/>
+			<Command CommandName="地形编辑_笔刷尺寸变小" Description="笔刷逐渐变小" Hotkey="Oem4" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="-1387538003"/>
+			<Command CommandName="地形编辑_笔刷尺寸变大" Description="笔刷逐渐变大" Hotkey="Oem6" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="None" HashCode="-1742879886"/>
+			<Command CommandName="地形编辑_更新地形刷" Description="刷新地形刷的坐标" Hotkey="None" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseMove" HashCode="-1084742673"/>
+			<Command CommandName="地形编辑_刷地形" Description="在地面上移动鼠标刷地形" Hotkey="LButton" WithCtrl="False" WithShift="False" WithAlt="False" MouseType="MouseMove" HashCode="324691890"/>
+		</Group>
+	</PresetGroup>
+</Hotkey>
+

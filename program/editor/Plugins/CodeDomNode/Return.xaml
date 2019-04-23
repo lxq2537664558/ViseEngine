@@ -1,0 +1,33 @@
+﻿<myTypes:BaseNodeControl x:Class="CodeDomNode.Return"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+			 xmlns:myTypes ="clr-namespace:CodeGenerateSystem.Base;assembly=CodeGenerateSystem"
+             xmlns:baseCtrl="clr-namespace:CodeGenerateSystem.Controls;assembly=CodeGenerateSystem"
+             xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             mc:Ignorable="d" >
+	<UserControl.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CodeGenerateSystem;Component/Themes/Generic.xaml" />
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</UserControl.Resources>
+    <theme:SystemDropShadowChrome>
+        <Border Background="{DynamicResource NormalControlBackground}" CornerRadius="5" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Rectangle x:Name="Rectangle_Title" Fill="{DynamicResource LinkNode_Method_Background}" RadiusX="5" RadiusY="5" Margin="-3,0"/>
+                <TextBlock Text="return" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="3" FontSize="18.667" IsHitTestVisible="False" Foreground="{DynamicResource TextForeground}" />
+                <baseCtrl:LinkInControl x:Name="MethodLink" Margin="0,-15,0,0" Height="10" BackBrush="{DynamicResource Link_MethodBrush}" VerticalAlignment="Top" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="10" Direction="Top"/>
+                <TextBlock Grid.Row="1" Text="返回值" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="3" Foreground="{DynamicResource TextForeground}"/>
+                <baseCtrl:LinkInControl x:Name="ReturnValueLink" Margin="-18,0,0,0" Height="10" BackBrush="{DynamicResource Link_ValueBrush}" HorizontalAlignment="Left" Grid.Column="2" Grid.Row="1" Width="10" Direction="Left"/>
+            </Grid>
+        </Border>
+    </theme:SystemDropShadowChrome>
+</myTypes:BaseNodeControl>

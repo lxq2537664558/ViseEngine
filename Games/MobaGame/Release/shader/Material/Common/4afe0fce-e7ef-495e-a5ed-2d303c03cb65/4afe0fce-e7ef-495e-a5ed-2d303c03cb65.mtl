@@ -1,0 +1,39 @@
+/*Material
+
+<?xml version="1.0" encoding="utf-16"?>
+<Material Name="天空球" Require="DiffuseUV" Main="DoMaterial_4afe0fce_e7ef_495e_a5ed_2d303c03cb65" ExtendString="" Id="4afe0fce-e7ef-495e-a5ed-2d303c03cb65" Ver="1">
+  <DefaultTechnique Name="DefaultTech" Ver="1" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" HostMaterialId="4afe0fce-e7ef-495e-a5ed-2d303c03cb65" Id="8470cc12-53a0-427a-86e0-fb9fa999c06b" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="0" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace">
+    <ShaderVar>
+      <diffTexture Type="texture" Value="Texture\Assist\SkyBox_002.dds" />
+    </ShaderVar>
+  </DefaultTechnique>
+</Material>
+*/
+
+
+
+
+texture diffTexture;
+sampler2D Samp_texture = sampler_state
+{
+	Texture = <diffTexture>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_4afe0fce_e7ef_495e_a5ed_2d303c03cb65(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    pssem.mDiffuseColor = vise_tex2D(Samp_texture,pssem.mDiffuseUV.xy);
+
+}

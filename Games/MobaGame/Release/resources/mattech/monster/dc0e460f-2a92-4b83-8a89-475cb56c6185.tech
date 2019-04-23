@@ -1,0 +1,9 @@
+<Technique Name="npc4" Ver="72" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="98e4c9bf-0101-4e44-bb7c-cf075e9bd97c" Id="dc0e460f-2a92-4b83-8a89-475cb56c6185" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_Vein EditorType="Texture" Type="texture" Value="resources/texture/monsters/npc_01_01.png"/>
+		<ShaderVar_Color EditorType="Color" Type="float4" Value="1,1,1,1"/>
+		<ShaderVar_SpecPow EditorType="Vector" Type="float1" Value="0.7"/>
+		<ShaderVar_speed EditorType="Vector" Type="float2" Value="0,0"/>
+	</ShaderVar>
+</Technique>
+

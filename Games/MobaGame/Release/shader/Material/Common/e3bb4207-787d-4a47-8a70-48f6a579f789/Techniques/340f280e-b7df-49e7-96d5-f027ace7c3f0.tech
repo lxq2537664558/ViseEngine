@@ -1,0 +1,7 @@
+<Technique Name="Red" Ver="4" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Equal" StencilRef="0" StencilMask="15" StencilWriteMask="240" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Keep" HostMaterialId="e3bb4207-787d-4a47-8a70-48f6a579f789" Id="340f280e-b7df-49e7-96d5-f027ace7c3f0">
+	<ShaderVar>
+		<Texture_5526e12e_1ea1_4d8d_a414_42f052d14906 Type="texture" Value="Texture/Assist/Circle.bmp"/>
+		<color Type="float3" Value="1,0,0"/>
+	</ShaderVar>
+</Technique>
+

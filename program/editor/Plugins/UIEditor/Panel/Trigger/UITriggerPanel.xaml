@@ -1,0 +1,34 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UIEditor.Panel.Trigger" x:Class="UIEditor.Panel.Trigger.UITriggerPanel" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             mc:Ignorable="d" 
+             d:DesignHeight="434" d:DesignWidth="300">
+    <Grid Background="#FF333333">
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="Auto"/>
+    		<RowDefinition Height="0.315*"/>
+    		<RowDefinition Height="2"/>
+    		<RowDefinition Height="0.674*"/>
+    	</Grid.RowDefinitions>
+    	<Grid Margin="0">
+    		<Grid.ColumnDefinitions>
+    			<ColumnDefinition/>
+    			<ColumnDefinition/>
+    			<ColumnDefinition/>
+    		</Grid.ColumnDefinitions>
+            <Button Content="+ 事件" Margin="2" Click="Button_AddEvent_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            <Button Content="+ 属性" Margin="2" Grid.Column="1" Click="Button_AddProperty_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            <Button Content="- 触发器" Margin="2" Grid.Column="2" Click="Button_RemoveTrigger_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+    	</Grid>
+    	<GridSplitter HorizontalAlignment="Stretch" Margin="0" Grid.Row="2" Background="#FF595959"/>
+        <ListBox x:Name="ListBox_Triggers" Margin="1" Grid.Row="1" SelectionChanged="ListBox_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            
+    	<local:UITriggerPropertyPanel x:Name="PropertyTriggerPanel" d:LayoutOverrides="Height" Grid.Row="3" Visibility="Hidden"/>
+    	<local:UITriggerEventPanel x:Name="EventTriggerPanel" d:LayoutOverrides="Height" Grid.Row="3" Visibility="Hidden"/>
+            
+    </Grid>
+</UserControl>

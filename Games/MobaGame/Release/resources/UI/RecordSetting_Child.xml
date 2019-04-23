@@ -1,0 +1,37 @@
+<cscommon TypeName="UISystem.WinForm" Id="49ff67d2-29e5-4e6f-9f61-7ce330ad202d" Width="213" Width_Auto="True" Height="63" Height_Auto="True">
+	<WinState/>
+	<cscommon TypeName="UISystem.Container.Grid.Grid" Id="91adeeb4-2a6a-4d96-a2d0-3050bdfb4813" Width="213" Width_Auto="True" Height="63" Height_Auto="True">
+		<WinState/>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="1*"/>
+		</Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="Auto"/>
+    </Grid.RowDefinitions>
+		<cscommon TypeName="UISystem.Image" Id="18026c7e-7680-4e42-bfbb-e3140636a17d" Width="149" Width_Auto="True" Height="63" Height_Auto="True" BackColor="7B4FAD79" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HitTestVisible="False">
+			<WinState/>
+		</cscommon>
+		<cscommon TypeName="UISystem.Image" Id="b86a9bb6-8531-4e9f-a712-10e4a855b632" Width="64" Width_Auto="True" Height="63" Height_Auto="True" BackColor="54D1CB60" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridColumn="1" HitTestVisible="False">
+			<WinState/>
+		</cscommon>
+		<cscommon TypeName="UISystem.TextBlock" Id="3af66141-1863-4fdc-9b04-0e47a8c23d23" Width="129" Width_Auto="True" Height="40" Height_Auto="True" VerticalAlignment="Center" Margin="10,10,10,10" HitTestVisible="False" Text="Name" FontSize="50">
+			<WinState/>
+			<FontRenderParams>
+				<0 BLColor="FF5B5B5B" BRColor="FF5B5B5B" TLColor="FF5B5B5B" TRColor="FF5B5B5B" OutlineType="Inner" OutlineThickness="0.8"/>
+				<1 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="Inner" OutlineThickness="0.1"/>
+			</FontRenderParams>
+		</cscommon>
+		<cscommon TypeName="UISystem.ToggleButton" Id="c97f2753-252a-4ace-9c42-28f54a14c631" Width="44" Height="43" VerticalAlignment="Center" Margin="10,10,10,10" GridColumn="1" Checked="True" WinToggleButtonClick="game@Client.RecordVManager|HidOrShowRecord">
+			<NormalState UVAnim="46fc50f0-ef85-4781-809c-0fe598677e8f"/>
+			<LightState/>
+			<CheckedState UVAnim="10cd4e9c-d1d8-4116-8073-c26214ea5ffe"/>
+			<DisableState/>
+		</cscommon>
+    <cscommon TypeName="UISystem.StackPanel" Id="8ea63b0d-ec7f-4825-a502-fa02bcadd326" WinName="ChildStackPanel" Width="0" Width_Auto="True" Height="0" Height_Auto="True" HorizontalAlignment="Stretch" GridColumnSpan="2" GridRow="1" Margin="30,0,0,0">
+      <WinState/>
+    </cscommon>
+	</cscommon>
+</cscommon>
+

@@ -1,0 +1,7 @@
+<Technique Name="Ëæ»úÊ÷Ò¶" Ver="4" AlphaRef="50" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyTest" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="de2033d9-6d3d-4ca7-9e99-dd47c3019be3" Id="83a8931a-3349-40e6-af6b-129c29f2fc7c" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_2ecfdc5a_13c7_4714_bb45_975f95801caa EditorType="Texture" Type="texture" Value="resources/texture/effect/object/leaf_tiled_random.png"/>
+		<ShaderVar_framecount EditorType="Vector" Type="float1" Value="4"/>
+	</ShaderVar>
+</Technique>
+

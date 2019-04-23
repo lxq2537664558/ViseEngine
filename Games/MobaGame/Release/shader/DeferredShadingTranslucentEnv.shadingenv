@@ -1,0 +1,101 @@
+/*<Technique>
+	<p0 VertexShader='vs_main' PixelShader='ps_main'/>
+</Technique>*/
+
+#include "VInc.fxx"
+#include "inport.dummy"
+
+#include "CommonDeferredShadingFunc.fxh"
+
+VertexOutput vs_main( VertexInput Input )
+{
+	// VS 2 Semantic
+	VertexTrans vssem = (VertexTrans)0;
+	VertexTransInit ( Input, vssem );
+
+	// VS do
+	V3D_VS_Modifiers ( vssem );
+
+	// Semantic 2 VS-Out
+	VertexOutput Output =(VertexOutput)0;
+	VertexTransToVertexOutput ( vssem, Output );
+//	Output.SV_POSITION = float4(0,0,Output.SV_POSITION.z,Output.SV_POSITION.w);
+
+	return Output;
+}
+
+struct V3D_PS_OUT
+{
+	// Albedo Color
+	float4	RT1		: COLOR0;
+//	float4	RT2		: COLOR1;
+//	float4	RT3		: COLOR2;
+};
+
+
+V3D_PS_OUT	ps_main(PixelInput Input)
+{
+	// PS 2 Semantic
+	PixelMaterialTrans pssem = (PixelMaterialTrans)0.00000001F;
+	PixelInputToMaterial( Input, pssem );
+
+	// PS do
+	//V3D_PS_Modifiers ( pssem );
+
+	//--------------------------------------------------
+	// WRITE SHADING ENVIRONMENT'S CODE HERE!!!!!
+	//--------------------------------------------------
+	// Semantic 2 PS-Out
+
+	V3D_PS_OUT Output =(V3D_PS_OUT)0;
+
+	/// TEMP
+	pssem.mViewPixelNormal = pssem.mViewVertexNormal;
+	/// TEMP
+
+	DoMaterial(pssem);
+	if(g_AlphaTest.x==1)
+	{
+		if(pssem.mDiffuseColor.a < g_AlphaTest.y)
+			discard;
+	}
+	
+/*
+	Output.vDepthNormal.x		= pssem.mProjPos.z / pssem.mProjPos.w;
+	half2 norm = WrapViewNormal(pssem.mViewPixelNormal);
+	Output.vDepthNormal.y		= (float)PackHalf2(norm);
+
+	Output.UnlitColor.xy		= PackRGBA_byteRGBE(pssem.mEmissiveColor.rgb);
+	//Output.UnlitColor.zw		= PackRGBA_byteRGBE(pssem.ShadeColor);
+	
+	Output.AlbedoColor			= pssem.mDiffuseColor;
+
+	Output.SpecularColor.x		= pssem.mSpecularPower;		
+	Output.SpecularColor.y		= pssem.mBloom;						
+	Output.SpecularColor.w	= 0;											
+*/
+
+	// renwind TODO: new MRT
+	pssem.mViewPixelNormal = normalize(pssem.mViewPixelNormal);
+
+	Output.RT1					= pssem.mDiffuseColor;			// AlbedoColor的Alpha位在PostProcess阶段用来存储AO
+//	Output.RT2.xy				= EncodeNormal(pssem.mViewPixelNormal.xyz).xy;
+//	float bloom					= clamp(pssem.mBloom,0,1);
+//	float specularPower		= clamp(pssem.mSpecularPower,0,1);
+//	Output.RT2.z				= EncodeBloomShininess(bloom, specularPower);
+//	Output.RT2.w				= pssem.mSpecularIntensity;
+//	Output.RT3.x				= pssem.mProjPos.z / pssem.mProjPos.w;
+
+	return Output;
+}
+
+#ifdef D3D_EFFECT
+technique tech
+{
+	pass p0
+	{
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

@@ -1,0 +1,67 @@
+﻿<UserControl x:Name="userControl" x:Class="EffectEditor.ParticleSpawnEffectorItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             mc:Ignorable="d" d:DesignWidth="306" d:DesignHeight="126" MouseDown="UserControl_MouseDown">
+    <UserControl.Resources>
+        <SolidColorBrush x:Key="NormalBackground" Color="#FF5D7210" />
+        <SolidColorBrush x:Key="SelectedBackground" Color="#FFCAD419" />
+    </UserControl.Resources>
+    <Border x:Name="Border_Main" BorderThickness="1" CornerRadius="3" Background="{DynamicResource NormalBackground}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Margin="2" TextWrapping="Wrap" Text="{Binding EffectorName, ElementName=userControl}" VerticalAlignment="Center" Foreground="White"/>
+            <Button Margin="2" Height="24" Grid.Column="2" Click="Button_Remove_Click" ToolTip="删除" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Width="Auto" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/File/Delete.png" Width="18" Height="18"/>
+            </Button>
+            <ToggleButton Grid.Column="1" Margin="2" d:LayoutOverrides="Width, Height" Style="{DynamicResource {ComponentResourceKey ResourceId=ToolBarToggleButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" IsChecked="{Binding IsActive, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ToolTip="是否激活" >
+                <Image Source="/ResourceLibrary;component/Icon/preview.png" Width="18" Height="18"/>
+            </ToggleButton>
+            <Border Grid.Row="1" Grid.ColumnSpan="3" Background="#3D000000" Margin="10,0,0,0" BorderBrush="Black" BorderThickness="1" CornerRadius="3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Margin="5,2,2,2" Text="发射器列表" d:LayoutOverrides="Height" VerticalAlignment="Center"/>
+                    <Button Height="24" Margin="0,2,34,2" HorizontalAlignment="Right" Click="Button_AddEmitter_Click" ToolTip="添加" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Width="32" Background="{x:Null}" BorderBrush="{x:Null}">
+                        <Image Source="/ResourceLibrary;component/Icon/File/New.png" Width="18" Height="18"/>
+                    </Button>
+                    <Button Height="24" Margin="0,2,2,2" HorizontalAlignment="Right" Click="Button_DelEmitter_Click" ToolTip="删除" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Width="32" Background="{x:Null}" BorderBrush="{x:Null}">
+                        <Image Source="/ResourceLibrary;component/Icon/File/Delete.png" Width="18" Height="18"/>
+                    </Button>
+                    <ListBox x:Name="ListBox_Emitters" Grid.Row="1" Margin="2" ItemsSource="{Binding EmittersList, ElementName=userControl}" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="1*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <TextBlock Grid.Column="0" Margin="2" VerticalAlignment="Center" Text="{Binding DisplayName}" />
+                                    <Button ToolTip="设置" Grid.Column="1" Margin="2" Width="24" Height="24" x:Name="Button_SetEmitter" Tag="{Binding MySelf}" Click="Button_SetEmitter_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                                        <Image Source="/ResourceLibrary;component/Icon/set.png" />
+                                    </Button>
+                                    <Button ToolTip="查找" Grid.Column="2" Margin="2" Width="24" Height="24" x:Name="Button_FindEmitter" Tag="{Binding MySelf}" Click="Button_FindEmitter_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                                        <Image Source="/ResourceLibrary;component/Icon/search.png"/>
+                                    </Button>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Border>
+        </Grid>
+    </Border>
+</UserControl>

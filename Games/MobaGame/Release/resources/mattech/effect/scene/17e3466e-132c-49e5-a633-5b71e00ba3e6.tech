@@ -1,0 +1,10 @@
+<Technique Name="СϪ" Ver="41" AlphaRef="40" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="1c5c4891-a92d-4bb7-96ec-9b53d7b88058" Id="17e3466e-132c-49e5-a633-5b71e00ba3e6" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_e3f4ba01_4ab7_4651_b240_4d8ba7d5676e EditorType="Texture" Type="texture" Value="resources/texture/effect/water/Water_03f.png"/>
+		<ShaderVar_364ce997_05ef_43fc_883c_d939ef135f22 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/water_normal_01.png"/>
+		<ShaderVar_21038055_8fae_4ded_b1d2_5a1d2382b97e EditorType="Texture" Type="texture" Value="resources/texture/effect/water/Angra_Town_Water_02.png"/>
+		<ShaderVar_f4839439_cad6_4c23_99f5_cd1352ad1921 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/waterfallmask.png"/>
+		<ShaderVar_5390a1a3_4abb_4a82_8fcb_888410e30062 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_455.png"/>
+	</ShaderVar>
+</Technique>
+

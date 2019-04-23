@@ -1,0 +1,67 @@
+﻿<UserControl x:Class="AIEditor.StateGridStateChange"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             mc:Ignorable="d" Background="{DynamicResource DefaultBackground}" >
+	<UserControl.Resources>
+		<Storyboard x:Key="UserControl_OnMouseEnter">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#4C0000FF"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<Storyboard x:Key="UserControl_OnMouseLeave">
+			<ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="rectangle">
+				<EasingColorKeyFrame KeyTime="0:0:0.1" Value="#000000FF"/>
+			</ColorAnimationUsingKeyFrames>
+		</Storyboard>
+		<SolidColorBrush x:Key="ToSameTarget" Color="#FF008FA1" />
+		<SolidColorBrush x:Key="ToDifferentTarget" Color="#FF858D00" />
+		<SolidColorBrush x:Key="DefaultBackground" Color="Gray" />
+	</UserControl.Resources>
+	<UserControl.Triggers>
+		<EventTrigger RoutedEvent="Mouse.MouseEnter">
+			<BeginStoryboard x:Name="UserControl_OnMouseEnter_BeginStoryboard" Storyboard="{StaticResource UserControl_OnMouseEnter}"/>
+		</EventTrigger>
+		<EventTrigger RoutedEvent="Mouse.MouseLeave">
+			<BeginStoryboard x:Name="UserControl_OnMouseLeave_BeginStoryboard" Storyboard="{StaticResource UserControl_OnMouseLeave}"/>
+		</EventTrigger>
+	</UserControl.Triggers>
+    <Border BorderBrush="White" BorderThickness="1">
+		<Grid x:Name="Grid_BG" Margin="0" Background="{DynamicResource DefaultBackground}" MouseLeftButtonDown="Grid_MouseLeftButtonDown" MouseRightButtonUp="Grid_MouseRightButtonUp" >
+			<Rectangle x:Name="rectangle" Fill="#000000FF" IsHitTestVisible="False"/>
+			<Rectangle x:Name="Rect_Dirty" Stroke="Red" Visibility="Hidden"/>
+			<Grid x:Name="Grid_ChangeDisable" Margin="5" IsHitTestVisible="False">
+				<Path Data="M0,8 L286.02797,294.02797" Stretch="Fill" Stroke="Red" StrokeThickness="3" StrokeStartLineCap="Triangle" StrokeEndLineCap="Triangle"/>
+				<Path Data="M293,5 L12.539565,285.46043" StrokeStartLineCap="Triangle" Stretch="Fill" StrokeEndLineCap="Triangle" Stroke="Red" StrokeThickness="3"/>
+			</Grid>
+			<TextBlock x:Name="TextBlock_TargetStateName" TextWrapping="Wrap" Text="目标状态名称" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="5" IsHitTestVisible="False"/>
+			<Popup x:Name="Popup_Details" StaysOpen="False">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="Auto"/>
+						<ColumnDefinition Width="0.665*"/>
+					</Grid.ColumnDefinitions>
+					<Rectangle Margin="0" Grid.ColumnSpan="2" Fill="#FF595959"/>
+                    <TextBlock x:Name="TextBlock_StateChangeInfo" Margin="5,3" Grid.ColumnSpan="2" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <ComboBox x:Name="ComboBox_State" Margin="5" Grid.Column="1" MinWidth="138" SelectionChanged="ComboBox_State_SelectionChanged" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <TextBlock Margin="5" TextWrapping="Wrap" Text="目标状态" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+					<Grid Margin="0,0,0,5" Grid.Row="2" Grid.ColumnSpan="2">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="1*"/>
+							<ColumnDefinition Width="1*"/>
+						</Grid.ColumnDefinitions>
+                        <Button x:Name="Button_EditCurrent" Content="编辑当前状态" Margin="2" Click="Button_EditCurrentState_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                        <Button x:Name="Button_EditTarget" Content="编辑目标状态" Margin="2" Grid.Column="1" Click="Button_EditTargetState_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+					</Grid>
+				</Grid>
+			</Popup>
+		</Grid>
+	</Border>
+</UserControl>

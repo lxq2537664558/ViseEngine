@@ -1,0 +1,25 @@
+/*Material
+
+<?xml version="1.0" encoding="utf-16"?>
+<Material Name="画阴影时的替代材质" Require="DiffuseUV" Main="DoMaterial_55ebb4c6_1f31_4bfa_ba04_685fcd7babf9" Id="55ebb4c6-1f31-4bfa-ba04-685fcd7babf9" Ver="2">
+  <DefaultTechnique Name="DefaultTech" Ver="3" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" HostMaterialId="55ebb4c6-1f31-4bfa-ba04-685fcd7babf9" Id="3a9766f8-8455-470b-a0f1-3f1a70af5a97" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="0" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace">
+    <ShaderVar />
+  </DefaultTechnique>
+</Material>
+*/
+
+
+
+
+#ifdef ByLayerBased
+void DoMaterial_55ebb4c6_1f31_4bfa_ba04_685fcd7babf9(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 Value_a0cfc813_f729_4d98_8435_5fc7d2563034 = float4(1,1,1,1);
+
+
+    pssem.mDiffuseColor = Value_a0cfc813_f729_4d98_8435_5fc7d2563034;
+
+}

@@ -1,0 +1,36 @@
+﻿<myTypes:BaseNodeControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:myTypes ="clr-namespace:CodeGenerateSystem.Base;assembly=CodeGenerateSystem"
+			 xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             xmlns:Controls="clr-namespace:CodeGenerateSystem.Controls;assembly=CodeGenerateSystem" x:Name="baseNodeControl" x:Class="MaterialEditor.Controls.Operation.Function"
+             mc:Ignorable="d" >
+    <myTypes:BaseNodeControl.Resources>
+        <ResourceDictionary Source="/MaterialEditor;component/Themes/Generic.xaml" />
+    </myTypes:BaseNodeControl.Resources>
+    <Grid>
+        <theme:SystemDropShadowChrome Color="#B2000000">
+            <Border Background="{StaticResource NodeBackground}" CornerRadius="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Border x:Name="Rectangle_Title" Background="{StaticResource Method}" CornerRadius="5,5,0,0" />
+                    <TextBlock x:Name="TitleLabel" FontStyle="Normal" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="5,3" Foreground="{StaticResource TextForeground}" IsHitTestVisible="False" ><Run Text="Function"/></TextBlock>
+                    <Grid x:Name="Grid_Function" Grid.Row="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.5*"/>
+                            <ColumnDefinition Width="0.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel x:Name="StackPanel_InValue" Margin="0"/>
+                        <StackPanel x:Name="StackPanel_OutValue" Grid.Column="1" Margin="0"/>
+                    </Grid>
+                </Grid>
+            </Border>
+        </theme:SystemDropShadowChrome>
+        <Controls:CommentControl Comment="{Binding Comment, ElementName=baseNodeControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    </Grid>
+</myTypes:BaseNodeControl>

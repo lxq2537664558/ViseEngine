@@ -1,0 +1,7 @@
+<Technique Name="ÉùÒôÍ¼±ê" Ver="6" AlphaRef="0" CullMode="CCW" ZDisable="1" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Free" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="dce1e9e2-8ead-4b6b-a577-4ca03a94c52c" Id="fb636f17-c19b-4b43-b0d7-0b2a3e2174ef" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_diffuse EditorType="Texture" Type="texture" Value="resources/default/Editor/texture/SoundIcon.png"/>
+		<ShaderVar_color EditorType="Color" Type="float4" Value="1,1,1,1"/>
+	</ShaderVar>
+</Technique>
+

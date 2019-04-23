@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="EffectEditor.MainControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+			 xmlns:wpg="clr-namespace:WPG;assembly=WPG"
+			 xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="520.5" d:DesignWidth="721.5"
+			 Loaded="UserControl_Loaded" x:Name="userControl">
+<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="0.658*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="0.319*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="0.669*"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="0.318*"/>
+		</Grid.ColumnDefinitions>
+		<!--ScrollViewer Grid.Column="2" Grid.Row="1" Grid.RowSpan="3"-->
+			<Grid Grid.Column="2" Grid.Row="1" Grid.RowSpan="3">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="Auto"/>
+					<RowDefinition Height="1*"/>
+				</Grid.RowDefinitions>
+				<wpg:PropertyGrid x:Name="MainProperties" Headline="特效属性" Margin="2" Grid.Row="0" />
+				<wpg:PropertyGrid x:Name="ItemProperties" Headline="属性" Margin="2" Grid.Row="1" />
+			</Grid>
+		<!--/ScrollViewer-->
+		<ToolBar Grid.ColumnSpan="3" VerticalAlignment="Center">
+			<Button x:Name="bnSave" Click="bnSave_Click"  Foreground="White" Content="保存" />
+			<Separator/>
+			<Button x:Name="bnAddEmitter" Content="添加粒子" Click="Button_AddParticle_Click" Foreground="White"/>
+			<!--Button x:Name="bnDelEmitter" Content="删除发射器" Click="bnDelEmitter_Click"  Foreground="White"/-->
+			<ToggleButton Content="循环预览" Style="{DynamicResource {ComponentResourceKey ResourceId=ToolBarToggleButtonBaseStyle, TypeInTargetAssembly={x:Type res:CustomResources}}}" Foreground="White" IsChecked="{Binding LoopView, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+			<Button x:Name="BtnReset" Content="重置" Click="Button_Reset_Click" Foreground="White"/>
+			<Separator/>
+			<Button x:Name="BtnCopy" Content="复制粒子" Click="Button_Copy_Click" Foreground="White"/>
+			<Button x:Name="BtnPaste" Content="粘贴粒子" Click="Button_Paste_Click" Foreground="White"/>
+			<Button x:Name="BtnResetID" Content="重置ID" Click="Button_ResetID_Click" Foreground="White"/>
+			<Separator/>
+			<Button x:Name="BtnShowAll" Content="全部显示" Click="Button_ShowAll_Click" Foreground="White"/>
+			<Button x:Name="BtnHideAll" Content="全部隐藏" Click="Button_HideAll_Click" Foreground="White"/>
+		</ToolBar>
+
+		<Grid x:Name="Grid_PreView"  Margin="1" Grid.Row="1"/>
+		<GridSplitter Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitter_Black, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Column="1" HorizontalAlignment="Stretch" Margin="0" Grid.Row="1" Width="3" Background="Black" Grid.RowSpan="3"/>
+		<GridSplitter Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitter_Black, TypeInTargetAssembly={x:Type res:CustomResources}}}" HorizontalAlignment="Stretch" Margin="0" Grid.Row="2" Background="Black" Height="3"/>
+		<ScrollViewer ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="0" Grid.Row="3" >
+			<StackPanel x:Name="StackPanel_Particles" Orientation="Horizontal" Background="#FF595959" />
+		</ScrollViewer>
+
+	</Grid>
+</UserControl>

@@ -1,0 +1,9 @@
+<Technique Name="É³³¾" Ver="16" AlphaRef="60" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="7adcf61d-aebe-4d5d-b73c-d1fd2f2771ae" Id="80f47fb2-1b73-435b-854f-4b470eb9cb5e" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_1cf5816d_0936_41bf_be4d_ac1e6c4754e8 EditorType="Texture" Type="texture" Value="resources/texture/effect/smoke/GF_301.png"/>
+		<ShaderVar_08fac4ff_02c1_4595_8612_e9ebaf6a5cc7 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_a40e4739_1c2a_4cf0_b486_93a89e9db080 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/mask_dust3.png"/>
+		<ShaderVar_cc360663_3925_4ef2_b9b9_5b2019cab961 EditorType="Texture" Type="texture" Value="resources/texture/effect/dirt/dust8_sand.png"/>
+	</ShaderVar>
+</Technique>
+

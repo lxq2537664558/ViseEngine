@@ -1,0 +1,8 @@
+<Technique Name="流动纹理材质" Ver="22" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="a529bfa4-1841-4d6e-8fde-ea00f334ff5d" Id="f4c0fae4-ad02-4720-8543-e0a4aa2c516a" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_04387fc4_335f_4873_b784_7f1cd3390eea EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_06c3c42d_11b0_42f1_b0b8_aa4a78a7bf29 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/noise028.png"/>
+		<ShaderVar_760946e6_4e2d_408a_97fb_3130cf9424b3 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/mask_spray.png"/>
+	</ShaderVar>
+</Technique>
+

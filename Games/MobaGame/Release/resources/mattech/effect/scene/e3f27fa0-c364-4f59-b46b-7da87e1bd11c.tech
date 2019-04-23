@@ -1,0 +1,9 @@
+<Technique Name="É½¼äµÄÔÆÎí" Ver="66" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="458e4361-d0b9-426a-ba7a-826fc43c74cf" Id="e3f27fa0-c364-4f59-b46b-7da87e1bd11c" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_2a91122f_a92e_4015_9a73_d2f5f1a24506 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_af1b8ebd_a56e_4cb5_af46_9ecf0ca2a94e EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/spiderWeb_boneyClouds_diffAlpha.png"/>
+		<ShaderVar_15c48b77_2b8c_40db_8b71_622815e4bc09 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+		<ShaderVar_aa774814_9534_4c0d_afe2_add2515c14c6 EditorType="Vector" Type="float1" Value="0"/>
+	</ShaderVar>
+</Technique>
+

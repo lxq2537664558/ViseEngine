@@ -1,0 +1,361 @@
+#ifndef _FX_VINC_FXX_
+#define _FX_VINC_FXX_
+
+#include "VBindDefine.fxx"
+
+//----------------------------------
+//Global Data
+//----------------------------------
+/*float4x4*/
+float4x4	g_World : World;
+float4x4	g_WorldInverse : WorldInverse;
+float4x4	g_View : View;
+float4x4	g_ViewInverse : ViewInverse;
+float4x4	g_Projection : Projection;
+float4x4	g_ProjectionInverse : ProjectionInverse;
+float4x4	g_WorldView : WorldView;
+float4x4	g_WorldViewInverse : WorldViewInverse;
+float4x4	g_ViewProjection : ViewProjection;
+float4x4	g_ViewProjectionInverse : ViewProjectionInverse;
+float4x4	g_WorldViewProjection : WorldViewProjection;
+float4x4	g_WorldViewProjectionInverse : WorldViewProjectionInverse;
+float4x4	g_WorldViewProjectionVP : WorldViewProjectionVP;
+float4x4	g_BoneMatrix : BoneMatrix;
+
+/*float*/
+float g_Random : Random;
+float g_UnitChange : UnitChange;
+float g_Slerp : Slerp;
+float g_Time : Time;
+float g_CustomTime : CustomTime;
+float g_FadePercent : FadePercent;
+int g_IsFadeIn : IsFadeIn;
+int g_IsFadeOut : IsFadeOut;
+//float g_TimeElapse : TimeElapse;
+//float g_TimeMod2Pi : TimeMod2Pi;
+float g_SinTime : SinTime;
+float g_CosTime : CosTime;
+float g_TextureFactor : TextureFactor;
+
+float g_ViewPortX : ViewPort_X;
+float g_ViewPortY : ViewPort_Y;
+float g_ViewPortW : ViewPort_W;
+float g_ViewPortH : ViewPort_H;
+
+float g_FogStart : FogStart;
+float g_FogEnd : FogEnd;
+float g_FogRange : FogRange;
+float g_FogDensity : FogDensity;
+
+float4 g_FogColor : FogColor;
+
+float2 g_AlphaTest : AlphaTest;
+
+/*float3*/
+float3 g_CameraPosition : CameraPosition;
+float3 g_CameraDirection : CameraDirection;
+float3 g_CameraUp : CameraUp;
+float3 g_CameraRight : CameraRight;
+float g_CameraZFar : ZFar;
+//float3 g_BindBox : BindBox;
+
+float3 g_CameraPositionInModel : CameraPositionInModel;
+float3 g_CameraDirectionInModel : CameraDirectionInModel;
+float3 g_CameraUpInModel : CameraUpInModel;
+float3 g_CameraRightInModel : CameraRightInModel;
+
+/*float4*/
+float4 g_GlobalAmbient : GlobalAmbient;
+float4 g_MaterialAmbient : MaterialAmbient;
+float4 g_MaterialDiffuse : MaterialDiffuse;
+float4 g_MaterialSpecular : MaterialSpecular;
+float4 g_MaterialEmissive : MaterialEmissive;
+float g_MaterialPower : MaterialPower;
+
+/*struct*/
+/* renwind test
+struct MaterialDesc
+{
+	float4 Diffuse;
+	float4 Ambient;        
+	float4 Specular;       
+	float4 Emissive;       
+	float Power;          
+};
+
+MaterialDesc g_Mtl : Material;
+
+struct LightDesc
+{
+	float3 Position;
+	float3 Direction;
+	float4 Ambient;
+	float4 Diffuse;
+	float4 Specular;
+};
+
+LightDesc g_Light0 : LightInModel0;
+LightDesc g_Light1 : LightInModel1;
+*/
+
+bool g_bFogX : FogEnable;
+bool g_bLightX : LightEnable;
+
+texture g_PreFrameBuffer : PreFrameBuffer;
+texture g_PreFrameDepth : PreFrameDepth;
+texture g_SceneCapture1 : SceneCapture1;
+texture g_SceneCapture2 : SceneCapture2;
+texture g_SceneCapture3 : SceneCapture3;
+texture g_SceneCapture4 : SceneCapture4;
+texture g_SceneCapture5 : SceneCapture5;
+
+sampler2D Samp_g_PreFrameBuffer = sampler_state
+{
+	Texture = <g_PreFrameBuffer>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = FALSE;
+};
+sampler2D Samp_g_PreFrameDepth = sampler_state
+{
+	Texture = <g_PreFrameDepth>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	SRGBTexture = FALSE;
+};
+
+sampler2D Samp_g_SceneCapture1 = sampler_state
+{
+	Texture = <g_SceneCapture1>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	SRGBTexture = FALSE;
+};
+
+sampler2D Samp_g_SceneCapture2 = sampler_state
+{
+	Texture = <g_SceneCapture2>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	SRGBTexture = FALSE;
+};
+
+sampler2D Samp_g_SceneCapture3 = sampler_state
+{
+	Texture = <g_SceneCapture3>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	SRGBTexture = FALSE;
+};
+sampler2D Samp_g_SceneCapture4 = sampler_state
+{
+	Texture = <g_SceneCapture4>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	SRGBTexture = FALSE;
+};
+
+sampler2D Samp_g_SceneCapture5 = sampler_state
+{
+	Texture = <g_SceneCapture5>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	SRGBTexture = FALSE;
+};
+
+/*
+//----------------------------------
+//Global Function
+//----------------------------------
+//处理灯光的函数
+float4 DoLightingWithMask( LightDesc Light , float3 VertexPos , float3 VertexNorm , float4 VertexDiffuse , float MaskColor , out float4 Specular )
+{
+	float4 Color;
+	Color = (g_Mtl.Emissive + g_Mtl.Ambient * VertexDiffuse) * g_GlobalAmbient;
+
+	float3 L = normalize(Light.Position - VertexPos);
+	float DiffuseLight = max(dot(VertexNorm,L),0);
+	float4 Diffuse = g_Mtl.Diffuse * Light.Diffuse * DiffuseLight * MaskColor;
+	
+	float3 V = normalize(g_CameraPositionInModel - VertexPos);
+	float3 H = normalize(L + V);
+	float SpecularLight = max(0,pow(max(dot(VertexNorm,H),0),g_Mtl.Power));
+	Specular = g_Mtl.Specular * Light.Diffuse * SpecularLight;
+
+	Color.xyz += Diffuse.xyz;
+	Color.w = VertexDiffuse.w;
+	
+	return Color;
+}
+
+//处理灯光的函数
+float4 Dp3Light( LightDesc Light , float3 VertexPos , float3 VertexNorm , float4 VertexDiffuse )
+{
+	float4 Color;
+	Color = (g_Mtl.Emissive + g_Mtl.Ambient * VertexDiffuse) * g_GlobalAmbient;
+
+	float3 L = normalize(Light.Position - VertexPos);
+	
+	float DiffuseLight = max(dot(VertexNorm,L),0);
+	float4 Diffuse = g_Mtl.Diffuse * Light.Diffuse * DiffuseLight;
+	Color.xyz += Diffuse.xyz;
+	
+	return Color;
+}
+
+//处理灯光的函数
+float4 DoLighting( LightDesc Light , float3 VertexPos , float3 VertexNorm , float4 VertexDiffuse , out float4 Specular )
+{
+	float4 Color;
+	Color = (g_Mtl.Emissive + g_Mtl.Ambient * VertexDiffuse) * g_GlobalAmbient;
+
+	float3 L = normalize(Light.Position - VertexPos);
+	float DiffuseLight = max(dot(VertexNorm,L),0);
+	float4 Diffuse = g_Mtl.Diffuse * Light.Diffuse * DiffuseLight;
+	
+	float3 V = normalize(g_CameraPositionInModel - VertexPos);
+	float3 H = normalize(L + V);
+	float SpecularLight = max(0,pow(max(dot(VertexNorm,H),0),g_Mtl.Power));
+	Specular = g_Mtl.Specular * Light.Diffuse * SpecularLight;
+
+	Color.xyz += Diffuse.xyz;
+	Color.w = VertexDiffuse.w;
+	
+	return Color;
+}
+//计算一个灯光的Diffuse
+float4 DoLightingDiffuse( LightDesc Light , float3 VertexPos ,  float3 VertexNorm , float4 VertexDiffuse )
+{
+	float4 Color;
+	Color = g_Mtl.Emissive + g_Mtl.Ambient * g_GlobalAmbient * VertexDiffuse;
+
+	float3 L = normalize(Light.Position - VertexPos);
+	float DiffuseLight = max(dot(VertexNorm,L),0);
+	float4 Diffuse = g_Mtl.Diffuse * Light.Diffuse * DiffuseLight;
+	
+	Color.xyz += Diffuse.xyz;
+	Color.w = VertexDiffuse.w;
+	
+	return Color;
+}
+//计算一个灯光的Specular
+float4 DoLightingSpecular( LightDesc Light , float3 VertexPos ,  float3 VertexNorm )
+{
+	float3 L = normalize(Light.Position - VertexPos);
+
+	float3 V = normalize(g_CameraPositionInModel - VertexPos);
+	float3 H = normalize(L + V);
+	float SpecularLight = max(0,pow(max(dot(VertexNorm,H),0),g_Mtl.Power));
+	return g_Mtl.Specular * Light.Diffuse * SpecularLight;
+}
+//通过灯光的Direction计算一个灯光的Diffuse
+float4 DoLightingDiffuseByDir( LightDesc Light ,  float3 VertexNorm , float4 VertexDiffuse )
+{
+	float4 Color;
+	//Color = g_Mtl.Emissive + g_Mtl.Ambient * g_GlobalAmbient  * VertexDiffuse;
+
+	float3 L = Light.Direction;
+	float DiffuseLight = max(dot(VertexNorm,L),0);
+	float4 Diffuse = VertexDiffuse * Light.Diffuse * DiffuseLight;
+	
+	Color.xyz = Diffuse.xyz;
+	Color.w = VertexDiffuse.w;
+	
+	return Color;
+}
+//通过灯光的Direction计算一个灯光的Specular
+float4 DoLightingSpecularByDir( LightDesc Light , float3 VertexPos ,  float3 VertexNorm )
+{
+	float3 L = Light.Direction;
+
+	float3 V = normalize(g_CameraPositionInModel - VertexPos);
+	float3 H = normalize(L + V);
+	float SpecularLight = max(0,pow(max(dot(VertexNorm,H),0),g_Mtl.Power));
+	return g_Mtl.Specular * Light.Diffuse * SpecularLight;
+}
+//计算点灯光在Tangent空间中的方向
+float3 TransfomLightDir( LightDesc Light , float3 VertexPos , float3 VertexNorm , float3 VertexTang )
+{
+	float3 lightDir = Light.Position - VertexPos;
+
+	float3 binormal = cross(VertexTang,VertexNorm);
+	float3x3 rotation = float3x3(VertexTang,binormal,VertexNorm);
+	return mul(rotation,lightDir);
+}
+*/
+float DoFog( float3 pos )
+{
+	float4 camPos = mul( float4(pos,1) , g_WorldView );
+	float fFogRange = g_FogEnd - g_FogStart;
+	float fVertexDist = g_FogEnd - camPos.z;
+	float fFog = clamp( (fVertexDist/fFogRange) , 0.0 , 1 );
+	return fFog;
+}
+
+//#include "VLightProcess.fxx"
+
+float4 MakeFloat4( float x,float y,float z,float w )
+{
+	return float4(x,y,z,w);
+}
+
+float3 MakeFloat3( float x,float y,float z )
+{
+	return float3(x,y,z);
+}
+
+float2 MakeFloat2( float x,float y )
+{
+	return float2(x,y);
+}
+
+#define	EPSILON			0.0001f
+#define	SMALL_EPSILON	0.0000001f
+
+
+
+
+void	AssignColor(float4 incolor, inout float4 outColor)
+{
+	outColor = incolor;
+}
+
+void 	SamplerParameter(sampler2D samp, float4 inUV, out float4 outColor)
+{
+	outColor = tex2D(samp, inUV.xy);
+}
+
+float4  vise_tex2D(sampler2D samp, float2 uv)
+{
+	return tex2D(samp, uv);
+}
+
+float4  vise_tex2Dproj(sampler2D samp, float4 uv)
+{
+#ifndef D3D_EFFECT
+	uv.y = 1 - uv.y;
+#endif
+
+	return tex2Dproj(samp, uv);
+}
+
+float4  vise_tex2Dlod(sampler2D samp, float4 uv)
+{
+#ifndef D3D_EFFECT
+	uv.y = 1 - uv.y;
+#endif
+
+	return tex2Dlod(samp, uv);
+}
+
+
+#endif // _FX_VINC_FXX_

@@ -1,0 +1,49 @@
+﻿<myTypes:BaseNodeControl x:Name="baseNodeControl" x:Class="MaterialEditor.Controls.Operation.IF"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:myTypes ="clr-namespace:CodeGenerateSystem.Base;assembly=CodeGenerateSystem"
+             xmlns:baseCtrl="clr-namespace:CodeGenerateSystem.Controls;assembly=CodeGenerateSystem"
+			 xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             mc:Ignorable="d" Width="100" >
+    <UserControl.Resources>
+        <ResourceDictionary Source="/MaterialEditor;component/Themes/Generic.xaml" />
+    </UserControl.Resources>
+    <Grid>
+        <theme:SystemDropShadowChrome Color="#B2000000">
+            <Border Background="{StaticResource NodeBackground}" CornerRadius="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Border CornerRadius="5,5,0,0" x:Name="Rectangle_Title" Background="{StaticResource IF}" />
+                    <TextBlock Name="TitleLabel" FontStyle="Normal" Margin="5,3" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource TextForeground}" IsHitTestVisible="False" >if</TextBlock>
+                    <TextBlock Grid.Row="1" VerticalAlignment="Center" Grid.RowSpan="6" HorizontalAlignment="Right" Margin="0,0,3,0" Foreground="{StaticResource TextForeground}">Result</TextBlock>
+                    <baseCtrl:LinkOutControl Name="ResultHandle"  Margin="0,0,-20,0" Grid.Row="1" Width="15" Height="15" BackBrush="{StaticResource ValueLink}" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.RowSpan="6" Direction="Right" />
+
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{StaticResource TextForeground}" Margin="3,8,0,8">A</TextBlock>
+                    <baseCtrl:LinkInControl Name="ValueA"  Margin="-22,0,0,0" Grid.Row="1" Width="15" Height="15" BackBrush="{StaticResource ValueLink}" HorizontalAlignment="Left" VerticalAlignment="Center" Direction="Left" />
+                    <TextBlock Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="{StaticResource TextForeground}" Margin="3,8,0,8">B</TextBlock>
+                    <baseCtrl:LinkInControl Name="ValueB"  Margin="-22,0,0,0" Grid.Row="2" Width="15" Height="15" BackBrush="{StaticResource ValueLink}" HorizontalAlignment="Left" VerticalAlignment="Center" Direction="Left" />
+
+                    <TextBlock Grid.Row="3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="A&gt;B" Foreground="{StaticResource TextForeground}" Margin="3,8,0,8" />
+                    <baseCtrl:LinkInControl Name="ValueAgtB" Margin="-22,0,0,0" Grid.Row="3" Width="15" Height="15" BackBrush="{StaticResource ValueLink}" HorizontalAlignment="Left" VerticalAlignment="Center" Direction="Left" />
+                    <TextBlock Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Text="A=B" Foreground="{StaticResource TextForeground}" Margin="3,8,0,8" />
+                    <baseCtrl:LinkInControl Name="ValueAeqB" Margin="-22,0,0,0" Grid.Row="4" Width="15" Height="15" BackBrush="{StaticResource ValueLink}" HorizontalAlignment="Left" VerticalAlignment="Center" Direction="Left" />
+                    <TextBlock Grid.Row="5" HorizontalAlignment="Left" VerticalAlignment="Center" Text="A&lt;B" Margin="3,8,0,8" Foreground="{StaticResource TextForeground}" />
+                    <baseCtrl:LinkInControl Name="ValueAltB" Margin="-22,0,0,0" Grid.Row="5" Width="15" Height="15" BackBrush="{StaticResource ValueLink}" HorizontalAlignment="Left" VerticalAlignment="Center" Direction="Left" />
+                    <!--TextBlock Grid.Row="6" HorizontalAlignment="Left" VerticalAlignment="Center" Text="bool" Foreground="{StaticResource TextForeground}" Margin="3,8,0,8" />
+                    <baseCtrl:LinkInControl Name="ValueBool" Margin="-20,0,0,0" Grid.Row="6" Width="15" Height="15" BackBrush="{StaticResource ValueLink}" HorizontalAlignment="Left" VerticalAlignment="Center" /-->
+                </Grid>
+            </Border>
+        </theme:SystemDropShadowChrome>
+        <baseCtrl:CommentControl d:LayoutOverrides="Width, Height" Comment="{Binding Comment, ElementName=baseNodeControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+    </Grid>
+</myTypes:BaseNodeControl>

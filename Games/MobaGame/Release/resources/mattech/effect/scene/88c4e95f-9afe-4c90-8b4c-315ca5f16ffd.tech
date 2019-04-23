@@ -1,0 +1,10 @@
+<Technique Name="Ð¡Ë®¾§À¶" Ver="44" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="785ecd3c-dee0-43f9-9646-730741a32f10" Id="88c4e95f-9afe-4c90-8b4c-315ca5f16ffd" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_c649eae2_8341_4354_8fc6_c3c5d8e66c32 EditorType="Texture" Type="texture" Value="resources/texture/effect/object/crystalblue.png"/>
+		<ShaderVar_vein EditorType="Texture" Type="texture" Value="resources/texture/effect/water/Water_03f.png"/>
+		<ShaderVar_RimColor EditorType="Vector" Type="float4" Value="0.08,0.2,0.6,1"/>
+		<ShaderVar_BaseColor EditorType="Vector" Type="float3" Value="0.1,0.14,0.22"/>
+		<ShaderVar_VeinColor EditorType="Vector" Type="float3" Value="0.4,0.75,0.68"/>
+	</ShaderVar>
+</Technique>
+

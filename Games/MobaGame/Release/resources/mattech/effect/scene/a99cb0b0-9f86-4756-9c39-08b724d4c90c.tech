@@ -1,0 +1,11 @@
+<Technique Name="»¨°ê" Ver="336" AlphaRef="60" CullMode="NONE" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="019e5c28-840c-4049-9c0b-ca245a6c1b97" Id="a99cb0b0-9f86-4756-9c39-08b724d4c90c" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_7966c282_aad0_4a9b_9a03_21cc28df4e61 EditorType="Texture" Type="texture" Value="resources/texture/scene/Flower3.png"/>
+		<ShaderVar_73ec7fcd_b13a_4d48_97d0_b9ec1a75d2a4 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/flower_mask.png"/>
+		<ShaderVar_7fcee9af_6217_42cc_a96c_25c83ed2b600 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/237-v3.png"/>
+		<ShaderVar_1b5fcf15_3b45_4879_bb6b_be56638f1694 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_f6c72463_dd6b_45a8_932e_6f5c9c0ebdcd EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/smokeRing_diff.png"/>
+		<ShaderVar_8dfec211_7706_429a_ad8a_6d3e3aea7c19 EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+	</ShaderVar>
+</Technique>
+

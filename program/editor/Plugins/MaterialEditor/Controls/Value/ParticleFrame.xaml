@@ -1,0 +1,23 @@
+﻿<myTypes:BaseNodeControl x:Name="baseNodeControl" x:Class="MaterialEditor.Controls.Value.ParticleFrame"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:myTypes ="clr-namespace:CodeGenerateSystem.Base;assembly=CodeGenerateSystem"
+             xmlns:baseCtrl="clr-namespace:CodeGenerateSystem.Controls;assembly=CodeGenerateSystem"
+			 xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             mc:Ignorable="d" >
+	<UserControl.Resources>
+        <ResourceDictionary Source="/MaterialEditor;component/Themes/Generic.xaml" />
+	</UserControl.Resources>
+    <Grid>
+	    <theme:SystemDropShadowChrome Color="#B2000000">
+            <Grid>
+    	        <Rectangle  Name="TitleLabel" Fill="{StaticResource Value}" RadiusX="5" RadiusY="5"/>
+                <TextBlock VerticalAlignment="Center" Margin="5" IsHitTestVisible="False" Foreground="{StaticResource TextForeground}" Text="粒子动画帧" />
+                <baseCtrl:LinkOutControl Name="TimeValueLink" Margin="0,0,-20,0" Grid.Row="1" Grid.Column="1" Width="15" Height="15" BackBrush="{StaticResource ValueLink}" HorizontalAlignment="Right" Direction="Right" />
+            </Grid>
+	    </theme:SystemDropShadowChrome>
+        <baseCtrl:CommentControl d:LayoutOverrides="Width, Height" Comment="{Binding Comment, ElementName=baseNodeControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+    </Grid>
+</myTypes:BaseNodeControl>

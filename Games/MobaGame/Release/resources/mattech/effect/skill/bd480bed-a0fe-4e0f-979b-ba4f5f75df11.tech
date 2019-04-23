@@ -1,0 +1,10 @@
+<Technique Name="花的矢量图能量罩" Ver="289" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="abb6a3c8-d112-468b-ad89-54b118130361" Id="bd480bed-a0fe-4e0f-979b-ba4f5f75df11" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_dbd3cc08_38dd_4905_a624_2d1bad463174 EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/smoke_trail03.png"/>
+		<ShaderVar_50224416_a108_46cf_8b8b_d28a5048248f EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_4561.png"/>
+		<ShaderVar_fbd2b506_343f_4885_8e1a_ac099c7ddedc EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/client-vfx-abl-0539-6.png"/>
+		<ShaderVar_c2536b37_bc1d_41ad_97cf_13aba1b38fa1 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_485db87d_4ae0_4ef4_b98b_9b633aec8772 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_456.png"/>
+	</ShaderVar>
+</Technique>
+

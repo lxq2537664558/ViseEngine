@@ -1,0 +1,153 @@
+﻿<myTypes:BaseNodeControl_ShaderVar
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+			 xmlns:myTypes ="clr-namespace:MaterialEditor.Controls"
+             xmlns:baseCtrl="clr-namespace:CodeGenerateSystem.Controls;assembly=CodeGenerateSystem"
+			 xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             x:Name="baseNodeControl_ShaderVar" x:Class="MaterialEditor.Controls.TextureControl"
+             mc:Ignorable="d" SnapsToDevicePixels="True" >
+    <myTypes:BaseNodeControl_ShaderVar.Resources>
+        <ResourceDictionary Source="/MaterialEditor;component/Themes/Generic.xaml" />
+    </myTypes:BaseNodeControl_ShaderVar.Resources>
+    <Grid>
+        <theme:SystemDropShadowChrome Color="#B2000000">
+            <Border Background="{StaticResource NodeBackground}" CornerRadius="5">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.108*" />
+                        <RowDefinition Height="0.603*" />
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="0.1*"/>
+                        <RowDefinition Height="0.089*" />
+                    </Grid.RowDefinitions>
+                    <Border CornerRadius="5,5,0,0" x:Name="TitleLabel" Background="{StaticResource Texture}" />
+                    <TextBlock Text="贴图" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="3" IsHitTestVisible="False" Foreground="{StaticResource TextForeground}" />
+                    <Grid Grid.Row="1" Margin="0,2" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <baseCtrl:LinkInControl x:Name="UVLink_2D" Width="15" Height="15" BackBrush="{StaticResource ValueLink_float2}" HorizontalAlignment="Left" Margin="-22,0,0,0" VerticalAlignment="Center" Direction="Left" />
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="UV" Margin="2" Foreground="{StaticResource TextForeground}" />
+
+                        <Image Height="150" x:Name="Image_Texture" Stretch="Fill" Width="150" Margin="3,2.999,3,3" AllowDrop="True" DragEnter="Image_Texture_DragEnter" DragLeave="Image_Texture_DragLeave" DragOver="Image_Texture_DragOver" Drop="Image_Texture_Drop" Grid.Column="1"/>
+                        <Grid Margin="2" d:LayoutOverrides="Width" Grid.Column="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="0.5*"/>
+                                <RowDefinition Height="0.5*"/>
+                            </Grid.RowDefinitions>
+                            <baseCtrl:LinkOutControl x:Name="RGBALink" HorizontalAlignment="Right" VerticalAlignment="Center" Width="15" Height="15" BackBrush="{StaticResource ValueLink_float4}" Margin="0,2,-20,2" Direction="Right" />
+                            <TextBlock Grid.Row="0" HorizontalAlignment="Right" Text="RGBA" VerticalAlignment="Center" Margin="2" Foreground="{StaticResource TextForeground}" />
+                            <baseCtrl:LinkOutControl x:Name="RGBLink" HorizontalAlignment="Right" VerticalAlignment="Center" Width="15" Height="15" BackBrush="{StaticResource ValueLink_float3}" Margin="0,2,-20,2" Grid.Row="1" Direction="Right" />
+                            <TextBlock Grid.Row="1" HorizontalAlignment="Right" Text="RGB" VerticalAlignment="Center" Margin="2" Foreground="{StaticResource TextForeground}" />
+                            <baseCtrl:LinkOutControl x:Name="RLink" HorizontalAlignment="Right" VerticalAlignment="Center" Width="15" Height="15" BackBrush="#FFAA0000" Margin="0,2,-20,2" Grid.Row="2" StrokeBrush="Red" Direction="Right" />
+                            <TextBlock Grid.Row="2" HorizontalAlignment="Right" Text="R" VerticalAlignment="Center" Margin="2" Foreground="{StaticResource TextForeground}" />
+                            <baseCtrl:LinkOutControl x:Name="GLink" HorizontalAlignment="Right" VerticalAlignment="Center" Width="15" Height="15" BackBrush="#FF00AA00" Margin="0,2,-20,2" Grid.Row="3" StrokeBrush="Lime" Direction="Right" />
+                            <TextBlock Grid.Row="3" HorizontalAlignment="Right" Text="G" VerticalAlignment="Center" Margin="2" Foreground="{StaticResource TextForeground}" />
+                            <baseCtrl:LinkOutControl x:Name="BLink" HorizontalAlignment="Right" VerticalAlignment="Center" Width="15" Height="15" BackBrush="#FF0000AA" Margin="0,2,-20,2" Grid.Row="4" StrokeBrush="Blue" Direction="Right" />
+                            <TextBlock Grid.Row="4" HorizontalAlignment="Right" Text="B" VerticalAlignment="Center" Margin="2" Foreground="{StaticResource TextForeground}" />
+                            <baseCtrl:LinkOutControl x:Name="ALink" HorizontalAlignment="Right" VerticalAlignment="Center" Width="15" Height="15" BackBrush="#FFAAAAAA" Margin="0,2,-20,2" Grid.Row="5" StrokeBrush="White" Direction="Right" />
+                            <TextBlock Grid.Row="5" HorizontalAlignment="Right" Text="A" VerticalAlignment="Center" Margin="2" Foreground="{StaticResource TextForeground}" />
+                            <baseCtrl:LinkOutControl x:Name="TextureLink"  Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" Width="15" Height="15" BackBrush="{StaticResource TextureLink}" Margin="0,0,-20,0" Direction="Right" />
+                            <TextBlock Grid.Row="6" HorizontalAlignment="Right" Text="Texture" VerticalAlignment="Center" Margin="2" Foreground="{StaticResource TextForeground}" />
+                        </Grid>
+                    </Grid>
+                    <Grid Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition  />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock VerticalAlignment="Center" Margin="2" Foreground="{StaticResource TextForeground}"><Run Text="名称"/></TextBlock>
+                        <TextBox x:Name="TextureNameTextBox" Grid.Column="1" Margin="2" Text="{Binding TextureName, ElementName=baseNodeControl_ShaderVar, Mode=TwoWay, UpdateSourceTrigger=Explicit}" LostFocus="TextureNameTextBox_LostFocus" KeyDown="TextureNameTextBox_KeyDown" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    </Grid>
+                    <Expander Header="属性" Grid.Row="5" Style="{DynamicResource {ComponentResourceKey ResourceId=ExpanderStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                        <Grid Grid.Row="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition  />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="MipFilter" VerticalAlignment="Center" Margin="3,2" Foreground="{StaticResource TextForeground}" />
+                            <ComboBox x:Name="MipFilterComboBox" Grid.Column="1" SelectedIndex="2" Padding="4,3" VerticalContentAlignment="Center" Margin="0,1" SelectionChanged="ComboBox_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                                <ComboBoxItem Content="NONE" ToolTip="不使用mipmap"/>
+                                <ComboBoxItem Content="POINT" ToolTip="用最接近的像素" />
+                                <ComboBoxItem Content="LINEAR" ToolTip="用线性插值法在相邻像素之间，并使用插值之后的结果" />
+                            </ComboBox>
+                            <TextBlock Grid.Row="1" ToolTip="缩小过滤器（ minFilter ）规定如何适用纹理如果该地区的质感较少像素比纹理（即纹理需要缩小，以填补该地区）" Text="MinFilter" VerticalAlignment="Center" Margin="3,2" Foreground="{StaticResource TextForeground}" />
+                            <ComboBox x:Name="MinFilterComboBox" Grid.Column="1" Grid.Row="1" SelectedIndex="1" VerticalContentAlignment="Center" Margin="0,1" SelectionChanged="ComboBox_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                                <ComboBoxItem Content="POINT" ToolTip="用最接近的像素" />
+                                <ComboBoxItem Content="LINEAR" ToolTip="用线性插值法在相邻像素之间，并使用插值之后的结果" />
+                                <ComboBoxItem Content="ANISOTROPIC" ToolTip="不按比例拉伸贴图，直到贴满整个区域" />
+                            </ComboBox>
+                            <TextBlock Grid.Row="2" ToolTip="放大过滤器（ magFilter ）规定如何适用纹理如果该地区的质感包含的像素比纹理（即纹理需要加以延伸，以填补该地区） 。这种放大会导致图像模糊" Text="MagFilter" VerticalAlignment="Center" Margin="3,2" Foreground="{StaticResource TextForeground}" />
+                            <ComboBox x:Name="MagFilterComboBox" Grid.Column="1" Grid.Row="2" SelectedIndex="1" VerticalContentAlignment="Center" Margin="0,1" SelectionChanged="ComboBox_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                                <ComboBoxItem Content="POINT" ToolTip="用最接近的像素" />
+                                <ComboBoxItem Content="LINEAR" ToolTip="用线性插值法在相邻像素之间，并使用插值之后的结果" />
+                                <ComboBoxItem Content="ANISOTROPIC" ToolTip="不按比例拉伸贴图，直到贴满整个区域" />
+                            </ComboBox>
+                            <TextBlock Grid.Row="3" Text="AddressU" ToolTip="纹理寻址模式(U)" Foreground="{StaticResource TextForeground}" VerticalAlignment="Center" Margin="3,0"/>
+                            <ComboBox x:Name="AddressUComboBox" Grid.Column="1" Grid.Row="3" SelectedIndex="0" VerticalContentAlignment="Center" Margin="0,1" SelectionChanged="ComboBox_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                                <ComboBoxItem Content="Wrap" ToolTip="重复贴图来填充贴图区域" />
+                                <ComboBoxItem Content="Mirror" ToolTip="重复贴图，当遇到UV的边界时反向（UV边界为0.0或者1.0）" />
+                                <ComboBoxItem Content="Clamp" ToolTip="用贴图的最后一行像素，重复覆盖没贴到的区域" />
+                                <ComboBoxItem Content="Border" ToolTip="超过的贴图区域，用一种特殊颜色的边标记出来" />
+                            </ComboBox>
+                            <TextBlock Grid.Row="4" Text="AddressV" ToolTip="纹理寻址模式(V)" Foreground="{StaticResource TextForeground}" VerticalAlignment="Center" Margin="3,0"/>
+                            <ComboBox x:Name="AddressVComboBox" Grid.Column="1" Grid.Row="4" SelectedIndex="0" VerticalContentAlignment="Center" Margin="0,1" SelectionChanged="ComboBox_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                                <ComboBoxItem Content="Wrap" ToolTip="重复贴图来填充贴图区域" />
+                                <ComboBoxItem Content="Mirror" ToolTip="重复贴图，当遇到UV的边界时反向（UV边界为0.0或者1.0）" />
+                                <ComboBoxItem Content="Clamp" ToolTip="用贴图的最后一行像素，重复覆盖没贴到的区域" />
+                                <ComboBoxItem Content="Border" ToolTip="超过的贴图区域，用一种特殊颜色的边标记出来" />
+                            </ComboBox>
+                            <TextBlock Grid.Row="5" Text="SRGBTexture" ToolTip="是否将RGB转换到线性空间,做Gamma矫正" Foreground="{StaticResource TextForeground}" VerticalAlignment="Center" Margin="3,0"/>
+                            <ComboBox x:Name="SRGBTextureComboBox" Grid.Column="1" Grid.Row="5" SelectedIndex="0" VerticalContentAlignment="Center" Margin="0,1" SelectionChanged="ComboBox_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                                <ComboBoxItem Content="False" ToolTip="Linear" />
+                                <ComboBoxItem Content="True" ToolTip="Gamma" />
+                            </ComboBox>
+                        </Grid>
+                    </Expander>
+                    <Grid Grid.Row="2" Margin="0,1" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition Width="19.8"/>
+                            <ColumnDefinition Width="19.8"/>
+                        </Grid.ColumnDefinitions>
+                        <Border BorderBrush="Black" BorderThickness="1" Margin="2,0,1,0">
+                            <TextBlock x:Name="TextureBlock_TextureFileName"  Margin="2,0" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Foreground="{StaticResource TextForeground}"/>
+                        </Border>
+                        <Button x:Name="Button_SetTexturePath" Grid.Column="1" Margin="1" Click="Button_SetTexturePath_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" BorderBrush="{x:Null}" BorderThickness="0">
+                            <Image Source="/ResourceLibrary;component/Icon/set.png" />
+                        </Button>
+                        <Button x:Name="Button_SearchTexture" Grid.Column="2" Margin="1" Click="Button_SearchTexture_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" BorderThickness="0" BorderBrush="{x:Null}">
+                            <Image Source="/ResourceLibrary;component/Icon/search.png" />
+                        </Button>
+                    </Grid>
+                    <Grid Grid.Row="3" Visibility="Collapsed">
+                        <baseCtrl:LinkInControl x:Name="UVLink_3D" Width="15" Height="15" BackBrush="{StaticResource ValueLink}" HorizontalAlignment="Left" Margin="-20,8.717,0,8.716" VerticalAlignment="Center" />
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Left" Text="UV" Margin="2,8.596,0,8.596" Foreground="{StaticResource TextForeground}" />
+                        <baseCtrl:LinkOutControl x:Name="Tex3DLink" HorizontalAlignment="Right" VerticalAlignment="Center" Width="15" Height="15" BackBrush="{StaticResource ValueLink}" Margin="0,8.717,-20,8.716" />
+                        <TextBlock Text="Tex3D" Margin="8.05,8.596,2,8.596" VerticalAlignment="Center" Foreground="{StaticResource TextForeground}" d:LayoutOverrides="Width" HorizontalAlignment="Right" />
+                    </Grid>
+                </Grid>
+            </Border>
+        </theme:SystemDropShadowChrome>
+        <baseCtrl:CommentControl d:LayoutOverrides="Width, Height" Comment="{Binding Comment, ElementName=baseNodeControl_ShaderVar, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top"/>
+    </Grid>
+</myTypes:BaseNodeControl_ShaderVar>

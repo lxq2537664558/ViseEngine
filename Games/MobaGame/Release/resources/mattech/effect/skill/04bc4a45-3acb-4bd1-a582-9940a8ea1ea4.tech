@@ -1,0 +1,9 @@
+<Technique Name="À©É¢²¨ÎÆ" Ver="16" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="871eeb02-c664-4baf-af0b-073ee9ba4dac" Id="04bc4a45-3acb-4bd1-a582-9940a8ea1ea4" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_68ae2d68_8502_4097_90d8_a6ff993f00f5 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_505d73d8_f6b9_4241_b532_5aeac7af0f1e EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/3788371711548769713.png"/>
+		<ShaderVar_85d75a4b_e96a_4c08_95bf_be326535e676 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/arrowmask.png"/>
+		<ShaderVar_86bfe388_471a_47ec_bf80_451169361e22 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/mask_dust2.png"/>
+	</ShaderVar>
+</Technique>
+

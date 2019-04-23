@@ -1,0 +1,37 @@
+﻿<DockControls:DockAbleWindowBase
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:DockControls="clr-namespace:DockControl.Controls;assembly=DockControl"
+        xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+        xmlns:converters="clr-namespace:WPG.Converters;assembly=WPG"
+		xmlns:WPG="clr-namespace:WPG;assembly=WPG" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Name="window" x:Class="ResourcesBrowser.SceneCreateWindow"
+		Title="创建场景" SizeToContent="Height" Width="567.083" Topmost="True"
+        Style="{DynamicResource {ComponentResourceKey ResourceId=DefaultWindowStyle, TypeInTargetAssembly={x:Type res:CustomResources}}}" WindowStartupLocation="CenterScreen"
+        MaxHeight="1000">
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="0.743*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Margin="2" Text="地图类型" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        <ComboBox x:Name="ComboBox_WorldType" SelectedValue="{Binding WorldInitType, ElementName=window}" Grid.Column="1" Margin="2" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+            <ComboBox.ItemsSource>
+                <Binding Path="WorldInitType" ElementName="window">
+                    <!--Binding.Converter>
+                        <converters:EnumTypeConverter />
+                    </-->
+                </Binding>
+            </ComboBox.ItemsSource>
+        </ComboBox>
+        <WPG:PropertyGrid x:Name="ProGrid" Margin="0" Grid.Row="1" Grid.ColumnSpan="2"/>
+        <Button Content="取消" Grid.Column="1" HorizontalAlignment="Right" Margin="2" Grid.Row="2" Width="84" Click="Button_Cancel_Click" IsCancel="True" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        <Button Content="确定" Grid.Column="1" HorizontalAlignment="Right" Margin="2,2,92,2" Grid.Row="2" Width="84" Click="Button_OK_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+
+    </Grid>
+</DockControls:DockAbleWindowBase>

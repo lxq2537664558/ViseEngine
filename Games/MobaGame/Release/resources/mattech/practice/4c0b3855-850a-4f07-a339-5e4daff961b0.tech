@@ -1,0 +1,8 @@
+<Technique Name="ÐòÁÐ»ð" Ver="6" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="21a63e4d-3e1e-4676-950c-412188b5a952" Id="4c0b3855-850a-4f07-a339-5e4daff961b0" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_aca86dc4_54da_4c83_baaa_36dea1d90d4c EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/Mask_432.png"/>
+		<ShaderVar_duration EditorType="Vector" Type="float1" Value="1"/>
+		<ShaderVar_framecount EditorType="Vector" Type="float2" Value="4,4"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,7 @@
+<Technique Name="新建材质实例" Ver="2" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="dce1e9e2-8ead-4b6b-a577-4ca03a94c52c" Id="c00885da-3e85-4835-8bc3-272231c6ae79" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_diffuse EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+		<ShaderVar_color EditorType="Color" Type="float4" Value="1,1,1,1"/>
+	</ShaderVar>
+</Technique>
+

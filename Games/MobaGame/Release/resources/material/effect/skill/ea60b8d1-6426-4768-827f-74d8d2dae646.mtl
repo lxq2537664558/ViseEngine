@@ -1,0 +1,47 @@
+/*Material
+
+<Material Name="ParticleColor" Require="DiffuseUV|ProjPos|VertexColor0" Main="DoMaterial_ea60b8d1_6426_4768_827f_74d8d2dae646" ExtendString="" Id="ea60b8d1-6426-4768-827f-74d8d2dae646" Ver="26">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcColor" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ea60b8d1-6426-4768-827f-74d8d2dae646" Id="9fb5e9f7-ccb6-4386-81aa-dfcbb6bb13cd" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_14c195b1_b1c8_4541_a52d_dde18a7de938 EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+			<ShaderVar_depth EditorType="Vector" Type="float1" Value="0.4"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../Shader/function/Common.function"
+
+
+texture ShaderVar_14c195b1_b1c8_4541_a52d_dde18a7de938;
+sampler2D Samp_ShaderVar_14c195b1_b1c8_4541_a52d_dde18a7de938 = sampler_state
+{
+	Texture = <ShaderVar_14c195b1_b1c8_4541_a52d_dde18a7de938>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+float1 ShaderVar_depth;
+
+#ifdef ByLayerBased
+void DoMaterial_ea60b8d1_6426_4768_827f_74d8d2dae646(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 ShaderVar_2ec72b88_464e_4120_b5f4_f8a80fa6e75b = float4(0,0,0,0);
+    float4 ShaderVar_14c195b1_b1c8_4541_a52d_dde18a7de938_2D = float4(0,0,0,0);
+
+
+    ShaderVar_14c195b1_b1c8_4541_a52d_dde18a7de938_2D = vise_tex2D(Samp_ShaderVar_14c195b1_b1c8_4541_a52d_dde18a7de938,pssem.mDiffuseUV.xy);
+    ShaderVar_2ec72b88_464e_4120_b5f4_f8a80fa6e75b = ShaderVar_14c195b1_b1c8_4541_a52d_dde18a7de938_2D;
+    pssem.mDiffuseColor = (((ShaderVar_2ec72b88_464e_4120_b5f4_f8a80fa6e75b * ShaderVar_2ec72b88_464e_4120_b5f4_f8a80fa6e75b.w) * pssem.mVertexColor0) * pssem.mVertexColor0.a);
+
+}

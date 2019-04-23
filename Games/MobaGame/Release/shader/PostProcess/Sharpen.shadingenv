@@ -1,0 +1,146 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+float2		g_InvScreenSize;
+texture 		RT_SRC;
+
+//For higher precision in the calculation of contour, requires slightly more processing power
+int				g_HighQualitySharpen = 1; //0 = Disable  | 1 = Enable
+float			g_Average = 0.8f;
+float			g_CoefBlur = 2;
+// Set values of the sharpening amount
+float			g_SharpenEdge = 0.4;
+float			g_SharpenValue = 1.4;
+
+sampler2D Samp_RT_SRC = sampler_state
+{
+	Texture = <RT_SRC>;
+    MipFilter = NONE;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+};
+
+struct VSInput
+{
+	float3 Pos		: LOCALPOS;
+	float2 UV		: DIFFUSEUV;
+};
+VSInput dummyVSIn;
+
+struct VSOutput
+{
+    float4 Pos		: POSITION;
+    float2 UV		: TEXCOORD0;
+	float4 PosProj	: TEXCOORD8;			// todo: 去掉
+};
+struct PSOutput
+{
+    float4	Color	: COLOR0;
+};
+
+VSOutput vs_main( VSInput Input )
+{
+	VSOutput o=(VSOutput)0;
+	o.Pos	= float4(Input.Pos,1);
+	o.PosProj	= float4(Input.Pos,1);
+	o.UV		= Input.UV;
+	o.UV		= Input.UV * float2(g_ViewPortW*g_InvScreenSize.x, g_ViewPortH*g_InvScreenSize.y) + float2(g_ViewPortX*g_InvScreenSize.x, g_ViewPortY*g_InvScreenSize.y);
+
+#ifdef D3D_EFFECT
+	o.Pos.xy += float2(-1,1) * g_InvScreenSize;
+	o.PosProj.xy += float2(-1,1) * g_InvScreenSize;
+#else
+	//o.UV.y = 1 - o.UV.y;
+#endif
+
+    return o;
+}
+
+float4 SharpenPass( sampler2D samp, float2 tex ) 
+{
+	float px = g_InvScreenSize.x;
+	float py = g_InvScreenSize.y;
+	float dx = (g_Average*px);
+	float dy = (g_Average*py);
+	float		CoefOri = (1+ g_CoefBlur);
+	float		Sharpen_val1 = ((g_SharpenValue-1) / 8.0);
+
+	// Recover the original pixels
+	float4 ori = vise_tex2D(samp, tex);
+	// Gaussian filter
+	//   [ 1, 2 , 1 ]
+	//   [ 2, 4 , 2 ]
+	//   [ 1, 2 , 1 ]
+	float4 c1 = vise_tex2D(samp, tex + float2(-dx,-dy));
+	float4 c2 = vise_tex2D(samp, tex + float2(0,-dy));
+	float4 c3 = vise_tex2D(samp, tex + float2(dx,-dy));
+	float4 c4 = vise_tex2D(samp, tex + float2(-dx,0));
+	float4 c5 = vise_tex2D(samp, tex + float2(dx,0));
+	float4 c6 = vise_tex2D(samp, tex + float2(-dx,dy));
+	float4 c7 = vise_tex2D(samp, tex + float2(0,dy));
+	float4 c8 = vise_tex2D(samp, tex + float2(dx,dy));
+	//Normalize the values. Formula: 1 / (1+2+1+2+4+2+1+2+1) = 1 / 16 = .0625
+	float4 blur = (c1+c3+c6+c8 + 2*(c2+c4+c5+c7)+ 4*ori)*0.0625;
+	//Subtracting the blurred image from the original image
+	float4 cori = CoefOri*ori - g_CoefBlur*blur;
+	//For higher precision in the calculation of contour, requires slightly more processing power
+	//   [ c1, c2 , c3 ]
+	//   [ c4, ori , c5 ]
+	//   [ c6, c7 , c8 ]
+	if (g_HighQualitySharpen == 1)
+	{
+		c1 = vise_tex2D(samp, tex + float2(-px,-py));
+		c2 = vise_tex2D(samp, tex + float2(0,-py));
+		c3 = vise_tex2D(samp, tex + float2(px,-py));
+		c4 = vise_tex2D(samp, tex + float2(-px,0));
+		c5 = vise_tex2D(samp, tex + float2(px,0));
+		c6 = vise_tex2D(samp, tex + float2(-px,py));
+		c7 = vise_tex2D(samp, tex + float2(0,py));
+		c8 = vise_tex2D(samp, tex + float2(px,py));
+	}
+	else {}
+	// Horizontal gradient
+	//   [ -1, 0 ,1 ]
+	//   [ -2, 0, 2 ]
+	//   [ -1, 0 ,1 ]
+	float delta1 = (c3 + 2*c5 + c8)-(c1 + 2*c4 + c6);
+	// Vertical gradient
+	//   [ -1,- 2,-1 ]
+	//   [  0,  0, 0 ]
+	//   [  1,  2, 1 ]
+	float delta2 = (c6 + 2*c7 + c8)-(c1 + 2*c2 + c3);
+	// Calculate and sharpen the blurry edges
+	if (sqrt( mul(delta1,delta1) + mul(delta2,delta2)) > g_SharpenEdge) 
+		{
+			// Contour sharpening
+			return ori*g_SharpenValue - (c1 + c2 + c3 + c4 + c5 + c6 + c7 + c8 ) * Sharpen_val1;
+		}
+	else 
+		{
+			// Return corrected image
+			return cori;
+		}
+}
+
+PSOutput	ps_main( VSOutput Input )
+{
+	PSOutput o = (PSOutput)0;
+	float2 uv = Input.UV;
+
+	o.Color = SharpenPass(Samp_RT_SRC, uv);
+
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique Sharpen
+{
+   pass p0
+   {
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

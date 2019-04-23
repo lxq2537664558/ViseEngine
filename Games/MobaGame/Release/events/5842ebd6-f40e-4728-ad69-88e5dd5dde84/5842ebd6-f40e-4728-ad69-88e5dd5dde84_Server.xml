@@ -1,0 +1,117 @@
+<Event ViewBoxMain_X="419.517822265625" ViewBoxMain_Y="-383.244323730469" ViewBoxMain_Width="1498.56457519531" GUID="00000000-0000-0000-0000-000000000000">
+	<OrigionCtrls>
+		<OrigionCtrl Id="7bd75415-63af-4821-a9c5-a78d04cc8038"/>
+	</OrigionCtrls>
+	<ChildNodesCtrls>
+		<MethodNode Useable="False" OverrideAble="True" CallBasePosition="None" UseBaseVisibility="Collapsed" IsStatic="True" ID="7bd75415-63af-4821-a9c5-a78d04cc8038" Type="DelegateMethodEditor@CodeDomNode.MethodNode" X="0" Y="0" Params="Invoke,hostRole:cscommon@CSUtility.Component.ActorBase/targetRole:cscommon@CSUtility.Component.ActorBase,mscorlib.dll@System.Void,game@GameData.Role.FOnCollision,true,false" IsDeleteable="False" Comment="">
+			<ChildNodes>
+				<ParameterControl ID="8f50d9c7-3cfa-4ef5-821a-2af324d971c6" Type="DelegateMethodEditor@CodeDomNode.ParameterControl" X="NaN" Y="NaN" Params="hostRole:cscommon@CSUtility.Component.ActorBase" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="bd0dd3f4-b8e1-4868-b976-ab2f1630a02c">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</ParameterControl>
+				<ParameterControl ID="863604cd-173e-48db-a029-e33991623759" Type="DelegateMethodEditor@CodeDomNode.ParameterControl" X="NaN" Y="NaN" Params="targetRole:cscommon@CSUtility.Component.ActorBase" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="5073363e-4621-4a21-9f49-c37442f634b0">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</ParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="c89e3c7c-1265-4225-95cb-0f5834799926">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="7a45b034-d193-4857-82a8-d3d1c324a420">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="db36c450-243d-40ce-8e31-e4b5be8a44b7">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="49bed7ca-a57a-4e06-82bf-9aa594ffd7f0">
+					<Link LinkFrom="49bed7ca-a57a-4e06-82bf-9aa594ffd7f0" LinkTo="c037d742-97cd-4c07-9f94-bcdf4842299b"/>
+				</LinkObject>
+			</LinkObjects>
+		</MethodNode>
+		<CommonValue ID="6b603906-9238-400d-b5a5-a3ee65015132" Type="DelegateMethodEditor@CodeDomNode.CommonValue" X="-468.227172851563" Y="451.342102050781" Params="System.String,Death," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="921bf533-5ee7-4234-9aa0-fbc919583dd6">
+					<Link LinkFrom="921bf533-5ee7-4234-9aa0-fbc919583dd6" LinkTo="b387a7a5-f444-4e9b-8762-bf84b0e73dfc"/>
+				</LinkObject>
+				<LinkObject ID="229f4341-a579-4e30-9822-a7b955f8a3e3">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</CommonValue>
+		<Value_Null ID="91675106-34e8-4abd-82d8-cf90d38d1d84" Type="DelegateMethodEditor@CodeDomNode.Value_Null" X="-302.053771972656" Y="502.672668457031" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="44882217-235b-43d6-81e0-87d19706f474">
+					<Link LinkFrom="44882217-235b-43d6-81e0-87d19706f474" LinkTo="1495ed78-e1f8-43cf-9f35-097aab608246"/>
+				</LinkObject>
+			</LinkObjects>
+		</Value_Null>
+		<PropertyNode ID="d0a4885d-587e-4d5b-b600-5fd032957dac" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="-549.19189453125" Y="100.437286376953" Params="角色对象.属性.当前状态(读取),CurrentState,CSUtility.AISystem.State,get;Normal,Server.Hall.Role.Monster.MonsterInstance,7bd75415-63af-4821-a9c5-a78d04cc8038,c89e3c7c-1265-4225-95cb-0f5834799926" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="e960a47e-9da2-4161-9f86-5b8ff99d1a05">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<MethodInvokeNode ID="7e55413d-7fdb-4992-a75d-a5677136cd6f" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeNode" X="-247.517944335938" Y="247.448028564453" Params="AI状态.状态转换,cscommon@CSUtility.AISystem.State,ToState,stateType:mscorlib.dll@System.String/param:cscommon@CSUtility.AISystem.StateParameter,mscorlib.dll@System.Void,Server;Normal,CSUtility.AISystem.State,d0a4885d-587e-4d5b-b600-5fd032957dac,e960a47e-9da2-4161-9f86-5b8ff99d1a05" IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<stateType Type="mscorlib.dll@System.String" Value=""/>
+				<param Type="cscommon@CSUtility.AISystem.StateParameter" Value="null"/>
+			</DefaultParamValue>
+			<ChildNodes>
+				<MethodInvokeParameterControl ID="0314c9a9-aa3f-4852-9c78-bc4c59e6ef0e" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="stateType:mscorlib.dll@System.String" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="b387a7a5-f444-4e9b-8762-bf84b0e73dfc">
+							<Link LinkFrom="921bf533-5ee7-4234-9aa0-fbc919583dd6" LinkTo="b387a7a5-f444-4e9b-8762-bf84b0e73dfc"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+				<MethodInvokeParameterControl ID="c6c7166d-7e0b-40de-9840-10ffe806ac69" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="param:cscommon@CSUtility.AISystem.StateParameter" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="1495ed78-e1f8-43cf-9f35-097aab608246">
+							<Link LinkFrom="44882217-235b-43d6-81e0-87d19706f474" LinkTo="1495ed78-e1f8-43cf-9f35-097aab608246"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="c037d742-97cd-4c07-9f94-bcdf4842299b">
+					<Link LinkFrom="49bed7ca-a57a-4e06-82bf-9aa594ffd7f0" LinkTo="c037d742-97cd-4c07-9f94-bcdf4842299b"/>
+				</LinkObject>
+				<LinkObject ID="b37ba9be-ab05-4879-ad1f-18de1a80f9c1">
+					<Link LinkFrom="b37ba9be-ab05-4879-ad1f-18de1a80f9c1" LinkTo="f5c71457-c863-4ae3-ad2a-a495102feccf"/>
+				</LinkObject>
+			</LinkObjects>
+		</MethodInvokeNode>
+		<MethodInvokeNode ID="1f1242e0-3ad1-4981-951f-9946b9f8bc0e" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeNode" X="-46.9302368164063" Y="496.063507080078" Params="角色对象.加血,game@Server.Hall.Role.RoleActor,AddHp,hp:mscorlib.dll@System.Int32,mscorlib.dll@System.Void,Server;Normal,Server.Hall.Role.RoleActor,7bd75415-63af-4821-a9c5-a78d04cc8038,7a45b034-d193-4857-82a8-d3d1c324a420" IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<hp Type="mscorlib.dll@System.Int32" Value="200"/>
+			</DefaultParamValue>
+			<ChildNodes>
+				<MethodInvokeParameterControl ID="162d9ce2-3cb9-4250-86d1-0d61c9c47e7c" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="hp:mscorlib.dll@System.Int32" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="5ae1b7d4-97a3-4a2a-b969-66ae4eca1f96">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="f5c71457-c863-4ae3-ad2a-a495102feccf">
+					<Link LinkFrom="b37ba9be-ab05-4879-ad1f-18de1a80f9c1" LinkTo="f5c71457-c863-4ae3-ad2a-a495102feccf"/>
+				</LinkObject>
+				<LinkObject ID="9203e4e5-e33f-4ff1-ac51-76fb90992c81">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</MethodInvokeNode>
+	</ChildNodesCtrls>
+</Event>
+

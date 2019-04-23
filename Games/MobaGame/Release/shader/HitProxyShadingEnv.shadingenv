@@ -1,0 +1,58 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+VertexOutput vs_main( VertexInput Input )
+{
+	// VS 2 Semantic
+	VertexTrans vssem = (VertexTrans)0;
+	VertexTransInit ( Input, vssem );
+
+	// VS do
+	V3D_VS_Modifiers ( vssem );
+
+	// Semantic 2 VS-Out
+	VertexOutput Output =(VertexOutput)0;
+	VertexTransToVertexOutput ( vssem, Output );
+//	Output.SV_POSITION = float4(0,0,Output.SV_POSITION.z,Output.SV_POSITION.w);
+
+	return Output;
+}
+
+
+struct V3D_PS_OUT
+{
+	float4	hp	: COLOR0;
+};
+
+float GHitProxyID;
+
+V3D_PS_OUT	ps_main(PixelInput Input) : COLOR
+{
+	// PS 2 Semantic
+	PixelMaterialTrans pssem = (PixelMaterialTrans)0;
+	PixelInputToMaterial( Input, pssem );
+
+	//--------------------------------------------------
+	// WRITE SHADING ENVIRONMENT'S CODE HERE!!!!!
+	//--------------------------------------------------
+	// Semantic 2 PS-Out
+
+	V3D_PS_OUT Output =(V3D_PS_OUT)0;
+
+	//DoMaterial(pssem);
+
+	Output.hp.rgba		= GHitProxyID;
+
+	return Output;
+}
+
+#ifdef D3D_EFFECT
+technique tech
+{
+	pass p0
+	{
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

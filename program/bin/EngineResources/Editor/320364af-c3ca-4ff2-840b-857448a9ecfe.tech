@@ -1,0 +1,14 @@
+<Technique Name="Ñ°Â·¸¨Öú" Ver="11" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="0" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="23686dd6-2795-4653-b03e-49f5944e1dac" Id="320364af-c3ca-4ff2-840b-857448a9ecfe" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_DiffuseTexture0 EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+		<ShaderVar_BlockTile EditorType="Texture" Type="texture" Value="resources/default/Editor/texture/PathBlockTile.bmp"/>
+		<ShaderVar_ManualTile EditorType="Texture" Type="texture" Value="resources/default/Editor/texture/PathManualTile.bmp"/>
+		<ShaderVar_DynamicTile EditorType="Texture" Type="texture" Value="resources/default/Editor/texture/PathDynamicTile.bmp"/>
+		<ShaderVar_PathTile EditorType="Texture" Type="texture" Value="resources/default/Editor/texture/PathPathTile.bmp"/>
+		<ShaderVar_TileCount EditorType="Vector" Type="float2" Value="10,10"/>
+		<ShaderVar_ShowDelta0 EditorType="Vector" Type="float4" Value="1000,4,3,5"/>
+		<ShaderVar_DiffuseTexture1 EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+		<ShaderVar_ShowDelta1 EditorType="Vector" Type="float4" Value="1,1,1,1"/>
+	</ShaderVar>
+</Technique>
+

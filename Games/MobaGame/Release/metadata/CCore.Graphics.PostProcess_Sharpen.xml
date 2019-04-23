@@ -1,0 +1,15 @@
+<CCore.Graphics.PostProcess_Sharpen ClassType="cscommon@CCore.Graphics.PostProcess_Sharpen" Ver="0">
+	<Class HashCode="208901092" LastUseTime="2015/12/15 15:18:00">
+		<Property HashCode="-787411244" Type="cscommon@CCore.Performance.ESharpen" Name="SharpenQuality"/>
+		<Property HashCode="1309326203" Type="mscorlib.dll@System.Boolean" Name="EnableHighQuality"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="1770076888" Type="mscorlib.dll@System.Boolean" Name="DoLerp"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="-2001596071" Type="mscorlib.dll@System.Single" Name="LerpValue"/>
+		<Property HashCode="-954214470" Type="mscorlib.dll@System.Single" Name="SharpenValue"/>
+		<Property HashCode="-1325464654" Type="mscorlib.dll@System.Single" Name="Average"/>
+		<Property HashCode="-1713715933" Type="mscorlib.dll@System.Single" Name="SharpenEdge"/>
+		<Property HashCode="-1913841666" Type="mscorlib.dll@System.Single" Name="CoefBlur"/>
+	</Class>
+</CCore.Graphics.PostProcess_Sharpen>
+

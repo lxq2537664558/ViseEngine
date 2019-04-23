@@ -1,0 +1,46 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+struct V3D_VS_IN
+{
+	float3	Pos : POSITION;
+};
+V3D_VS_IN dummyVSIn;
+
+struct V3D_VS_OUT
+{
+	float4 Pos : POSITION;
+};
+
+struct V3D_PS_OUT
+{
+	float4	Color	: COLOR0;
+};
+
+V3D_VS_OUT vs_main( V3D_VS_IN Input )
+{
+	V3D_VS_OUT vsOut;
+	vsOut.Pos = mul( float4( Input.Pos.xyz, 1), g_WorldViewProjection );
+	return vsOut;
+}
+
+float4 gFillColor={1,1,1,1};
+
+V3D_PS_OUT	ps_main( V3D_VS_OUT Input )
+{
+	V3D_PS_OUT psOut;
+	psOut.Color = gFillColor;
+	return psOut;
+}
+
+#ifdef D3D_EFFECT
+technique tech
+{
+	pass p0
+	{
+		//ZEnable = false;
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

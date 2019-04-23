@@ -1,0 +1,40 @@
+/*Material
+
+<Material Name="Ä¬ÈÏÌùÍ¼²ÄÖÊ" Require="DiffuseUV|VertexColor0" Main="DoMaterial_8b89cdb7_fa5c_4727_9bd8_6ccea3f5e1ce" ExtendString="" Id="8b89cdb7-fa5c-4727-9bd8-6ccea3f5e1ce" Ver="20">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="8b89cdb7-fa5c-4727-9bd8-6ccea3f5e1ce" Id="19692d65-b5c2-45c0-9c42-a35840bbfbbc" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_GDiffuseTexture EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/GF_474.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+texture ShaderVar_GDiffuseTexture;
+sampler2D Samp_ShaderVar_GDiffuseTexture = sampler_state
+{
+	Texture = <ShaderVar_GDiffuseTexture>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_8b89cdb7_fa5c_4727_9bd8_6ccea3f5e1ce(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    pssem.mDiffuseColor = (vise_tex2D(Samp_ShaderVar_GDiffuseTexture,pssem.mDiffuseUV.xy) * pssem.mVertexColor0);
+
+}

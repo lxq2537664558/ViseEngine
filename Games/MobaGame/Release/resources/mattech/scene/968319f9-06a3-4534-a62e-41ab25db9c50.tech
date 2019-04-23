@@ -1,0 +1,7 @@
+<Technique Name="新建材质实例" Ver="4" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="949c9ba9-6484-4d7c-856a-639929e9e48d" Id="968319f9-06a3-4534-a62e-41ab25db9c50" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_e0bedcb8_d869_4350_b7ab_8e69a0614c84 EditorType="Texture" Type="texture" Value="resources/texture/scene/Triton_Statue_02_diffusemap.png"/>
+		<ShaderVar_002e663a_332f_4e5a_8452_a276e6cbc8f8 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/arrowmask.png"/>
+	</ShaderVar>
+</Technique>
+

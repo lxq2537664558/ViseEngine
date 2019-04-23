@@ -1,0 +1,13 @@
+<Technique Name="¶ñÄ§Ëþ¹¥»÷µ¯µÀ" Ver="207" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="3c984a7f-9459-4e9d-be0b-1876128c757a" Id="2c19b8e3-c53c-4b3b-9c9a-41bf72d06d66" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_e3bd5c0e_842b_435b_ba88_2937b1790f22 EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/00509.png"/>
+		<ShaderVar_60fa2fab_bd74_44c3_8564_e0d776d64308 EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/GF_105.png"/>
+		<ShaderVar_13b52155_abf6_4276_8ecb_f4cb533c9b8f EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_21f36933_3ae4_4652_b7a4_accb374a46ca EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/flow_vein.png"/>
+		<ShaderVar_6d4c9323_5e4f_498a_8c9d_19a0a361bc90 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/windMask.png"/>
+		<ShaderVar_CoreColor EditorType="Vector" Type="float4" Value="1.6,0.8,0.5,1"/>
+		<ShaderVar_DistortionColor EditorType="Vector" Type="float4" Value="1.5,0.42,0.2,1"/>
+		<ShaderVar_VeinColor EditorType="Vector" Type="float4" Value="2,0.2,0.05,2"/>
+	</ShaderVar>
+</Technique>
+

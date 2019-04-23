@@ -1,0 +1,63 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+float g_Highlight = 1.0f;
+
+struct V3D_PS_OUT
+{
+    float4	Color	: COLOR0;
+};
+
+VertexOutput vs_main( VertexInput Input )
+{
+	// VS 2 Semantic
+	VertexTrans vssem = (VertexTrans)0;
+	VertexTransInit ( Input, vssem );
+
+	// VS do
+	V3D_VS_Modifiers ( vssem );
+
+	// Semantic 2 VS-Out
+	VertexOutput Output =(VertexOutput)0;
+	VertexTransToVertexOutput ( vssem, Output );
+
+
+#ifndef D3D_EFFECT
+	//Output.mDiffuseUV.y = 1 - Output.mDiffuseUV.y;
+#endif
+
+	return Output;
+}
+
+V3D_PS_OUT	ps_main( PixelInput Input )
+{
+	PixelMaterialTrans pssem = (PixelMaterialTrans)0;
+	PixelInputToMaterial( Input, pssem );
+
+	V3D_PS_OUT o = (V3D_PS_OUT)0;
+
+	DoMaterial(pssem);
+	if(g_AlphaTest.x==1)
+	{
+		if(pssem.mDiffuseColor.a < g_AlphaTest.y)
+			discard;
+	}
+
+	//o.Color.xyz = pssem.mDiffuseColor ;
+	o.Color.xyz = pssem.mDiffuseColor.xyz * g_Highlight;
+	o.Color.a = pssem.mDiffuseColor.a;
+
+	return o;
+}
+
+
+#ifdef D3D_EFFECT
+technique tech
+{
+	pass p0
+	{
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

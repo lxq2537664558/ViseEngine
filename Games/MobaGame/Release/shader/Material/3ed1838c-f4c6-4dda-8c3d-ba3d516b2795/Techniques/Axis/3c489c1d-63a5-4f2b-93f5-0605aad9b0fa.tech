@@ -1,0 +1,8 @@
+<Technique Name="PathMesh" Ver="2" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="4294967295" StencilWriteMask="4294967295" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="3ed1838c-f4c6-4dda-8c3d-ba3d516b2795" Id="3c489c1d-63a5-4f2b-93f5-0605aad9b0fa" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<GDiffuse Type="float4" Value="0,1,0,1"/>
+		<GEmissive Type="float4" Value="0,0,0,0"/>
+		<GSpecular Type="float4" Value="0,0,0,0"/>
+	</ShaderVar>
+</Technique>
+

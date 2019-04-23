@@ -1,0 +1,11 @@
+<Technique Name="»ð»·" Ver="17" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="bf795c58-5485-4c32-9eb9-e2a96392f159" Id="4254a2be-bf02-4e02-9f4f-ff51508001f2" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_095ba488_8da3_49ae_8407_4db6132ceb9a EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/pulse_mask3.png"/>
+		<ShaderVar_a884d4d4_3371_4145_8422_ae658d3d5553 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/GF_062.png"/>
+		<ShaderVar_956f38eb_1bbf_4bad_b3ac_4c4854131a1f EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_1d400932_e47a_43e7_ade2_9709df77259b EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/Mask_396_2.png"/>
+		<ShaderVar_3066586a_ff52_439f_bf12_b35c84d7f0ae EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/arrowmask.png"/>
+		<ShaderVar_65d86a89_e383_4107_9904_7a42c95bcaa8 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/Noise_Wave_000_rotate90.png"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,40 @@
+/*Material
+
+<Material Name="ฒÝตุ" Require="DiffuseUV" Main="DoMaterial_97cc9f0c_67b3_4710_928c_146df7ee0f44" ExtendString="" Id="97cc9f0c-67b3-4710-928c-146df7ee0f44" Ver="8">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="97cc9f0c-67b3-4710-928c-146df7ee0f44" Id="38621a75-ad50-45e6-a2b2-5a2ea0f126ce" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_GDiffuse EditorType="Texture" Type="texture" Value="resources/texture/scene/gmg_landscape_cliff001_id02.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+texture ShaderVar_GDiffuse;
+sampler2D Samp_ShaderVar_GDiffuse = sampler_state
+{
+	Texture = <ShaderVar_GDiffuse>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_97cc9f0c_67b3_4710_928c_146df7ee0f44(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    pssem.mDiffuseColor = vise_tex2D(Samp_ShaderVar_GDiffuse,pssem.mDiffuseUV.xy);
+
+}

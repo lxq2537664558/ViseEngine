@@ -1,0 +1,50 @@
+﻿<UserControl x:Name="userControl" x:Class="MeshTemplateEditor.MeshSocketManagerControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:SearchBox="clr-namespace:SearchBox;assembly=EditorControlLib"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:lib="clr-namespace:EditorControlLib;assembly=EditorControlLib"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0.895*"/>
+        </Grid.RowDefinitions>
+        <ToggleButton x:Name="toggleButton_AddComponent" HorizontalAlignment="Left" Margin="2" Height="24" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ToggleButtonStyle_Default}}" >
+            <StackPanel Orientation="Horizontal">
+                <Image Source="/ResourceLibrary;component/Icon/File/new.png" />
+                <TextBlock Text="添加组件" Margin="2" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+                <Popup IsOpen="{Binding IsChecked, ElementName=toggleButton_AddComponent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" StaysOpen="False">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <SearchBox:SearchBox Margin="0" SearchText="{Binding SocketComponentInfoCreateFilterString, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Height="24" MinWidth="120" />
+                        <StackPanel x:Name="StackPanel_Components" Grid.Row="1" />
+                    </Grid>
+                </Popup>
+            </StackPanel>
+        </ToggleButton>
+
+        <Button HorizontalAlignment="Right" Margin="2" Width="24" Height="24" Click="Button_Del_Click" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" BorderBrush="{x:Null}" Background="{x:Null}">
+            <Image Source="/ResourceLibrary;component/Icon/File/delete.png" />
+        </Button>
+        <ListView x:Name="ListBox_Sockets" Margin="1" Grid.Row="1" HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListBox_Sockets_SelectionChanged" 
+                  Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ListViewStyle_Default}}"
+                  ItemsSource="{Binding SocketInfoList, ElementName=userControl, Mode=TwoWay}"
+                  GridViewColumnHeader.Click="ListViewColumn_Click">
+            <ListView.View>
+                <GridView ColumnHeaderContainerStyle="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=GridViewColumnHeaderStyle_Default}}">
+                    <GridViewColumn Header="挂接点" DisplayMemberBinding="{Binding SocketName}" />
+                    <GridViewColumn Header="类型" DisplayMemberBinding="{Binding SocketComponentType}" />
+                    <GridViewColumn Header="说明" DisplayMemberBinding="{Binding Description, Mode=TwoWay}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+    </Grid>
+</UserControl>

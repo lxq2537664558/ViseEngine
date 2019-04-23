@@ -1,0 +1,45 @@
+/*Material
+
+<Material Name="¼«×ø±ê²ÄÖÊ" Require="DiffuseUV|VertexColor0" Main="DoMaterial_a54eb5fd_64f8_4e31_bd7b_f30d029f2118" ExtendString="" Id="a54eb5fd-64f8-4e31-bd7b-f30d029f2118" Ver="9">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="a54eb5fd-64f8-4e31-bd7b-f30d029f2118" Id="5e1e3593-f8af-48ca-905b-9b13813b0391" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_3e983e55_1c1c_475f_a392_e633ec95c4ff EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/ring_teal_01.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../shader/function/Common.function"
+
+
+texture ShaderVar_3e983e55_1c1c_475f_a392_e633ec95c4ff;
+sampler2D Samp_ShaderVar_3e983e55_1c1c_475f_a392_e633ec95c4ff = sampler_state
+{
+	Texture = <ShaderVar_3e983e55_1c1c_475f_a392_e633ec95c4ff>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Clamp;
+	AddressV = Clamp;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_a54eb5fd_64f8_4e31_bd7b_f30d029f2118(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 ShaderVar_3e983e55_1c1c_475f_a392_e633ec95c4ff_2D = float4(0,0,0,0);
+
+
+    float2 FuncTempValue_ec064443_0b32_40aa_89e4_0215d736f21e_1 = float2(0, 0);
+    PolarCoodP2D(pssem.mDiffuseUV,FuncTempValue_ec064443_0b32_40aa_89e4_0215d736f21e_1);
+    ShaderVar_3e983e55_1c1c_475f_a392_e633ec95c4ff_2D = vise_tex2D(Samp_ShaderVar_3e983e55_1c1c_475f_a392_e633ec95c4ff,FuncTempValue_ec064443_0b32_40aa_89e4_0215d736f21e_1.xy);
+    pssem.mDiffuseColor = (ShaderVar_3e983e55_1c1c_475f_a392_e633ec95c4ff_2D * pssem.mVertexColor0);
+
+}

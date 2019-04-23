@@ -1,0 +1,18 @@
+<Technique Name="Ë®¾§À¶" Ver="68" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="4f3b385e-3323-4f78-90bb-bcc63ece97c0" Id="d51a5891-17ef-466b-a32b-fe40a2573e06" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_8e4a24c5_4de6_4aa4_811d_1d38b694f7fc EditorType="Texture" Type="texture" Value="resources/texture/effect/water/Water_03f.png"/>
+		<ShaderVar_0f7c11d1_407c_4ccf_8d9c_bdad0c8bf7ab EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_7a50d5cc_d328_4611_aa19_f868c1da63d3 EditorType="Texture" Type="texture" Value="resources/texture/effect/object/crystalblue.png"/>
+		<ShaderVar_7514bd36_e3dd_4f9c_a744_159970c3eab6 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/client-vfx-abl-0539-6.png"/>
+		<ShaderVar_61d8d88a_540b_4f43_a540_a99b753a016d EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_4561.png"/>
+		<ShaderVar_VeinColor EditorType="Vector" Type="float3" Value="0.55,1.25,1.1"/>
+		<ShaderVar_BaseColor EditorType="Vector" Type="float3" Value="0.15,0.22,0.6"/>
+		<ShaderVar_RimColor EditorType="Vector" Type="float4" Value="0.5,0.65,1.25,1"/>
+		<ShaderVar_blend EditorType="Vector" Type="float1" Value="0.75"/>
+		<ShaderVar_e951320e_8568_4f69_a5fd_c0736c99533a EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/mask_136.png"/>
+		<ShaderVar_FlowColor EditorType="Vector" Type="float4" Value="0.22,0.5,0.62,0"/>
+		<ShaderVar_FlowUV EditorType="Vector" Type="float2" Value="0.42,1.25"/>
+		<ShaderVar_sweepblend EditorType="Vector" Type="float1" Value="0.045"/>
+	</ShaderVar>
+</Technique>
+

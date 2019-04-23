@@ -1,0 +1,9 @@
+<Technique Name="½ð±Ò" Ver="4" AlphaRef="50" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="d65f4924-23db-457b-9dee-4363a43f5d67" Id="12853251-0337-497b-8d61-e09d6faec01b" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_544dc947_581e_43a9_9f38_1ef889651d58 EditorType="Texture" Type="texture" Value="resources/texture/scene/coin.png"/>
+		<ShaderVar_81c1db1f_487f_4108_9235_1bde3275364a EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/flower_mask.png"/>
+		<ShaderVar_8b044862_daad_4bab_819e_a59242bc0066 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_8ee31d0e_102c_496c_99af_e78e415e00b8 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/237.png"/>
+	</ShaderVar>
+</Technique>
+

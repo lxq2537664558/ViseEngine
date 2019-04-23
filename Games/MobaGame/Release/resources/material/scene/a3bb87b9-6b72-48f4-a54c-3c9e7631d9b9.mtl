@@ -1,0 +1,44 @@
+/*Material
+
+<Material Name="Ê¯Í·µØ°å" Require="DiffuseUV" Main="DoMaterial_a3bb87b9_6b72_48f4_a54c_3c9e7631d9b9" ExtendString="" Id="a3bb87b9-6b72-48f4-a54c-3c9e7631d9b9" Ver="14">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="a3bb87b9-6b72-48f4-a54c-3c9e7631d9b9" Id="ae6338d6-014f-41c7-b651-b4a419bb6da0" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_GDiffuse EditorType="Texture" Type="texture" Value="resources/texture/scene/GrassLand_mossy_B_01.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+texture ShaderVar_GDiffuse;
+sampler2D Samp_ShaderVar_GDiffuse = sampler_state
+{
+	Texture = <ShaderVar_GDiffuse>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_a3bb87b9_6b72_48f4_a54c_3c9e7631d9b9(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 ShaderVar_GDiffuse_2D = float4(0,0,0,0);
+    float2 ShaderVar_042b8f7c_c60b_427b_8028_c84403a3d06a = float2(1,1);
+    float4 ShaderVar_acff7014_2695_44a3_bb82_9cc56aa16695 = float4(0.1411765,0.1411765,0.1568628,1);
+
+
+    ShaderVar_GDiffuse_2D = vise_tex2D(Samp_ShaderVar_GDiffuse,(pssem.mDiffuseUV * ShaderVar_042b8f7c_c60b_427b_8028_c84403a3d06a).xy);
+    pssem.mDiffuseColor = (ShaderVar_GDiffuse_2D * ShaderVar_acff7014_2695_44a3_bb82_9cc56aa16695);
+
+}

@@ -1,0 +1,32 @@
+﻿<myTypes:BaseNodeControl x:Name="baseNodeControl" x:Class="CodeDomNode.EnumValue"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:myTypes ="clr-namespace:CodeGenerateSystem.Base;assembly=CodeGenerateSystem"
+             xmlns:baseCtrl="clr-namespace:CodeGenerateSystem.Controls;assembly=CodeGenerateSystem"
+             xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CodeGenerateSystem;Component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <theme:SystemDropShadowChrome>
+        <Border Background="{DynamicResource NormalControlBackground}" CornerRadius="5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Rectangle x:Name="Rectangle_Title" Fill="{DynamicResource LinkNode_Value_Background}" Margin="-3,0" RadiusX="5" RadiusY="5"/>
+                <TextBlock Text="{Binding NodeName, ElementName=baseNodeControl}" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="8,3" FontSize="18.667" IsHitTestVisible="False" Foreground="{DynamicResource TextForeground}"/>
+                <ComboBox x:Name="Combo_Keys" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="3"/>
+                <baseCtrl:LinkOutControl x:Name="ValueLinkHandle"  Margin="0,6,-15,7" Width="10" Height="10" BackBrush="{DynamicResource Link_ValueBrush}" HorizontalAlignment="Right" Grid.RowSpan="2" Direction="Right"/>
+            </Grid>
+        </Border>
+    </theme:SystemDropShadowChrome>
+</myTypes:BaseNodeControl>

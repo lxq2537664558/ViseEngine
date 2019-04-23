@@ -1,0 +1,8 @@
+<Technique Name="SimplateMesh" Ver="3" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="0" WireFrame="1" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="4294967295" StencilWriteMask="4294967295" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="3ed1838c-f4c6-4dda-8c3d-ba3d516b2795" Id="eb07ca47-da90-44fe-ae77-d3bbc7c7de94" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<GDiffuse Type="float4" Value="0.5,0.5,0.5,1"/>
+		<GEmissive Type="float4" Value="0,0,0,0"/>
+		<GSpecular Type="float4" Value="0,0,0,0"/>
+	</ShaderVar>
+</Technique>
+

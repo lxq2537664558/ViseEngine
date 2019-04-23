@@ -1,0 +1,8 @@
+<Technique Name="µ¶ºÛ" Ver="8" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="2f69eb97-b0dc-406c-b26d-e5e50d786232" Id="2ecfc5bc-8920-49c5-932e-84805f7ca23b" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5 EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/Trail4.png"/>
+		<ShaderVar_a36ab05e_9044_4c45_9cf6_340246236a56 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+		<ShaderVar_f7af0c42_0f2c_43c9_a22f_d71718e12e36 EditorType="Texture" Type="texture" Value="resources/texture/effect/weapontrail/slash_vein.png"/>
+	</ShaderVar>
+</Technique>
+

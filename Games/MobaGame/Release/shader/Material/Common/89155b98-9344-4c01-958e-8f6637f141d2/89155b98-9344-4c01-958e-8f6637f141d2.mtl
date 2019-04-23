@@ -1,0 +1,27 @@
+/*Material
+
+<?xml version="1.0" encoding="utf-16"?>
+<Material Name="Guard捕获场景" Require="DiffuseUV" Main="DoMaterial_89155b98_9344_4c01_958e_8f6637f141d2" ExtendString="" Id="89155b98-9344-4c01-958e-8f6637f141d2" Ver="4">
+  <DefaultTechnique Name="DefaultTech" Ver="5" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" HostMaterialId="89155b98-9344-4c01-958e-8f6637f141d2" Id="4baff78e-df34-4fdd-a944-beb178d33061" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" DepthBias="0" SlopeScaleDepthBias="0">
+    <ShaderVar />
+  </DefaultTechnique>
+</Material>
+*/
+
+#include "../Shader/Material/Common/Common.function"
+
+
+
+#ifdef ByLayerBased
+void DoMaterial_89155b98_9344_4c01_958e_8f6637f141d2(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    float4 FuncTempValue_881568d7_0923_4e11_9252_42213a2460ee_1 = float4(0, 0, 0, 0);
+    SampSceneCapture4(pssem.mDiffuseUV,FuncTempValue_881568d7_0923_4e11_9252_42213a2460ee_1);
+    pssem.mDiffuseColor = FuncTempValue_881568d7_0923_4e11_9252_42213a2460ee_1;
+
+}

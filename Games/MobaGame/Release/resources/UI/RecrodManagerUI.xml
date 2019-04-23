@@ -1,0 +1,82 @@
+<cscommon TypeName="UISystem.WinForm" Id="aba3bca4-3880-4d51-be0d-172e90141971" Width="400" Height="300" DragEnable="True" HorizontalAlignment="Center" VerticalAlignment="Center">
+	<WinState/>
+	<cscommon TypeName="UISystem.Container.Grid.Grid" Id="f4f2cf12-62a8-4192-adcc-701924d2360d" Width="400" Width_Auto="True" Height="300" Height_Auto="True" BackColor="C8352D2D" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+		<WinState/>
+		<cscommon TypeName="UISystem.StackPanel" Id="912fe268-49b2-4be4-b419-3dda9cbe767e" Width="80" Width_Auto="True" Height="98" Height_Auto="True">
+			<WinState/>
+			<cscommon TypeName="UISystem.ToggleButton" Id="5eecb82a-696f-42e1-93fa-877dcc80a061" WinName="RecordShowToggleButton" Width="80" Height="80" HorizontalAlignment="Center" WinToggleButtonClick="game@Client.RecordVManager|CloseOrOpenRecord">
+				<NormalState UVAnim="7033011a-e9c0-4244-8fe3-d15e3bb27dfb"/>
+				<LightState/>
+				<CheckedState UVAnim="5d0f0857-5cdb-4ca6-a8a0-b0f53e77c6e3"/>
+				<DisableState/>
+			</cscommon>
+			<cscommon TypeName="UISystem.TextBlock" Id="1b0cbc20-6c6b-4fae-a7be-d1f94226c87e" Width="64" Width_Auto="True" Height="18" HorizontalAlignment="Center" Text="RecordV" FontSize="16">
+				<WinState/>
+				<FontRenderParams>
+					<0 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="None" OutlineThickness="0"/>
+				</FontRenderParams>
+			</cscommon>
+		</cscommon>
+		<cscommon TypeName="UISystem.StackPanel" Id="fe1ebbf8-86fe-41aa-9f9c-dbc2b7a6489b" Width="106" Width_Auto="True" Height="98" Height_Auto="True" HorizontalAlignment="Center" Visibility="Collapsed">
+			<WinState/>
+			<cscommon TypeName="UISystem.ToggleButton" Id="adb911f7-62c1-4198-a096-562082ff5bca" WinName="RecordSettingToggleButton" Width="80" Height="80" HorizontalAlignment="Center" WinToggleButtonClick="game@Client.RecordVManager|CloseOrOpenSettingRecord">
+				<NormalState UVAnim="0082b020-e731-4a99-95ef-245aa11b0f0a"/>
+				<LightState/>
+				<CheckedState UVAnim="0ef9a331-bea4-4b0a-8af1-c276379af50f"/>
+				<DisableState/>
+			</cscommon>
+			<cscommon TypeName="UISystem.TextBlock" Id="02b4e110-d9fc-416d-abe9-52ecbdee3009" Width="106" Width_Auto="True" Height="18" Text="RecordSetting" FontSize="16">
+				<WinState/>
+				<FontRenderParams>
+					<0 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="None" OutlineThickness="0"/>
+				</FontRenderParams>
+			</cscommon>
+		</cscommon>
+		<cscommon TypeName="UISystem.StackPanel" Id="f42a444b-9d52-4716-b512-668a2e024742" Width="87" Width_Auto="True" Height="98" Height_Auto="True" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Right">
+			<WinState/>
+			<cscommon TypeName="UISystem.ToggleButton" Id="0fe84bf4-f9fa-451f-9d94-5426aec63e09" WinName="RecordTitleToggleButton" Width="80" Height="80" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Center" WinToggleButtonClick="game@Client.RecordVManager|CloseOrOpenTitleRecord">
+				<NormalState UVAnim="694eac62-2566-4cc4-8cca-c2a4ad4e5705"/>
+				<LightState/>
+				<CheckedState UVAnim="5a947ca0-aa14-4045-bab0-47d7a771b779"/>
+				<DisableState/>
+			</cscommon>
+			<cscommon TypeName="UISystem.TextBlock" Id="e786336f-13aa-4db8-826d-a2334330c801" Width="87" Width_Auto="True" Height="18" ForeColor="FFFFFFFF" BackColor="D3D3D3" Text="RecordTitle" FontSize="16">
+				<WinState/>
+				<FontRenderParams>
+					<0 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="None" OutlineThickness="0"/>
+				</FontRenderParams>
+			</cscommon>
+		</cscommon>
+		<cscommon TypeName="UISystem.Container.Grid.Grid" Id="33a19913-b584-4dcd-8ff3-cd1c9be9a95a" Width="100" Width_Auto="True" Height="100" Height_Auto="True" Margin="0,100,0,0">
+			<WinState/>
+			<cscommon TypeName="UISystem.Button" Id="07934bf7-721e-4e33-bec8-286e08afa810" Width="100" Height="100" WinButtonClick="game@Client.RecordVManager|HidOrShowAllRecord">
+				<NormalState UVAnim="3eb06418-f96e-4a37-b233-ddbc5c906080"/>
+				<LightState TextOffset="-1,-1"/>
+				<PressState UVAnim="021575d1-0d00-4c75-9d3c-b8d7cb803ad6" TextOffset="1,1"/>
+				<DisableState/>
+			</cscommon>
+			<cscommon TypeName="UISystem.TextBlock" Id="d779a2cb-16fb-40a2-b14b-68c851f7142a" Width="76" Width_Auto="True" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center" HitTestVisible="False" Text="CloseAll">
+				<WinState/>
+				<FontRenderParams>
+					<0 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="None" OutlineThickness="0"/>
+				</FontRenderParams>
+			</cscommon>
+		</cscommon>
+		<cscommon TypeName="UISystem.StackPanel" Id="6cc217c5-7b4c-4666-b2d6-a93bc7d7de67" Width="159" Width_Auto="True" Height="98" Height_Auto="True" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Center">
+			<WinState/>
+			<cscommon TypeName="UISystem.ToggleButton" Id="d2f64e27-e847-441e-8938-4aae4a4cb6f4" WinName="RecordPerformanceToggleButton" Width="80" Height="80" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Center" WinToggleButtonClick="game@Client.RecordVManager|CloseOrOpenPerformanceRecord">
+				<NormalState UVAnim="84cbf34d-c4a5-41d2-a3e8-c29a8c4cd45a"/>
+				<LightState/>
+				<CheckedState UVAnim="dcffb1a5-6b01-4ca4-bff8-4e9f708f591c"/>
+				<DisableState/>
+			</cscommon>
+			<cscommon TypeName="UISystem.TextBlock" Id="20734319-b062-4326-b45b-3d7d21ce91f2" Width="159" Width_Auto="True" Height="18" ForeColor="FFFFFFFF" BackColor="D3D3D3" Text="RecordPerformance " FontSize="16">
+				<WinState/>
+				<FontRenderParams>
+					<0 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="None" OutlineThickness="0"/>
+				</FontRenderParams>
+			</cscommon>
+		</cscommon>
+	</cscommon>
+</cscommon>
+

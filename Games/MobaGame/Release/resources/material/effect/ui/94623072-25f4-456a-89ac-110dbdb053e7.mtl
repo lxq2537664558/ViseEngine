@@ -1,0 +1,18 @@
+/*Material
+
+<Material Name="×°±¸¿ò" Require="DiffuseColor|DiffuseUV" Main="DoMaterial_94623072_25f4_456a_89ac_110dbdb053e7" ExtendString="" Id="94623072-25f4-456a-89ac-110dbdb053e7" Ver="1">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="94623072-25f4-456a-89ac-110dbdb053e7" Id="960e7a35-ec23-408e-8151-40aa7d094588" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar/>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#ifdef ByLayerBased
+void DoMaterial_94623072_25f4_456a_89ac_110dbdb053e7(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{}

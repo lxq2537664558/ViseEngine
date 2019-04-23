@@ -1,0 +1,6 @@
+<Technique Name="ÉùÒô·¶Î§½ü" Ver="5" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="8adb24d5-df58-41a8-8594-b9fbab8c8154" Id="0f5f1f90-f06b-4f1f-a6a1-6a0e6bc5fe1d" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_GDiffuse EditorType="Color" Type="float4" Value="0,1,0,0.4745098"/>
+	</ShaderVar>
+</Technique>
+

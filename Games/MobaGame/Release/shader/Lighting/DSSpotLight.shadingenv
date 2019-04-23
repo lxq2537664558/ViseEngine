@@ -1,0 +1,244 @@
+#include "VInc.fxx"
+
+#include "CommonDeferredShadingFunc.fxh"
+
+#include "CommonLightFunc.fxh"
+
+#include "inport.dummy"
+
+
+int				g_ShadowType;
+float			g_LBRAmount;
+float			g_ShadowAlpha;
+//#define SHADOW_EPSILON 0.0005f
+float			g_Intensity; 
+float			g_SpecularIntensity;
+float4		g_LightingDiffuse;
+float4  		g_LightingAmbient;
+float4		g_LightingSpecular;
+float4		g_LightingShadow;
+float3       g_LightingPos;
+float3		g_LightingDir;
+float			g_Height;
+float2		g_CosCone;
+float3		g_Attenuation;
+float2		g_TextureSize;
+int				g_LightingMode;
+float4x4	g_LightViewProj;
+
+texture MRT_Albedo;
+sampler2D Samp_MRT_Albedo = sampler_state
+{
+	Texture = <MRT_Albedo>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+};
+
+texture MRT_Depth;
+sampler2D Samp_MRT_Depth = sampler_state
+{
+	Texture = <MRT_Depth>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+};
+
+texture MRT_NormalBloomSpecular;
+sampler2D Samp_MRT_NormalBloomSpecular = sampler_state
+{
+	Texture = <MRT_NormalBloomSpecular>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+};
+
+texture ProjTexture;
+sampler2D Samp_ProjTexture = sampler_state
+{
+	Texture = <ProjTexture>;
+    MipFilter = Point;
+    MinFilter = Point;
+    MagFilter = Point;
+
+};
+
+float g_RandomSize=64;
+texture T_Random;
+sampler2D Samp_T_Random = sampler_state
+{
+	Texture = <T_Random>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+    AddressU = WRAP;
+    AddressV = WRAP;
+};
+
+texture 		RT_OpaqueShadowDepth;
+sampler2D Samp_RT_OpaqueShadowDepth = sampler_state
+{
+	Texture = <RT_OpaqueShadowDepth>;
+    MipFilter = POINT;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = Border;
+    AddressV = Border;
+	//BorderColor = 0xFFFFFFFF;
+};
+
+struct PSOut_PointLight
+{
+    float4	Color	: COLOR0;
+};
+
+VertexOutput vs_main( VertexInput Input )
+{
+	// VS 2 Semantic
+	VertexTrans vssem = (VertexTrans)0;
+	VertexTransInit ( Input, vssem );
+
+	// VS do
+	V3D_VS_Modifiers ( vssem );
+//	vssem.mWorldPos = mul(float4(Input.mLocalPos, 0), g_World);
+
+	// Semantic 2 VS-Out
+	VertexOutput Output =(VertexOutput)0;
+	VertexTransToVertexOutput ( vssem, Output );
+//	Output.mDiffuseUV.xy	= Input.mDiffuseUV.xy;
+//	Output.mDiffuseUV.xy	= Input.mDiffuseUV.xy * float2(g_ViewPortW/g_TextureSize.x, g_ViewPortH/g_TextureSize.y) + float2(g_ViewPortX/g_TextureSize.x, g_ViewPortY/g_TextureSize.y);
+
+#ifdef D3D_EFFECT
+	Output.mProjPos.xy += float2(-1,1) / g_TextureSize;
+#else
+//	//Output.mDiffuseUV.y = 1 - Output.mDiffuseUV.y;
+#endif
+
+	return Output;
+}
+
+float3 getRandom(in float2 uv)
+{
+	return normalize(vise_tex2D(Samp_T_Random, g_TextureSize * uv / g_RandomSize).xyz * 2.0f - 1.0f);
+}
+
+PSOut_PointLight ps_main( PixelInput Input )
+{
+	PSOut_PointLight o = (PSOut_PointLight)0;
+
+	float2 UV = (Input.mProjPos.xy/Input.mProjPos.w + 1)/2;
+//	UV = UV+0.5/g_TextureSize.x;
+
+#ifdef D3D_EFFECT
+	UV.y = 1 - UV.y;
+#else
+#endif
+
+
+	//half4			Albedo		= vise_tex2D(Samp_MRT_Albedo, UV);
+
+	// Deferred Shading Surface Infomations
+	float			vZ			= vise_tex2D(Samp_MRT_Depth, UV).x;
+	float4		nbs = vise_tex2D(Samp_MRT_NormalBloomSpecular, UV);
+	float3	    Norm = DecodeNormal(nbs.xy);
+
+	float			SpecularIntensity = nbs.w;
+	half2			BloomShininess = DecodeBloomShininess(nbs.z);
+	float			Shininiess = BloomShininess.y*256;
+
+	float3   LightPos = mul( float4(g_LightingPos,1), g_View );
+	float3	LightDir	= normalize(mul(float4(g_LightingDir,0), g_View).xyz);
+
+	// Unpack ViewSpace Position
+#ifdef D3D_EFFECT
+#else
+	vZ = vZ * 2 - 1;
+#endif
+	float4	Pos		= UnwrapViewPosition( Input.mProjPos, vZ );
+	// ViewSpace Eye Dir
+	float3   ViewDir		= normalize(Pos.xyz);
+
+	float3 LightDiff = float3(0,0,0);
+	float3 LightSpec = float3(0,0,0);
+	float3 L = normalize( LightPos-Pos );
+	float3 V = -ViewDir;
+
+	float cos_direction = dot(-L, LightDir);
+	float spot = smoothstep(g_CosCone.x, g_CosCone.y, cos_direction);
+	if(spot<=0)
+	{
+		o.Color = 0;
+	}
+	else
+	{
+		{
+			SimpleDirLight_Pixel_Phong( LightDiff, LightSpec, L, V, Norm, g_LightingDiffuse.xyz, g_LightingSpecular.xyz*SpecularIntensity, Shininiess );
+
+			// use long edge to Attenuation
+			float fRange = g_Height/g_CosCone.x;
+			float Atten = AttenuationTerm( LightPos, Pos, fRange, g_Attenuation );
+			LightDiff*=spot * Atten;
+			LightSpec*=spot * Atten;
+		}
+	
+		// ShadowMapping
+		float lightAmount = 1;
+		float lightAmbientAmount = 1;
+		if(g_ShadowType >= 1)
+		{
+			float4 lightSpacePos = mul( Pos, g_LightViewProj );
+			float4 v_shadowCoord = lightSpacePos;
+		#ifdef D3D_EFFECT
+			v_shadowCoord.xy = v_shadowCoord.xy * 0.5 + 0.5;
+			v_shadowCoord.y = 1.0f - v_shadowCoord.y;
+		#else
+			v_shadowCoord.xy = v_shadowCoord.xy * 0.5 + 0.5;
+			v_shadowCoord.z = v_shadowCoord.z * 0.5 + 0.5;
+		#endif
+			float4 g_shadowOffsets[4] = {
+				float4( -0.5, -0.5, 0, 0 ),
+				float4( -0.5, 0.5, 0, 0 ),
+				float4( 0.5, -0.5, 0, 0 ),
+				float4( 0.5, 0.5, 0, 0 )
+			};
+			float4 pixelSize = float4(1/g_TextureSize.x, 1/g_TextureSize.y, 0, 0);
+			lightAmount = 0;
+			lightAmount += tex2Dproj(Samp_RT_OpaqueShadowDepth, v_shadowCoord+g_shadowOffsets[0]*pixelSize).x;
+			lightAmount += tex2Dproj(Samp_RT_OpaqueShadowDepth, v_shadowCoord+g_shadowOffsets[1]*pixelSize).x;
+			lightAmount += tex2Dproj(Samp_RT_OpaqueShadowDepth, v_shadowCoord+g_shadowOffsets[2]*pixelSize).x;
+			lightAmount += tex2Dproj(Samp_RT_OpaqueShadowDepth, v_shadowCoord+g_shadowOffsets[3]*pixelSize).x;
+			lightAmount *= 0.25f;
+
+			//ShadowMapping(g_ShadowType, Pos, g_LightViewProj, Samp_RT_OpaqueShadowDepth, g_LBRAmount, g_TextureSize, lightAmount, lightAmbientAmount);
+		}
+
+		float shadowDark = 1 - lightAmount;
+		shadowDark *= g_ShadowAlpha;
+		float3	    LightColor = (LightDiff*(1-shadowDark) + g_LightingAmbient.xyz)*g_Intensity + LightSpec*g_SpecularIntensity;
+		float4		Albedo		= vise_tex2D(Samp_MRT_Albedo, UV);
+
+		if(g_LightingMode==0)
+		{
+			o.Color.xyz = LightColor*Albedo.xyz;
+		}
+		else
+		{
+			o.Color.xyz = LightColor*0.3;
+		}
+
+		o.Color.w = 0;
+	}
+
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique tech
+{
+	pass p0
+	{
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

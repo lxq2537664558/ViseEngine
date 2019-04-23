@@ -1,0 +1,9 @@
+<Technique Name="у╫й©х╧вс" Ver="65" AlphaRef="20" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyTest" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="1c1023d1-0f98-46db-af2e-3ebad1eab941" Id="beaa4ce3-97d8-45a3-b587-8b1118191cb2" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_80756e86_567f_4c5c_856d_c4a52a4da673 EditorType="Texture" Type="texture" Value="resources/texture/character/warrior/warrior_suit07_04_pants.png"/>
+		<ShaderVar_Scale EditorType="Vector" Type="float2" Value="0.5,0.5"/>
+		<ShaderVar_Pos EditorType="Vector" Type="float2" Value="0.5,0.375"/>
+		<ShaderVar_Color EditorType="Vector" Type="float4" Value="1.5,0.75,0.4,1"/>
+	</ShaderVar>
+</Technique>
+

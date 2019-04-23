@@ -1,0 +1,41 @@
+/*Material
+
+<Material Name="ɽʯ2" Require="DiffuseUV" Main="DoMaterial_36c0ef4f_c417_4cc9_a39b_b43105aef35a" ExtendString="" Id="36c0ef4f-c417-4cc9-a39b-b43105aef35a" Ver="10">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="36c0ef4f-c417-4cc9-a39b-b43105aef35a" Id="3bfeb9a5-9ef6-4c05-ae7a-6dff3344cb06" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_28c00117_dfe3_44fa_b0ff_5daa23c494d7 EditorType="Texture" Type="texture" Value="resources/texture/scene/mountain_cliff_A_05.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+texture ShaderVar_28c00117_dfe3_44fa_b0ff_5daa23c494d7;
+sampler2D Samp_ShaderVar_28c00117_dfe3_44fa_b0ff_5daa23c494d7 = sampler_state
+{
+	Texture = <ShaderVar_28c00117_dfe3_44fa_b0ff_5daa23c494d7>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_36c0ef4f_c417_4cc9_a39b_b43105aef35a(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float2 ShaderVar_04410eb0_0cf3_44c4_b422_fff5f20b9fd0 = float2(3.2,3.2);
+
+
+    pssem.mDiffuseColor = vise_tex2D(Samp_ShaderVar_28c00117_dfe3_44fa_b0ff_5daa23c494d7,(pssem.mDiffuseUV * ShaderVar_04410eb0_0cf3_44c4_b422_fff5f20b9fd0).xy);
+
+}

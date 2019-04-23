@@ -1,0 +1,107 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+#include "CommonDeferredShadingFunc.fxh"
+
+float2		g_InvScreenSize;
+float2		g_ScreenSize;
+texture 		RT_SRC;
+sampler2D Samp_RT_SRC = sampler_state
+{
+	Texture = <RT_SRC>;
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+};
+
+texture 		RT_GLOW0;
+sampler2D Samp_RT_GLOW0 = sampler_state
+{
+	Texture = <RT_GLOW0>;
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+};
+
+texture 		RT_GLOW1;
+sampler2D Samp_RT_GLOW1 = sampler_state
+{
+	Texture = <RT_GLOW1>;
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+};
+
+texture 		RT_GLOW2;
+sampler2D Samp_RT_GLOW2 = sampler_state
+{
+	Texture = <RT_GLOW2>;
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+};
+
+struct VSInput
+{
+	float3 Pos		: LOCALPOS;
+	float2 UV		: DIFFUSEUV;
+};
+VSInput dummyVSIn;
+
+struct VSOutput
+{
+    float4 Pos		: POSITION;
+    float2 UV		: TEXCOORD0;
+};
+struct PSOutput
+{
+    float4	Color	: COLOR0;
+};
+
+VSOutput vs_main( VSInput Input )
+{
+	VSOutput o=(VSOutput)0;
+	o.Pos	= float4(Input.Pos,1);
+	o.UV		= Input.UV;
+
+#ifdef D3D_EFFECT
+	o.Pos.xy += float2(-1,1) * g_InvScreenSize;
+#else
+	//o.UV.y = 1 - o.UV.y;
+#endif
+
+    return o;
+}
+
+PSOutput	ps_main( VSOutput Input )
+{
+	PSOutput o = (PSOutput)0;
+	float2 uv = Input.UV;
+
+	float4 clr0 = vise_tex2D(Samp_RT_GLOW0, uv);
+	float4 clr1 = vise_tex2D(Samp_RT_GLOW1, uv);
+	float4 clr2 = vise_tex2D(Samp_RT_GLOW2, uv);
+
+//	o.Color = clr0 * 1.0f + clr1 * 0.575f + clr2 * 0.225f;
+	o.Color = clr0 * 2.0f + clr1 * 1.15f + clr2 * 0.45f;
+
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique GlowMerge
+{
+   pass p0
+   {
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

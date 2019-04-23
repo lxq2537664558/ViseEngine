@@ -1,0 +1,47 @@
+<Method ViewBoxMain_X="151" ViewBoxMain_Y="66" ViewBoxMain_Width="1024" GUID="00000000-0000-0000-0000-000000000000">
+	<OrigionCtrls>
+		<OrigionCtrl Id="48773073-9264-4f42-9810-e2cc2510590a"/>
+	</OrigionCtrls>
+	<ChildNodesCtrls>
+		<MethodNode CurrentState="" TargetState="" ChangeToState="" MethodEditType="Default" Useable="False" OverrideAble="True" CallBasePosition="None" UseBaseVisibility="Visible" IsStatic="False" ID="48773073-9264-4f42-9810-e2cc2510590a" Type="AIEditor.dll@AIEditor.LinkSystem.MethodNode" X="0" Y="0" Params="OnEnterState,,mscorlib.dll@System.Void,game@Server.Hall.ServerStates.Idle,true,false" IsDeleteable="False" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="b2615685-1f16-4ca5-af5a-3af035e27966">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="839dbfea-4a58-4a59-b8be-d41ad1d15ec0">
+					<Link LinkFrom="839dbfea-4a58-4a59-b8be-d41ad1d15ec0" LinkTo="42c75fbd-170b-4fd8-9a36-f715e733b8ee"/>
+				</LinkObject>
+			</LinkObjects>
+		</MethodNode>
+		<MethodInvokeNode ID="715fc203-c784-4702-bb7c-113552c0389c" Type="AIEditor.dll@CodeDomNode.MethodInvokeNode" X="32.671142578125" Y="193.1826171875" Params="AI×´Ì¬.Ìí¼Ó¼ÆÊ±Æ÷,game@Server.Hall.ServerStates.Idle,AddLogicTimer,name:mscorlib.dll@System.String/interval:mscorlib.dll@System.Int64,mscorlib.dll@System.Void,Server;This,Server.Hall.ServerStates.Idle,null,null" IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<name Type="mscorlib.dll@System.String" Value="Ñ°ÕÒ¹¥»÷Ä¿±ê"/>
+				<interval Type="mscorlib.dll@System.Int64" Value="1000"/>
+			</DefaultParamValue>
+			<ChildNodes>
+				<MethodInvokeParameterControl ID="19cdc6c9-a0f6-4fb2-a551-3c03526836fa" Type="AIEditor.dll@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="name:mscorlib.dll@System.String" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="5d5a8047-f933-4577-8669-ab598bd891d1">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+				<MethodInvokeParameterControl ID="87dcd343-07fd-49bc-867a-2daf16775e91" Type="AIEditor.dll@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="interval:mscorlib.dll@System.Int64" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="87ea3487-8b39-4260-b198-ee1340954137">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="42c75fbd-170b-4fd8-9a36-f715e733b8ee">
+					<Link LinkFrom="839dbfea-4a58-4a59-b8be-d41ad1d15ec0" LinkTo="42c75fbd-170b-4fd8-9a36-f715e733b8ee"/>
+				</LinkObject>
+				<LinkObject ID="233d1e48-04ca-4cc1-9843-a10e40d4ed4b">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</MethodInvokeNode>
+	</ChildNodesCtrls>
+</Method>
+

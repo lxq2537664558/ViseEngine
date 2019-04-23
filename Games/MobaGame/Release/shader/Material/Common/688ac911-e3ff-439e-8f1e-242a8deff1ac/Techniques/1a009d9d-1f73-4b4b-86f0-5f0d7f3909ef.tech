@@ -1,0 +1,7 @@
+<Technique Name="Yellow" Ver="59" AlphaRef="30" CullMode="CCW" ZDisable="1" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyTest" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="0" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="688ac911-e3ff-439e-8f1e-242a8deff1ac" Id="1a009d9d-1f73-4b4b-86f0-5f0d7f3909ef" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<Value_35221e29_5b5f_4300_b37e_84ef23551197 Type="float4" Value="1,0.8,0,1"/>
+		<DiffTexture Type="texture" Value="Texture/UVchecker.dds"/>
+	</ShaderVar>
+</Technique>
+

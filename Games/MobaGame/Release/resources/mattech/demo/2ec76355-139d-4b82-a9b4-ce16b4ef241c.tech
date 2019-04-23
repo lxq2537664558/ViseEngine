@@ -1,0 +1,10 @@
+<Technique Name="»ðÔÆ" Ver="261" AlphaRef="50" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="6690d37d-200e-47db-8de4-5711c7b87959" Id="2ec76355-139d-4b82-a9b4-ce16b4ef241c" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_e3e75f5d_14ee_40f1_8cab_7a5fb6148346 EditorType="Texture" Type="texture" Value="resources/texture/effect/smoke/smoke_uv.png"/>
+		<ShaderVar_a3c0a1a3_9183_4ecd_a323_646ad70c515e EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/pulse_mask7.png"/>
+		<ShaderVar_543fd001_ebce_4378_ab6e_dcef33474e50 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_f79cff99_27bd_415c_b655_e67260aecc49 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_45612.png"/>
+		<ShaderVar_c8c1f092_144a_4bbb_8499_1c3167c7ba15 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/GF_062.png"/>
+	</ShaderVar>
+</Technique>
+

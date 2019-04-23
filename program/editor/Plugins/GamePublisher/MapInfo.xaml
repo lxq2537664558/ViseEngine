@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="ZeusPublisher.MapInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="305.333" d:DesignWidth="464.667">
+    <Grid Background="{DynamicResource ControlBackground}">
+    	<Grid.RowDefinitions>
+    		<RowDefinition Height="Auto"/>
+    		<RowDefinition Height="0.91*"/>
+    	</Grid.RowDefinitions>
+    	<TextBlock HorizontalAlignment="Left" Margin="8,5,0,5" Text="地图" d:LayoutOverrides="Height" VerticalAlignment="Center"/>
+    	<ComboBox Margin="40,5,5,5" d:LayoutOverrides="Height" VerticalAlignment="Center"/>
+    	<TabControl Margin="2" Grid.Row="1">
+    		<TabItem Header="TabItem">
+    			<Grid />
+    		</TabItem>
+    		<TabItem Header="TabItem">
+    			<Grid Background="#FFE5E5E5"/>
+    		</TabItem>
+    	</TabControl>
+            
+    </Grid>
+</UserControl>

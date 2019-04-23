@@ -1,0 +1,45 @@
+<CCore.Graphics.PostProcess_Bloom ClassType="cscommon@CCore.Graphics.PostProcess_Bloom" Ver="0">
+	<Class HashCode="-554621673" LastUseTime="2015/12/28 14:07:38">
+		<Property HashCode="2038591314" Type="mscorlib.dll@System.Single" Name="BlurScale"/>
+		<Property HashCode="-750355973" Type="mscorlib.dll@System.Single" Name="BlurAmount"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="1770076888" Type="mscorlib.dll@System.Boolean" Name="DoLerp"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="1459846124" Type="cscommon@CCore.Graphics.enBlurType" Name="BlurType"/>
+		<Property HashCode="-2001596071" Type="mscorlib.dll@System.Single" Name="LerpValue"/>
+		<Property HashCode="1392067792" Type="mscorlib.dll@System.Single" Name="BlurStrength"/>
+		<Property HashCode="-2030139376" Type="mscorlib.dll@System.Single" Name="BloomImageScale"/>
+	</Class>
+	<Class HashCode="-1720626351" LastUseTime="2015/12/27 10:52:40">
+		<Property HashCode="2038591314" Type="mscorlib.dll@System.Single" Name="BlurScale"/>
+		<Property HashCode="-630384996" Type="mscorlib.dll@System.Single" Name="FSBlurStrength"/>
+		<Property HashCode="-750355973" Type="mscorlib.dll@System.Single" Name="BlurAmount"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="1770076888" Type="mscorlib.dll@System.Boolean" Name="DoLerp"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="1462764008" Type="mscorlib.dll@System.Single" Name="FSRate"/>
+		<Property HashCode="1459846124" Type="cscommon@CCore.Graphics.enBlurType" Name="BlurType"/>
+		<Property HashCode="-2001596071" Type="mscorlib.dll@System.Single" Name="LerpValue"/>
+		<Property HashCode="1392067792" Type="mscorlib.dll@System.Single" Name="BlurStrength"/>
+		<Property HashCode="623200071" Type="mscorlib.dll@System.Single" Name="FSBlurScale"/>
+		<Property HashCode="-2030139376" Type="mscorlib.dll@System.Single" Name="BloomImageScale"/>
+	</Class>
+	<Class HashCode="-579734715" LastUseTime="2015/12/28 15:07:43">
+		<Property HashCode="-1605013451" Type="mscorlib.dll@System.Single" Name="EdgeDetectStrength"/>
+		<Property HashCode="949546849" Type="mscorlib.dll@System.Single" Name="EdgeDetectRate"/>
+		<Property HashCode="2038591314" Type="mscorlib.dll@System.Single" Name="BlurScale"/>
+		<Property HashCode="-630384996" Type="mscorlib.dll@System.Single" Name="FSBlurStrength"/>
+		<Property HashCode="-750355973" Type="mscorlib.dll@System.Single" Name="BlurAmount"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="419296322" Type="mscorlib.dll@System.Single" Name="EdgeDetectScale"/>
+		<Property HashCode="1770076888" Type="mscorlib.dll@System.Boolean" Name="DoLerp"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="1462764008" Type="mscorlib.dll@System.Single" Name="FSRate"/>
+		<Property HashCode="1459846124" Type="cscommon@CCore.Graphics.enBlurType" Name="BlurType"/>
+		<Property HashCode="-2001596071" Type="mscorlib.dll@System.Single" Name="LerpValue"/>
+		<Property HashCode="1392067792" Type="mscorlib.dll@System.Single" Name="BlurStrength"/>
+		<Property HashCode="623200071" Type="mscorlib.dll@System.Single" Name="FSBlurScale"/>
+		<Property HashCode="-2030139376" Type="mscorlib.dll@System.Single" Name="BloomImageScale"/>
+	</Class>
+</CCore.Graphics.PostProcess_Bloom>
+

@@ -1,0 +1,60 @@
+/*Material
+
+<Material Name="·¨Õó" Require="DiffuseUV" Main="DoMaterial_c16334f8_2c78_484e_81d0_64ca69231770" ExtendString="" Id="c16334f8-2c78-484e-81d0-64ca69231770" Ver="22">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="c16334f8-2c78-484e-81d0-64ca69231770" Id="b61617fe-68f7-44b1-9ea8-7be538159580" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_785cc2bd_d533_46e9_a1d7_0c21dbf2feb9 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/rune_circle.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../Shader/function/Common.function"
+
+
+texture ShaderVar_785cc2bd_d533_46e9_a1d7_0c21dbf2feb9;
+sampler2D Samp_ShaderVar_785cc2bd_d533_46e9_a1d7_0c21dbf2feb9 = sampler_state
+{
+	Texture = <ShaderVar_785cc2bd_d533_46e9_a1d7_0c21dbf2feb9>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Clamp;
+	AddressV = Clamp;
+	SRGBTexture = False;
+};
+
+float Time_cce74045_e360_425f_a826_5a7b3232ccc2 : Time;
+
+#ifdef ByLayerBased
+void DoMaterial_c16334f8_2c78_484e_81d0_64ca69231770(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 ShaderVar_c208342d_e9b9_47d8_982c_473a73158113 = float4(1,1,1,1);
+    float3 ShaderVar_428914be_3006_456b_b336_97f2e13782c5 = float3(0,0,0);
+    float4 ShaderVar_3941ea87_ffb8_4b36_bd69_e76e1ba02ebf = float4(0,0,0,0);
+    float1 ShaderVar_02450fca_de0c_4868_a8d1_9c5e75b0923e = 2;
+    float1 ShaderVar_eddfe7aa_4bef_4290_ad4f_c9afb058257f = 1.6;
+
+
+    float2 FuncTempValue_06ca25e8_d054_43d5_b12a_8c74e67e9ab7_5 = float2(0, 0);
+    Rotator(pssem.mDiffuseUV,Time_cce74045_e360_425f_a826_5a7b3232ccc2,float2(0,0),float2(1,1),50,FuncTempValue_06ca25e8_d054_43d5_b12a_8c74e67e9ab7_5);
+    ShaderVar_3941ea87_ffb8_4b36_bd69_e76e1ba02ebf = vise_tex2D(Samp_ShaderVar_785cc2bd_d533_46e9_a1d7_0c21dbf2feb9, FuncTempValue_06ca25e8_d054_43d5_b12a_8c74e67e9ab7_5);
+    float FuncTempValue_6407eb9a_9e73_4bef_91c7_2d6355cb6c13_2 = 0;
+    Pow(ShaderVar_3941ea87_ffb8_4b36_bd69_e76e1ba02ebf.w,ShaderVar_02450fca_de0c_4868_a8d1_9c5e75b0923e,FuncTempValue_6407eb9a_9e73_4bef_91c7_2d6355cb6c13_2);
+    ShaderVar_428914be_3006_456b_b336_97f2e13782c5 = ((vise_tex2D(Samp_ShaderVar_785cc2bd_d533_46e9_a1d7_0c21dbf2feb9,pssem.mDiffuseUV.xy) * FuncTempValue_6407eb9a_9e73_4bef_91c7_2d6355cb6c13_2) * ShaderVar_eddfe7aa_4bef_4290_ad4f_c9afb058257f).xyz;
+    ShaderVar_c208342d_e9b9_47d8_982c_473a73158113.x = ShaderVar_428914be_3006_456b_b336_97f2e13782c5.x;
+    ShaderVar_3941ea87_ffb8_4b36_bd69_e76e1ba02ebf = vise_tex2D(Samp_ShaderVar_785cc2bd_d533_46e9_a1d7_0c21dbf2feb9, FuncTempValue_06ca25e8_d054_43d5_b12a_8c74e67e9ab7_5);
+    ShaderVar_428914be_3006_456b_b336_97f2e13782c5 = ((vise_tex2D(Samp_ShaderVar_785cc2bd_d533_46e9_a1d7_0c21dbf2feb9,pssem.mDiffuseUV.xy) * FuncTempValue_6407eb9a_9e73_4bef_91c7_2d6355cb6c13_2) * ShaderVar_eddfe7aa_4bef_4290_ad4f_c9afb058257f).xyz;
+    ShaderVar_c208342d_e9b9_47d8_982c_473a73158113.y = ShaderVar_428914be_3006_456b_b336_97f2e13782c5.y;
+    ShaderVar_3941ea87_ffb8_4b36_bd69_e76e1ba02ebf = vise_tex2D(Samp_ShaderVar_785cc2bd_d533_46e9_a1d7_0c21dbf2feb9, FuncTempValue_06ca25e8_d054_43d5_b12a_8c74e67e9ab7_5);
+    ShaderVar_428914be_3006_456b_b336_97f2e13782c5 = ((vise_tex2D(Samp_ShaderVar_785cc2bd_d533_46e9_a1d7_0c21dbf2feb9,pssem.mDiffuseUV.xy) * FuncTempValue_6407eb9a_9e73_4bef_91c7_2d6355cb6c13_2) * ShaderVar_eddfe7aa_4bef_4290_ad4f_c9afb058257f).xyz;
+    ShaderVar_c208342d_e9b9_47d8_982c_473a73158113.z = ShaderVar_428914be_3006_456b_b336_97f2e13782c5.z;
+    pssem.mDiffuseColor = ShaderVar_c208342d_e9b9_47d8_982c_473a73158113;
+
+}

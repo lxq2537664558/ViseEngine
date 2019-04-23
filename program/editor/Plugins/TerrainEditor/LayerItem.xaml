@@ -1,0 +1,40 @@
+﻿<UserControl x:Name="userControl" x:Class="TerrainEditor.LayerItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+			 xmlns:wpg="clr-namespace:WPG;assembly=WPG"
+             mc:Ignorable="d" 
+             d:DesignWidth="403" Margin="1">
+    <Border x:Name="Border_LayerItem"  BorderBrush="#FFCBCBCB" BorderThickness="2" CornerRadius="5">
+		<Grid>
+    		<Grid.RowDefinitions>
+    			<RowDefinition Height="Auto"/>
+    			<RowDefinition Height="Auto"/>
+    			<RowDefinition Height="Auto"/>
+    			<RowDefinition Height="Auto"/>
+    		</Grid.RowDefinitions>
+    		<Grid.ColumnDefinitions>
+    			<ColumnDefinition Width="Auto"/>
+    			<ColumnDefinition Width="0.81*"/>
+    			<ColumnDefinition Width="Auto"/>
+				<ColumnDefinition Width="Auto"/>
+    		</Grid.ColumnDefinitions>
+    		<Image Margin="2" Width="50" Height="50" Source="{Binding Image, ElementName=userControl}" Grid.RowSpan="3"/>
+            <TextBlock Grid.Column="1" Margin="1,1,0,1" HorizontalAlignment="Left" FontSize="10.667" Text="{Binding LayerType, ElementName=userControl}" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+            <TextBlock x:Name="textBlock" Grid.Column="1" Margin="4" TextWrapping="Wrap" Text="{Binding LayerName, ElementName=userControl}" VerticalAlignment="Center" FontSize="10.667" Grid.Row="2" ToolTip="{Binding Text, ElementName=textBlock}" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+            <Button x:Name="Button_SetValue" Grid.Column="2" Margin="2" Width="24" Height="24" Click="Button_SetValue_Click" Foreground="White" Grid.Row="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/set.png" Margin="0" />  	
+			</Button>
+            <Button x:Name="Button_SearchValue" Grid.Column="3" Margin="2" Width="24" Height="24" Click="Button_SearchValue_Click" Foreground="White" Grid.Row="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/search.png" Margin="0" />  	
+    		</Button>
+			<Border x:Name="Border_Grass" Margin="8,0,0,0" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="4" BorderThickness="1" >
+				<wpg:PropertyGrid x:Name="GrassPropertyGrid" Alphabetical="False" ShowHeadline="False" Headline="草皮" PropertyExpanded="False" ExpanderHeadline="True" />
+			</Border>
+            <TextBox x:Name="TextBox_Remark" Grid.Column="1" Margin="42,2,2,2" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Remarks, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" d:LayoutOverrides="Height" Grid.ColumnSpan="3" ToolTip="{Binding Text, ElementName=TextBox_Remark}" IsEnabled="False" Foreground="White" CaretBrush="White" FontSize="16" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBoxStyle_Default}}"/>
+            <TextBlock Margin="2" TextWrapping="Wrap" Text="备注:" d:LayoutOverrides="Width, Height" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="{Binding Visibility, ElementName=TextBox_Remark}" FontSize="16" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+		</Grid>		
+	</Border>
+</UserControl>

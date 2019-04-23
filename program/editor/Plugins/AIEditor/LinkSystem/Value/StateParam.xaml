@@ -1,0 +1,48 @@
+﻿<myTypes:BaseNodeControl x:Name="baseNodeControl" x:Class="AIEditor.LinkSystem.Value.StateParam"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:myTypes ="clr-namespace:CodeGenerateSystem.Base;assembly=CodeGenerateSystem"
+    		 xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:baseCtrl="clr-namespace:CodeGenerateSystem.Controls;assembly=CodeGenerateSystem"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CodeGenerateSystem;Component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <theme:SystemDropShadowChrome>
+        <Grid Background="{DynamicResource NormalControlBackground}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Rectangle x:Name="RectangleTitle" Fill="{DynamicResource LinkNode_Value_Background}" Grid.ColumnSpan="2" Margin="0"/>
+            <TextBlock Foreground="{DynamicResource TextForeground}" x:Name="MoveHandle" HorizontalAlignment="Center" Grid.ColumnSpan="2" Text="StateParam" VerticalAlignment="Center" Margin="8,2" IsHitTestVisible="False" FontSize="18.667" />
+            <TextBlock x:Name="ParamNameLabel" Foreground="{DynamicResource TextForeground}" Grid.Row="1" Grid.Column="0" Text="参数名称" VerticalAlignment="Center" Margin="2,0" HorizontalAlignment="Center" />
+            <TextBox x:Name="ValueNameBox" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="1" MinWidth="70" Margin="2" VerticalAlignment="Center" VerticalContentAlignment="Center" Text="{Binding ParamName, ElementName=baseNodeControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsReadOnly="{Binding ParamNameReadOnly, ElementName=baseNodeControl}" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            <StackPanel x:Name="ParamStack" Grid.Row="2" Grid.ColumnSpan="2"/>
+            <!--<Expander Header="状态参数组" Name="expander_Param" Margin="2,0,2,0" Grid.Row="1">
+                <Grid>
+                    <StackPanel>
+                        <Button></Button>
+                        <Button>Hi</Button>
+                        <Button></Button>                    
+                    </StackPanel>
+                </Grid>
+            </Expander>-->
+            <!--<Ellipse Margin="-20,0,0,0" Name="stateParam_Enter" Stroke="Black" Fill="LightGreen" StrokeThickness="2" HorizontalAlignment="Left" Width="15" Height="15" Grid.Row="0" />-->
+            <!--Rectangle Margin="0,0,-13,0" x:Name="stateParam_Leave" Stroke="Black" Fill="LightGreen" StrokeThickness="2" HorizontalAlignment="Right" Width="10" Height="10" Grid.Column="1" /-->
+            <baseCtrl:LinkOutControl Margin="0,0,-17,0" x:Name="ParamGetValue" BackBrush="{DynamicResource Link_ValueBrush}" HorizontalAlignment="Right" Width="13" Height="13" Grid.Column="1" Grid.Row="1" Direction="Right" />
+        </Grid>
+    </theme:SystemDropShadowChrome>
+</myTypes:BaseNodeControl>

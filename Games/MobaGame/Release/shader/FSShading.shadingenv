@@ -1,0 +1,72 @@
+#include "VInc.fxx"
+#include "CommonDeferredShadingFunc.fxh"
+#include "CommonLightFunc.fxh"
+#include "inport.dummy"
+
+float2		g_TextureSize;
+
+texture 		RT_FS;
+sampler2D Samp_RT_FS = sampler_state
+{
+	Texture = <RT_FS>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+    AddressU = Clamp;
+    AddressV = Clamp;
+    SRGBTexture = FALSE;
+};
+
+struct VSIn_FS
+{
+	float3 Pos		: LOCALPOS;
+	float2 UV		: DIFFUSEUV;
+};
+VSIn_FS dummyVSIn;
+
+struct VSOut_FS
+{
+    float4 Pos		: POSITION;
+    float2 UV		: TEXCOORD0;
+	float4 PosProj	: TEXCOORD8;
+};
+struct PSOut_FS
+{
+    float4	Color	: COLOR0;
+};
+
+VSOut_FS vs_main( VSIn_FS Input )
+{
+	VSOut_FS o=(VSOut_FS)0;
+	o.Pos		= float4(Input.Pos,1);
+	o.PosProj	= float4(Input.Pos,1);
+	o.UV		= Input.UV;
+
+#ifdef D3D_EFFECT
+	o.Pos.xy += float2(-1,1) / g_TextureSize;
+#else
+	//o.UV.y = 1 - o.UV.y;
+#endif
+
+    return o;
+}
+
+PSOut_FS	ps_main( VSOut_FS Input )
+{
+	PSOut_FS o = (PSOut_FS)0;
+
+	o.Color = vise_tex2D(Samp_RT_FS, Input.UV);
+
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique tech
+{
+	pass p0
+	{
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

@@ -1,0 +1,46 @@
+<CCore.Mesh.MeshTemplate Ver="0">
+	<NickName Type="mscorlib.dll@System.String" Value="法师技能3"/>
+	<Ver Type="mscorlib.dll@System.UInt32" Value="3"/>
+	<MeshID Type="mscorlib.dll@System.Guid" Value="614e8235-8c2c-4c5d-a9ce-d6312344bc5c"/>
+	<NeedCalcFullSkeleton Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<MeshInitList Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Mesh.MeshInitPart]]">
+		<Data Type="cscommon@CCore.Mesh.MeshInitPart" Value="null">
+			<MeshName Type="mscorlib.dll@System.String" Value="resources/meshsource/standardmesh/socket_mesh.vms"/>
+			<Techs Type="mscorlib.dll@System.Collections.Generic.List`1[[mscorlib.dll@System.Guid]]">
+				<Data Type="mscorlib.dll@System.Guid" Value="00000000-0000-0000-0000-000000000000"/>
+			</Techs>
+		</Data>
+	</MeshInitList>
+	<ActionName Type="mscorlib.dll@System.String" Value=""/>
+	<PlayRate Type="mscorlib.dll@System.Double" Value="1"/>
+	<ActionPercent Type="mscorlib.dll@System.Double" Value="0"/>
+	<Scale Type="mscorlib.dll@System.Single" Value="1"/>
+	<LayerName Type="mscorlib.dll@System.String" Value="Other"/>
+	<Layer Type="cscommon@CCore.RLayer" Value="RL_Translucent"/>
+	<SocketComponentInfoList Type="cscommon@CSUtility.Support.ConcurentObjManager`2[[mscorlib.dll@System.Guid][cscommon@CCore.Socket.ISocketComponentInfo]]">
+		<Data>
+			<Key Type="mscorlib.dll@System.Guid" Value="526a3fef-b78d-4934-8036-22d0ac57aeeb"/>
+			<Value Type="cscommon@CCore.Component.EffectVisualInit" Value="null">
+				<EffectTemplateID Type="mscorlib.dll@System.Guid" Value="c250cea1-762e-4999-b819-6b97a2100839"/>
+				<CanHitProxy Type="mscorlib.dll@System.Boolean" Value="True"/>
+				<SocketName Type="mscorlib.dll@System.String" Value="hp_socket_effect"/>
+				<Pos Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+				<Scale Type="cscommon@SlimDX.Vector3" Value="1,1,1"/>
+				<Description Type="mscorlib.dll@System.String" Value=""/>
+				<Rotate Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+				<SocketComponentInfoId Type="mscorlib.dll@System.Guid" Value="526a3fef-b78d-4934-8036-22d0ac57aeeb"/>
+				<InheritSocketRotate Type="mscorlib.dll@System.Boolean" Value="True"/>
+				<InheritRotateWhenBorn Type="mscorlib.dll@System.Boolean" Value="False"/>
+				<InheritRotate Type="mscorlib.dll@System.Boolean" Value="True"/>
+				<InheritScale Type="mscorlib.dll@System.Boolean" Value="True"/>
+			</Value>
+		</Data>
+	</SocketComponentInfoList>
+	<CastShadow Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<TickAllTime Type="mscorlib.dll@System.Boolean" Value="False"/>
+	<MeshFadeType Type="cscommon@CCore.Mesh.MeshFadeType" Value="None"/>
+	<FadeInTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<FadeOutTime Type="mscorlib.dll@System.UInt32" Value="500"/>
+	<IgnoreMouseLineCheckInGame Type="mscorlib.dll@System.Boolean" Value="False"/>
+</CCore.Mesh.MeshTemplate>
+

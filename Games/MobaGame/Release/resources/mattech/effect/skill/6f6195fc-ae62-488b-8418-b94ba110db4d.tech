@@ -1,0 +1,10 @@
+<Technique Name="»ðÑæÍÏÎ²µ¶¹â" Ver="19" AlphaRef="30" CullMode="CW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="a99bf1a5-c0c2-437f-8bcb-6f93847c2b1d" Id="6f6195fc-ae62-488b-8418-b94ba110db4d" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_16547016_d019_41a8_b66a_67fbf943e0a9 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_location EditorType="Vector" Type="float2" Value="10,-5"/>
+		<ShaderVar_d810f204_1258_439e_b955_a1f441ba5c1d EditorType="Texture" Type="texture" Value="resources/texture/effect/weapontrail/trail_101_3.png"/>
+		<ShaderVar_0fa02919_008e_4f25_8a97_67518033ee75 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+		<ShaderVar_c8e19e8c_efc3_4428_b9dd_12de90694540 EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/mask_141.png"/>
+	</ShaderVar>
+</Technique>
+

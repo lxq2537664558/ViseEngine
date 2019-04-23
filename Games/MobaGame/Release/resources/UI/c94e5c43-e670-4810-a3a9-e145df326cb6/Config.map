@@ -1,0 +1,19 @@
+<CCore.World.WorldInit Ver="0">
+	<BackgroundMusic Type="mscorlib.dll@System.String" Value=""/>
+	<SceneGraphInfo Type="cscommon@CCore.Scene.TileScene.TileSceneInfo" Value="null"/>
+	<ContainsTerrain Type="mscorlib.dll@System.Boolean" Value="True"/>
+	<TerrainInfo Type="cscommon@CCore.Terrain.TerrainInfoOperator" Value="null">
+		<LevelX Type="mscorlib.dll@System.UInt32" Value="4"/>
+		<LevelZ Type="mscorlib.dll@System.UInt32" Value="2"/>
+		<PatchDepthPerLevel Type="mscorlib.dll@System.UInt32" Value="2"/>
+		<MaxPatchTessellationLevel Type="mscorlib.dll@System.UInt32" Value="3"/>
+	</TerrainInfo>
+	<WorldId Type="mscorlib.dll@System.Guid" Value="c94e5c43-e670-4810-a3a9-e145df326cb6"/>
+	<WorldName Type="mscorlib.dll@System.String" Value="128*64"/>
+	<OnEnterMap Type="mscorlib.dll@System.Guid" Value="00000000-0000-0000-0000-000000000000"/>
+	<OnLeaveMap Type="mscorlib.dll@System.Guid" Value="00000000-0000-0000-0000-000000000000"/>
+	<OnInitMap Type="mscorlib.dll@System.Guid" Value="00000000-0000-0000-0000-000000000000"/>
+	<OnTickMap Type="mscorlib.dll@System.Guid" Value="00000000-0000-0000-0000-000000000000"/>
+	<OnRoleActorDeath Type="mscorlib.dll@System.Guid" Value="00000000-0000-0000-0000-000000000000"/>
+</CCore.World.WorldInit>
+

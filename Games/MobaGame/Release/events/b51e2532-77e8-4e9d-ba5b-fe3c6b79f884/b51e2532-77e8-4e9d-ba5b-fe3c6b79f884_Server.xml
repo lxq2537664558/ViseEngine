@@ -1,0 +1,491 @@
+<Event ViewBoxMain_X="200" ViewBoxMain_Y="-991" ViewBoxMain_Width="1024" GUID="00000000-0000-0000-0000-000000000000">
+	<OrigionCtrls>
+		<OrigionCtrl Id="377ad386-5256-4896-ad93-0b15324abc94"/>
+	</OrigionCtrls>
+	<ChildNodesCtrls>
+		<MethodNode Useable="False" OverrideAble="True" CallBasePosition="None" UseBaseVisibility="Collapsed" IsStatic="True" ID="377ad386-5256-4896-ad93-0b15324abc94" Type="DelegateMethodEditor@CodeDomNode.MethodNode" X="0" Y="0" Params="Invoke,name:mscorlib.dll@System.String/processData:cscommon@CSUtility.Map.Trigger.TriggerProcessData/trigger:cscommon@CSUtility.Map.Trigger.TriggerData,mscorlib.dll@System.Boolean,cscommon@CSUtility.Map.Trigger.FProcessDataOnTimer,true,false" IsDeleteable="False" Comment="">
+			<ChildNodes>
+				<ParameterControl ID="d37820a2-7572-417f-9970-a7541f01e2bd" Type="DelegateMethodEditor@CodeDomNode.ParameterControl" X="NaN" Y="NaN" Params="name:mscorlib.dll@System.String" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="f98e34ed-57e8-4248-bbdb-715cabdbe15a">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</ParameterControl>
+				<ParameterControl ID="2de28c9b-eccb-408a-b49c-e5513dfe354c" Type="DelegateMethodEditor@CodeDomNode.ParameterControl" X="NaN" Y="NaN" Params="processData:cscommon@CSUtility.Map.Trigger.TriggerProcessData" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="b34089e8-e6bb-4169-845a-d7b56c2eb406">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</ParameterControl>
+				<ParameterControl ID="74621c52-b643-4157-a151-67d22975ed46" Type="DelegateMethodEditor@CodeDomNode.ParameterControl" X="NaN" Y="NaN" Params="trigger:cscommon@CSUtility.Map.Trigger.TriggerData" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="09ffd6c6-6012-44e7-b4a3-dcd9950ef131">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</ParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="52996984-0213-4e33-95be-be74788e4f74">
+					<Link LinkFrom="52996984-0213-4e33-95be-be74788e4f74" LinkTo="4bafd2db-1bd8-4654-b174-d2a074e6b46f"/>
+					<Link LinkFrom="52996984-0213-4e33-95be-be74788e4f74" LinkTo="06870391-def5-4590-af77-e634ed9eee53"/>
+				</LinkObject>
+				<LinkObject ID="fc6f1d25-bbea-4aee-b4ef-03a555d445a4">
+					<Link LinkFrom="fc6f1d25-bbea-4aee-b4ef-03a555d445a4" LinkTo="2ae11698-8c01-45f6-a00e-210ff8a5b749"/>
+					<Link LinkFrom="fc6f1d25-bbea-4aee-b4ef-03a555d445a4" LinkTo="d3ccca19-d098-4075-8a5a-990e676f7596"/>
+				</LinkObject>
+				<LinkObject ID="a2d0944f-277c-45c7-95aa-ed693db4f534">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="7fb04616-082a-4ed2-a0a9-fb9762e6c132">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="e367d00e-c3c2-4dae-9db0-1293c64dc5da">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="a71e8db1-af62-4964-ae94-419395625306">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="45df2720-f4f9-4b44-9f5d-2be31c08cd11">
+					<Link LinkFrom="45df2720-f4f9-4b44-9f5d-2be31c08cd11" LinkTo="2a79f0d1-e8bd-4e53-b083-bdd184dfd88e"/>
+				</LinkObject>
+			</LinkObjects>
+		</MethodNode>
+		<Compare ID="b9b5cc8c-21f8-4f81-a698-7bab6eca409a" Type="DelegateMethodEditor@CodeDomNode.Compare" X="-256.282531738281" Y="147.71989440918" Params="==" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="4bafd2db-1bd8-4654-b174-d2a074e6b46f">
+					<Link LinkFrom="52996984-0213-4e33-95be-be74788e4f74" LinkTo="4bafd2db-1bd8-4654-b174-d2a074e6b46f"/>
+				</LinkObject>
+				<LinkObject ID="43290f19-5cfa-4b63-966b-a583319abb72">
+					<Link LinkFrom="52eef9dd-156b-4d08-968c-a285a1176738" LinkTo="43290f19-5cfa-4b63-966b-a583319abb72"/>
+				</LinkObject>
+				<LinkObject ID="03de3554-d9c1-4cfb-b0c3-f665f17918ab">
+					<Link LinkFrom="03de3554-d9c1-4cfb-b0c3-f665f17918ab" LinkTo="e208461a-3703-4d6c-861a-2f52e59ca10e"/>
+				</LinkObject>
+			</LinkObjects>
+		</Compare>
+		<CommonValue ID="a6a9fbf3-d1e4-4070-afb4-a406c52d5807" Type="DelegateMethodEditor@CodeDomNode.CommonValue" X="-433.375854492188" Y="202.353378295898" Params="System.String,怪物波数计时器," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="52eef9dd-156b-4d08-968c-a285a1176738">
+					<Link LinkFrom="52eef9dd-156b-4d08-968c-a285a1176738" LinkTo="43290f19-5cfa-4b63-966b-a583319abb72"/>
+				</LinkObject>
+				<LinkObject ID="cdf865ef-4e25-44a7-9279-085858171f3e">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</CommonValue>
+		<Return ID="57f0ab08-b0b3-4a13-a23c-193c1d1d1235" Type="DelegateMethodEditor@CodeDomNode.Return" X="4.44286506557341" Y="340.909537860869" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="3ba78ea6-ec33-4ff5-b8ed-9c6247db1a6f">
+					<Link LinkFrom="e1737e81-0836-4bbf-ae8f-1fd5af526907" LinkTo="3ba78ea6-ec33-4ff5-b8ed-9c6247db1a6f"/>
+				</LinkObject>
+				<LinkObject ID="82614862-a6bb-480d-a9db-8c4d92bc239e">
+					<Link LinkFrom="7d945e8c-6677-4025-a63c-1e159b57c331" LinkTo="82614862-a6bb-480d-a9db-8c4d92bc239e"/>
+				</LinkObject>
+			</LinkObjects>
+		</Return>
+		<Value_Boolean ID="1c6ce5ae-a423-4d70-9998-fd9a03706518" Type="DelegateMethodEditor@CodeDomNode.Value_Boolean" X="-337.889557002763" Y="332.485738910068" Params="True," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="e1737e81-0836-4bbf-ae8f-1fd5af526907">
+					<Link LinkFrom="e1737e81-0836-4bbf-ae8f-1fd5af526907" LinkTo="3ba78ea6-ec33-4ff5-b8ed-9c6247db1a6f"/>
+				</LinkObject>
+			</LinkObjects>
+		</Value_Boolean>
+		<CommonValue ID="7da6bca1-c425-4174-81b2-8c33b7609125" Type="DelegateMethodEditor@CodeDomNode.CommonValue" X="457.877137306864" Y="32.2940226828404" Params="System.String,怪物生成间隔," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="f7c4f1c6-5a91-4497-abdd-cd277ef24537">
+					<Link LinkFrom="f7c4f1c6-5a91-4497-abdd-cd277ef24537" LinkTo="b122c303-d8a6-46cf-94ab-82824e5775fb"/>
+					<Link LinkFrom="f7c4f1c6-5a91-4497-abdd-cd277ef24537" LinkTo="a09f6621-6df8-4ca6-be7b-64a947d05d46"/>
+					<Link LinkFrom="f7c4f1c6-5a91-4497-abdd-cd277ef24537" LinkTo="1d63a149-4c97-483a-b6e0-b17529a8f3d9"/>
+				</LinkObject>
+				<LinkObject ID="ad9bc442-6704-41e4-8f51-25996a35cc67">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</CommonValue>
+		<CommonValue ID="b50d399b-2672-4ef5-8627-c6fa7f0d42cf" Type="DelegateMethodEditor@CodeDomNode.CommonValue" X="707.33642578125" Y="-49.8968200683594" Params="System.Int64,2000," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="546d45ad-1329-4321-b1cf-c3ca4b2cf918">
+					<Link LinkFrom="546d45ad-1329-4321-b1cf-c3ca4b2cf918" LinkTo="dfc3bb11-30e2-4b0e-877d-f7fe6e581ab7"/>
+				</LinkObject>
+				<LinkObject ID="ad84a2f7-6b34-4b6d-8bd0-0877df285235">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</CommonValue>
+		<CommonValue ID="3e54cd60-0e6f-43da-8cc0-6fb4024509dc" Type="DelegateMethodEditor@CodeDomNode.CommonValue" X="37.4906695568284" Y="1076.56867914015" Params="System.Int32,1," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="cce09b8e-217d-495a-8bf9-380edd9f6475">
+					<Link LinkFrom="cce09b8e-217d-495a-8bf9-380edd9f6475" LinkTo="a3aca142-c689-4893-aca6-e899a17924fc"/>
+				</LinkObject>
+				<LinkObject ID="e09b9f23-d5ec-4541-a5ed-bf609a999415">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</CommonValue>
+		<CommonValue ID="09c5567a-b761-43fb-96eb-12dd3380740a" Type="DelegateMethodEditor@CodeDomNode.CommonValue" X="-74.0411987304688" Y="1318.18896484375" Params="System.Int32,3," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="df19537c-9895-4167-8961-7e1dcaf9f5de">
+					<Link LinkFrom="df19537c-9895-4167-8961-7e1dcaf9f5de" LinkTo="473139cb-d052-4517-a879-2cdb881790e2"/>
+				</LinkObject>
+				<LinkObject ID="04d02331-6628-4856-a1da-8968223e02f5">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</CommonValue>
+		<IfNode ID="f8277eae-9516-47a1-a442-4900f13147ae" Type="DelegateMethodEditor@CodeDomNode.IfNode" X="22.506776677422" Y="227.98072219061" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes>
+				<ConditionControl ID="d6f2c8ae-ffe8-44c7-b543-01a3195bfd22" Type="DelegateMethodEditor@CodeDomNode.ConditionControl" X="NaN" Y="NaN" Params="" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="e208461a-3703-4d6c-861a-2f52e59ca10e">
+							<Link LinkFrom="03de3554-d9c1-4cfb-b0c3-f665f17918ab" LinkTo="e208461a-3703-4d6c-861a-2f52e59ca10e"/>
+						</LinkObject>
+						<LinkObject ID="d95bb095-038d-48a4-a59c-5bf6c2534d20">
+							<Link LinkFrom="d95bb095-038d-48a4-a59c-5bf6c2534d20" LinkTo="a3cda8a6-0d30-4b87-88cc-7a25b29f3ff0"/>
+						</LinkObject>
+					</LinkObjects>
+				</ConditionControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="2a79f0d1-e8bd-4e53-b083-bdd184dfd88e">
+					<Link LinkFrom="45df2720-f4f9-4b44-9f5d-2be31c08cd11" LinkTo="2a79f0d1-e8bd-4e53-b083-bdd184dfd88e"/>
+				</LinkObject>
+				<LinkObject ID="4ae6b431-3ac3-40be-81a5-5fe2c1b4335f">
+					<Link LinkFrom="4ae6b431-3ac3-40be-81a5-5fe2c1b4335f" LinkTo="7c178efb-18fa-4a56-bd7d-b633d10bf1f7"/>
+				</LinkObject>
+				<LinkObject ID="7d945e8c-6677-4025-a63c-1e159b57c331">
+					<Link LinkFrom="7d945e8c-6677-4025-a63c-1e159b57c331" LinkTo="82614862-a6bb-480d-a9db-8c4d92bc239e"/>
+				</LinkObject>
+			</LinkObjects>
+		</IfNode>
+		<MethodInvokeNode ID="fab89d55-1d08-4e0e-be8d-7a20f2489598" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeNode" X="642.072400893466" Y="149.301873676778" Params="触发器.函数.添加计时器,cscommon@CSUtility.Map.Trigger.TriggerData,AddProcessDataLogicTimer,name:mscorlib.dll@System.String/interval:mscorlib.dll@System.Int64/processData:cscommon@CSUtility.Map.Trigger.TriggerProcessData,mscorlib.dll@System.Void,Server;Normal,CSUtility.Map.Trigger.TriggerData,377ad386-5256-4896-ad93-0b15324abc94,a2d0944f-277c-45c7-95aa-ed693db4f534" IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<name Type="mscorlib.dll@System.String" Value=""/>
+				<interval Type="mscorlib.dll@System.Int64" Value="0"/>
+				<processData Type="cscommon@CSUtility.Map.Trigger.TriggerProcessData" Value="null"/>
+			</DefaultParamValue>
+			<ChildNodes>
+				<MethodInvokeParameterControl ID="e1b478ef-9903-4fc3-bd38-3e0c7d5353ac" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="name:mscorlib.dll@System.String" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="b122c303-d8a6-46cf-94ab-82824e5775fb">
+							<Link LinkFrom="f7c4f1c6-5a91-4497-abdd-cd277ef24537" LinkTo="b122c303-d8a6-46cf-94ab-82824e5775fb"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+				<MethodInvokeParameterControl ID="4bcb31ad-c9e8-49c4-9f67-c3dcfcd202e6" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="interval:mscorlib.dll@System.Int64" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="dfc3bb11-30e2-4b0e-877d-f7fe6e581ab7">
+							<Link LinkFrom="546d45ad-1329-4321-b1cf-c3ca4b2cf918" LinkTo="dfc3bb11-30e2-4b0e-877d-f7fe6e581ab7"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+				<MethodInvokeParameterControl ID="dfe1bf47-ded5-440e-9b5a-a81df75fecdb" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="processData:cscommon@CSUtility.Map.Trigger.TriggerProcessData" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="2ae11698-8c01-45f6-a00e-210ff8a5b749">
+							<Link LinkFrom="fc6f1d25-bbea-4aee-b4ef-03a555d445a4" LinkTo="2ae11698-8c01-45f6-a00e-210ff8a5b749"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="a3cda8a6-0d30-4b87-88cc-7a25b29f3ff0">
+					<Link LinkFrom="d95bb095-038d-48a4-a59c-5bf6c2534d20" LinkTo="a3cda8a6-0d30-4b87-88cc-7a25b29f3ff0"/>
+				</LinkObject>
+				<LinkObject ID="9d217e73-f799-4bb1-9897-1fe2c0c2d8e8">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</MethodInvokeNode>
+		<IfNode ID="27342168-ebfd-4bfa-9fb5-8a4b0f0de5c5" Type="DelegateMethodEditor@CodeDomNode.IfNode" X="309.061220037621" Y="418.475319576575" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes>
+				<ConditionControl ID="fd1f82a1-3175-403e-807b-ec9e2bea574f" Type="DelegateMethodEditor@CodeDomNode.ConditionControl" X="NaN" Y="NaN" Params="" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="ecfbcd85-d42f-46d4-abda-8cb22c7f822e">
+							<Link LinkFrom="1f22189e-ca32-47f1-9165-73a178297821" LinkTo="ecfbcd85-d42f-46d4-abda-8cb22c7f822e"/>
+						</LinkObject>
+						<LinkObject ID="b9170284-e189-49f0-b5d9-2869bc2b7dc1">
+							<Link LinkFrom="b9170284-e189-49f0-b5d9-2869bc2b7dc1" LinkTo="18c44a93-8a18-460b-b470-35828f2e6c33"/>
+						</LinkObject>
+					</LinkObjects>
+				</ConditionControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="7c178efb-18fa-4a56-bd7d-b633d10bf1f7">
+					<Link LinkFrom="4ae6b431-3ac3-40be-81a5-5fe2c1b4335f" LinkTo="7c178efb-18fa-4a56-bd7d-b633d10bf1f7"/>
+				</LinkObject>
+				<LinkObject ID="94fe7ccf-4daa-4b96-a51a-29ee68cd89d7">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="8cecb941-b7f5-4901-a27a-0bb54d091fcc">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</IfNode>
+		<Compare ID="1ea37623-a0f1-434a-9f8b-3f5c2082e7c2" Type="DelegateMethodEditor@CodeDomNode.Compare" X="437.753517982855" Y="300.904578243871" Params="==" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="a09f6621-6df8-4ca6-be7b-64a947d05d46">
+					<Link LinkFrom="f7c4f1c6-5a91-4497-abdd-cd277ef24537" LinkTo="a09f6621-6df8-4ca6-be7b-64a947d05d46"/>
+				</LinkObject>
+				<LinkObject ID="06870391-def5-4590-af77-e634ed9eee53">
+					<Link LinkFrom="52996984-0213-4e33-95be-be74788e4f74" LinkTo="06870391-def5-4590-af77-e634ed9eee53"/>
+				</LinkObject>
+				<LinkObject ID="1f22189e-ca32-47f1-9165-73a178297821">
+					<Link LinkFrom="1f22189e-ca32-47f1-9165-73a178297821" LinkTo="ecfbcd85-d42f-46d4-abda-8cb22c7f822e"/>
+				</LinkObject>
+			</LinkObjects>
+		</Compare>
+		<PropertyNode ID="280c971c-b424-40b9-9464-135143ec3f4d" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="-500.671754083218" Y="443.425495589255" Params="触发器数据.属性.绑定对象(读取),Actor,CSUtility.Component.ActorBase,get;Normal,Server.Hall.Role.Trigger.TriggerProcessData_Server,377ad386-5256-4896-ad93-0b15324abc94,fc6f1d25-bbea-4aee-b4ef-03a555d445a4" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="811f35c0-0bed-48ad-84b6-a69b91b1694d">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<PropertyNode ID="4d992f06-73bd-4729-8f12-7eac532f94b1" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="-564.652360816772" Y="568.861158790527" Params="触发器.位置(读取),Location,SlimDX.Vector3,get;Normal,Server.Hall.Role.Trigger.TriggerInstance,280c971c-b424-40b9-9464-135143ec3f4d,811f35c0-0bed-48ad-84b6-a69b91b1694d" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="f1d7fbd0-af2d-4863-843e-b58c01aa3bcd">
+					<Link LinkFrom="f1d7fbd0-af2d-4863-843e-b58c01aa3bcd" LinkTo="4bcbdd42-c133-4a1f-8803-dcea7df9c443"/>
+				</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<PropertyNode ID="64a140ff-8166-4d04-a13d-23e1a0c56e39" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="-385.338291945137" Y="671.566869599645" Params="触发器.所属地图(读取),HostMap,Server.Hall.Map.MapInstance,get;Normal,Server.Hall.Role.Trigger.TriggerProcessData_Server,377ad386-5256-4896-ad93-0b15324abc94,fc6f1d25-bbea-4aee-b4ef-03a555d445a4" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="d8623883-a0bc-4e5a-b22a-6dde2890ff28">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<MethodInvokeNode ID="405b4acd-f47d-4b9c-87b3-0256bca88bef" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeNode" X="231.916259765625" Y="653.102355957031" Params="地图.创建怪物,game@Server.Hall.Map.MapInstance,CreateMonsterByCreateTemplate,templateId:mscorlib.dll@System.UInt16/pos:cscommon@SlimDX.Vector3/listIndex:mscorlib.dll@System.Int32,game@Server.Hall.Role.Monster.MonsterInstance,Server;Normal,Server.Hall.Map.MapInstance,64a140ff-8166-4d04-a13d-23e1a0c56e39,d8623883-a0bc-4e5a-b22a-6dde2890ff28" IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<templateId Type="mscorlib.dll@System.UInt16" Value="0"/>
+				<pos Type="cscommon@SlimDX.Vector3" Value="0,0,0"/>
+				<listIndex Type="mscorlib.dll@System.Int32" Value="0"/>
+			</DefaultParamValue>
+			<ChildNodes>
+				<MethodInvokeParameterControl ID="d23aa9f1-fa90-4e2d-9b41-319a1a9bde62" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="templateId:mscorlib.dll@System.UInt16" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="dc6d36bd-4498-4f72-829b-05da8e298234">
+							<Link LinkFrom="04033936-2ba9-47a4-8433-f21c0cdb206a" LinkTo="dc6d36bd-4498-4f72-829b-05da8e298234"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+				<MethodInvokeParameterControl ID="83240319-3d85-4740-87b7-d23eb7ee7b02" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="pos:cscommon@SlimDX.Vector3" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="4bcbdd42-c133-4a1f-8803-dcea7df9c443">
+							<Link LinkFrom="f1d7fbd0-af2d-4863-843e-b58c01aa3bcd" LinkTo="4bcbdd42-c133-4a1f-8803-dcea7df9c443"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+				<MethodInvokeParameterControl ID="43d6c7d4-b431-4eb6-86c7-4af381b05b7a" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="listIndex:mscorlib.dll@System.Int32" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="0173c627-72d6-4f8d-bd79-4537434a4a4f">
+							<Link LinkFrom="4232034a-8ee6-443c-b2c7-9a37a71d2f63" LinkTo="0173c627-72d6-4f8d-bd79-4537434a4a4f"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="742a6e9c-86bd-4d96-8db7-b2d8a4ad0c77">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="5c7f36dc-abad-4245-9b5a-ed606a68456e">
+					<Link LinkFrom="c2e89952-6d3a-435c-bf51-270e166b1d6c" LinkTo="5c7f36dc-abad-4245-9b5a-ed606a68456e"/>
+				</LinkObject>
+				<LinkObject ID="adbb3611-3dcc-4fee-96fa-ef394dc4f18e">
+					<Link LinkFrom="adbb3611-3dcc-4fee-96fa-ef394dc4f18e" LinkTo="3e18b096-decd-4bc5-9680-1b3f1f5491f4"/>
+				</LinkObject>
+			</LinkObjects>
+		</MethodInvokeNode>
+		<PropertyNode ID="e9247a86-ea59-41db-bec7-c331ae17529c" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="-351.664288401168" Y="832.360236522085" Params="触发器.怪物创建模板ID(读取),MonsterCreateTemplateId,System.UInt16,get;Normal,CSUtility.Map.Trigger.TriggerData,377ad386-5256-4896-ad93-0b15324abc94,a2d0944f-277c-45c7-95aa-ed693db4f534" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="04033936-2ba9-47a4-8433-f21c0cdb206a">
+					<Link LinkFrom="04033936-2ba9-47a4-8433-f21c0cdb206a" LinkTo="dc6d36bd-4498-4f72-829b-05da8e298234"/>
+				</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<PropertyNode ID="1838d1b4-eae2-4e90-8a47-9738622e4816" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="-382.812741679327" Y="956.112199546172" Params="触发器.Timer出发次数(读取),OnTimerTimes,System.Int32,get;Normal,Server.Hall.Role.Trigger.TriggerProcessData_Server,377ad386-5256-4896-ad93-0b15324abc94,fc6f1d25-bbea-4aee-b4ef-03a555d445a4" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="4232034a-8ee6-443c-b2c7-9a37a71d2f63">
+					<Link LinkFrom="4232034a-8ee6-443c-b2c7-9a37a71d2f63" LinkTo="0173c627-72d6-4f8d-bd79-4537434a4a4f"/>
+					<Link LinkFrom="4232034a-8ee6-443c-b2c7-9a37a71d2f63" LinkTo="0d744178-c8a5-43aa-9440-5ec35e583fb9"/>
+					<Link LinkFrom="4232034a-8ee6-443c-b2c7-9a37a71d2f63" LinkTo="34af3712-518a-4bb9-95f3-de2337df4210"/>
+				</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<Assign ID="8242e3de-ae02-4dc5-aab6-99a0bb5a1181" Type="DelegateMethodEditor@CodeDomNode.Assign" X="482.820396908748" Y="877.992854715324" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="3e18b096-decd-4bc5-9680-1b3f1f5491f4">
+					<Link LinkFrom="adbb3611-3dcc-4fee-96fa-ef394dc4f18e" LinkTo="3e18b096-decd-4bc5-9680-1b3f1f5491f4"/>
+				</LinkObject>
+				<LinkObject ID="a4f399cf-7059-4208-9907-941b5745467a">
+					<Link LinkFrom="33f6ac37-48ff-4261-bd52-4d5e23046ef4" LinkTo="a4f399cf-7059-4208-9907-941b5745467a"/>
+				</LinkObject>
+				<LinkObject ID="2909d70e-095f-4e3a-b0cd-1d321f9d5609">
+					<Link LinkFrom="2909d70e-095f-4e3a-b0cd-1d321f9d5609" LinkTo="29396f27-067f-4367-a2de-3faed58c3604"/>
+				</LinkObject>
+				<LinkObject ID="846274f2-b5ae-4b24-b49b-b142c9907c9f">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</Assign>
+		<PropertyNode ID="45ed3e76-b78d-47da-8ea6-4bcc8d943aa8" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="796.571070810861" Y="832.264818121375" Params="触发器.Timer出发次数(设置),OnTimerTimes,System.Int32,set;Normal,Server.Hall.Role.Trigger.TriggerProcessData_Server,377ad386-5256-4896-ad93-0b15324abc94,fc6f1d25-bbea-4aee-b4ef-03a555d445a4" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="29396f27-067f-4367-a2de-3faed58c3604">
+					<Link LinkFrom="2909d70e-095f-4e3a-b0cd-1d321f9d5609" LinkTo="29396f27-067f-4367-a2de-3faed58c3604"/>
+				</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<Arithmetic ID="e9308c1b-b13d-487c-a323-c7a8a89c5a55" Type="DelegateMethodEditor@CodeDomNode.Arithmetic" X="233.031716426181" Y="937.409640379711" Params="＋" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="0d744178-c8a5-43aa-9440-5ec35e583fb9">
+					<Link LinkFrom="4232034a-8ee6-443c-b2c7-9a37a71d2f63" LinkTo="0d744178-c8a5-43aa-9440-5ec35e583fb9"/>
+				</LinkObject>
+				<LinkObject ID="a3aca142-c689-4893-aca6-e899a17924fc">
+					<Link LinkFrom="cce09b8e-217d-495a-8bf9-380edd9f6475" LinkTo="a3aca142-c689-4893-aca6-e899a17924fc"/>
+				</LinkObject>
+				<LinkObject ID="33f6ac37-48ff-4261-bd52-4d5e23046ef4">
+					<Link LinkFrom="33f6ac37-48ff-4261-bd52-4d5e23046ef4" LinkTo="a4f399cf-7059-4208-9907-941b5745467a"/>
+				</LinkObject>
+				<LinkObject ID="884fd2fe-b074-41c0-81b9-20928f3a0fb8">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="b005fc9b-a328-4e35-aaf3-d4bb8a809fef">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</Arithmetic>
+		<PropertyNode ID="39bd4786-93f6-4d83-9c53-41f78e0b4888" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="796.571070810861" Y="1061.92324568565" Params="触发器.Timer出发次数(设置),OnTimerTimes,System.Int32,set;Normal,Server.Hall.Role.Trigger.TriggerProcessData_Server,377ad386-5256-4896-ad93-0b15324abc94,fc6f1d25-bbea-4aee-b4ef-03a555d445a4" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="6d4d5db1-3c94-47a3-ae11-fe941fcd21de">
+					<Link LinkFrom="748846ee-17c8-4367-bf02-f70b0eebae42" LinkTo="6d4d5db1-3c94-47a3-ae11-fe941fcd21de"/>
+				</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<Assign ID="8509fbf7-e60d-4624-b46c-db19914fced7" Type="DelegateMethodEditor@CodeDomNode.Assign" X="615.79576236668" Y="1213.18421805733" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="c90debb8-091b-4ef1-a182-d3a160af5eec">
+					<Link LinkFrom="5beb277f-7e37-4167-a737-1264c8396d55" LinkTo="c90debb8-091b-4ef1-a182-d3a160af5eec"/>
+				</LinkObject>
+				<LinkObject ID="102cf0c4-eb84-4e23-b3be-9ac0fd74736d">
+					<Link LinkFrom="42d02e4d-67e7-4f07-b792-07dcbdd9119e" LinkTo="102cf0c4-eb84-4e23-b3be-9ac0fd74736d"/>
+				</LinkObject>
+				<LinkObject ID="748846ee-17c8-4367-bf02-f70b0eebae42">
+					<Link LinkFrom="748846ee-17c8-4367-bf02-f70b0eebae42" LinkTo="6d4d5db1-3c94-47a3-ae11-fe941fcd21de"/>
+				</LinkObject>
+				<LinkObject ID="148a6977-5eeb-49ec-96b1-6206c2220f8d">
+					<Link LinkFrom="148a6977-5eeb-49ec-96b1-6206c2220f8d" LinkTo="2300e34f-4089-4c93-b659-9e0905651186"/>
+				</LinkObject>
+			</LinkObjects>
+		</Assign>
+		<CommonValue ID="3e3589f4-0b97-4ed1-bba2-748f8fc8bcf0" Type="DelegateMethodEditor@CodeDomNode.CommonValue" X="370.367478478649" Y="1284.7328985427" Params="System.Int32,0," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="42d02e4d-67e7-4f07-b792-07dcbdd9119e">
+					<Link LinkFrom="42d02e4d-67e7-4f07-b792-07dcbdd9119e" LinkTo="102cf0c4-eb84-4e23-b3be-9ac0fd74736d"/>
+				</LinkObject>
+				<LinkObject ID="2798efa6-9472-42cd-b63f-4fc8d0d79d65">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</CommonValue>
+		<MethodInvokeNode ID="892d4e68-76c7-4862-b66b-7b0b397a0681" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeNode" X="871.231386833172" Y="1385.3248131913" Params="触发器.函数.删除计时器,cscommon@CSUtility.Map.Trigger.TriggerData,RemoveProcessDataLogicTimer,name:mscorlib.dll@System.String/processData:cscommon@CSUtility.Map.Trigger.TriggerProcessData,mscorlib.dll@System.Void,Server;Normal,CSUtility.Map.Trigger.TriggerData,377ad386-5256-4896-ad93-0b15324abc94,a2d0944f-277c-45c7-95aa-ed693db4f534" IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<name Type="mscorlib.dll@System.String" Value=""/>
+				<processData Type="cscommon@CSUtility.Map.Trigger.TriggerProcessData" Value="null"/>
+			</DefaultParamValue>
+			<ChildNodes>
+				<MethodInvokeParameterControl ID="6a6e8358-f62a-471b-8816-e65f3f25e08c" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="name:mscorlib.dll@System.String" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="1d63a149-4c97-483a-b6e0-b17529a8f3d9">
+							<Link LinkFrom="f7c4f1c6-5a91-4497-abdd-cd277ef24537" LinkTo="1d63a149-4c97-483a-b6e0-b17529a8f3d9"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+				<MethodInvokeParameterControl ID="36c28486-e5ed-47d8-8b9a-db68fff6131e" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="processData:cscommon@CSUtility.Map.Trigger.TriggerProcessData" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="d3ccca19-d098-4075-8a5a-990e676f7596">
+							<Link LinkFrom="fc6f1d25-bbea-4aee-b4ef-03a555d445a4" LinkTo="d3ccca19-d098-4075-8a5a-990e676f7596"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="2300e34f-4089-4c93-b659-9e0905651186">
+					<Link LinkFrom="148a6977-5eeb-49ec-96b1-6206c2220f8d" LinkTo="2300e34f-4089-4c93-b659-9e0905651186"/>
+				</LinkObject>
+				<LinkObject ID="8a64844b-7a15-4e0b-b796-a663a9e385da">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</MethodInvokeNode>
+		<IfNode ID="98e77d59-cb4f-4879-9bc1-69f9b4a72acd" Type="DelegateMethodEditor@CodeDomNode.IfNode" X="539.609191894531" Y="480.28955078125" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes>
+				<ConditionControl ID="934d0b2c-f8f8-477c-a516-8eeac004a6d5" Type="DelegateMethodEditor@CodeDomNode.ConditionControl" X="NaN" Y="NaN" Params="" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="ea501773-85eb-4b0a-abef-3459b5703095">
+							<Link LinkFrom="4702b7ab-4efe-4db6-b95c-a36ea291c383" LinkTo="ea501773-85eb-4b0a-abef-3459b5703095"/>
+						</LinkObject>
+						<LinkObject ID="c2e89952-6d3a-435c-bf51-270e166b1d6c">
+							<Link LinkFrom="c2e89952-6d3a-435c-bf51-270e166b1d6c" LinkTo="5c7f36dc-abad-4245-9b5a-ed606a68456e"/>
+						</LinkObject>
+					</LinkObjects>
+				</ConditionControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="18c44a93-8a18-460b-b470-35828f2e6c33">
+					<Link LinkFrom="b9170284-e189-49f0-b5d9-2869bc2b7dc1" LinkTo="18c44a93-8a18-460b-b470-35828f2e6c33"/>
+				</LinkObject>
+				<LinkObject ID="5beb277f-7e37-4167-a737-1264c8396d55">
+					<Link LinkFrom="5beb277f-7e37-4167-a737-1264c8396d55" LinkTo="c90debb8-091b-4ef1-a182-d3a160af5eec"/>
+				</LinkObject>
+				<LinkObject ID="9455ad0d-2c56-48dc-9afd-b1d072765048">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</IfNode>
+		<Compare ID="08016315-8c44-42bc-ae70-9327f351ce42" Type="DelegateMethodEditor@CodeDomNode.Compare" X="115.08447265625" Y="1220.8232421875" Params="＜" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="34af3712-518a-4bb9-95f3-de2337df4210">
+					<Link LinkFrom="4232034a-8ee6-443c-b2c7-9a37a71d2f63" LinkTo="34af3712-518a-4bb9-95f3-de2337df4210"/>
+				</LinkObject>
+				<LinkObject ID="473139cb-d052-4517-a879-2cdb881790e2">
+					<Link LinkFrom="df19537c-9895-4167-8961-7e1dcaf9f5de" LinkTo="473139cb-d052-4517-a879-2cdb881790e2"/>
+				</LinkObject>
+				<LinkObject ID="4702b7ab-4efe-4db6-b95c-a36ea291c383">
+					<Link LinkFrom="4702b7ab-4efe-4db6-b95c-a36ea291c383" LinkTo="ea501773-85eb-4b0a-abef-3459b5703095"/>
+				</LinkObject>
+			</LinkObjects>
+		</Compare>
+	</ChildNodesCtrls>
+</Event>
+

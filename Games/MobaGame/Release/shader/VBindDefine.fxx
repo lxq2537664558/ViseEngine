@@ -1,0 +1,130 @@
+#ifndef _VBINDDEFINE_FXX_
+#define _VBINDDEFINE_FXX_
+
+
+//全局结构定义
+//--------------------------------------------------------------------------------------------------
+#if VS_NUMBER>=300
+	#define V_POSITION	POSITION 
+	#define V_POSITIONLERP	POSITION1
+	#define V_NORMAL	NORMAL 
+	#define V_NORMALLERP	NORMAL1
+	#define V_TANGENT	TANGENT
+	#define V_BINORMAL	BINORMAL
+	#define V_VERTEXCOLOR	COLOR
+	#define V_BLENDINDICES	BLENDINDICES 
+	#define V_BLENDWEIGHT	BLENDWEIGHT 
+	#define V_DIFFUSEUV	TEXCOORD0
+	#define V_DIFFUSELERPUV	TEXCOORD1
+	#define V_NORMALUV	TEXCOORD2
+	#define V_LIGHTMAPUV	TEXCOORD3
+	#define V_VERTEXWEIGHT	TEXCOORD4
+#endif
+
+//全局结构定义
+//--------------------------------------------------------------------------------------------------
+#if PS_NUMBER>=300
+	#define P_SCREENPOS	POSITION0
+	#define P_WORLDPOS	POSITION1
+	#define P_MODELPOS	POSITION2
+	#define P_NORMAL	NORMAL0
+	#define P_PIXELNORMAL	NORMAL1
+	#define P_BINORMAL	BINORMAL
+	#define P_TANGENT	TANGENT
+
+	#define P_COLOR0	COLOR0
+	#define P_COLOR1	COLOR1
+
+	#define P_DIFFUSEUV	TEXCOORD0
+	#define P_NORMALUV	TEXCOORD1
+	#define P_LIGHTMAPUV	TEXCOORD2
+
+//	#define P_FOG		FOG0
+//	#define P_SELECTOR	FOG1
+#endif
+
+//模型顶点输入结构
+struct VS_INPUT
+{
+	float4 pos : V_POSITION;
+	float4 nor : V_NORMAL;
+
+	float4 tan : V_TANGENT;
+	float4 bin : V_BINORMAL;
+
+	float4 diff : V_VERTEXCOLOR;
+
+	float4 index : V_BLENDINDICES;
+	float4 weight : V_BLENDWEIGHT;
+	
+	float4 dif_uv : V_DIFFUSEUV;
+	float4 nor_uv : V_NORMALUV;
+	
+	float3 pos_lerp : V_POSITIONLERP;		
+	float3 nor_lerp : V_NORMALLERP;			
+	float2 difuv_lerp : V_DIFFUSELERPUV;		
+
+#if VS_NUMBER>=300
+	float4 tm_row1 : PSIZE0;
+	float4 tm_row2 : PSIZE1;
+	float4 tm_row3 : PSIZE2;
+	float4 tm_row4 : PSIZE3;
+	float slt : PSIZE4;
+#endif
+};
+
+struct PS_INPUT
+{
+	float4 screen_pos : P_SCREENPOS;
+	float4 world_pos : P_WORLDPOS;
+	float4 model_pos : P_MODELPOS;
+	float4 nor : P_NORMAL;
+	float4 tan : P_TANGENT;
+	float4 bin : P_BINORMAL;
+
+	float4 diff : P_COLOR0;
+	float4 spec : P_COLOR1;
+
+	float4 dif_uv : P_DIFFUSEUV;
+	float4 nor_uv : P_NORMALUV;
+	float4 lightmap_uv : P_LIGHTMAPUV;
+
+//	float  fog : P_FOG;
+
+#if VS_NUMBER>=300
+	float slt : PSIZE4;
+#endif
+};
+
+
+//顶点组织和光照计算数据交换结构定义
+struct VS_TEMP
+{
+	float3 pos;
+	float3 nor;
+	float3 tangent;
+	float3 binormal;
+
+	float4 diff;
+	float4 spec;
+
+	float  fog;
+	float4 dif_uv;
+};
+
+void InitVertexData( out VS_TEMP ModResult , VS_INPUT Input )
+{
+	ModResult.pos = Input.pos.xyz;
+	ModResult.nor = Input.nor.xyz;
+	ModResult.tangent = Input.tan.xyz;
+	ModResult.binormal = Input.bin.xyz;
+
+	ModResult.diff = float4(0,0,0,Input.diff.w);
+	ModResult.spec = float4(0,0,0,Input.diff.w);
+
+	ModResult.fog = 1;
+	ModResult.dif_uv = Input.dif_uv;
+}
+
+
+#endif

@@ -1,0 +1,113 @@
+/*Material
+
+<Material Name="µ¶ºÛ" Require="DiffuseUV|VertexColor0" Main="DoMaterial_2f69eb97_b0dc_406c_b26d_e5e50d786232" ExtendString="" Id="2f69eb97-b0dc-406c-b26d-e5e50d786232" Ver="28">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="2f69eb97-b0dc-406c-b26d-e5e50d786232" Id="14c9eb5e-970a-4c53-ac35-034bfd67061e" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5 EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/Trail4.png"/>
+			<ShaderVar_a36ab05e_9044_4c45_9cf6_340246236a56 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+			<ShaderVar_f7af0c42_0f2c_43c9_a22f_d71718e12e36 EditorType="Texture" Type="texture" Value="resources/texture/effect/weapontrail/slash_vein.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../Shader/function/Common.function"
+
+
+texture ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5;
+sampler2D Samp_ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5 = sampler_state
+{
+	Texture = <ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Clamp;
+	AddressV = Clamp;
+	SRGBTexture = False;
+};
+
+texture ShaderVar_a36ab05e_9044_4c45_9cf6_340246236a56;
+sampler2D Samp_ShaderVar_a36ab05e_9044_4c45_9cf6_340246236a56 = sampler_state
+{
+	Texture = <ShaderVar_a36ab05e_9044_4c45_9cf6_340246236a56>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+texture ShaderVar_f7af0c42_0f2c_43c9_a22f_d71718e12e36;
+sampler2D Samp_ShaderVar_f7af0c42_0f2c_43c9_a22f_d71718e12e36 = sampler_state
+{
+	Texture = <ShaderVar_f7af0c42_0f2c_43c9_a22f_d71718e12e36>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Clamp;
+	AddressV = Clamp;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_2f69eb97_b0dc_406c_b26d_e5e50d786232(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 ShaderVar_dff8bbf5_66c3_4cd3_b907_507c110c2c79 = float4(0,0,0,1);
+    float3 ShaderVar_144cd13d_bb8c_4633_93d5_a18e53e87e24 = float3(0,0,0);
+    float3 ShaderVar_31e3460b_c2f6_42a7_adb3_ac549a6056bc = float3(0.025,0.005,0.001);
+    float3 ShaderVar_5ea217bc_a68d_47eb_984b_cc5f040832b0 = float3(0,0,0);
+    float3 ShaderVar_de228d80_68c5_4169_a205_7a576174d350 = float3(0,0,0);
+    float2 ShaderVar_dac4482b_cc03_437c_87d3_325efd08a820 = float2(0,0);
+    float2 ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2 = float2(10,-7);
+
+
+    float2 FuncTempValue_e883f36b_3643_4770_b313_aa8a331fbf03_4 = float2(0, 0);
+    Panner(pssem.mDiffuseUV,1,float2(0.06,0),float2(1.4,0.55),FuncTempValue_e883f36b_3643_4770_b313_aa8a331fbf03_4);
+    ShaderVar_5ea217bc_a68d_47eb_984b_cc5f040832b0 = vise_tex2D(Samp_ShaderVar_f7af0c42_0f2c_43c9_a22f_d71718e12e36,FuncTempValue_e883f36b_3643_4770_b313_aa8a331fbf03_4.xy).xyz;
+    float2 FuncTempValue_f3d09968_dde9_4dda_b7d1_ba9ae2d993c5_5 = float2(0, 0);
+    Rotator(pssem.mDiffuseUV,1,float2(0,0),float2(1,1),90,FuncTempValue_f3d09968_dde9_4dda_b7d1_ba9ae2d993c5_5);
+    ShaderVar_dac4482b_cc03_437c_87d3_325efd08a820.y = ((pssem.mVertexColor0.b * ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.x) + ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.y);
+    float2 FuncTempValue_57092022_c947_4cf0_8f99_e1740b4953a3_4 = float2(0, 0);
+    Panner(FuncTempValue_f3d09968_dde9_4dda_b7d1_ba9ae2d993c5_5,1,ShaderVar_dac4482b_cc03_437c_87d3_325efd08a820,float2(6.5,1.8),FuncTempValue_57092022_c947_4cf0_8f99_e1740b4953a3_4);
+    ShaderVar_de228d80_68c5_4169_a205_7a576174d350 = vise_tex2D(Samp_ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5,FuncTempValue_57092022_c947_4cf0_8f99_e1740b4953a3_4.xy).xyz;
+    ShaderVar_dac4482b_cc03_437c_87d3_325efd08a820.y = ((pssem.mVertexColor0.b * ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.x) + ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.y);
+    ShaderVar_de228d80_68c5_4169_a205_7a576174d350 = vise_tex2D(Samp_ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5,FuncTempValue_57092022_c947_4cf0_8f99_e1740b4953a3_4.xy).xyz;
+    float FuncTempValue_d6b3937b_21a6_476b_8f10_93b7ee6a03e2_1 = 0;
+    Luminance3(ShaderVar_de228d80_68c5_4169_a205_7a576174d350,FuncTempValue_d6b3937b_21a6_476b_8f10_93b7ee6a03e2_1);
+    float3 FuncTempValue_78cd310a_f3f1_48df_affb_476c5206de39_3 = float3(0, 0, 0);
+    Lerp3D((ShaderVar_31e3460b_c2f6_42a7_adb3_ac549a6056bc * ShaderVar_5ea217bc_a68d_47eb_984b_cc5f040832b0),ShaderVar_de228d80_68c5_4169_a205_7a576174d350,FuncTempValue_d6b3937b_21a6_476b_8f10_93b7ee6a03e2_1,FuncTempValue_78cd310a_f3f1_48df_affb_476c5206de39_3);
+    ShaderVar_144cd13d_bb8c_4633_93d5_a18e53e87e24 = FuncTempValue_78cd310a_f3f1_48df_affb_476c5206de39_3.xyz;
+    ShaderVar_dff8bbf5_66c3_4cd3_b907_507c110c2c79.x = ShaderVar_144cd13d_bb8c_4633_93d5_a18e53e87e24.x;
+    ShaderVar_5ea217bc_a68d_47eb_984b_cc5f040832b0 = vise_tex2D(Samp_ShaderVar_f7af0c42_0f2c_43c9_a22f_d71718e12e36,FuncTempValue_e883f36b_3643_4770_b313_aa8a331fbf03_4.xy).xyz;
+    ShaderVar_dac4482b_cc03_437c_87d3_325efd08a820.y = ((pssem.mVertexColor0.b * ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.x) + ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.y);
+    ShaderVar_de228d80_68c5_4169_a205_7a576174d350 = vise_tex2D(Samp_ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5,FuncTempValue_57092022_c947_4cf0_8f99_e1740b4953a3_4.xy).xyz;
+    ShaderVar_dac4482b_cc03_437c_87d3_325efd08a820.y = ((pssem.mVertexColor0.b * ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.x) + ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.y);
+    ShaderVar_de228d80_68c5_4169_a205_7a576174d350 = vise_tex2D(Samp_ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5,FuncTempValue_57092022_c947_4cf0_8f99_e1740b4953a3_4.xy).xyz;
+    ShaderVar_144cd13d_bb8c_4633_93d5_a18e53e87e24 = FuncTempValue_78cd310a_f3f1_48df_affb_476c5206de39_3.xyz;
+    ShaderVar_dff8bbf5_66c3_4cd3_b907_507c110c2c79.y = ShaderVar_144cd13d_bb8c_4633_93d5_a18e53e87e24.y;
+    ShaderVar_5ea217bc_a68d_47eb_984b_cc5f040832b0 = vise_tex2D(Samp_ShaderVar_f7af0c42_0f2c_43c9_a22f_d71718e12e36,FuncTempValue_e883f36b_3643_4770_b313_aa8a331fbf03_4.xy).xyz;
+    ShaderVar_dac4482b_cc03_437c_87d3_325efd08a820.y = ((pssem.mVertexColor0.b * ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.x) + ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.y);
+    ShaderVar_de228d80_68c5_4169_a205_7a576174d350 = vise_tex2D(Samp_ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5,FuncTempValue_57092022_c947_4cf0_8f99_e1740b4953a3_4.xy).xyz;
+    ShaderVar_dac4482b_cc03_437c_87d3_325efd08a820.y = ((pssem.mVertexColor0.b * ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.x) + ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.y);
+    ShaderVar_de228d80_68c5_4169_a205_7a576174d350 = vise_tex2D(Samp_ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5,FuncTempValue_57092022_c947_4cf0_8f99_e1740b4953a3_4.xy).xyz;
+    ShaderVar_144cd13d_bb8c_4633_93d5_a18e53e87e24 = FuncTempValue_78cd310a_f3f1_48df_affb_476c5206de39_3.xyz;
+    ShaderVar_dff8bbf5_66c3_4cd3_b907_507c110c2c79.z = ShaderVar_144cd13d_bb8c_4633_93d5_a18e53e87e24.z;
+    ShaderVar_dac4482b_cc03_437c_87d3_325efd08a820.y = ((pssem.mVertexColor0.b * ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.x) + ShaderVar_e9161679_bb26_4b99_85b8_5e27a7d2b6f2.y);
+    ShaderVar_de228d80_68c5_4169_a205_7a576174d350 = vise_tex2D(Samp_ShaderVar_e678cd9a_b434_4874_9f50_9dbe3f4a33c5,FuncTempValue_57092022_c947_4cf0_8f99_e1740b4953a3_4.xy).xyz;
+    ShaderVar_5ea217bc_a68d_47eb_984b_cc5f040832b0 = vise_tex2D(Samp_ShaderVar_f7af0c42_0f2c_43c9_a22f_d71718e12e36,FuncTempValue_e883f36b_3643_4770_b313_aa8a331fbf03_4.xy).xyz;
+    float FuncTempValue_16bb3866_6b9b_44c1_96dd_f9b8cc5debcf_1 = 0;
+    Luminance3(ShaderVar_5ea217bc_a68d_47eb_984b_cc5f040832b0,FuncTempValue_16bb3866_6b9b_44c1_96dd_f9b8cc5debcf_1);
+    ShaderVar_dff8bbf5_66c3_4cd3_b907_507c110c2c79.w = (FuncTempValue_d6b3937b_21a6_476b_8f10_93b7ee6a03e2_1 + FuncTempValue_16bb3866_6b9b_44c1_96dd_f9b8cc5debcf_1);
+    float FuncTempValue_9e988ff6_d058_487c_bec9_d0ed78cdd798_1 = 0;
+    Luminance4(vise_tex2D(Samp_ShaderVar_a36ab05e_9044_4c45_9cf6_340246236a56,pssem.mDiffuseUV.xy),FuncTempValue_9e988ff6_d058_487c_bec9_d0ed78cdd798_1);
+    pssem.mDiffuseColor = (((ShaderVar_dff8bbf5_66c3_4cd3_b907_507c110c2c79 * FuncTempValue_9e988ff6_d058_487c_bec9_d0ed78cdd798_1) * pssem.mVertexColor0) * pssem.mVertexColor0.a);
+
+}

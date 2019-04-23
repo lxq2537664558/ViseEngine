@@ -1,0 +1,81 @@
+﻿<DockControls:DockAbleWindowBase
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="AIEditor.CodeViewer"
+        xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+        xmlns:DockControls="clr-namespace:DockControl.Controls;assembly=DockControl"
+        Title="代码预览" Closed="Window_Closed" Width="1024" Height="768"
+        Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=DefaultWindowStyle}}">
+    <TabControl Style="{DynamicResource {ComponentResourceKey ResourceId=TabControlStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+		<TabItem Header="客户端">
+			<Grid Margin="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.67*"/>
+					<RowDefinition Height="5"/>
+					<RowDefinition Height="Auto" MaxHeight="768"/>
+				</Grid.RowDefinitions>
+        
+				<avalonedit:TextEditor x:Name="TextEditor_Code_Client" SyntaxHighlighting="C#"/>
+				<GridSplitter HorizontalAlignment="Stretch" Margin="0" Grid.Row="1"/>
+				<ScrollViewer Grid.Row="2" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <ListView x:Name="ListView_Errors_Client" Margin="0" VerticalAlignment="Top" VerticalContentAlignment="Top" Style="{DynamicResource {ComponentResourceKey ResourceId=ListViewStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+						<ListView.View>
+                            <GridView ColumnHeaderContainerStyle="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=GridViewColumnHeaderStyle_Default}}">
+								<GridViewColumn Header="错误说明">
+									<GridViewColumn.CellTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding ErrorText}"/>
+										</DataTemplate>			
+									</GridViewColumn.CellTemplate>			
+								</GridViewColumn>
+								<GridViewColumn Header="行数">
+									<GridViewColumn.CellTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding Line}"/>
+										</DataTemplate>
+									</GridViewColumn.CellTemplate>
+								</GridViewColumn>
+							</GridView>
+						</ListView.View>
+					</ListView>
+				</ScrollViewer>
+        
+			</Grid>
+		</TabItem>
+		<TabItem Header="服务器端">
+			<Grid Margin="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="0.67*"/>
+					<RowDefinition Height="5"/>
+					<RowDefinition Height="Auto" MaxHeight="768"/>
+				</Grid.RowDefinitions>
+        
+				<avalonedit:TextEditor x:Name="TextEditor_Code_Server" SyntaxHighlighting="C#"/>
+				<GridSplitter HorizontalAlignment="Stretch" Margin="0" Grid.Row="1"/>
+				<ScrollViewer Grid.Row="2" ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto">
+                    <ListView x:Name="ListView_Errors_Server" Margin="0" VerticalAlignment="Top" VerticalContentAlignment="Top" Style="{DynamicResource {ComponentResourceKey ResourceId=ListViewStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+						<ListView.View>
+                            <GridView ColumnHeaderContainerStyle="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=GridViewColumnHeaderStyle_Default}}">
+								<GridViewColumn Header="错误说明">
+									<GridViewColumn.CellTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding ErrorText}"/>
+										</DataTemplate>			
+									</GridViewColumn.CellTemplate>			
+								</GridViewColumn>
+								<GridViewColumn Header="行数">
+									<GridViewColumn.CellTemplate>
+										<DataTemplate>
+											<TextBlock Text="{Binding Line}"/>
+										</DataTemplate>
+									</GridViewColumn.CellTemplate>
+								</GridViewColumn>
+							</GridView>
+						</ListView.View>
+					</ListView>
+				</ScrollViewer>
+        
+			</Grid>
+		</TabItem>
+	</TabControl>
+</DockControls:DockAbleWindowBase>

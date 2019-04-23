@@ -1,0 +1,53 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+struct V3D_VS_IN
+{
+	float3	Pos : POSITION;
+	float2	UV : TEXCOORD;
+};
+
+struct V3D_VS_OUT
+{
+	float4 Pos : POSITION;
+	float2 UV : TEXCOORD;
+};
+
+struct V3D_PS_OUT
+{
+	float4	Color	: COLOR0;
+};
+
+V3D_VS_OUT vs_main( V3D_VS_IN Input )
+{
+	V3D_VS_OUT vsOut;
+	vsOut.Pos = mul( float4( Input.Pos.xyz, 1), g_WorldViewProjection );
+	vsOut.UV = Input.UV;
+	return vsOut;
+}
+
+texture gDiffTexture;
+
+sampler2D Samp_gDiffTexture = sampler_state
+{
+    Texture = <gDiffTexture>;
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+};
+
+V3D_PS_OUT	ps_main( V3D_VS_OUT Input )
+{
+	V3D_PS_OUT psOut;
+	psOut.Color = vise_tex2D(Samp_gDiffTexture,Input.UV.xy);
+	return psOut;
+}
+
+technique tech
+{
+	pass p0
+	{
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}

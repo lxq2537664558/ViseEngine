@@ -1,0 +1,22 @@
+<FSMGrid Name="Ëþ">
+	<DefaultState Type="Idle"/>
+	<State Type="Idle" NickName="Idle" BaseType="CSUtility.AISystem.States.Idle">
+		<StatePropertys/>
+	</State>
+	<State Type="StayAttack" NickName="StayAttack" BaseType="CSUtility.AISystem.States.StayAttack">
+		<StatePropertys/>
+	</State>
+	<State Type="Death" NickName="Death" BaseType="CSUtility.AISystem.States.Death">
+		<StatePropertys/>
+	</State>
+	<StateSwitch FromState="Idle" ToState="Idle" NewCurrentState="Idle" NewTargetState=""/>
+	<StateSwitch FromState="StayAttack" ToState="Idle" NewCurrentState="Idle" NewTargetState=""/>
+	<StateSwitch FromState="Idle" ToState="StayAttack" NewCurrentState="StayAttack" NewTargetState=""/>
+	<StateSwitch FromState="StayAttack" ToState="StayAttack" NewCurrentState="StayAttack" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="Idle" NewCurrentState="" NewTargetState=""/>
+	<StateSwitch FromState="Idle" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="StayAttack" NewCurrentState="" NewTargetState=""/>
+	<StateSwitch FromState="StayAttack" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="Death" NewCurrentState="" NewTargetState=""/>
+</FSMGrid>
+

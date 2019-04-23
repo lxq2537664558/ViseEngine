@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F072ACC9-F9E8-4992-B24C-1B983EF9724A}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIEditor</RootNamespace>
+    <AssemblyName>UIEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.20621.0</ExpressionBlendVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\binary\Plugins\ResourcesBrowser\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\binary\Plugins\ResourcesBrowser\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClientCommon">
+      <HintPath>..\..\..\bin\DllWindow\ClientCommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EditorCommon">
+      <HintPath>..\..\binary\EditorCommon.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EditorControlLib">
+      <HintPath>..\..\binary\EditorControlLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PresentationFramework.Aero" />
+    <Reference Include="ResourceLibrary">
+      <HintPath>..\..\binary\ResourceLibrary.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPG">
+      <HintPath>..\..\binary\WPG.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DrawPanel_GridOperation.cs" />
+    <Compile Include="DrawPanel_Operation.cs" />
+    <Compile Include="DrawPanel_RT.cs" />
+    <Compile Include="GridLengthAssistControl.xaml.cs">
+      <DependentUpon>GridLengthAssistControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\ControlsBrowser\UIControlViewModel.cs" />
+    <Compile Include="Panel\ControlsBrowser\UITemplateBrowser.xaml.cs">
+      <DependentUpon>UITemplateBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\ControlsTreeView\Unuse\ConverterLoginMarginLeft.cs" />
+    <Compile Include="Panel\ControlsTreeView\Unuse\TreeViewExtensions.cs" />
+    <Compile Include="Panel\ControlsTreeView\UIControlsContainer.xaml.cs">
+      <DependentUpon>UIControlsContainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\ControlsTreeView\Unuse\UIControlsTreeViewItem.xaml.cs">
+      <DependentUpon>UIControlsTreeViewItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\ControlsBrowser\UIControlsBrowser.xaml.cs">
+      <DependentUpon>UIControlsBrowser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\PropertyAndBind\CommandBindControl.xaml.cs">
+      <DependentUpon>CommandBindControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\PropertyAndBind\CommandBindItem.xaml.cs">
+      <DependentUpon>CommandBindItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\PropertyAndBind\EventBindControl.xaml.cs">
+      <DependentUpon>EventBindControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Trigger\PropertyTriggerConditionItem.xaml.cs">
+      <DependentUpon>PropertyTriggerConditionItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Trigger\TriggerPanelListBoxItem.xaml.cs">
+      <DependentUpon>TriggerPanelListBoxItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Trigger\TriggerPropertyActionItem.xaml.cs">
+      <DependentUpon>TriggerPropertyActionItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Trigger\UITriggerEventPanel.xaml.cs">
+      <DependentUpon>UITriggerEventPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Trigger\UITriggerPanel.xaml.cs">
+      <DependentUpon>UITriggerPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\Trigger\UITriggerPropertyPanel.xaml.cs">
+      <DependentUpon>UITriggerPropertyPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Panel\PropertyAndBind\PropertyAndBindPanel.xaml.cs">
+      <DependentUpon>PropertyAndBindPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\UIControlTemplateSetter.xaml.cs">
+      <DependentUpon>UIControlTemplateSetter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PropertyGrid\UIControlTypesSelector.xaml.cs">
+      <DependentUpon>UIControlTypesSelector.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIResourceInfo.cs" />
+    <Compile Include="WinBase.cs" />
+    <Page Include="DrawPanel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GridLengthAssistControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Panel\ControlsBrowser\UITemplateBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\ControlsTreeView\Unuse\ResourceDictionary_ControlsTreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PropertyGrid\UIControlTemplateSetter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PropertyGrid\UIControlTypesSelector.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ResourceDictionary_DataTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\ResourceDictionary_TreeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Panel\ControlsTreeView\UIControlsContainer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\ControlsTreeView\Unuse\UIControlsTreeViewItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\ControlsBrowser\UIControlsBrowser_Item.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\PropertyAndBind\CommandBindControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\PropertyAndBind\CommandBindItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\PropertyAndBind\EventBindControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\Trigger\PropertyTriggerConditionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\Trigger\TriggerPanelListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\Trigger\TriggerPropertyActionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\Trigger\UITriggerEventPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\Trigger\UITriggerPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Panel\Trigger\UITriggerPropertyPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="Panel\PropertyAndBind\PropertyAndBindPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Panel\ControlsBrowser\UIControlsBrowser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DrawPanel.xaml.cs">
+      <DependentUpon>DrawPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainControl.xaml.cs">
+      <DependentUpon>MainControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Panel\ControlsBrowser\UIControlsBrowser_Item.xaml.cs">
+      <DependentUpon>UIControlsBrowser_Item.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LogicalName>
+      </LogicalName>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ResourcesBrowser\ResourcesBrowser.csproj">
+      <Project>{502e562d-aec0-416f-9202-580e39618926}</Project>
+      <Name>ResourcesBrowser</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Icons\ignoreSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Icons\Record\record_disable.png" />
+    <Resource Include="Source\Icons\Record\record_enable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\Icons\trigger_enable.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\ScrollBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\Button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\Canvas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\ComboBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\ContentPresenter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\control.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\WinForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\Grid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\GridSplitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\Image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\Line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\Popup.png" />
+    <Resource Include="Source\ControlIcons\ProgressBar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\Slider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\ControlTemplate.png" />
+    <Resource Include="Source\ControlIcons\TextBlock.png" />
+    <Resource Include="Source\ControlIcons\ToggleButton.png" />
+    <Resource Include="Source\ControlIcons\Track.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\Thumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\ScrollContentPresenter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\StackPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\WrapPanel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\RichTextBox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\ItemsPresenter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Source\ControlIcons\Joysticks.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

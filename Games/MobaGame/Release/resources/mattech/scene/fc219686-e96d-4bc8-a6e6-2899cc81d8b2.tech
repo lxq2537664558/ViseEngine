@@ -1,0 +1,10 @@
+<Technique Name="ÈÛÑÒµØ±í" Ver="158" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="da7de7d7-c04f-44fa-99e3-aa104c67292a" Id="fc219686-e96d-4bc8-a6e6-2899cc81d8b2" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_68ddcd4c_05e5_47f9_ba82_9fd83ca71daf EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/lava1.png"/>
+		<ShaderVar_8e43e85f_e575_4d1d_9542_b622ca35bafa EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/lavamask22.png"/>
+		<ShaderVar_dea5b897_f661_4506_ba17_c51a2b24338d EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/DemonHunter_MoltenArrow_groundBurn2.png"/>
+		<ShaderVar_c1fcec95_1e2c_41a0_b6d7_0a1f0e70e918 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/ashland.png"/>
+		<ShaderVar_0409a8e8_f580_4751_a1ae_0c5ccb4fbaac EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/lava1_glowmask.png"/>
+	</ShaderVar>
+</Technique>
+

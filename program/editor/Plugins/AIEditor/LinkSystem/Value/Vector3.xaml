@@ -1,0 +1,49 @@
+﻿<myTypes:BaseNodeControl x:Class="AIEditor.LinkSystem.Value.Vector3"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:myTypes ="clr-namespace:CodeGenerateSystem.Base;assembly=CodeGenerateSystem"
+             xmlns:theme="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:baseCtrl="clr-namespace:CodeGenerateSystem.Controls;assembly=CodeGenerateSystem"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/CodeGenerateSystem;Component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <theme:SystemDropShadowChrome>
+        <Grid Background="{DynamicResource NormalControlBackground}" Name="ValueGrid" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Rectangle x:Name="RectangleTitle" Fill="{DynamicResource LinkNode_Value_Background}" Margin="0" Grid.ColumnSpan="2"/>
+            <baseCtrl:LinkOutControl x:Name="ClassFieldLinkHandle" Grid.ColumnSpan="2" Margin="0,-13,0,0" Width="10" Height="10" BackBrush="{DynamicResource Link_MethodBrush}" VerticalAlignment="Top" HorizontalAlignment="Center" Visibility="Collapsed"/>
+            <TextBlock x:Name="TitleLabel" Foreground="{DynamicResource TextForeground}" Grid.ColumnSpan="2" Text="Vector3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="3" IsHitTestVisible="False"/>
+            <TextBlock Foreground="{DynamicResource TextForeground}" Grid.Row="1" Text="参数名称" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2"/>
+            <TextBox x:Name="ValueNameBox" HorizontalContentAlignment="Center" Grid.Row="1" Grid.Column="1" Foreground="White" CaretBrush="White" Margin="1" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            <TextBlock Foreground="{DynamicResource TextForeground}" Grid.Row="2" HorizontalAlignment="Center" Text="X" VerticalAlignment="Center" Margin="2"/>
+            <TextBox x:Name="ValueX" Grid.Row="2" Grid.Column="1" MinWidth="70" HorizontalContentAlignment="Center" AllowDrop="False" Text="{Binding x, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" CaretBrush="White" Foreground="White" Margin="1" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            <TextBlock Foreground="{DynamicResource TextForeground}" Grid.Row="3" HorizontalAlignment="Center" Text="Y" VerticalAlignment="Center" Margin="2"/>
+            <TextBox x:Name="ValueY" Grid.Row="3" Grid.Column="1" MinWidth="70" HorizontalContentAlignment="Center" AllowDrop="False" Text="{Binding y, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="White" CaretBrush="White" Margin="1" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            <TextBlock Foreground="{DynamicResource TextForeground}" Grid.Row="4" HorizontalAlignment="Center" Text="Z" VerticalAlignment="Center" Margin="2"/>
+            <TextBox x:Name="ValueZ" Grid.Row="4" Grid.Column="1" MinWidth="70" HorizontalContentAlignment="Center" AllowDrop="False" Text="{Binding z, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Foreground="White" CaretBrush="White" Margin="1" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+            <baseCtrl:LinkOutControl x:Name="ValueLinkHandle"  Margin="0,0,-12,0" Width="10" Height="10" BackBrush="{DynamicResource Link_ValueBrush}" HorizontalAlignment="Right" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1" Direction="Right"/>
+            <baseCtrl:LinkInControl x:Name="value_X" Grid.Row="2" Width="10" Height="10" BackBrush="{DynamicResource Link_ValueBrush}" Margin="-15,0,0,0" HorizontalAlignment="Left" Direction="Left" />
+            <baseCtrl:LinkInControl x:Name="value_Y" Grid.Row="3" Width="10" Height="10" BackBrush="{DynamicResource Link_ValueBrush}" Margin="-15,0,0,0" HorizontalAlignment="Left" Direction="Left" />
+            <baseCtrl:LinkInControl x:Name="value_Z" Grid.Row="4" Width="10" Height="10" BackBrush="{DynamicResource Link_ValueBrush}" Margin="-15,0,0,0" HorizontalAlignment="Left" Direction="Left" />
+            <baseCtrl:LinkInControl x:Name="value_XYZ" Grid.Row="0" Width="12" Height="12" BackBrush="{DynamicResource Link_ValueBrush}" Margin="-17,0,0,0" HorizontalAlignment="Left" Direction="Left" />
+        </Grid>
+    </theme:SystemDropShadowChrome>
+</myTypes:BaseNodeControl>

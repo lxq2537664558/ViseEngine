@@ -1,0 +1,47 @@
+/*Material
+
+<?xml version="1.0" encoding="utf-16"?>
+<Material Name="CircleMaterial" Require="DiffuseUV" Main="DoMaterial_e3bb4207_787d_4a47_8a70_48f6a579f789" Id="e3bb4207-787d-4a47-8a70-48f6a579f789" Ver="5">
+  <DefaultTechnique Name="DefaultTech" Ver="6" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" HostMaterialId="e3bb4207-787d-4a47-8a70-48f6a579f789" Id="b8e13d8e-8873-4ef8-94c3-4abff390508c" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Equal" StencilRef="0" StencilMask="15" StencilWriteMask="240" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Keep">
+    <ShaderVar>
+      <Texture_5526e12e_1ea1_4d8d_a414_42f052d14906 Type="texture" Value="Texture/Assist/Circle.bmp" />
+      <color Type="float3" Value="0,1,0" />
+    </ShaderVar>
+  </DefaultTechnique>
+</Material>
+*/
+
+
+
+texture Texture_5526e12e_1ea1_4d8d_a414_42f052d14906;
+sampler2D Samp_Texture_5526e12e_1ea1_4d8d_a414_42f052d14906 = sampler_state
+{
+	Texture = <Texture_5526e12e_1ea1_4d8d_a414_42f052d14906>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+float3 color;
+
+#ifdef ByLayerBased
+void DoMaterial_e3bb4207_787d_4a47_8a70_48f6a579f789(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 Value_e27184a4_375f_4800_ab9e_1cddeb0ca993 = float4(0,0,0,0);
+    float4 Value_d70d73a3_2506_426a_b6db_f94784590930 = float4(0,0,0,0);
+
+
+    Value_e27184a4_375f_4800_ab9e_1cddeb0ca993.x = color.x;
+    Value_e27184a4_375f_4800_ab9e_1cddeb0ca993.y = color.y;
+    Value_e27184a4_375f_4800_ab9e_1cddeb0ca993.z = color.z;
+    Value_d70d73a3_2506_426a_b6db_f94784590930 = vise_tex2D(Samp_Texture_5526e12e_1ea1_4d8d_a414_42f052d14906,pssem.mDiffuseUV.xy);
+    Value_e27184a4_375f_4800_ab9e_1cddeb0ca993.w = Value_d70d73a3_2506_426a_b6db_f94784590930.x;
+    pssem.mDiffuseColor = Value_e27184a4_375f_4800_ab9e_1cddeb0ca993;
+
+}

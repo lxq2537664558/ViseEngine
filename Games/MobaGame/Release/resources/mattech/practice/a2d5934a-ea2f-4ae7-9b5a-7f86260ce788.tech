@@ -1,0 +1,10 @@
+<Technique Name="环形水流" Ver="23" AlphaRef="25" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ce5b41bf-0b15-45cc-9e8b-4fb157389bf5" Id="a2d5934a-ea2f-4ae7-9b5a-7f86260ce788" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_2c2b6919_22b2_4831_a3be_31827f5eb6cb EditorType="Texture" Type="texture" Value="resources/texture/effect/water/NFX_Water01A_blue.png"/>
+		<ShaderVar_56d0730f_c464_409e_a820_9cfe7d2081b4 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_fa9d3dd6_339c_44e9_8e9d_c9e57a0cce0e EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_275_2.png"/>
+		<ShaderVar_4abef4f8_2ee1_4249_91f6_d7a891e77504 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/Water_03f.png"/>
+		<ShaderVar_7464c1d2_c567_4d0f_947e_4cc1e6bed4a8 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+	</ShaderVar>
+</Technique>
+

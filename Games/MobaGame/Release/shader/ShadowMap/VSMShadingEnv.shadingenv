@@ -1,0 +1,69 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+#include "CommonDeferredShadingFunc.fxh"
+
+
+VertexOutput vs_main( VertexInput Input )
+{
+	// VS 2 Semantic
+	VertexTrans vssem = (VertexTrans)0;
+	VertexTransInit ( Input, vssem );
+
+	// VS do
+	V3D_VS_Modifiers ( vssem );
+
+	// Save depth
+	vssem.mNormalUV.xy = vssem.mProjPos.zw;
+
+	// Semantic 2 VS-Out
+	VertexOutput Output =(VertexOutput)0;
+	VertexTransToVertexOutput ( vssem, Output );
+
+	return Output;
+}
+
+struct PSOut_LightDepth
+{
+    float4	Color	: COLOR0;
+};
+
+float2 ComputeMoments(float Depth)
+{
+	float2 Moments;
+	Moments.x = Depth;
+	Moments.y = Depth*Depth;
+
+	return Moments;
+}
+
+PSOut_LightDepth	ps_main(PixelInput Input)
+{
+	PixelMaterialTrans pssem = (PixelMaterialTrans)0;
+	PixelInputToMaterial( Input, pssem );
+
+	DoMaterial(pssem);
+	if(g_AlphaTest.x==1)
+	{
+		if(pssem.mDiffuseColor.a < g_AlphaTest.y)
+			discard;
+	}
+
+	PSOut_LightDepth o = (PSOut_LightDepth)0;
+	
+	float d = Input.mNormalUV.x / Input.mNormalUV.y;
+	float2 Moments = ComputeMoments(d);
+	o.Color.xy = Moments;
+
+	o.Color.w = pssem.mDiffuseColor.w;
+	return o;
+}
+
+technique DepthMap
+{
+   pass pass_depthmap
+   {
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}

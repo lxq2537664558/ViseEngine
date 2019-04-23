@@ -1,0 +1,8 @@
+<Technique Name="ÉÁµç²ÄÖÊ" Ver="68" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="20d39723-7c0f-4913-a790-54de436ba0fe" Id="923bc1a5-89d8-48a9-9d74-eecfd6a697d5" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_fb6a4872_efb5_462a_8352_5ec3e4ca6853 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_fd626ddd_f0f6_4804_9459_cf736201da2c EditorType="Texture" Type="texture" Value="resources/texture/effect/light/client-vfx-mgc-0503-2.png"/>
+		<ShaderVar_09d4e5f1_7254_4e60_8339_88968c84f039 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,190 @@
+﻿<UserControl x:Class="Viewer.XNDFileViewer" x:Name="userControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+			 xmlns:local="clr-namespace:Viewer"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Initialized="userControl_Initialized" Loaded="userControl_Loaded">
+    <Grid Background="{DynamicResource {ComponentResourceKey ResourceId=ControlBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="14"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" HorizontalAlignment="Left">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Click="Button_CopyNodeToLeftClick" ToolTip="复制节点到左边" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/XndViewer/CopyToLeft.png" Height="16" Width="16" Margin="0"/>
+            </Button>
+            <Button Grid.Column="1" Click="Button_CopyNodeToRightClick" ToolTip="复制节点到右边" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/XndViewer/CopyToRight.png" Height="16" Width="16" Margin="0"/>
+            </Button>
+            <Button Grid.Column="2" Click="Button_CopyToLeftClick" ToolTip="全部复制到左边" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/XndViewer/copyAllToLeft.png" Height="16" Width="16" Margin="0"/>
+            </Button>
+            <Button Grid.Column="3" Click="Button_CopyToRightClick" ToolTip="全部复制到右边" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/XndViewer/copyAllToRight.png" Height="16" Width="16" Margin="0"/>
+            </Button>
+            <Button Grid.Column="4" Click="Button_PrevDifferenceClick" ToolTip="上一个区别" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/XndViewer/pre.png" Height="16" Width="16" Margin="0"/>
+            </Button>
+            <Button Grid.Column="5" Click="Button_NextDifferenceClick" ToolTip="下一个区别" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                <Image Source="/ResourceLibrary;component/Icon/XndViewer/next.png" Height="16" Width="16" Margin="0"/>
+            </Button>
+        </Grid>
+        <Grid Grid.Row="2" Visibility="{Binding ProcessingVisible, ElementName=userControl}">
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,2" FontSize="10" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}" Text="{Binding ProcessingInfo, ElementName=userControl}"/>
+            <ProgressBar HorizontalAlignment="Right" VerticalAlignment="Center" Height="8" Grid.RowSpan="2" Grid.Row="1" Value="{Binding ProcessPercent, ElementName=userControl}" Maximum="1" SmallChange="0.001" MinWidth="100" />
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" MinWidth="26" MinHeight="26">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="0.926*"/>
+                </Grid.RowDefinitions>
+                <TreeView x:Name="TreeView_InfosLeft" Margin="2,2,4,2" Grid.Row="1"  Background="{x:Null}" SnapsToDevicePixels="True" TextOptions.TextFormattingMode="Display"
+                      Style="{DynamicResource {ComponentResourceKey ResourceId=TreeViewStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"
+                      ScrollViewer.VerticalScrollBarVisibility="Visible">
+                    <TreeView.ItemTemplate >
+                        <HierarchicalDataTemplate DataType="{x:Type local:XNDNodeInfo}" ItemsSource="{Binding Children}" >
+                            <Border BorderBrush="{DynamicResource {ComponentResourceKey ResourceId=PanelBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}" BorderThickness="2" Margin="1" Background="{DynamicResource {ComponentResourceKey ResourceId=PanelBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="7"/>
+                                </Border.Effect>
+                                <Grid Margin="2" SnapsToDevicePixels="True">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Visibility="{Binding NodeVisible}" Text="Node: " Margin="1" Foreground="#FF97D2FF" FontSize="14" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                    <TextBlock Visibility="{Binding NodeVisible}" Text="{Binding NodeName}" Margin="2" Grid.Column="1" Foreground="#FFBCFFF4" HorizontalAlignment="Left" FontSize="14" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                    <TextBlock Visibility="{Binding NodeVisible}"  Text="{Binding Info}" Margin="5,2,2,2" Grid.Column="2" Foreground="#FF97D2FF" HorizontalAlignment="Left" FontSize="14" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                    <ListBox ItemsSource="{Binding Attribs}" Margin="5,2,2,2" Grid.Row="1" Grid.ColumnSpan="3" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid SnapsToDevicePixels="True">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Visibility="{Binding AttribVisible}" Text="Att: " Margin="2" Foreground="White" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                                    <TextBlock Visibility="{Binding AttribVisible}" Text="{Binding AttName}" Margin="2" Grid.Column="1" Foreground="#FFBCFFF4" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                                    <TextBlock Visibility="{Binding AttribVisible}" Text="Ver: " Margin="4,2,0,2" Foreground="White" Grid.Column="2" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                                    <TextBlock Visibility="{Binding AttribVisible}" Text="{Binding AttVersion}" Margin="1,2,4,2" Grid.Column="3" Foreground="White" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                                    <TextBlock Visibility="{Binding AttribVisible}" Text="{Binding Info}" Margin="5,2,2,2" Grid.Column="4" Foreground="White" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                </Grid>
+                            </Border>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Margin="2" d:LayoutOverrides="Height" Click="Button_OpenFileLeft_Click" ToolTip="打开文件" HorizontalAlignment="Left" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                        <Image Source="/ResourceLibrary;component/Icon/File/openFile.png" Width="24" Height="24" Margin="0" />
+                    </Button>
+                    <TextBlock ToolTip="{Binding FileNameLeft, ElementName=userControl}" Margin="5" Text="{Binding FileNameLeft, ElementName=userControl}" VerticalAlignment="Center" Grid.Column="1"/>
+                    <Button Grid.Column="2" Margin="2" d:LayoutOverrides="Height" Click="Button_SaveLeft_Click" ToolTip="保存" HorizontalAlignment="Left" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                        <Image Source="/ResourceLibrary;component/Icon/File/save.png" Width="24" Height="24" Margin="0" />
+                    </Button>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1" MinWidth="26" MinHeight="26">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="0.926*"/>
+                </Grid.RowDefinitions>
+                <TreeView x:Name="TreeView_InfosRight" Margin="2" Grid.Row="1"  Background="{x:Null}" SnapsToDevicePixels="True" TextOptions.TextFormattingMode="Display"
+                      Style="{DynamicResource {ComponentResourceKey ResourceId=TreeViewStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"
+                      ScrollViewer.VerticalScrollBarVisibility="Visible">
+                    <TreeView.ItemTemplate >
+                        <HierarchicalDataTemplate DataType="{x:Type local:XNDNodeInfo}" ItemsSource="{Binding Children}" >
+                            <Border BorderBrush="{DynamicResource {ComponentResourceKey ResourceId=PanelBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}" BorderThickness="2" Margin="1" Background="{DynamicResource {ComponentResourceKey ResourceId=PanelBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="7"/>
+                                </Border.Effect>
+                                <Grid Margin="2" SnapsToDevicePixels="True">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                        <ColumnDefinition Width="1*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Visibility="{Binding NodeVisible}" Text="Node: " Margin="1" Foreground="#FF97D2FF" FontSize="14" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                    <TextBlock Visibility="{Binding NodeVisible}" Text="{Binding NodeName}" Margin="2" Grid.Column="1" Foreground="#FFBCFFF4" HorizontalAlignment="Left" FontSize="14" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                    <TextBlock Visibility="{Binding NodeVisible}"  Text="{Binding Info}" Margin="5,2,2,2" Grid.Column="2" Foreground="#FF97D2FF" HorizontalAlignment="Left" FontSize="14" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                    <ListBox ItemsSource="{Binding Attribs}" Margin="5,2,2,2" Grid.Row="1" Grid.ColumnSpan="3" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid SnapsToDevicePixels="True">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock Visibility="{Binding AttribVisible}" Text="Att: " Margin="2" Foreground="White" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                                    <TextBlock Visibility="{Binding AttribVisible}" Text="{Binding AttName}" Margin="2" Grid.Column="1" Foreground="#FFBCFFF4" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                                    <TextBlock Visibility="{Binding AttribVisible}" Text="Ver: " Margin="4,2,0,2" Foreground="White" Grid.Column="2" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                                    <TextBlock Visibility="{Binding AttribVisible}" Text="{Binding AttVersion}" Margin="1,2,4,2" Grid.Column="3" Foreground="White" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                                    <TextBlock Visibility="{Binding AttribVisible}" Text="{Binding Info}" Margin="5,2,2,2" Grid.Column="4" Foreground="White" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                </Grid>
+                            </Border>
+                        </HierarchicalDataTemplate>
+                    </TreeView.ItemTemplate>
+                </TreeView>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Margin="2" d:LayoutOverrides="Height" Click="Button_OpenFileRight_Click" ToolTip="打开文件" HorizontalAlignment="Left" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                        <Image Source="/ResourceLibrary;component/Icon/File/openFile.png" Width="24" Height="24" Margin="0" />
+                    </Button>
+                    <TextBlock ToolTip="{Binding FileNameRight, ElementName=userControl}" Margin="5" Text="{Binding FileNameRight, ElementName=userControl}" VerticalAlignment="Center" Grid.Column="1"/>
+                    <Button Grid.Column="2" Margin="2" d:LayoutOverrides="Height" Click="Button_SaveRight_Click" ToolTip="保存" HorizontalAlignment="Left" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}">
+                        <Image Source="/ResourceLibrary;component/Icon/File/save.png" Width="24" Height="24" Margin="0" />
+                    </Button>
+                </Grid>
+            </Grid>
+            <GridSplitter Grid.Row="1" Width="2" VerticalAlignment="Stretch" HorizontalAlignment="Right" Background="{DynamicResource {ComponentResourceKey ResourceId=ControlBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        </Grid>
+    </Grid>
+</UserControl>

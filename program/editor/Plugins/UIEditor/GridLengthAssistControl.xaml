@@ -1,0 +1,87 @@
+﻿<UserControl x:Class="UIEditor.GridLengthAssistControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:converters="clr-namespace:WPG.Converters;assembly=WPG"
+             xmlns:lib="clr-namespace:EditorControlLib;assembly=EditorControlLib"
+             xmlns:wpg="clr-namespace:WPG.Themes.TypeEditors;assembly=WPG"
+             xmlns:local="clr-namespace:UIEditor" x:Name="userControl"
+             xmlns:editorControlLib="clr-namespace:EditorControlLib;assembly=EditorControlLib"
+             mc:Ignorable="d" MouseDown="userControl_MouseDown" MouseUp="userControl_MouseUp" >
+
+    <Border Background="#99000000" CornerRadius="5" RenderTransformOrigin="0.5,0.5">
+        <Border.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform/>
+                <RotateTransform x:Name="TransRotate" Angle="0"/>
+                <TranslateTransform/>
+            </TransformGroup>
+        </Border.RenderTransform>
+        <Grid>
+            <Expander Style="{DynamicResource {ComponentResourceKey ResourceId=ExpanderStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" >
+                <Expander.Header>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock x:Name="TextBlock_Show"  Margin="2" Text="aaa" VerticalAlignment="Center"/>
+                        <Button Grid.Column="2" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Background="{x:Null}" BorderBrush="{x:Null}" Margin="2,2,2,5" Padding="0" Click="Button_Delete_Click">
+                            <Image Source="/ResourceLibrary;component/Icon/File/delete.png" Width="16" Height="16" ToolTip="删除"/>
+                        </Button>
+                    </Grid>
+                </Expander.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.301*"/>
+                        <RowDefinition Height="0.362*"/>
+                        <RowDefinition Height="0.337*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="0.759*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="ComboBox_GridUnitType" Grid.Column="3" Margin="2" MinWidth="79" SelectedValue="{Binding UnityType, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ComboBoxStyle_Default}}">
+                        <ComboBox.ItemsSource>
+                            <Binding Path="UnityType" ElementName="userControl">
+                                <Binding.Converter>
+                                    <converters:EnumTypeConverter />
+                                </Binding.Converter>
+                            </Binding>
+                        </ComboBox.ItemsSource>
+                    </ComboBox>
+                    <TextBlock Margin="5,2,2,2" TextWrapping="Wrap" Text="值" VerticalAlignment="Center" Grid.Column="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+                    <TextBlock Margin="5,2,2,2" TextWrapping="Wrap" Text="最大值" Grid.Row="1" VerticalAlignment="Center" Grid.Column="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+                    <TextBlock Margin="5,2,2,2" TextWrapping="Wrap" Text="最小值" Grid.Row="2" VerticalAlignment="Center" Grid.Column="1" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}"/>
+                    <Grid Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.818*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="Button_ResetMaxValue" Margin="2,0" Grid.Column="1" Click="Button_ResetMaxValue_Click" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="重置">
+                            <Image Source="/ResourceLibrary;component/Icon/reset.png" Width="16" Height="16"/>
+                        </Button>
+                        <editorControlLib:NumericTypeEditor Margin="2" VerticalAlignment="Center" NumericObject="{Binding MaxValue, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                    <Grid Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="2" Margin="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="Button_ResetMinValue" Margin="2,0" Grid.Column="1" Click="Button_ResetMinValue_Click" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Width="Auto" Height="Auto" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="重置">
+                            <Image Source="/ResourceLibrary;component/Icon/reset.png" Width="16" Height="16"/>
+                        </Button>
+                        <editorControlLib:NumericTypeEditor Margin="2" VerticalAlignment="Center" NumericObject="{Binding MinValue, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+                    <TextBlock x:Name="TextBlock_Index" Margin="2" Grid.RowSpan="3" TextWrapping="Wrap" Text="0" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FFC6C6C6" FontSize="29.333" Visibility="Collapsed"/>
+                    <editorControlLib:NumericTypeEditor x:Name="NTE_Value" Grid.Column="2" Margin="2" VerticalAlignment="Center" NumericObject="{Binding LengthValue, ElementName=userControl, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+            </Expander>
+        </Grid>
+    </Border>
+</UserControl>

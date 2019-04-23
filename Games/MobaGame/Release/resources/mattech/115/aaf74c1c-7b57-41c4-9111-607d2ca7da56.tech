@@ -1,0 +1,7 @@
+<Technique Name="»Ò³¾" Ver="8" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="1e871739-4dec-48a2-b034-a7488711c87e" Id="aaf74c1c-7b57-41c4-9111-607d2ca7da56" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_cf39f42a_9350_44e4_bd64_5efc93c006bd EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/Mask_499.png"/>
+		<ShaderVar_a92982c7_ae31_405b_bfd2_89ffde342ec0 EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/alpha_glow.png"/>
+	</ShaderVar>
+</Technique>
+

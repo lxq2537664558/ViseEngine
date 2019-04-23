@@ -1,0 +1,40 @@
+/*Material
+
+<Material Name="Srcalpha" Require="DiffuseUV|VertexColor0" Main="DoMaterial_ff3675ed_cc79_4117_bb86_6c48dc2f9239" ExtendString="" Id="ff3675ed-cc79-4117-bb86-6c48dc2f9239" Ver="4">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ff3675ed-cc79-4117-bb86-6c48dc2f9239" Id="2ec79833-30c6-4d84-9d74-a03bfa728589" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_1e033490_9fa6_4b59_95f9_e7a4d98449e8 EditorType="Texture" Type="texture" Value="resources/texture/effect/dirt/dust1.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+texture ShaderVar_1e033490_9fa6_4b59_95f9_e7a4d98449e8;
+sampler2D Samp_ShaderVar_1e033490_9fa6_4b59_95f9_e7a4d98449e8 = sampler_state
+{
+	Texture = <ShaderVar_1e033490_9fa6_4b59_95f9_e7a4d98449e8>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_ff3675ed_cc79_4117_bb86_6c48dc2f9239(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    pssem.mDiffuseColor = (vise_tex2D(Samp_ShaderVar_1e033490_9fa6_4b59_95f9_e7a4d98449e8,pssem.mDiffuseUV.xy) * pssem.mVertexColor0);
+
+}

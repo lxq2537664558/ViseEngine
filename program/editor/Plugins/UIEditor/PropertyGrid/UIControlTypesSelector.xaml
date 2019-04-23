@@ -1,0 +1,12 @@
+﻿<UserControl x:Class="UIEditor.PropertyGrid.UIControlTypesSelector"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             mc:Ignorable="d" 
+             d:DesignHeight="28.5" d:DesignWidth="320">
+    <Grid>
+        <ComboBox x:Name="ComboBox_Types" Margin="2" d:LayoutOverrides="Height" SelectionChanged="ComboBox_Types_SelectionChanged" Style="{DynamicResource {ComponentResourceKey ResourceId=ComboBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>            
+    </Grid>
+</UserControl>

@@ -1,0 +1,22 @@
+<Technique Name="Ë®Á÷¶Ü²¨ÀË" Ver="25" AlphaRef="80" CullMode="NONE" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="91d48d99-921f-49f1-aa60-fc24e1bac70b" Id="f6204387-ec2a-4f18-888d-11cd9fda06cc" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_1d49579d_8871_4d73_8749_8a43b03d2833 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/water_05A.png"/>
+		<ShaderVar_b4b99fb2_7181_4c7b_b76a_a001d7e582ee EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_a71040aa_16e6_4a44_9d1d_debba84a5932 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/NFX_Water01A_blue.png"/>
+		<ShaderVar_04e1932b_af83_4c04_abcc_e3db6808c486 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_476.png"/>
+		<ShaderVar_f7a4f205_61c9_425e_9093_287096c2fdf4 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_275_2.png"/>
+		<ShaderVar_cae6049d_533a_45a7_b7c6_b4bd6f31d533 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+		<ShaderVar_VeinScale EditorType="Vector" Type="float2" Value="0.75,1.4"/>
+		<ShaderVar_VeinSpeed EditorType="Vector" Type="float2" Value="0.65,0.3"/>
+		<ShaderVar_VeinWaveSpeed01 EditorType="Vector" Type="float2" Value="0.5,0.3"/>
+		<ShaderVar_VeinWaveScale01 EditorType="Vector" Type="float2" Value="1.35,0.85"/>
+		<ShaderVar_VeinWaveSpeed02 EditorType="Vector" Type="float2" Value="-0.24,-0.45"/>
+		<ShaderVar_VeinWaveScale02 EditorType="Vector" Type="float2" Value="0.6,0.95"/>
+		<ShaderVar_MaskDistSpeed EditorType="Vector" Type="float2" Value="-0.26,0"/>
+		<ShaderVar_MaskDistScale EditorType="Vector" Type="float2" Value="1.3,1"/>
+		<ShaderVar_SpecWaveSpeed EditorType="Vector" Type="float2" Value="0.45,0"/>
+		<ShaderVar_SpecWaveScale EditorType="Vector" Type="float2" Value="0.6,0.88"/>
+		<ShaderVar_Mask_Scale EditorType="Vector" Type="float2" Value="0.85,1.2"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,17 @@
+<Technique Name="扰动流动纹理" Ver="275" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="faede452-0dd1-4add-a17b-9836d23ba53a" Id="7c2fb919-fe0d-4333-9af5-6f9cb7f8f7f7" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_8be85140_978f_4faa_bd16_654f423d0b7e EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/ice_shock_mask.png"/>
+		<ShaderVar_f5fdc7e7_4b2b_4aa3_b7a3_b3712bf4d39e EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_a8a4d578_197e_41f5_a1d5_79adbf5bcbe5 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/client-vfx-abl-0539-6.png"/>
+		<ShaderVar_speed1 EditorType="Vector" Type="float2" Value="0.24,-0.16"/>
+		<ShaderVar_scale1 EditorType="Vector" Type="float2" Value="1.4,0.95"/>
+		<ShaderVar_speed2 EditorType="Vector" Type="float2" Value="-0.19,0.26"/>
+		<ShaderVar_scale2 EditorType="Vector" Type="float2" Value="1.1,1.6"/>
+		<ShaderVar_texspeed EditorType="Vector" Type="float2" Value="0,-0.26"/>
+		<ShaderVar_texscale EditorType="Vector" Type="float2" Value="0.5,1.2"/>
+		<ShaderVar_maskSpeed EditorType="Vector" Type="float2" Value="0,-0.25"/>
+		<ShaderVar_maskScale EditorType="Vector" Type="float2" Value="1,1.45"/>
+		<ShaderVar_MaskDisSpeed EditorType="Vector" Type="float2" Value="0,0.25"/>
+	</ShaderVar>
+</Technique>
+

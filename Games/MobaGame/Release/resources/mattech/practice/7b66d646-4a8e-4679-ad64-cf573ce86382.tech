@@ -1,0 +1,9 @@
+<Technique Name="นวรฌ" Ver="18" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="c8d529a0-c223-4a0b-82f3-951d6ecb5417" Id="7b66d646-4a8e-4679-ad64-cf573ce86382" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_5cd035f6_7c34_4834_8f74_e106fb47dab1 EditorType="Texture" Type="texture" Value="resources/texture/effect/object/bone_spear.png"/>
+		<ShaderVar_b61163c9_7b39_4dcc_b6f3_e96f498cd86b EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/ashland.png"/>
+		<ShaderVar_2d685588_7665_4019_b712_c68e828427a4 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/lava2.png"/>
+		<ShaderVar_13d7e84e_2ae7_4a5d_9053_417cff327ea4 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/lava_bone_mask.png"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,29 @@
+/*Material
+
+<Material Name="´¿É«" Require="DiffuseUV" Main="DoMaterial_85f4df4c_01c6_4165_8f37_de5cce4b24c8" ExtendString="" Id="85f4df4c-01c6-4165-8f37-de5cce4b24c8" Ver="3">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="85f4df4c-01c6-4165-8f37-de5cce4b24c8" Id="214493a2-d285-4731-b0d2-acfc592fcdd2" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_BackColor EditorType="Color" Type="float4" Value="1,1,1,1"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+float4 ShaderVar_BackColor;
+
+#ifdef ByLayerBased
+void DoMaterial_85f4df4c_01c6_4165_8f37_de5cce4b24c8(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    pssem.mDiffuseColor = ShaderVar_BackColor;
+
+}

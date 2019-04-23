@@ -1,0 +1,76 @@
+#include "VInc.fxx"
+#include "modifier_def.fxx"
+
+
+V3D_VS_OUT vs_main( V3D_VS_IN Input )
+{
+	// VS 2 Semantic
+	V3D_VS_Semantic vssem = (V3D_VS_Semantic)0;
+	V3D_VSIn2Semantic ( Input, vssem );
+
+	// VS do
+	V3D_VS_Modifiers ( vssem );
+
+	// Semantic 2 VS-Out
+	V3D_VS_OUT Output =(V3D_VS_OUT)0;
+	V3D_VSSemantic2Out ( vssem, Output );
+
+	return Output;
+}
+
+
+
+struct V3D_PS_OUT
+{
+	float4 color;
+};
+
+V3D_PS_OUT	ps_main(V3D_VS_OUT Input) : COLOR
+{
+	// PS 2 Semantic
+	V3D_PS_Semantic pssem = (V3D_PS_Semantic)0;
+	V3D_PSIn2Semantic ( Input, pssem );
+
+	// PS do
+	V3D_PS_Modifiers ( pssem );
+
+
+	//--------------------------------------------------
+	// WRITE SHADING ENVIRONMENT'S CODE HERE!!!!!
+	//--------------------------------------------------
+	// Semantic 2 PS-Out
+
+	V3D_PS_OUT Output =(V3D_PS_OUT)0;
+
+	DoMaterial(pssem);
+	if(g_AlphaTest.x==1)
+	{
+		if(pssem.mDiffuseColor.a < g_AlphaTest.y)
+			discard;
+	}
+
+	//Output.color = pssem.DiffuseColor + pssem.EmissiveColor;
+
+	LightDesc ld;
+	ld.Direction = float3(0,-1,0);
+	ld.Ambient = float4(0,0,0,0);
+	ld.Diffuse = float4(1,1,1,1);
+	ld.Specular = float4(1,1,1,1);
+	Output.color = DoLightingDiffuseByDir( ld, pssem.ViewVertexNormal, pssem.DiffuseColor);
+	Output.color += pssem.EmissiveColor;
+
+	return Output;
+}
+
+technique tech
+{
+	pass p0
+	{
+		VertexShader = compile VS_VERSION vs_main();
+#if PS_NUMBER==0
+		PixelShader = NULL;
+#else
+		PixelShader = compile PS_VERSION ps_main();
+#endif
+	}
+}

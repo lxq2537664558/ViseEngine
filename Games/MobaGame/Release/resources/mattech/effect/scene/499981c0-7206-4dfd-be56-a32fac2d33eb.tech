@@ -1,0 +1,11 @@
+<Technique Name="ˮ2" Ver="18" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="af476538-1074-49b2-9a4c-35ec59f9da7b" Id="499981c0-7206-4dfd-be56-a32fac2d33eb" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_wenli EditorType="Texture" Type="texture" Value="resources/texture/effect/water/FX_water_03.png"/>
+		<ShaderVar_f1aad998_9c23_4992_9b35_0c6c14498532 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/Lake_Normal_01.png"/>
+		<ShaderVar_47ea4e7e_44b9_4853_96a7_e326d03fec6a EditorType="Texture" Type="texture" Value="resources/texture/effect/water/GF_480.png"/>
+		<ShaderVar_16419f53_be57_4180_b20a_a829c8e3ea91 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/Angra_Town_Water_02.png"/>
+		<ShaderVar_eebb964f_6535_4bbb_9ef1_3e576603d408 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/spiderWeb_boneyClouds_diffAlpha.png"/>
+		<ShaderVar_c9fa1f9e_ac98_4aca_ac4f_1f0b05b348c1 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/water_splash5.png"/>
+	</ShaderVar>
+</Technique>
+

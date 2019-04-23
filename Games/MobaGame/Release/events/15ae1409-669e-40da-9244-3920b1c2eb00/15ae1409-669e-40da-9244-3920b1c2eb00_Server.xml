@@ -1,0 +1,163 @@
+<Event ViewBoxMain_X="550" ViewBoxMain_Y="-222" ViewBoxMain_Width="1024" GUID="00000000-0000-0000-0000-000000000000">
+	<OrigionCtrls>
+		<OrigionCtrl Id="7a95fe39-aba4-424b-b1c6-1119a24612cb"/>
+	</OrigionCtrls>
+	<ChildNodesCtrls>
+		<MethodNode Useable="False" OverrideAble="True" CallBasePosition="None" UseBaseVisibility="Collapsed" IsStatic="True" ID="7a95fe39-aba4-424b-b1c6-1119a24612cb" Type="DelegateMethodEditor@CodeDomNode.MethodNode" X="0" Y="0" Params="Invoke,host:cscommon@CSUtility.AISystem.IStateHost,mscorlib.dll@System.Void,game@GameData.Role.FOnRoleDeath,true,false" IsDeleteable="False" Comment="">
+			<ChildNodes>
+				<ParameterControl ID="9e3256d9-0ae5-4313-bf58-7f1e2734c743" Type="DelegateMethodEditor@CodeDomNode.ParameterControl" X="NaN" Y="NaN" Params="host:cscommon@CSUtility.AISystem.IStateHost" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="e8bcf704-2f6a-4b12-b3e9-1b62eb210964">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</ParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="21c83772-eee4-477b-bafd-c4070eea7141">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="687fc953-7778-44e8-862c-27a75668e42c">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="31092b6d-03ca-48bf-830c-4d8a8bd50dbb">
+					<Link LinkFrom="31092b6d-03ca-48bf-830c-4d8a8bd50dbb" LinkTo="a772ba1c-18c4-4564-816d-8caffc72e718"/>
+				</LinkObject>
+			</LinkObjects>
+		</MethodNode>
+		<PropertyNode ID="792c09d7-30de-4f6e-bc45-953a0890caf0" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="-247.779449462891" Y="161.11994934082" Params="怪物.怪物数据(读取),MonsterData,GameData.Role.MonsterData,get;Normal,Server.Hall.Role.Monster.MonsterInstance,7a95fe39-aba4-424b-b1c6-1119a24612cb,21c83772-eee4-477b-bafd-c4070eea7141" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="f386c7a7-d307-4d02-a4f3-e432c6cced62">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<PropertyNode ID="5d083a73-f79d-4784-97e0-0e28c79e210a" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="-503.087707519531" Y="425.038909912109" Params="MonsterData.关联RoleID(读取),NextLinkedRoleId,System.Guid,get;Normal,GameData.Role.MonsterData,792c09d7-30de-4f6e-bc45-953a0890caf0,f386c7a7-d307-4d02-a4f3-e432c6cced62" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="ed34734d-95db-49c7-a2ec-96a31999b8e7">
+					<Link LinkFrom="ed34734d-95db-49c7-a2ec-96a31999b8e7" LinkTo="c4ad3d27-4738-4125-be26-f255deece230"/>
+				</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<PropertyNode ID="33659865-0cd8-4047-99bd-c68da202e786" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="-245.579528808594" Y="288.326751708984" Params="角色对象.所属地图(读取),HostMap,Server.Hall.Map.MapInstance,get;Normal,Server.Hall.Role.Monster.MonsterInstance,7a95fe39-aba4-424b-b1c6-1119a24612cb,21c83772-eee4-477b-bafd-c4070eea7141" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="84eb52a0-e37b-4e23-81eb-30a2d40005cd">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<IfNode ID="31545568-5a5a-426b-a34f-93726c4f0b29" Type="DelegateMethodEditor@CodeDomNode.IfNode" X="395.909790039063" Y="224.43603515625" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes>
+				<ConditionControl ID="815fd9e8-5a32-4f72-8f68-5db84c5cbee9" Type="DelegateMethodEditor@CodeDomNode.ConditionControl" X="NaN" Y="NaN" Params="" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="4f093dfe-b274-4b30-b4ee-bc37029d8ebf">
+							<Link LinkFrom="5f749a94-1a39-412e-bc2f-e92b2c0bb128" LinkTo="4f093dfe-b274-4b30-b4ee-bc37029d8ebf"/>
+						</LinkObject>
+						<LinkObject ID="6c4b944b-1fcf-4fad-8f6f-cd23710bb4c0">
+							<Link LinkFrom="6c4b944b-1fcf-4fad-8f6f-cd23710bb4c0" LinkTo="0f7b0ab8-91de-44d6-8e69-d91473318398"/>
+						</LinkObject>
+					</LinkObjects>
+				</ConditionControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="a772ba1c-18c4-4564-816d-8caffc72e718">
+					<Link LinkFrom="31092b6d-03ca-48bf-830c-4d8a8bd50dbb" LinkTo="a772ba1c-18c4-4564-816d-8caffc72e718"/>
+				</LinkObject>
+				<LinkObject ID="8330fbc0-b916-48d7-8122-cea34e76c434">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="80b7de39-e1b9-4899-9083-85465f08280f">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</IfNode>
+		<Value_Null ID="a7d565f2-e9be-436c-949a-a2cc9e65b3c8" Type="DelegateMethodEditor@CodeDomNode.Value_Null" X="213.041015625" Y="458.379760742188" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="c90c2c44-15c8-44ce-9ed4-5ef9d9e832c3">
+					<Link LinkFrom="c90c2c44-15c8-44ce-9ed4-5ef9d9e832c3" LinkTo="3a84ff10-7f7a-4b33-95b5-2b981831038b"/>
+				</LinkObject>
+			</LinkObjects>
+		</Value_Null>
+		<Compare ID="1c787387-f920-4efd-bd63-befd3703f8e2" Type="DelegateMethodEditor@CodeDomNode.Compare" X="218.589599609375" Y="296.492858886719" Params="≠" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="989fef32-b791-481c-9761-efe326f35226">
+					<Link LinkFrom="08f7fa6c-150d-480d-9422-ffe3a2265020" LinkTo="989fef32-b791-481c-9761-efe326f35226"/>
+				</LinkObject>
+				<LinkObject ID="3a84ff10-7f7a-4b33-95b5-2b981831038b">
+					<Link LinkFrom="c90c2c44-15c8-44ce-9ed4-5ef9d9e832c3" LinkTo="3a84ff10-7f7a-4b33-95b5-2b981831038b"/>
+				</LinkObject>
+				<LinkObject ID="5f749a94-1a39-412e-bc2f-e92b2c0bb128">
+					<Link LinkFrom="5f749a94-1a39-412e-bc2f-e92b2c0bb128" LinkTo="4f093dfe-b274-4b30-b4ee-bc37029d8ebf"/>
+				</LinkObject>
+			</LinkObjects>
+		</Compare>
+		<Assign ID="cc47d53c-1555-4422-a341-0c96ef95a609" Type="DelegateMethodEditor@CodeDomNode.Assign" X="423.867919921875" Y="511.7041015625" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="0f7b0ab8-91de-44d6-8e69-d91473318398">
+					<Link LinkFrom="6c4b944b-1fcf-4fad-8f6f-cd23710bb4c0" LinkTo="0f7b0ab8-91de-44d6-8e69-d91473318398"/>
+				</LinkObject>
+				<LinkObject ID="a4c76adc-6f22-49ca-b4d7-c7cec07fa8fd">
+					<Link LinkFrom="1592a9a4-ca25-486f-8cc3-018e491098d2" LinkTo="a4c76adc-6f22-49ca-b4d7-c7cec07fa8fd"/>
+				</LinkObject>
+				<LinkObject ID="de845d44-77eb-487f-862f-b8ac5e573d12">
+					<Link LinkFrom="de845d44-77eb-487f-862f-b8ac5e573d12" LinkTo="f6ca8857-c991-403b-87ce-51f2fd71f215"/>
+				</LinkObject>
+				<LinkObject ID="5d3bb5a2-396b-4717-883c-cbac1439c085">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</Assign>
+		<Value_Boolean ID="9505ab6a-2373-4384-b3a4-77cac07b03dd" Type="DelegateMethodEditor@CodeDomNode.Value_Boolean" X="250.867919921875" Y="647.7080078125" Params="False," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="1592a9a4-ca25-486f-8cc3-018e491098d2">
+					<Link LinkFrom="1592a9a4-ca25-486f-8cc3-018e491098d2" LinkTo="a4c76adc-6f22-49ca-b4d7-c7cec07fa8fd"/>
+				</LinkObject>
+			</LinkObjects>
+		</Value_Boolean>
+		<MethodInvokeNode ID="d210675d-5096-4154-87cc-5586d3d9eb72" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeNode" X="-465.523132324219" Y="546.701293945313" Params="地图.查找怪物,game@Server.Hall.Map.MapInstance,GetMonsterRole,roleId:mscorlib.dll@System.Guid,game@Server.Hall.Role.Monster.MonsterInstance,Server;Normal,Server.Hall.Map.MapInstance,33659865-0cd8-4047-99bd-c68da202e786,84eb52a0-e37b-4e23-81eb-30a2d40005cd" IsDeleteable="True" Comment="">
+			<DefaultParamValue>
+				<roleId Type="mscorlib.dll@System.Guid" Value="00000000-0000-0000-0000-000000000000"/>
+			</DefaultParamValue>
+			<ChildNodes>
+				<MethodInvokeParameterControl ID="a1e2edf8-832e-40ca-94b8-fd54a3286907" Type="DelegateMethodEditor@CodeDomNode.MethodInvokeParameterControl" X="NaN" Y="NaN" Params="roleId:mscorlib.dll@System.Guid" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="c4ad3d27-4738-4125-be26-f255deece230">
+							<Link LinkFrom="ed34734d-95db-49c7-a2ec-96a31999b8e7" LinkTo="c4ad3d27-4738-4125-be26-f255deece230"/>
+						</LinkObject>
+					</LinkObjects>
+				</MethodInvokeParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="08f7fa6c-150d-480d-9422-ffe3a2265020">
+					<Link LinkFrom="08f7fa6c-150d-480d-9422-ffe3a2265020" LinkTo="989fef32-b791-481c-9761-efe326f35226"/>
+				</LinkObject>
+				<LinkObject ID="212f4866-5e67-45d1-8571-1c5ae04ddca0">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="cc0ecf6e-17d2-40ad-a84c-2350fcaf82cf">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</MethodInvokeNode>
+		<PropertyNode ID="7b1fa8b0-4190-4373-8dcb-1fa0e1d7adea" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="-865.973022460938" Y="746.403259277344" Params="怪物.怪物数据(读取),MonsterData,GameData.Role.MonsterData,get;Normal,Server.Hall.Role.Monster.MonsterInstance,d210675d-5096-4154-87cc-5586d3d9eb72,08f7fa6c-150d-480d-9422-ffe3a2265020" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="3a336b3a-8343-476e-a646-43f4f4119e7b">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<PropertyNode ID="38c08cfd-63b8-46c2-9696-e9ce8879f309" Type="DelegateMethodEditor@CodeDomNode.PropertyNode" X="453.757629394531" Y="840.085998535156" Params="MonsterData.是否无敌(设置),Unrivaled,System.Boolean,set;Normal,GameData.Role.MonsterData,7b1fa8b0-4190-4373-8dcb-1fa0e1d7adea,3a336b3a-8343-476e-a646-43f4f4119e7b" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="f6ca8857-c991-403b-87ce-51f2fd71f215">
+					<Link LinkFrom="de845d44-77eb-487f-862f-b8ac5e573d12" LinkTo="f6ca8857-c991-403b-87ce-51f2fd71f215"/>
+				</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+	</ChildNodesCtrls>
+</Event>
+

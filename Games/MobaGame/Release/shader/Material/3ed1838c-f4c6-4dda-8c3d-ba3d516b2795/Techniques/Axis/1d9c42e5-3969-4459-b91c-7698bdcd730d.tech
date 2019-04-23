@@ -1,0 +1,8 @@
+<Technique Name="EditorAxisAlphaYellow" Ver="2" AlphaRef="8" CullMode="CCW" ZDisable="1" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="Always" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="4294967295" StencilWriteMask="4294967295" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="3ed1838c-f4c6-4dda-8c3d-ba3d516b2795" Id="1d9c42e5-3969-4459-b91c-7698bdcd730d" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<GDiffuse Type="float4" Value="1,1,0,0.5"/>
+		<GEmissive Type="float4" Value="1,1,0,0.5"/>
+		<GSpecular Type="float4" Value="0,0,0,0"/>
+	</ShaderVar>
+</Technique>
+

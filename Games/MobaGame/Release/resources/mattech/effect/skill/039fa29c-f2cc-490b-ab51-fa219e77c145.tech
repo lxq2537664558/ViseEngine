@@ -1,0 +1,6 @@
+<Technique Name="法师武器特效冰球" Ver="66" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ee169f18-65fd-42d8-8f7a-b16fe9ea8fd8" Id="039fa29c-f2cc-490b-ab51-fa219e77c145" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_d8218f3a_4265_4ad0_b61c_ba857ab81fa5 EditorType="Texture" Type="texture" Value="resources/texture/effect/ice/snowbal_colorl.png"/>
+	</ShaderVar>
+</Technique>
+

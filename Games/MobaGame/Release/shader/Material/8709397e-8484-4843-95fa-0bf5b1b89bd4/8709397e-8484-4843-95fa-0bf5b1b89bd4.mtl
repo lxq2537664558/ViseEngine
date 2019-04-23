@@ -1,0 +1,76 @@
+/*Material
+
+<?xml version="1.0" encoding="utf-16"?>
+<Material Name="UIMaterial" Require="DiffuseUV" Main="DoMaterial" ExtendString="" Id="8709397e-8484-4843-95fa-0bf5b1b89bd4" Ver="13">
+  <DefaultTechnique Name="DefaultTech" Ver="13" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" HostMaterialId="8709397e-8484-4843-95fa-0bf5b1b89bd4" Id="b70449a4-5153-46df-8c1c-fc48590efdb8" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="4294967295" StencilWriteMask="4294967295" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" DepthBias="0" SlopeScaleDepthBias="0">
+    <ShaderVar>
+      <GDiffuseTexture Type="texture" Value="Texture\checker.tga" />
+      <RotCenter Type="float2" Value="0,0" />
+      <Scale Type="float2" Value="1,1" />
+      <RotSpeed Type="float1" Value="0" />
+      <BackColor Type="float4" Value="0,0,0,0" />
+      <Opacity Type="float1" Value="1" />
+    </ShaderVar>
+  </DefaultTechnique>
+</Material>
+*/
+
+#include "../Shader/Material/Common/Common.function"
+
+
+texture GDiffuseTexture;
+sampler2D Samp_GDiffuseTexture = sampler_state
+{
+	Texture = <GDiffuseTexture>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+float4 BackColor;
+float2 RotCenter;
+float2 Scale;
+float1 RotSpeed;
+float1 Opacity;
+
+#ifdef ByLayerBased
+void DoMaterial(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 Value_1b551758_7a89_4c18_940c_938ad1168c9a = float4(0,0,0,0);
+    float3 Value_e98cbc2b_7eda_4b73_a8e9_24400bab83c0 = float3(0,0,0);
+    float3 Value_ddeb140a_0d08_4f4d_9016_3656dcee4fd3 = float3(0,0,0);
+    float4 Value_4ede0940_faea_4178_80b5_7add908b2856 = float4(0,0,0,0);
+    float1 Value_f7b2b7c9_f854_4b71_8efc_3d0133a21e77 = 1;
+    float3 Value_1fdc49fc_faec_4036_92f7_7d474bc01bb8 = float3(0,0,0);
+
+
+    float2 FuncTempValue_1ca890eb_7adf_4faf_97c4_bb3b7ce66cc7_5 = float2(0, 0);
+    Rotator(pssem.mDiffuseUV,Value_f7b2b7c9_f854_4b71_8efc_3d0133a21e77,RotCenter,Scale,RotSpeed,FuncTempValue_1ca890eb_7adf_4faf_97c4_bb3b7ce66cc7_5);
+    Value_4ede0940_faea_4178_80b5_7add908b2856 = vise_tex2D(Samp_GDiffuseTexture,FuncTempValue_1ca890eb_7adf_4faf_97c4_bb3b7ce66cc7_5.xy);
+    Value_ddeb140a_0d08_4f4d_9016_3656dcee4fd3 = Value_4ede0940_faea_4178_80b5_7add908b2856.xyz;
+    Value_1fdc49fc_faec_4036_92f7_7d474bc01bb8 = BackColor.xyz;
+    float3 FuncTempValue_944695a3_6218_4921_9971_13908f1d8fea_3 = float3(0, 0, 0);
+    Lerp3D(Value_ddeb140a_0d08_4f4d_9016_3656dcee4fd3,Value_1fdc49fc_faec_4036_92f7_7d474bc01bb8,BackColor.w,FuncTempValue_944695a3_6218_4921_9971_13908f1d8fea_3);
+    Value_e98cbc2b_7eda_4b73_a8e9_24400bab83c0 = FuncTempValue_944695a3_6218_4921_9971_13908f1d8fea_3.xyz;
+    Value_1b551758_7a89_4c18_940c_938ad1168c9a.x = Value_e98cbc2b_7eda_4b73_a8e9_24400bab83c0.x;
+    Value_4ede0940_faea_4178_80b5_7add908b2856 = vise_tex2D(Samp_GDiffuseTexture,FuncTempValue_1ca890eb_7adf_4faf_97c4_bb3b7ce66cc7_5.xy);
+    Value_ddeb140a_0d08_4f4d_9016_3656dcee4fd3 = Value_4ede0940_faea_4178_80b5_7add908b2856.xyz;
+    Value_1fdc49fc_faec_4036_92f7_7d474bc01bb8 = BackColor.xyz;
+    Value_e98cbc2b_7eda_4b73_a8e9_24400bab83c0 = FuncTempValue_944695a3_6218_4921_9971_13908f1d8fea_3.xyz;
+    Value_1b551758_7a89_4c18_940c_938ad1168c9a.y = Value_e98cbc2b_7eda_4b73_a8e9_24400bab83c0.y;
+    Value_4ede0940_faea_4178_80b5_7add908b2856 = vise_tex2D(Samp_GDiffuseTexture,FuncTempValue_1ca890eb_7adf_4faf_97c4_bb3b7ce66cc7_5.xy);
+    Value_ddeb140a_0d08_4f4d_9016_3656dcee4fd3 = Value_4ede0940_faea_4178_80b5_7add908b2856.xyz;
+    Value_1fdc49fc_faec_4036_92f7_7d474bc01bb8 = BackColor.xyz;
+    Value_e98cbc2b_7eda_4b73_a8e9_24400bab83c0 = FuncTempValue_944695a3_6218_4921_9971_13908f1d8fea_3.xyz;
+    Value_1b551758_7a89_4c18_940c_938ad1168c9a.z = Value_e98cbc2b_7eda_4b73_a8e9_24400bab83c0.z;
+    Value_4ede0940_faea_4178_80b5_7add908b2856 = vise_tex2D(Samp_GDiffuseTexture,FuncTempValue_1ca890eb_7adf_4faf_97c4_bb3b7ce66cc7_5.xy);
+    Value_1b551758_7a89_4c18_940c_938ad1168c9a.w = (Value_4ede0940_faea_4178_80b5_7add908b2856.w * Opacity);
+    pssem.mDiffuseColor = Value_1b551758_7a89_4c18_940c_938ad1168c9a;
+
+}

@@ -1,0 +1,53 @@
+<cscommon TypeName="UISystem.WinForm" Id="ccabb35a-370f-4490-b6c2-f3c9f477002a" Width="80" Width_Auto="True" Height_Auto="True" BackColor="FFFFFF" VerticalAlignment="Stretch" HitThrough="True">
+	<WinState/>
+	<cscommon TypeName="UISystem.Container.Grid.Grid" Id="d75d2d21-3ec3-427a-817e-b6a8ae12e411" Width="80" Width_Auto="True" Height_Auto="True" VerticalAlignment="Stretch" HitThrough="True">
+		<WinState/>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="Auto"/>
+		</Grid.ColumnDefinitions>
+		<cscommon TypeName="UISystem.Container.Grid.Grid" Id="b969166d-31e0-401c-8139-2bb2da14be46" Width="0" Width_Auto="True" Height_Auto="True" VerticalAlignment="Stretch" GridColumn="4" HitThrough="True">
+			<WinState/>
+			<cscommon TypeName="UISystem.StackPanel" Id="8ea63b0d-ec7f-4825-a502-fa02bcadd326" WinName="RecordShowStackPanel" Width="0" Width_Auto="True" Height="0" Height_Auto="True" LockingX="True" AstrictY="True">
+				<WinState/>
+				<cscommon TypeName="UISystem.Container.Grid.Grid" Id="46fee426-0222-4319-8166-d60635049c8e" Width="0" Width_Auto="True" Height="0" Height_Auto="True" GridColumn="3" HitThrough="True">
+					<WinState/>
+					<cscommon TypeName="UISystem.StackPanel" Id="90a925d4-9b58-451c-8de2-5c0dc3181fb1" WinName="RecordSettingStackPanel" Width="0" Width_Auto="True" Height="0" Height_Auto="True" DragEnable="True" LockingX="True" AstrictY="True">
+						<WinState/>
+					</cscommon>
+				</cscommon>
+			</cscommon>
+		</cscommon>
+		<cscommon TypeName="UISystem.Container.Grid.Grid" Id="71fcf702-2564-47d3-a6ab-c457215b42f9" Width="0" Width_Auto="True" Height_Auto="True" VerticalAlignment="Stretch" GridColumn="1" HitThrough="True">
+			<WinState/>
+			<cscommon TypeName="UISystem.StackPanel" Id="ff7616a6-bcbb-480e-822b-27a53516d492" WinName="RecordTitleStackPanel" Width="0" Width_Auto="True" Height="0" Height_Auto="True" DragEnable="True" LockingX="True" AstrictY="True">
+				<WinState/>
+			</cscommon>
+		</cscommon>
+		<cscommon TypeName="UISystem.Container.Grid.Grid" Id="e24bf6cf-2b1b-403b-aa11-cb27fb56fccc" Width="0" Width_Auto="True" Height_Auto="True" ForeColor="FFFFFFFF" BackColor="D3D3D3" VerticalAlignment="Stretch" GridColumn="2" HitThrough="True">
+			<WinState/>
+			<cscommon TypeName="UISystem.StackPanel" Id="9f0b51e8-23a3-48e7-bae1-48f4f43e20b0" WinName="RecordPerformanceStackPanel" Width="0" Width_Auto="True" Height="0" Height_Auto="True" DragEnable="True" LockingX="True" AstrictY="True" ForeColor="FFFFFFFF" BackColor="D3D3D3">
+				<WinState/>
+			</cscommon>
+		</cscommon>
+		<cscommon TypeName="UISystem.Container.Grid.Grid" Id="b0473084-c09e-4226-ad75-b1a3fc955800" Width="80" Width_Auto="True" Height="80" Height_Auto="True">
+			<WinState/>
+			<cscommon TypeName="UISystem.Button" Id="dab16d18-d345-49c6-b83b-4c304a178b09" Width="80" Height="80" WinButtonClick="game@Client.RecordVManager|OpenRecordManagerUI">
+				<NormalState UVAnim="e0073260-cac2-49cd-88b7-adc8584b4fc7"/>
+				<LightState TextOffset="-1,-1"/>
+				<PressState UVAnim="021575d1-0d00-4c75-9d3c-b8d7cb803ad6" TextOffset="1,1"/>
+				<DisableState/>
+			</cscommon>
+			<cscommon TypeName="UISystem.TextBlock" Id="78496bc5-30f0-490b-95fb-ad2e66e9302b" Width="74" Width_Auto="True" Height="18" HorizontalAlignment="Center" VerticalAlignment="Center" HitTestVisible="False" Text="OpenMenu" FontSize="16">
+				<WinState/>
+				<FontRenderParams>
+					<0 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="None" OutlineThickness="0"/>
+				</FontRenderParams>
+			</cscommon>
+		</cscommon>
+	</cscommon>
+</cscommon>
+

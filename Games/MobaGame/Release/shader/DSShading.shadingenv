@@ -1,0 +1,135 @@
+#include "VInc.fxx"
+
+#include "CommonDeferredShadingFunc.fxh"
+
+#include "CommonLightFunc.fxh"
+
+#include "inport.dummy"
+
+
+float			g_ShadowType;
+float			g_LBRAmount;
+float4		g_LightingDiffuse;
+float4  		g_LightingAmbient;
+float4		g_LightingSpecular;
+float4		g_LightingShadow;
+float3		g_LightingDir;
+float4x4 	g_matViewToLightProj;
+float2		g_TextureSize;
+int				g_AOEnable;
+int				g_EdgeDetectMode;
+
+/*
+texture 		RT_AO;
+sampler2D Samp_RT_AO = sampler_state
+{
+	Texture = <RT_AO>;
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+    SRGBTexture = FALSE;
+};
+*/
+
+texture 		RT_Light;
+sampler2D Samp_RT_Light = sampler_state
+{
+	Texture = <RT_Light>;
+    MipFilter = POINT;
+    MinFilter = POINT;
+    MagFilter = POINT;
+    AddressU = Clamp;
+    AddressV = Clamp;
+    SRGBTexture = FALSE;
+};
+
+texture 		RT_EdgeDetect;
+sampler2D Samp_RT_EdgeDetect = sampler_state
+{
+	Texture = <RT_EdgeDetect>;
+    MipFilter = LINEAR;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = Clamp;
+    AddressV = Clamp;
+    SRGBTexture = FALSE;
+};
+
+struct VSIn_Light
+{
+	float3 Pos		: LOCALPOS;
+	float2 UV		: DIFFUSEUV;
+};
+VSIn_Light dummyVSIn;
+
+struct VSOut_Light
+{
+    float4 Pos		: POSITION;
+    float2 UV		: TEXCOORD0;
+	float4 PosProj	: TEXCOORD8;
+};
+struct PSOut_Light
+{
+//    float4	Color	: COLOR0;
+    float4	Color	: COLOR0;
+};
+
+VSOut_Light vs_main( VSIn_Light Input )
+{
+	VSOut_Light o=(VSOut_Light)0;
+	o.Pos		= float4(Input.Pos,1);
+	o.PosProj	= float4(Input.Pos,1);
+	o.UV		= Input.UV;
+
+#ifdef D3D_EFFECT
+	o.Pos.xy += float2(-1,1) / g_TextureSize;
+#else
+	//o.UV.y = 1 - o.UV.y;
+#endif
+
+    return o;
+}
+
+float GetMax(float lh,float rh)
+{
+	if(lh>=rh)
+		return lh;
+	return rh;
+}
+
+PSOut_Light	ps_main( VSOut_Light Input )
+{
+	PSOut_Light o = (PSOut_Light)0;
+
+	float4	    LightColor = vise_tex2D(Samp_RT_Light, Input.UV);
+
+//	float			AO			= 0;
+//	float			AO			= vise_tex2D(Samp_RT_AO, Input.UV).a;
+//	LightColor = LightColor*(1-AO*g_AOEnable);
+
+	float4		EdgeColor = vise_tex2D(Samp_RT_EdgeDetect, Input.UV);
+
+	float edgeLum = GetMax(EdgeColor.r, EdgeColor.g);
+	edgeLum = GetMax(edgeLum, EdgeColor.b);
+	o.Color.xyz = LightColor * (1-edgeLum) + EdgeColor.xyz;
+
+//	o.Color.xyz = EdgeColor.xyz;
+//	o.Color = LightColor*(1-AO*g_AOEnable);
+	o.Color.w = LightColor.a;
+
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique tech
+{
+	pass p0
+	{
+
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

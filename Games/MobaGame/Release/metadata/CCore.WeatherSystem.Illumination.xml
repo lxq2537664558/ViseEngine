@@ -1,0 +1,27 @@
+<CCore.WeatherSystem.Illumination ClassType="cscommon@CCore.WeatherSystem.Illumination" Ver="0">
+	<Class HashCode="179186075" LastUseTime="2015/12/15 15:18:00">
+		<Property HashCode="-683586435" Type="mscorlib.dll@System.DateTime" Name="SunSetTime"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-1942690293" Type="mscorlib.dll@System.Single" Name="SunAngleOfInclination"/>
+		<Property HashCode="-280422348" Type="mscorlib.dll@System.Double" Name="UpdateMinuteInterval"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="-1936058093" Type="mscorlib.dll@System.Single" Name="SunRiseDirection"/>
+		<Property HashCode="354058088" Type="mscorlib.dll@System.Guid" Name="Id"/>
+		<Property HashCode="1264673615" Type="mscorlib.dll@System.DateTime" Name="SunRiseTime"/>
+		<Property HashCode="-845596328" Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.WeatherSystem.SunProperty]]" Name="SunProertiesByHour"/>
+	</Class>
+	<Class HashCode="-1524086263" LastUseTime="2015/12/19 9:31:06">
+		<Property HashCode="-683586435" Type="mscorlib.dll@System.DateTime" Name="SunSetTime"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-1942690293" Type="mscorlib.dll@System.Single" Name="SunAngleOfInclination"/>
+		<Property HashCode="-280422348" Type="mscorlib.dll@System.Double" Name="UpdateMinuteInterval"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="-1936058093" Type="mscorlib.dll@System.Single" Name="SunRiseDirection"/>
+		<Property HashCode="354058088" Type="mscorlib.dll@System.Guid" Name="Id"/>
+		<Property HashCode="1264673615" Type="mscorlib.dll@System.DateTime" Name="SunRiseTime"/>
+		<Property HashCode="-845596328" Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.WeatherSystem.SunProperty]]" Name="SunProertiesByHour"/>
+		<Property HashCode="2029089033" Type="cscommon@CCore.Light.EShadowType" Name="StoreSunShadowType"/>
+		<Property HashCode="-1752980553" Type="mscorlib.dll@System.Guid" Name="SunActorId"/>
+	</Class>
+</CCore.WeatherSystem.Illumination>
+

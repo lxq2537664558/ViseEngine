@@ -1,0 +1,11 @@
+<Technique Name="UITech_add" Ver="11" AlphaRef="0" CullMode="CCW" ZDisable="1" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="0" StencilCmp="Always" StencilRef="1" StencilMask="4294967295" StencilWriteMask="4294967295" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="8709397e-8484-4843-95fa-0bf5b1b89bd4" Id="9dd53117-db72-4db1-86ff-b128363cc0fc" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<GDiffuseTexture Type="texture" Value="Texture\checker.tga"/>
+		<RotCenter Type="float2" Value="0,0"/>
+		<Scale Type="float2" Value="1,1"/>
+		<RotSpeed Type="float1" Value="0"/>
+		<BackColor Type="float4" Value="0,0,0,0"/>
+		<Opacity Type="float1" Value="1"/>
+	</ShaderVar>
+</Technique>
+

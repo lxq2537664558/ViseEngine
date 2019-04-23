@@ -1,0 +1,1064 @@
+/*function
+<?xml version="1.0" encoding="utf-16"?>
+<Function>
+  <Func0 Name="Clamp" Description="将指定值转换到min和max范围" Path="函数.Clamp">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="min"/>
+	<Param2 Type="float" Name="max"/>
+	<Param3 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func0>
+  <Func1 Name="FMod" Description="返回x/y的余数" Path="函数.FMod">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="y"/>
+	<Param2 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="BlingSpec" Description="Bling式高光" Path="函数.BlingSpec">
+    <Param>
+	<Param0 Type="float4" Name="flo4"/>
+	<Param1 Type="float" Name="intensity"/>
+	<Param2 Type="float" Name="powIn"/>
+	<Param3 Type="float4" Name="worldPos"/>
+	<Param4 Type="float4" Name="worldNorm"/>
+	<Param5 Type="float3" Name="LP"/>
+	<Param6 Type="float" Name="BlingSpec" Attribute="out"/>
+    </Param>
+	 </Func1>
+  <Func1 Name="PolarCoodP2D" Description="把极坐标展成直角坐标" Path="函数.PolarCoodP2D">
+    <Param>
+	<Param0 Type="float2" Name="uv"/>
+	<Param1 Type="float2" Name="outuv" Attribute="out"/>
+    </Param>
+	 </Func1>
+	   <Func1 Name="PolarCoodD2P" Description="把极坐标展成直角坐标" Path="函数.PolarCoodD2P">
+    <Param>
+	<Param0 Type="float2" Name="uv"/>
+	<Param1 Type="float2" Name="outuv" Attribute="out"/>
+    </Param>
+	</Func1>
+	 <Func1 Name="Vortex" Description="产生漩涡的效果" Path="函数.Vortex">
+    <Param>
+	<Param0 Type="float2" Name="uv"/>
+	<Param1 Type="float" Name="degree"/>
+	<Param2 Type="float2" Name="outuv" Attribute="out"/>
+    </Param>
+	 </Func1>
+   <Func1 Name="CartoonColorFliter" Description="卡通颜色过滤" Path="函数.CartoonColorFliter">
+	  <Param>
+	<Param0 Type="float4" Name="InColor"/>
+	<Param1 Type="float" Name="steps"/>	
+	<Param2 Type="float" Name="threshold"/>	
+	<Param3 Type="float4" Name="CartoonColorFliter" Attribute="out"/>
+   </Param>
+  </Func1>
+  <Func1 Name="FMod4D" Description="返回x/y的余数" Path="函数.FMod4D">
+    <Param>
+	<Param0 Type="float4" Name="x"/>
+	<Param1 Type="float4" Name="y"/>
+	<Param2 Type="float4" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="ModF" Description="将值差分为整数部分和小数部分" Path="函数.ModF">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ip" Attribute="out"/>
+	<Param2 Type="float" Name="fp" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="ACos" Description="获取输入值的反余弦" Path="函数.ACos">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="ASin" Description="获取输入值的反正弦" Path="函数.ASin">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="ATan" Description="获取输入值的反正切" Path="函数.ATan">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="ATan2" Description="获取x、y输入值的反正切" Path="函数.ATan2">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="y"/>
+	<Param2 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Ceil" Description="获取大于或等于输入值的最小整数" Path="函数.Ceil">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Cos" Description="获取输入值的余弦" Path="函数.Cos">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Sin" Description="获取输入值的正弦" Path="函数.Sin">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Tan" Description="获取输入值的正切" Path="函数.Tan">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="SinCos" Description="获取输入值的正弦和余弦" Path="函数.SinCos">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="sin" Attribute="out"/>
+	<Param2 Type="float" Name="cos" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Sqrt" Description="获取输入值的平方根" Path="函数.Sqrt">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="RSqrt" Description="获取输入值的平方根的倒数" Path="函数.RSqrt">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Reflect3D" Description="使用入射向量和法线获取反射向量" Path="函数.Reflect3D">
+    <Param>
+	<Param0 Type="float3" Name="v1"/>
+	<Param1 Type="float3" Name="normal"/>
+	<Param2 Type="float3" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Cross3D" Description="返回两个向量的叉乘值" Path="函数.Cross3D">
+    <Param>
+	<Param0 Type="float3" Name="v1"/>
+	<Param1 Type="float3" Name="v2"/>
+	<Param2 Type="float3" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Dot2D" Description="返回两个向量的点乘值" Path="函数.Dot2D">
+    <Param>
+	<Param0 Type="float2" Name="v1"/>
+	<Param1 Type="float2" Name="v2"/>
+	<Param2 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Dot3D" Description="返回两个向量的点乘值" Path="函数.Dot3D">
+    <Param>
+	<Param0 Type="float3" Name="v1"/>
+	<Param1 Type="float3" Name="v2"/>
+	<Param2 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Exp" Description="返回e的指定次幂 e^x" Path="函数.Exp">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Exp2" Description="返回2的指定次幂 2^x" Path="函数.Exp2">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Floor" Description="返回小于或等于指定值得最大整数" Path="函数.Floor">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Frac" Description="返回指定数值大于或等于0并且小于1的整数或小数部分" Path="函数.Frac">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Pow" Description="返回v1的v2次方" Path="函数.Pow">
+    <Param>
+	<Param0 Type="float" Name="v1"/>
+	<Param1 Type="float" Name="v2"/>
+	<Param2 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Lerp" Description="返回在v1和v2中按照s的值线性插值" Path="函数.Lerp">
+    <Param>
+	<Param0 Type="float" Name="v1"/>
+	<Param1 Type="float" Name="v2"/>
+	<Param2 Type="float" Name="s"/>
+	<Param3 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Lerp2D" Description="返回在v1和v2中按照s的值线性插值" Path="函数.Lerp2D">
+    <Param>
+	<Param0 Type="float2" Name="v1"/>
+	<Param1 Type="float2" Name="v2"/>
+	<Param2 Type="float" Name="s"/>
+	<Param3 Type="float2" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Lerp3D" Description="返回在v1和v2中按照s的值线性插值" Path="函数.Lerp3D">
+    <Param>
+	<Param0 Type="float3" Name="v1"/>
+	<Param1 Type="float3" Name="v2"/>
+	<Param2 Type="float" Name="s"/>
+	<Param3 Type="float3" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Saturate" Description="返回0和1之间的值" Path="函数.Saturate">
+    <Param>
+	<Param0 Type="float" Name="x"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="SmoothStep" Description="根据s返回min和max之间的埃尔米特插值" Path="函数.SmoothStep">
+    <Param>
+	<Param0 Type="float" Name="minvalue"/>
+	<Param1 Type="float" Name="maxvalue"/>
+	<Param2 Type="float" Name="s"/>
+	<Param3 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Luminance4" Description="计算输入颜色的亮度值" Path="函数.Luminance4">
+    <Param>
+	<Param0 Type="float4" Name="color"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Luminance3" Description="计算输入颜色的亮度值" Path="函数.Luminance3">
+    <Param>
+	<Param0 Type="float3" Name="color"/>
+	<Param1 Type="float" Name="ret" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="SampSceneCapture1" Description="获取场景捕获的贴图1" Path="函数.SampSceneCapture1">
+    <Param>
+        <Param0 Type="float2" Name="uv"/>
+        <Param1 Type="float4" Name="color" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="SampSceneCapture2" Description="获取场景捕获的贴图2" Path="函数.SampSceneCapture2">
+    <Param>
+        <Param0 Type="float2" Name="uv"/>
+        <Param1 Type="float4" Name="color" Attribute="out"/>
+      </Param>
+  </Func1>
+  <Func1 Name="SampSceneCapture3" Description="获取场景捕获的贴图3" Path="函数.SampSceneCapture3">
+    <Param>
+        <Param0 Type="float2" Name="uv"/>
+        <Param1 Type="float4" Name="color" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="SampSceneCapture4" Description="获取场景捕获的贴图4" Path="函数.SampSceneCapture4">
+    <Param>
+        <Param0 Type="float2" Name="uv"/>
+        <Param1 Type="float4" Name="color" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="SampSceneCapture5" Description="获取场景捕获的贴图5" Path="函数.SampSceneCapture5">
+    <Param>
+        <Param0 Type="float2" Name="uv"/>
+        <Param1 Type="float4" Name="color" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="AnimateUV" Description="序列帧节点。'time'-完成播放使用的时间；'duration'-播放的频率；'framecount'-序列图的行数和列数。" Path="函数.AnimateUV">
+    <Param>
+	<Param0 Type="float" Name="time"/>
+	<Param1 Type="float" Name="duration"/>
+	<Param2 Type="float2" Name="frameCount"/>
+	<Param3 Type="float2" Name="uv"/>
+	<Param4 Type="float2" Name="finalUV" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="SubUV" Description="随机播放序列图中的某一帧。'index'-连'particleframe'节点，然后在粒子发射器中指定随机的区间；'frameCount'-当前序列图的帧数。" Path="函数.SubUV">
+    <Param>
+	<Param0 Type="float" Name="index"/>
+	<Param1 Type="float" Name="frameCount"/>
+	<Param2 Type="float2" Name="uv"/>
+	<Param3 Type="float2" Name="finalUV" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="UnpackNormal" Description="把法线拆包。" Path="函数.UnpackNormal">
+    <Param>
+	<Param0 Type="float4" Name="packedNormal"/>
+	<Param1 Type="float3" Name="normal" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="Distortion" Description="扭曲背景。'strength'-扭曲的力度；'transparency'扭曲的透明度；'distortionOffset'-用tex的alpha来扭曲背景。" Path="函数.Distortion">
+    <Param>
+	<Param0 Type="float4" Name="localPos"/>
+	<Param1 Type="float4" Name="localNorm"/>
+	<Param2 Type="float4" Name="viewPos"/>
+	<Param3 Type="float4" Name="projPos"/>
+	<Param4 Type="float3" Name="localCameraPos"/>
+	<Param5 Type="float" Name="strength"/>
+	<Param6 Type="float" Name="transparency"/>
+	<Param7 Type="float" Name="distortionOffset"/>
+	<Param8 Type="float2" Name="distortionUV" Attribute="out"/>
+	<Param9 Type="float" Name="distortionAlpha" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="Distortion2" Description="扭曲背景新的节点。'strength'-扭曲的力度；'transparency'扭曲的透明度；'distortionOffset'-用tex的alpha来扭曲背景。" Path="函数.Distortion2">
+    <Param>
+	<Param0 Type="float4" Name="localPos"/>
+	<Param1 Type="float4" Name="localNorm"/>
+	<Param2 Type="float4" Name="viewPos"/>
+	<Param3 Type="float4" Name="projPos"/>
+	<Param4 Type="float" Name="strength"/>
+	<Param5 Type="float" Name="transparency"/>
+	<Param6 Type="float" Name="distortionOffset"/>
+	<Param7 Type="float4" Name="distortionColor" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="ScreenPos" Description="取屏幕的位置。" Path="函数.ScreenPos">
+    <Param>
+	<Param0 Type="float4" Name="projPos"/>
+	<Param1 Type="float2" Name="screenPos" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="PreFrameWorldYBias" Description="取上一帧世界坐标Y高度的差。" Path="函数.PreFrameWorldYBias">
+    <Param>
+	<Param0 Type="float4" Name="projPos"/>
+	<Param2 Type="float" Name="worldYBias" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="PreFrameDepthBias" Description="取上一帧深度的差。" Path="函数.PreFrameDepthBias">
+    <Param>
+	<Param0 Type="float4" Name="projPos"/>
+	<Param2 Type="float" Name="depthBias" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="ZDisableDepthBiasAlpha" Description="取上一帧Z覆盖的深度差。'dist'-表示小于赋予值的范围都会覆盖上去。" Path="函数.ZDisableDepthBiasAlpha">
+    <Param>
+	<Param0 Type="float4" Name="projPos"/>
+	<Param1 Type="float" Name="alpha"/>
+	<Param1 Type="float" Name="dist"/>
+	<Param2 Type="float" Name="outAlpha" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="DepthBiasAlpha" Description="与地面接触的地方，alpha值会淡出为0。'alphaDistance'-赋予一个float1，表示从该高度到地面的alpha为0-1的衰减；'alpha'输入想淡出的图像的alpha值。" Path="函数.DepthBiasAlpha">
+    <Param>
+	<Param0 Type="float4" Name="projPos"/>
+	<Param1 Type="float" Name="alphaDistance"/>
+	<Param2 Type="float" Name="alpha" Attribute="out"/>
+    </Param>
+  </Func1>  
+  <Func1 Name="Rotator" Description="顺时针或者逆时针旋转tex。'center'旋转的中心点位置；'scale'-贴图的缩放比；'speed'旋转速度。" Path="函数.Rotator">
+    <Param>
+        <Param0 Type="float2" Name="uv"/>
+        <Param1 Type="float" Name="time"/>
+        <Param2 Type="float2" Name="center"/>
+        <Param3 Type="float2" Name="scale"/>
+        <Param4 Type="float" Name="speed"/>
+        <Param5 Type="float2" Name="outUV" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="Panner" Description="给贴图一个位移。'speed'位移的速度；'scale'贴图的缩放比。" Path="函数.Panner">
+    <Param>
+        <Param0 Type="float2" Name="uv"/>
+        <Param1 Type="float" Name="time"/>
+        <Param2 Type="float2" Name="speed"/>
+        <Param3 Type="float2" Name="scale"/>
+        <Param4 Type="float2" Name="outUV" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="RimLight" Description="给模型添加一个从边缘到中心衰减的光，'rimStart'-最中心的alpha值；'rimEnd'边缘的alpha值；'rimColor'透明颜色的输入值；" Path="函数.RimLight">
+    <Param>
+        <Param0 Type="float3" Name="localPos"/>
+        <Param1 Type="float3" Name="localNormal"/>
+        <Param2 Type="float" Name="rimStart"/>
+        <Param3 Type="float" Name="rimEnd"/>
+        <Param4 Type="float4" Name="rimColor"/>
+        <Param5 Type="float" Name="rimMultiply"/>
+        <Param6 Type="float4" Name="outColor" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="RimLightBloom" Description="效果同RimLight,并且增加了勾边的bloom属性。'isRimBloom'-是否开启bloom光。" Path="函数.RimLightBloom">
+    <Param>
+        <Param0 Type="float3" Name="localPos"/>
+        <Param1 Type="float3" Name="localNormal"/>
+        <Param2 Type="float" Name="rimStart"/>
+        <Param3 Type="float" Name="rimEnd"/>
+        <Param4 Type="float4" Name="rimColor"/>
+        <Param5 Type="float" Name="rimMultiply"/>
+        <Param6 Type="float4" Name="objColor"/>
+        <Param7 Type="int" Name="isRimBloom"/>
+        <Param8 Type="float4" Name="outColor" Attribute="out"/>
+        <Param9 Type="float" Name="outBloom" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="VecMultiplyQuat" Description="" Path="函数.VecMultiplyQuat">
+    <Param>
+        <Param0 Type="float3" Name="vec"/>
+        <Param1 Type="float4" Name="quat"/>
+        <Param2 Type="float3" Name="outVector" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="VecMulMatrix" Description="" Path="函数.VecMulMatrix">
+    <Param>
+        <Param0 Type="float4" Name="vec"/>
+        <Param1 Type="float4x4" Name="mat"/>
+        <Param2 Type="float4" Name="outVector" Attribute="out"/>
+    </Param>
+  </Func1>
+  <Func1 Name="NormalMap" Description="使输出效果带有法线贴图的凹凸质感。'viewTangent'-输入'LoaclTangent'；'mviewNormal(float4)'；输入'mViewVertexNormal(float4)'；'resultViewNormal'输出连接到'mViewVertexNormal'。" Path="函数.NormalMap">
+    <Param>
+        <Param0 Type="float3" Name="viewTangent"/>
+        <Param1 Type="float3" Name="viewNormal"/>
+        <Param2 Type="float3" Name="bump"/>
+        <Param3 Type="float4" Name="resultViewNormal" Attribute="out"/>
+    </Param>
+  </Func1>
+</Function>
+*/
+
+#ifndef _COMMON_FUNCTION_
+#define _COMMON_FUNCTION_
+#define PI 3.1415926
+
+#include "VInc.fxx"
+
+
+void Clamp( float x, float min, float max, out float ret )
+{
+	ret = clamp( x, min, max );
+}
+
+void FMod( float x, float y, out float ret )
+{
+	ret = fmod(x, y);
+}
+
+void FMod4D( float4 x, float4 y, out float4 ret )
+{
+	ret = fmod(x, y);
+}
+
+void ModF( float x, out float ip, out float fp )
+{
+	fp = modf(x, ip);
+}
+
+void ACos( float x, out float ret )
+{
+	ret = acos(x);
+}
+
+void ASin( float x, out float ret )
+{
+	ret = asin(x);
+}
+
+void ATan( float x, out float ret )
+{
+	ret = atan(x);
+}
+
+void ATan2( float x, float y, out float ret )
+{
+	ret = atan2(x, y);
+}
+
+void Ceil( float x, out float ret )
+{
+	ret = ceil(x);
+}
+
+void Cos( float x, out float ret )
+{
+	ret = cos(x);
+}
+
+void Sin( float x, out float ret )
+{
+	ret = sin(x);
+}
+
+void Tan( float x, out float ret )
+{
+	ret = tan(x);
+}
+
+void SinCos( float x, out float sin, out float cos )
+{
+	sincos(x,sin,cos);
+}
+
+void Sqrt( float x, out float ret )
+{
+	ret = sqrt(x);
+}
+
+void RSqrt( float x, out float ret )
+{
+	ret = rsqrt(x);
+}
+
+void Reflect3D( float3 v1, float3 normal, out float3 ret )
+{
+	ret = reflect(v1, normal);
+}
+
+void Cross3D( float3 v1, float3 v2, out float3 ret )
+{
+	ret = cross(v1, v2);
+}
+
+void Dot2D( float2 v1, float2 v2, out float ret )
+{
+	ret = dot(v1, v2);
+}
+
+void Dot3D( float3 v1, float3 v2, out float ret )
+{
+	ret = dot(v1, v2);
+}
+
+void Exp( float x, out float ret )
+{
+	ret = exp(x);
+}
+
+void Exp2( float x, out float ret )
+{
+	ret = exp2(x);
+}
+
+void Floor( float x, out float ret )
+{
+	ret = floor(x);
+}
+
+void Frac( float x, out float ret )
+{
+	ret = frac(x);
+}
+
+void Pow( float v1, float v2, out float ret )
+{
+	ret = pow(v1,v2);
+}
+
+void Lerp( float v1, float v2, float s , out float ret )
+{
+	ret = lerp(v1, v2,s);
+}
+
+void Lerp2D( float2 v1, float2 v2, float s , out float2 ret )
+{
+	ret = lerp(v1, v2,s);
+}
+
+void Lerp3D( float3 v1, float3 v2, float s , out float3 ret )
+{
+	ret = lerp(v1, v2,s);
+}
+
+void Saturate( float x, out float ret )
+{
+	ret = saturate(x);
+}
+
+void SmoothStep( float minvalue, float maxvalue, float s , out float ret )
+{
+	ret = smoothstep(minvalue, maxvalue,s);
+}
+
+
+void Luminance3( float3 color , out float ret  )
+{
+	const float3 RGB_TO_LUM = float3(0.2126f, 0.7152f, 0.0722f);
+	ret = dot(color, RGB_TO_LUM);
+}
+
+void SampSceneCapture1(float2 uv, out float4 color)
+{
+	color = vise_tex2D(Samp_g_SceneCapture1, uv);
+}
+
+void SampSceneCapture2(float2 uv, out float4 color)
+{
+	color = vise_tex2D(Samp_g_SceneCapture2, uv);
+}
+
+void SampSceneCapture3(float2 uv, out float4 color)
+{
+	color = vise_tex2D(Samp_g_SceneCapture3, uv);
+}
+void SampSceneCapture4(float2 uv, out float4 color)
+{
+	color = vise_tex2D(Samp_g_SceneCapture4, uv);
+}
+void SampSceneCapture5(float2 uv, out float4 color)
+{
+	color = vise_tex2D(Samp_g_SceneCapture5, uv);
+}
+
+void AnimateUV( float time, float duration , float2 frameCount, float2 uv, out float2 finalUV )
+{
+    float2 FrameStep = 1/frameCount;
+
+    float timeElapsedPercent = fmod((time/duration),1);
+//    float timeElapsedPercent = fmod(time, duration)/duration;
+	float2 currFrame;
+	float fCurrFrame = timeElapsedPercent * frameCount.x * frameCount.y;
+	currFrame.x = (int)( modf( fCurrFrame / frameCount.x, currFrame.y )*frameCount.x );
+	finalUV = (currFrame+uv) * FrameStep;
+}
+
+void SubUV( float index, float frameCount, float2 uv, out float2 finalUV )
+{
+    float FrameStep = 1/frameCount;
+
+	float currFrame;
+	float percent = index/frameCount;
+	float temp;
+	percent = modf( percent, temp ); 
+//	percent = fmod(index, frameCount);
+	currFrame = percent * frameCount;
+	finalUV.x = (currFrame+uv.x) * FrameStep;
+	finalUV.y = uv.y;
+}
+
+void UnpackNormal( float4 packedNormal, out float3 normal )
+{
+	float3 temp = packedNormal.xyz * 2 - 1;
+	// normalmap存储的法向量方向是朝向Z的， 这里转换成朝向y
+	normal = float3( temp.x, temp.z, temp.y );
+}
+
+void ScreenPos( float4 projPos, out float2 screenPos )
+{
+	screenPos = projPos.xy / projPos.w;
+	screenPos = (screenPos+1)*0.5;
+	screenPos.y = 1-screenPos.y;   // uv坐标相反
+
+	screenPos.x += 1.0f/g_ViewPortW*0.5f;
+	screenPos.y += 1.0f/g_ViewPortH*0.5f;
+}
+
+void Distortion( float4 localPos, float4 localNorm, float4 viewPos, float4 projPos, float3 localCameraPos, float strength, float transparency, float distortionOffset, out  float2 distortionUV, out float distortionAlpha) 
+{
+	float3 localViewDir = normalize(localCameraPos - localPos.xyz);
+	float NdotV = dot(localNorm.xyz, localViewDir);
+	float depth = viewPos.z + 1;
+
+	float distortion = abs((NdotV / depth)*strength);
+	distortionAlpha = distortion / transparency;
+
+	// 计算当前顶点在屏幕Texture上的uv坐标
+	float2 screenPos;
+	ScreenPos(projPos, screenPos);
+	distortionUV = screenPos + distortionOffset * distortion; // 扰动uv
+}
+
+void Distortion2( float4 localPos, float4 localNorm, float4 viewPos, float4 projPos, float strength, float transparency, float distortionOffset, out  float4 distortionColor) 
+{
+	float3 localViewDir = normalize(g_CameraPositionInModel - localPos.xyz);
+	float NdotV = dot(localNorm.xyz, localViewDir);
+	float depth = viewPos.z + 1;
+
+	float distortion = abs((NdotV / depth)*strength);
+
+	// 计算当前顶点在屏幕Texture上的uv坐标
+	float2 screenPos;
+	ScreenPos(projPos, screenPos);
+	float2 distortionUV = screenPos + distortionOffset * distortion; // 扰动uv
+
+	distortionColor.rgb = vise_tex2D(Samp_g_PreFrameBuffer, distortionUV).rgb;
+	distortionColor.a = distortion / transparency;
+
+}
+
+float4	CalcWorldPosition(float4 PosProj, float vDepth)
+{
+	// Position
+	float4 VPos = PosProj;
+	VPos.xy /= VPos.ww;
+	VPos.z = vDepth;
+	VPos.w = 1.0f;
+	// Inverse ViewProjection Matrix
+	VPos = mul(VPos, g_ViewProjectionInverse);
+	VPos.xyz /= VPos.www;
+	VPos.w = 1.0f;
+	return VPos;
+}
+
+void PreFrameWorldYBias(float4 projPos, out float worldYBias)
+{
+	float2 screenPos;
+	ScreenPos(projPos, screenPos);
+	float sceneDepth = vise_tex2D(Samp_g_PreFrameDepth, screenPos);
+
+	float3 worldPos1 = mul(projPos, g_ViewProjectionInverse);
+	float3 worldPos2 = CalcWorldPosition(projPos, sceneDepth);
+
+	worldYBias = worldPos1.y - worldPos2.y; // 当前顶点和场景的worldY差}
+}
+
+float4	CalcViewPosition(float4 PosProj, float vDepth)
+{
+	// Position
+	float4 VPos = PosProj;
+	VPos.xy /= VPos.ww;
+	VPos.z = vDepth;
+	VPos.w = 1.0f;
+	// Inverse Projection Matrix
+	VPos = mul(VPos, g_ProjectionInverse);
+	VPos.xyz /= VPos.www;
+	VPos.w = 1.0f;
+	return VPos;
+}
+
+void PreFrameDepthBias(float4 projPos, out float depthBias)
+{
+	float2 screenPos;
+	ScreenPos(projPos, screenPos);
+	float sceneDepth = vise_tex2D(Samp_g_PreFrameDepth, screenPos);
+
+	float3 viewPos1 = mul(projPos, g_ProjectionInverse);
+	float3 viewPos2 = CalcViewPosition(projPos, sceneDepth);
+
+	depthBias = viewPos1.z - viewPos2.z; // 当前顶点和场景的深度差}
+}
+
+void ZDisableDepthBiasAlpha(float4 projPos, float alpha, float dist, out float outAlpha)
+{
+	float depthBias = 0;
+	PreFrameDepthBias(projPos, depthBias);
+
+	outAlpha = 0;
+	if(depthBias<=dist)
+	{
+		outAlpha = alpha;
+	}
+}
+
+void DepthBiasAlpha( float4 projPos, float alphaDistance, out float alpha )
+{
+	/*
+	alpha = 1;
+	float depthBias = 0;
+	PreFrameDepthBias(projPos, depthBias);
+
+	if(depthBias>=0)
+	{
+		alpha = 1;
+	}
+	else
+	{
+		alpha = smoothstep(0, 1, abs(depthBias) / alphaDistance);
+	}
+	*/
+
+	float depthBias = 0;
+	PreFrameDepthBias(projPos, depthBias);
+	depthBias = abs(depthBias);
+	float s = alphaDistance - depthBias;
+	if( s <= 0 )
+	{
+		alpha = 1;
+	}
+	else
+	{
+		if(alphaDistance == 0)
+			alpha = 1;
+		else
+			alpha = lerp(0, 1, depthBias / alphaDistance);
+	}
+
+}
+
+void Panner(float2 uv, float time, float2 speed, float2 scale, out float2 outUV)
+{
+	float2 uvTrans = time * speed;
+
+	//matrix <float, 4, 4> scaleM = {
+	float4x4 scaleM = {
+		1.0f, 0.0f, 0.0f, 0.0f, // row 1
+		0.0f, 1.0f, 0.0f, 0.0f, // row 2
+		0.0f, 0.0f, 1.0f, 0.0f, // row 3
+		0.0f, 0.0f, 0.0f, 1.0f, // row 4
+	};
+
+	if(scale.x==0 || scale.y==0)
+	{
+		outUV = uv;
+	}
+	else
+	{
+
+		scaleM[0][0] = 1 / scale.x;
+		scaleM[1][1] = 1 / scale.y;
+		// Skip matrix concat since first matrix update
+		scaleM[3][0] = (-0.5f * scaleM[0][0]) + 0.5f;
+		scaleM[3][1] = (-0.5f * scaleM[1][1]) + 0.5f;
+
+		//matrix <float, 4, 4> trans = {
+		float4x4 trans = {
+			1.0f, 0.0f, 0.0f, 0.0f, // row 1
+			0.0f, 1.0f, 0.0f, 0.0f, // row 2
+			0.0f, 0.0f, 1.0f, 0.0f, // row 3
+			0.0f, 0.0f, 0.0f, 1.0f, // row 4
+		};
+
+		trans[3][0] = uvTrans.x;
+		trans[3][1] = uvTrans.y;
+
+		float4 inUV = { uv.x, uv.y, 1.0f, 1.0f };
+		inUV = mul(inUV, scaleM);
+		outUV = mul(inUV, trans);
+	}
+}
+
+void Rotator(float2 uv, float time, float2 center, float2 scale, float speed, out float2 outUV)
+{
+	float angle = time * speed;
+
+	//matrix <float, 4, 4> scaleM = {
+	float4x4 scaleM = {
+		1.0f, 0.0f, 0.0f, 0.0f, // row 1
+		0.0f, 1.0f, 0.0f, 0.0f, // row 2
+		0.0f, 0.0f, 1.0f, 0.0f, // row 3
+		0.0f, 0.0f, 0.0f, 1.0f, // row 4
+	};
+
+	scaleM[0][0] = 1 / scale.x;
+	scaleM[1][1] = 1 / scale.y;
+	// Skip matrix concat since first matrix update
+	scaleM[3][0] = (-0.5f * scaleM[0][0]) + 0.5f;
+	scaleM[3][1] = (-0.5f * scaleM[1][1]) + 0.5f;
+
+	//matrix <float, 4, 4> trans = {
+	float4x4 trans = {
+		1.0f, 0.0f, 0.0f, 0.0f, // row 1
+		0.0f, 1.0f, 0.0f, 0.0f, // row 2
+		0.0f, 0.0f, 1.0f, 0.0f, // row 3
+		0.0f, 0.0f, 0.0f, 1.0f, // row 4
+	};
+
+	trans[3][0] = center.x;
+	trans[3][1] = center.y;
+
+	//matrix <float, 4, 4> rot = { 
+	float4x4 rot = { 
+		1.0f, 0.0f, 0.0f, 0.0f, // row 1
+		0.0f, 1.0f, 0.0f, 0.0f, // row 2
+		0.0f, 0.0f, 1.0f, 0.0f, // row 3
+		0.0f, 0.0f, 0.0f, 1.0f, // row 4
+	};
+
+	float theta = radians(angle);
+	float cosTheta = cos(theta);
+	float sinTheta = sin(theta);
+
+
+	rot[0][0] = cosTheta;
+	rot[1][0] = -sinTheta;
+	rot[0][1] = sinTheta;
+	rot[1][1] = cosTheta;
+
+	rot[3][0] = 0.5f + ((-0.5f * cosTheta) - (-0.5f * sinTheta));
+	rot[3][1] = 0.5f + ((-0.5f * sinTheta) + (-0.5f * cosTheta));
+
+
+	float4 inUV = { uv.x, uv.y, 1.0f, 1.0f };
+	inUV = mul(inUV, scaleM);
+	inUV = mul(inUV, trans);
+	outUV = mul(inUV, rot);
+}
+
+void RimLight( float3 localPos, float3 localNormal, float rimStart, float rimEnd, float4 rimColor, float rimMultiply, out float4 outColor )
+{
+	float l = length(localNormal);
+	if(l==0)
+	{
+		outColor = float4(0,0,0,0);
+		return;
+	}
+    float3 N = normalize(localNormal);
+    float3 V = normalize(g_CameraPositionInModel - localPos);
+    float rim = smoothstep(rimStart, rimEnd, 1- dot(N,V));
+
+    outColor = rim* rimMultiply * rimColor;
+}
+
+void Luminance4( float4 color , out float ret  )
+{
+	const float3 RGB_TO_LUM = float3(0.2126f, 0.7152f, 0.0722f);
+	float3 color3 = color.rgb;
+	ret = dot(color3, RGB_TO_LUM);
+}
+
+void RimLightBloom( float3 localPos, float3 localNormal, float rimStart, float rimEnd, float4 rimColor, float rimMultiply, float4 objColor, int isRimBloom, out float4 outColor, out float outBloom )
+{
+	float l = length(localNormal);
+	float3 N = normalize(localNormal);
+    float3 V = normalize(g_CameraPositionInModel - localPos);
+    
+	float rim = smoothstep(rimStart, rimEnd, 1- dot(N,V));
+
+    float4 borderColor = rim* rimMultiply * rimColor;
+
+	outBloom = 0;
+	if(isRimBloom>0)
+	{
+		float lum = 0;
+		Luminance4( borderColor, lum );
+		outBloom = lum;
+
+		outColor = borderColor + objColor;
+	}
+	else
+	{
+		float objLum = 0;
+		Luminance4( objColor, objLum );
+		float t = objLum;
+		//if(t<0.07)
+		//	t = 0.07 + t;
+		outColor = borderColor * t + objColor;
+	}
+}
+
+void VecMultiplyQuat(float3 vec, float4 quat, out float3 outVector)
+{
+	float3 uv = cross(quat.xyz, vec);
+	float3 uuv = cross(quat.xyz, uv);
+	uv = uv * (2.0f * quat.w);
+	uuv *= 2.0f;
+	
+	outVector = vec + uv + uuv;
+}
+
+void VecMulMatrix(float4 vec, float4x4 mat, out float4 outVector)
+{
+	outVector = mul(vec, mat);
+}
+
+void NormalMap(float3 viewTangent, float3 viewNormal, float3 bump, out float4 resultViewNormal)
+{
+	float3 binormal = cross(viewTangent, viewNormal);
+    float3x3 tbn = float3x3(viewTangent, binormal, viewNormal);
+
+	bump = normalize( ( bump * 2.0f ) - 1.0f );
+	resultViewNormal = float4(mul(bump, tbn),1);
+}
+
+void BlingSpec(float4 flo4 , float intensity , float powIn , float4 worldNorm , float4 worldPos , float3 LP ,  out float BlingSpec)
+{
+	float texlum;
+	Luminance4(flo4 , texlum);
+	float3 LightVec= LP - worldPos.xyz;
+	float3 ViewVec = g_CameraPositionInModel - worldPos.xyz ;
+	float3 VLn = normalize(ViewVec + LightVec);
+	float VLdN;
+	VLdN = dot(VLn, worldNorm);
+	BlingSpec = pow(VLdN , powIn) * texlum ;
+}
+
+float3 smoothstep3D(float3 InColor )
+{	
+	float3 OutColor ;
+	OutColor.x = smoothstep( 0 , 1 , InColor.x );
+	OutColor.y = smoothstep( 0 , 1 , InColor.y );
+	OutColor.z = smoothstep( 0 , 1 , InColor.z );
+	return OutColor ;
+}
+
+float3 floor3D(float3 InColor)
+{
+	float3 OutColor;
+	OutColor.x = floor(InColor.x);
+	OutColor.y = floor(InColor.y);
+	OutColor.z = floor(InColor.z);
+	return OutColor;
+}
+
+//void CartoonColorFliter(float4 InColor, float steps, float threshold , out float4 OutColor )
+//{		
+//	InColor = (InColor+1)/2 ;
+//	float3 colorRGB; 
+//	colorRGB = smoothstep3D ( InColor.xyz );
+//	float3 toon = floor3D((colorRGB * steps) / steps);
+//	OutColor = (lerp( colorRGB , toon , threshold ),InColor.w);
+//}
+
+void PolarCoodP2D(float2 uv,out float2 polar)
+{
+	float a,b,x,y;
+	x = uv.x ;
+	y = 1 - uv.y ;
+	a = 0.5-y*0.5/1*sin(x*2*3.1415926/1);
+	b = 0.5+y*0.5/1*cos(x*2*3.1415926/1);
+	polar.x = a;
+	polar.y = b;
+}
+
+void PolarCoodD2P(float2 uv,out float2 polar)
+{
+	float pi;
+	pi = 3.1415926;
+	float alpha;
+	float a,b,x,y,x1,y1,r1,r2;
+	x = uv.x ;
+	y = 1 - uv.y ;
+	a = y - 0.5;
+	b = 0.5 - x;
+	alpha = atan(b/a);
+	if( a<=0 )
+		alpha = alpha + pi;
+	if( a>0 && b<=0 )
+		alpha = alpha + 2*pi;
+	r1 = (b/sin(alpha)) ;
+	y1 = r1*2;
+	x1 = alpha * 1 /( 2*pi);
+	x = x1;
+	y = y1;
+	polar.x = x;
+	polar.y = y;
+}
+
+void Vortex(float2 uv, float degree , out float2 VortexUV)
+{
+	float pi;
+	pi = 3.1415926;
+	float alpha;
+	float a,b,x,y,x1,y1,r;
+	x = uv.x ;
+	y = 1 - uv.y ;
+	a = y - 0.5;
+	b = 0.5 - x;
+	if(a==0)
+	{
+		a = 0+0.0001;
+		alpha = atan(b/a);
+	}
+	if(a<0)
+		alpha = alpha + pi;
+	if(a>0)
+		alpha = pi/2;
+	r = sqrt(a*a+b*b);
+	alpha = alpha + r/degree;
+	x = r * cos(degree);
+	y = r * sin(degree);
+	x = x + 0.5;
+	y = 0.5 - y;
+	VortexUV.x = x;
+	VortexUV.y = y;
+}
+
+#endif

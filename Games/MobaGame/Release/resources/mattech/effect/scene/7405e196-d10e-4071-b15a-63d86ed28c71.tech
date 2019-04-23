@@ -1,0 +1,9 @@
+<Technique Name="Ð¡Ë®¾§ºì" Ver="27" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="1a0ab9e0-5a63-44c7-8cfa-7aff12f41537" Id="7405e196-d10e-4071-b15a-63d86ed28c71" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_79b48bfe_1489_4d71_93ab_cd37ce1f1d8d EditorType="Texture" Type="texture" Value="resources/texture/effect/object/crystalred.png"/>
+		<ShaderVar_RimColor EditorType="Color" Type="float4" Value="1,1,1,1"/>
+		<ShaderVar_5b0d0269_b041_4b7d_be50_55e79d53dbbd EditorType="Texture" Type="texture" Value="resources/texture/effect/fire/T_Rescue_Fire_Rolling.png"/>
+		<ShaderVar_rimcolor EditorType="Vector" Type="float4" Value="0.45,0.08,0.22,1"/>
+	</ShaderVar>
+</Technique>
+

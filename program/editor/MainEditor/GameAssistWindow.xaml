@@ -1,0 +1,414 @@
+﻿<Window x:Name="window" x:Class="MainEditor.GameAssistWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+        xmlns:ctrlLib="clr-namespace:EditorControlLib;assembly=EditorControlLib"
+        xmlns:TypeEditors="clr-namespace:WPG.Themes.TypeEditors;assembly=WPG"
+        xmlns:editorControlLib="clr-namespace:EditorControlLib;assembly=EditorControlLib"
+        xmlns:local="clr-namespace:MainEditor"
+        mc:Ignorable="d"
+        Title="GameAssistWindow" WindowStyle="None" ResizeMode="NoResize" AllowsTransparency="True" Background="{x:Null}" Foreground="White" BorderThickness="7" SizeToContent="WidthAndHeight" Closing="Window_Closing" MouseDown="Window_MouseDown" MouseMove="Window_MouseMove" MouseUp="Window_MouseUp" ShowInTaskbar="False" Focusable="False" ShowActivated="False" Activated="Window_Activated" Deactivated="Window_Deactivated" LocationChanged="Window_LocationChanged">
+    <Window.Resources>
+        <Style x:Key="ContextMenu_Default" TargetType="{x:Type ContextMenu}">
+            <Setter Property="OverridesDefaultStyle" Value="True"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Background" Value="#00000000"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ContextMenu}">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="3" Margin="6">
+                            <Border.Effect>
+                                <DropShadowEffect/>
+                            </Border.Effect>
+                            <Grid ClipToBounds="True" IsItemsHost="True" Margin="2"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ControlTemplate x:Key="ContextMenuItemTemplate" TargetType="{x:Type MenuItem}">
+            <Grid SnapsToDevicePixels="true">
+                <ContentPresenter ContentSource="Header" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
+            </Grid>
+        </ControlTemplate>
+        <Style x:Key="ContextMenuItemStyle" TargetType="{x:Type MenuItem}">
+            <Setter Property="HorizontalContentAlignment" Value="{Binding HorizontalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="VerticalContentAlignment" Value="{Binding VerticalContentAlignment, RelativeSource={RelativeSource AncestorType={x:Type ItemsControl}}}"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template" Value="{DynamicResource ContextMenuItemTemplate}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Window.Effect>
+        <DropShadowEffect/>
+    </Window.Effect>
+    <Border Background="#4C000000" CornerRadius="3">
+        <Grid Margin="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="0"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" >
+                <Rectangle Width="3" Margin="3,5,5,5">
+                    <Rectangle.Fill>
+                        <DrawingBrush TileMode="Tile" Viewbox="0,0,4,4" Viewport="0,0,4,4" ViewportUnits="Absolute" ViewboxUnits="Absolute">
+                            <DrawingBrush.Drawing>
+                                <DrawingGroup>
+                                    <GeometryDrawing Brush="Black" Geometry="M 1 1 L 1 3 L 3 3 L 3 1 z"/>
+                                    <GeometryDrawing Brush="LightGray" Geometry="M 0 0 L 0 2 L 2 2 L 2 0 z"/>
+                                </DrawingGroup>
+                            </DrawingBrush.Drawing>
+                        </DrawingBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+                <Button Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Margin="2" Click="Button_OpenEditor_Click" >
+                    <StackPanel>
+                        <Image Source="/ResourceLibrary;component/Icon/editor.png" Width="32" Height="32" />
+                        <TextBlock Text="打开编辑器" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Path Data="M122.55582,4.5712787 L122.55582,58.280711" Stretch="Fill" Stroke="LightGray" Width="1" Height="48"/>
+                <Button Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Margin="2" Background="{x:Null}" BorderBrush="{x:Null}" ToolTip="点击保存地图，右键详细设置" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Click="Button_SaveWorld_Click">
+                    <Grid>
+                        <StackPanel>
+                            <Image Source="/ResourceLibrary;component/Icon/File/saveMap.png" Width="32" Height="32"/>
+                            <TextBlock Text="保存地图" HorizontalAlignment="Center" Margin="0,0,3,0" />
+                        </StackPanel>
+                        <Path Data="M0,20 L20,0 20,20" Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="5" Stretch="Fill" VerticalAlignment="Bottom" Width="5" StrokeThickness="0"/>
+                    </Grid>
+                    <Button.ContextMenu>
+                        <ContextMenu Style="{StaticResource ContextMenu_Default}" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Placement="Bottom">
+                            <MenuItem Style="{DynamicResource ContextMenuItemStyle}" VerticalAlignment="Stretch">
+                                <MenuItem.Header>
+                                    <Border Background="Gray" CornerRadius="3" BorderBrush="Black" BorderThickness="1" >
+                                        <Border.Effect>
+                                            <DropShadowEffect/>
+                                        </Border.Effect>
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <TextBlock Margin="3" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Text="地图保存设置"/>
+                                            <ListBox x:Name="ListBox_WorldSaveItems" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="2" Grid.Row="1">
+                                                <ListBox.ItemTemplate>
+                                                    <HierarchicalDataTemplate >
+                                                        <Grid >
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="Auto"/>
+                                                                <ColumnDefinition Width="Auto"/>
+                                                                <ColumnDefinition Width="*"/>
+                                                            </Grid.ColumnDefinitions>
+                                                            <CheckBox IsChecked="{Binding Save, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                                            <ctrlLib:CustomTextBlock Text="{Binding Name}" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Column="1" />
+                                                        </Grid>
+                                                    </HierarchicalDataTemplate>
+                                                </ListBox.ItemTemplate>
+                                            </ListBox>
+                                        </Grid>
+                                    </Border>
+                                </MenuItem.Header>
+                            </MenuItem>
+                        </ContextMenu>
+                    </Button.ContextMenu>
+                </Button>
+                <Path Data="M122.55582,4.5712787 L122.55582,58.280711" Stretch="Fill" Stroke="LightGray" Width="1" Height="48"/>
+                <RadioButton Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=RadioToggleButtonStyle}}" BorderThickness="0" Margin="2" GroupName="TransForm" IsChecked="{Binding SelectedMode, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                    <StackPanel Background="{Binding Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type RadioButton}}}">
+                        <Image Source="/ResourceLibrary;component/Icon/select.png" Width="32" Height="32"/>
+                        <TextBlock Text="选择" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton x:Name="RadioButton_Move" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=RadioToggleButtonStyle}}" BorderThickness="0" Margin="2" GroupName="TransForm" 
+                             IsChecked="{Binding MoveMode, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MouseRightButtonDown="RadioButton_Snap_MouseRightButtonDown">
+                    <Grid>
+                        <StackPanel>
+                            <Image Source="/ResourceLibrary;component/Icon/move.png" Width="32" Height="32"/>
+                            <TextBlock Text="平移" HorizontalAlignment="Center" Margin="0,0,3,0" />
+                        </StackPanel>
+                        <Path Data="M0,20 L20,0 20,20" Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="5" Stretch="Fill" VerticalAlignment="Bottom" Width="5" StrokeThickness="0"/>
+                    </Grid>
+                </RadioButton>
+                <Popup x:Name="Popup_Snap" PopupAnimation="Fade" Grid.RowSpan="2" PlacementTarget="{Binding ElementName=RadioButton_Move}" MouseDown="Popup_MouseDown" MouseUp="Popup_MouseUp" MouseMove="Popup_MouseMove" >
+                    <Border Background="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=PanelBackground}}" CornerRadius="3" BorderThickness="1">
+                        <Border.Effect>
+                            <DropShadowEffect/>
+                        </Border.Effect>
+                        <Grid Margin="2,2,2,2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition Width="5"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Rectangle Grid.ColumnSpan="3" Fill="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ControlBackground}}" Grid.Row="1" Grid.RowSpan="2" />
+                            <TextBlock Text="吸附设置" VerticalAlignment="Center" Margin="5,3,0,3" Grid.ColumnSpan="3" />
+                            <Button Grid.ColumnSpan="3" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_WinBtn, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="2" HorizontalAlignment="Right" Click="Button_CloseSnapSet_Click">
+                                <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="10" Height="10">
+                                    <Path Data="M8.625,0 L-0.38280911,9.0078091" Stretch="Fill" Stroke="Red" StrokeThickness="3"/>
+                                    <Path Data="M0.5,0.5 L9.2708581,9.2708581" Stretch="Fill" Stroke="Red" StrokeThickness="3"/>
+                                </Grid>
+                            </Button>
+
+                            <Grid Grid.Row="2" Grid.ColumnSpan="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="36"/>
+                                    <ColumnDefinition Width="36"/>
+                                    <ColumnDefinition Width="36"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                </Grid.ColumnDefinitions>
+                                <ToggleButton x:Name="ToggleButton_Snap_Origin" IsChecked="{Binding SnapOrigin, ElementName=window, Mode=TwoWay}" Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ToggleButtonStyle_Default}}" Width="32" Height="32" Padding="1" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="吸附原点">
+                                    <ToggleButton.Content>
+                                        <Image Source="/ResourceLibrary;component/Icon/Snap/button_snap04.png" Margin="3"></Image>
+                                    </ToggleButton.Content>
+                                </ToggleButton>
+                                <ToggleButton x:Name="ToggleButton_Snap_Vertex" IsChecked="{Binding SnapVertex, ElementName=window, Mode=TwoWay}" Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ToggleButtonStyle_Default}}" Grid.Column="1" Width="32" Height="32" HorizontalAlignment="Center" VerticalAlignment="Center" ToolTip="吸附顶点">
+                                    <ToggleButton.Content>
+                                        <Image Source="/ResourceLibrary;component/Icon/Snap/button_snap03.png" Margin="3"></Image>
+                                    </ToggleButton.Content>
+                                </ToggleButton>
+                                <ToggleButton x:Name="ToggleButton_Snap_Face" IsChecked="{Binding SnapFace, ElementName=window, Mode=TwoWay}" Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ToggleButtonStyle_Default}}" Grid.Column="2" d:LayoutOverrides="HorizontalAlignment" Width="32" Height="32" ToolTip="吸附面">
+                                    <ToggleButton.Content>
+                                        <Image Source="/ResourceLibrary;component/Icon/Snap/button_snap.png" Margin="3"></Image>
+                                    </ToggleButton.Content>
+                                </ToggleButton>
+                                <ToggleButton x:Name="ToggleButton_Snap_Tile" IsChecked="{Binding SnapTile, ElementName=window, Mode=TwoWay}" Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ToggleButtonStyle_Default}}" Grid.Column="3" Height="32" HorizontalAlignment="Center" VerticalAlignment="Center" MinWidth="32" ToolTip="吸附网格">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="/ResourceLibrary;component/Icon/Snap/button_snap02.png" Margin="3" Width="25" Height="25"></Image>
+                                        <editorControlLib:FloatNumericTypeEditor Grid.Column="1" Margin="0,0,2,0" d:LayoutOverrides="Height" VerticalAlignment="Center" NumericObject="{Binding TileDensity, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                                    </Grid>
+                                </ToggleButton>
+                            </Grid>
+                            <TextBlock ScrollViewer.VerticalScrollBarVisibility="Disabled" Text="吸附范围" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBlockStyle_Default}}" Margin="3,0" Grid.Row="1"/>
+                            <Slider x:Name="slider_SnapRadius" Margin="2" Minimum="0.01" Grid.Column="1" Value="{Binding SnapRange, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=SliderStyle_Default}}" SmallChange="0.01" Grid.Row="1"/>
+                            <editorControlLib:FloatNumericTypeEditor Grid.Column="2" Margin="0,0,2,0" d:LayoutOverrides="Height" VerticalAlignment="Center" NumericObject="{Binding Value, ElementName=slider_SnapRadius, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1"/>
+                        </Grid>
+                    </Border>
+                </Popup>
+                <RadioButton x:Name="RadioButton_Rot" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=RadioToggleButtonStyle}}" BorderThickness="0" Margin="2" GroupName="TransForm" 
+                             IsChecked="{Binding RotMode, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MouseRightButtonDown="RadioButton_Rot_MouseRightButtonDown">
+                    <Grid >
+                        <StackPanel>
+                            <Image Source="/ResourceLibrary;component/Icon/rotate.png" Width="32" Height="32"/>
+                            <TextBlock Text="旋转" HorizontalAlignment="Center" Margin="0,0,3,0" />
+                        </StackPanel>
+                        <Path Data="M0,20 L20,0 20,20" Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="5" Stretch="Fill" VerticalAlignment="Bottom" Width="5" StrokeThickness="0"/>
+                    </Grid>
+                </RadioButton>
+                <Popup x:Name="Popup_RotateSet" StaysOpen="True" PlacementTarget="{Binding ElementName=RadioButton_Rot}" MouseDown="Popup_MouseDown" MouseUp="Popup_MouseUp" MouseMove="Popup_MouseMove">
+                    <Border Background="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=PanelBackground}}" CornerRadius="3" BorderBrush="Black" BorderThickness="1" >
+                        <Border.Effect>
+                            <DropShadowEffect/>
+                        </Border.Effect>
+                        <Grid Margin="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="角度锁定设置" VerticalAlignment="Center" Margin="3" />
+                            <Button Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_WinBtn}}" Margin="2" Click="Button_RotSetClose_Click" Grid.Column="1">
+                                <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="10" Height="10" Grid.Row="1">
+                                    <Path Data="M8.625,0 L-0.38280911,9.0078091" Stretch="Fill" Stroke="Red" StrokeThickness="3"/>
+                                    <Path Data="M0.5,0.5 L9.2708581,9.2708581" Stretch="Fill" Stroke="Red" StrokeThickness="3"/>
+                                </Grid>
+                            </Button>
+                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ControlBackground}}"/>
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="67*"/>
+                                </Grid.ColumnDefinitions>
+                                <ToggleButton x:Name="ToggleButton_Snap_Angle" Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ToggleButtonStyle_Default}}" MinWidth="32" 
+                                                        IsChecked="{Binding IsRotSnap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ElementName=window}" Padding="0" Width="24" Height="24" >
+                                    <Image Source="/ResourceLibrary;component/Icon/Snap/Snap_Angle.png" Margin="1" />
+                                </ToggleButton>
+                                <editorControlLib:FloatNumericTypeEditor Grid.Column="1" Margin="0,0,2,0" VerticalAlignment="Center" NumericObject="{Binding RotSnapAngle, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Popup>
+                <RadioButton x:Name="RadioButton_Scale" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=RadioToggleButtonStyle}}" BorderThickness="0" Margin="2" GroupName="TransForm" 
+                             IsChecked="{Binding ScaleMode, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MouseRightButtonDown="RadioButton_Scale_MouseRightButtonDown">
+                    <Grid>
+                        <StackPanel>
+                            <Image Source="/ResourceLibrary;component/Icon/scale.png" Width="32" Height="32"/>
+                            <TextBlock Text="缩放" HorizontalAlignment="Center" Margin="0,0,3,0" />
+                        </StackPanel>
+                        <Path Data="M0,20 L20,0 20,20" Fill="#FFF4F4F5" HorizontalAlignment="Right" Height="5" Stretch="Fill" VerticalAlignment="Bottom" Width="5" StrokeThickness="0"/>
+                    </Grid>
+                </RadioButton>
+                <Popup x:Name="Popup_ScaleSet" StaysOpen="True" PlacementTarget="{Binding ElementName=RadioButton_Scale}" MouseDown="Popup_MouseDown" MouseUp="Popup_MouseUp" MouseMove="Popup_MouseMove">
+                    <Border Background="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=PanelBackground}}" CornerRadius="3" BorderBrush="Black" BorderThickness="1" >
+                        <Border.Effect>
+                            <DropShadowEffect/>
+                        </Border.Effect>
+                        <Grid Margin="2">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Text="缩放锁定设置" VerticalAlignment="Center" Margin="3" />
+                            <Button Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_WinBtn}}" Margin="2" Click="Button_ScaleSetClose_Click" Grid.Column="1">
+                                <Grid VerticalAlignment="Center" HorizontalAlignment="Center" Width="10" Height="10" Grid.Row="1">
+                                    <Path Data="M8.625,0 L-0.38280911,9.0078091" Stretch="Fill" Stroke="Red" StrokeThickness="3"/>
+                                    <Path Data="M0.5,0.5 L9.2708581,9.2708581" Stretch="Fill" Stroke="Red" StrokeThickness="3"/>
+                                </Grid>
+                            </Button>
+                            <Rectangle Grid.Row="1" Grid.ColumnSpan="2" Fill="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ControlBackground}}"/>
+                            <Grid Grid.Row="1" Grid.ColumnSpan="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="67*"/>
+                                </Grid.ColumnDefinitions>
+                                <ToggleButton Margin="2" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ToggleButtonStyle_Default}}" MinWidth="32" 
+                                                        IsChecked="{Binding IsScaleSnap, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, ElementName=window}" Padding="0" Width="24" Height="24" >
+                                    <Image Source="/ResourceLibrary;component/Icon/Snap/Snap_Scale.png" Margin="1" />
+                                </ToggleButton>
+                                <editorControlLib:FloatNumericTypeEditor Grid.Column="1" Margin="0,0,2,0" VerticalAlignment="Center" NumericObject="{Binding ScaleSnap, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Popup>
+                <RadioButton Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=RadioToggleButtonStyle}}" BorderThickness="0" Margin="2" GroupName="AxisMode" IsChecked="{Binding AxisMode_World, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                    <StackPanel>
+                        <Image Source="/ResourceLibrary;component/Icon/world.png" Width="32" Height="32"/>
+                        <TextBlock Text="世界坐标" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=RadioToggleButtonStyle}}" BorderThickness="0" Margin="2" GroupName="AxisMode" IsChecked="{Binding AxisMode_Local, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                    <StackPanel>
+                        <Image Source="/ResourceLibrary;component/Icon/local.png" Width="32" Height="32"/>
+                        <TextBlock Text="本地坐标" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=RadioToggleButtonStyle}}" BorderThickness="0" Margin="2" GroupName="AxisOperationType" IsChecked="{Binding AxisOperationType_MoveObject, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                    <StackPanel>
+                        <Image Source="/ResourceLibrary;component/Icon/moveObj.png" Width="32" Height="32"/>
+                        <TextBlock Text="移动物体" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </RadioButton>
+                <RadioButton Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=RadioToggleButtonStyle}}" BorderThickness="0" Margin="2" GroupName="AxisOperationType" IsChecked="{Binding AxisOperationType_MoveAxis, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" >
+                    <StackPanel>
+                        <Image Source="/ResourceLibrary;component/Icon/moveAxis.png" Width="32" Height="32"/>
+                        <TextBlock Text="移动坐标轴" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </RadioButton>
+                <Path Data="M122.55582,4.5712787 L122.55582,58.280711" Stretch="Fill" Stroke="LightGray" Width="1" Height="48"/>
+                <Button Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" Margin="2" Click="Button_Focus_Click" >
+                    <StackPanel>
+                        <Image Source="/ResourceLibrary;component/Icon/fill.png" Width="32" Height="32" />
+                        <TextBlock Text="聚焦选中对象" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <ToggleButton x:Name="toggleButton" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ToggleButtonStyle_Default}}" BorderThickness="0" Margin="2" >
+                    <Grid>
+                        <StackPanel>
+                            <Image Source="/ResourceLibrary;component/Icon/config.png" Width="32" Height="32"/>
+                            <TextBlock Text="设置" HorizontalAlignment="Center" />
+                        </StackPanel>
+                        <Popup StaysOpen="False" PopupAnimation="Fade" Grid.RowSpan="2" IsOpen="{Binding IsChecked, ElementName=toggleButton, Mode=TwoWay}">
+                            <Border Background="Gray" CornerRadius="3" BorderBrush="Black" BorderThickness="1">
+                                <Border.Effect>
+                                    <DropShadowEffect/>
+                                </Border.Effect>
+                                <StackPanel>
+                                    <Grid >
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="地图显示范围" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="3,0,0,0"/>
+                                        <Slider Style="{DynamicResource {ComponentResourceKey ResourceId=SliderStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"
+					                                    Minimum="1" Value="{Binding NeighborSide, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Maximum="20" Margin="5,0" Grid.Column="1"/>
+                                    </Grid>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="80"/>
+                                            <ColumnDefinition Width="1*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="坐标轴大小" HorizontalAlignment="Right" VerticalAlignment="Center" Padding="3,0,0,0" />
+                                        <Slider x:Name="Slider_3DAxisScaleRate" Style="{DynamicResource {ComponentResourceKey ResourceId=SliderStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"
+                                                Margin="5,0" MinWidth="100" Value="{Binding AxisScaleRate, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Minimum="0.5" Maximum="3" VerticalAlignment="Center" Grid.Column="1"/>
+                                    </Grid>
+                                    <GroupBox Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="2" Header="摄像机">
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"/>
+                                                <ColumnDefinition Width="1*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="Auto"/>
+                                            </Grid.RowDefinitions>
+                                            <Label Content="平移速度" Foreground="White"/>
+                                            <Slider Style="{DynamicResource {ComponentResourceKey ResourceId=SliderStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"
+                                                x:Name="Slider_MoveVRate" Value="{Binding CameraMoveSpdRate, ElementName=window, Mode=TwoWay}" Grid.Column="1" Margin="5,0" MinWidth="100" Maximum="1" Minimum="0.01"/>
+                                            <Label Content="缩放速度" Foreground="White" Grid.Row="1"/>
+                                            <Slider Style="{DynamicResource {ComponentResourceKey ResourceId=SliderStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"
+                                                    x:Name="Slider_ZoomVRate" Value="{Binding CameraZoomSpdRate, ElementName=window, Mode=TwoWay}" Grid.Column="1" Margin="5,0" Grid.Row="1" MinWidth="100" Minimum="0.001" Maximum="0.1"/>
+                                        </Grid>
+                                    </GroupBox>
+                                    <GroupBox Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="2" Header="渲染">
+                                        <StackPanel>
+                                            <RadioButton Content="网格" GroupName="RenderDebug" Foreground="White" IsChecked="{Binding WireFrame, ElementName=window, Mode=TwoWay}" />
+                                            <RadioButton Content="Albedo" GroupName="RenderDebug" Foreground="White" IsChecked="{Binding Albedo, ElementName=window, Mode=TwoWay}" />
+                                            <RadioButton Content="光照" GroupName="RenderDebug" Foreground="White" IsChecked="{Binding Lighting, ElementName=window, Mode=TwoWay}" />
+                                            <RadioButton Content="Shading" GroupName="RenderDebug" Foreground="White" IsChecked="{Binding Shading, ElementName=window, Mode=TwoWay}" />
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <GroupBox Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="2" Header="调试">
+                                        <StackPanel>
+                                            <CheckBox Content="锁定地形摄像机裁剪" Foreground="White" Margin="2" IsChecked="{Binding LockTerrainCulling, ElementName=window, Mode=TwoWay}"/>
+                                            <CheckBox Content="锁定场景摄像机裁剪" Foreground="White" Margin="2" IsChecked="{Binding LockSceneCulling, ElementName=window, Mode=TwoWay}"/>
+                                            <CheckBox Content="锁定阴影摄像机裁剪" Foreground="White" Margin="2" IsChecked="{Binding LockShadowSceneCulling, ElementName=window, Mode=TwoWay}"/>
+                                            <CheckBox Content="显示裁剪包围盒" Foreground="White" Margin="2" IsChecked="{Binding ShowCullingBoundingBox, ElementName=window, Mode=TwoWay}"/>
+                                        </StackPanel>
+                                    </GroupBox>
+                                    <CheckBox Margin="4,4,4,2" Content="鼠标滑过时高亮" Foreground="White" IsChecked="{Binding HighLightWhenMouseOver, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    <CheckBox Margin="4,2" Content="显示地图网格" Foreground="White" IsChecked="{Binding ShowMapGrid, ElementName=window, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                    <ListBox x:Name="ListBox_GameTypeShowItems" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Margin="2">
+                                        <ListBox.ItemTemplate>
+                                            <HierarchicalDataTemplate >
+                                                <Grid >
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <CheckBox IsChecked="{Binding ShowData, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                                    <ctrlLib:CustomTextBlock Text="{Binding ActorTypeName}" HighLightString="{Binding HighLightString}" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBlockStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Column="1" />
+                                                </Grid>
+                                            </HierarchicalDataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
+                                </StackPanel>
+                            </Border>
+                        </Popup>
+                    </Grid>
+                </ToggleButton>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</Window>

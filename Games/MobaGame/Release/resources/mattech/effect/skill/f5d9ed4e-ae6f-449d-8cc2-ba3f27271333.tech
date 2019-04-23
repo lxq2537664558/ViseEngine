@@ -1,0 +1,11 @@
+<Technique Name="±ù³å»÷²¨" Ver="11" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="e40435fa-91f2-4189-b843-19904accd363" Id="f5d9ed4e-ae6f-449d-8cc2-ba3f27271333" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_259db56e_9d77_4957_bf33_d172352761cf EditorType="Texture" Type="texture" Value="resources/texture/effect/ice/iceroad.png"/>
+		<ShaderVar_05e63deb_26c4_4bfc_bb25_e53db1fce3a2 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/equake_ice.png"/>
+		<ShaderVar_3d3083af_9bbc_44ac_a377_08d1d4871a9b EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/ice_shock_mask.png"/>
+		<ShaderVar_d1f996de_c716_499b_96e3_e3823433a94b EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_1b68a08f_eb4e_4a8b_83fb_464d3d1a28ba EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/pulse_mask7.png"/>
+		<ShaderVar_12abfb26_200e_4572_a91c_5938205f9b91 EditorType="Texture" Type="texture" Value="resources/texture/effect/ice/Ice_02A.png"/>
+	</ShaderVar>
+</Technique>
+

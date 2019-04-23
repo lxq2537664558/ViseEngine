@@ -1,0 +1,86 @@
+#include "VInc.fxx"
+#include "inport.dummy"
+
+float2		g_InvScreenSize;
+texture 		RT_SRC;
+sampler2D g_txSRC = sampler_state
+{
+	Texture = <RT_SRC>;
+    MipFilter = POINT;
+    MinFilter = LINEAR;
+    MagFilter = LINEAR;
+    AddressU = CLAMP;
+    AddressV = CLAMP;
+};
+
+float2			g_ScreenLightPos;
+float				g_Density;
+float				g_Decay;
+float				g_Exposure;
+#define NUM_SAMPLES 8
+
+struct VSInput
+{
+	float3 Pos		: LOCALPOS;
+	float2 UV		: DIFFUSEUV;
+};
+VSInput dummyVSIn;
+
+struct VSOutput
+{
+    float4 Pos		: POSITION;
+    float2 UV		: TEXCOORD0;
+};
+struct PSOutput
+{
+    float4	Color	: COLOR0;
+};
+
+VSOutput vs_main( VSInput Input )
+{
+	VSOutput o=(VSOutput)0;
+	o.Pos	= float4(Input.Pos ,1);
+	o.Pos.xy += float2(-1,1) * g_InvScreenSize;
+	o.UV		= Input.UV;
+    return o;
+}
+
+PSOutput	ps_main( VSOutput Input )
+{
+	PSOutput o = (PSOutput)0;
+
+	float2 uv = Input.UV;
+
+	float2 deltaUV = uv - g_ScreenLightPos;
+	deltaUV *= 1.0f/NUM_SAMPLES * g_Density;
+	float4 color = vise_tex2D(g_txSRC, uv);
+	float illuminationDecay = 1.0f;
+	for (int i = 0; i < NUM_SAMPLES; i++)
+	{
+		uv -= deltaUV;
+
+		float4 sample = vise_tex2D(g_txSRC, uv);
+
+		sample *= illuminationDecay;
+		
+		color += sample;
+
+		illuminationDecay *= g_Decay;
+	}
+
+	o.Color = color / NUM_SAMPLES;
+	o.Color = half4( o.Color.xyz * g_Exposure, 1);
+
+	return o;
+}
+
+#ifdef D3D_EFFECT
+technique Blur
+{
+   pass p0
+   {
+		VertexShader = compile vs_3_0 vs_main();
+		PixelShader = compile ps_3_0 ps_main();
+	}
+}
+#endif

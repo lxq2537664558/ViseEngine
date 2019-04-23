@@ -1,0 +1,10 @@
+<Technique Name="ÆÙ²¼" Ver="20" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="a2902096-647f-4561-b967-c6ed37541d97" Id="dafb13a7-8c6c-4a9e-9f85-9791a809d952" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_534ce3fa_09f4_4610_8623_7a62b120affc EditorType="Texture" Type="texture" Value="resources/texture/effect/water/GF_437.png"/>
+		<ShaderVar_bf184138_2101_4e85_84ab_f234e0974ab0 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/Waterfall_Bpart.png"/>
+		<ShaderVar_76abd368_7b52_4583_934e_bf4f48655b41 EditorType="Texture" Type="texture" Value="resources/texture/effect/water/GF_435.png"/>
+		<ShaderVar_d42a2ee8_9546_4892_b407_8ac18bd183ba EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_c1ea40e7_0344_47d9_9970_a7e413bce86b EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+	</ShaderVar>
+</Technique>
+

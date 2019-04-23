@@ -1,0 +1,8 @@
+<Technique Name="°µÉ«²¨ÎÆ" Ver="6" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="RevSubtract" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="0" StencilEnable="1" StencilCmp="Always" StencilRef="17" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="b972a012-2ffe-406c-9ff4-49dbbaf3b5a6" Id="0a11289e-c372-4907-ba2d-e545ffa993b8" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_7ffd16ef_3011_40de_9083_ba9d7b4d2c6a EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_f2cfcbc1_7502_4d9f_a5e4_4d6c7ce8d6df EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/pulse.png"/>
+		<ShaderVar_bef0ac2c_e484_4b5f_b4bf_f9177de25b4e EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/mask_spray.png"/>
+	</ShaderVar>
+</Technique>
+

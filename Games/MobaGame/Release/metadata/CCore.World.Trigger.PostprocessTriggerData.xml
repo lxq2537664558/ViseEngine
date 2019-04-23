@@ -1,0 +1,65 @@
+<CCore.World.Trigger.PostprocessTriggerData ClassType="cscommon@CCore.World.Trigger.PostprocessTriggerData" Ver="0">
+	<Class HashCode="-1365287218" LastUseTime="2015/12/15 15:18:00">
+		<Property HashCode="1182723077" Type="cscommon@CSUtility.Map.Trigger.TriggerData+enProcessType" Name="ProcessType"/>
+		<Property HashCode="1299654956" Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Graphics.PostProcess]]" Name="PostProcesses"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-1075532827" Type="mscorlib.dll@System.Int64" Name="LerpDuration"/>
+		<Property HashCode="1957535250" Type="mscorlib.dll@System.Guid" Name="ProcessDataOnTimer"/>
+		<Property HashCode="-1218529682" Type="mscorlib.dll@System.Guid" Name="OnEnter"/>
+		<Property HashCode="393352768" Type="mscorlib.dll@System.Guid" Name="OnLeave"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="354058088" Type="mscorlib.dll@System.Guid" Name="Id"/>
+		<Property HashCode="1465070141" Type="cscommon@SlimDX.Matrix" Name="TransMatrix"/>
+		<Property HashCode="-302224628" Type="mscorlib.dll@System.Guid" Name="OnTick"/>
+		<Property HashCode="-649185954" Type="mscorlib.dll@System.String" Name="TriggerGroup"/>
+	</Class>
+	<Class HashCode="-682874200" LastUseTime="2015/12/20 18:45:25">
+		<Property HashCode="-1416028274" Type="mscorlib.dll@System.Guid" Name="OnCreate"/>
+		<Property HashCode="1182723077" Type="cscommon@CSUtility.Map.Trigger.TriggerData+enProcessType" Name="ProcessType"/>
+		<Property HashCode="1299654956" Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Graphics.PostProcess]]" Name="PostProcesses"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-1075532827" Type="mscorlib.dll@System.Int64" Name="LerpDuration"/>
+		<Property HashCode="1957535250" Type="mscorlib.dll@System.Guid" Name="ProcessDataOnTimer"/>
+		<Property HashCode="-1218529682" Type="mscorlib.dll@System.Guid" Name="OnEnter"/>
+		<Property HashCode="393352768" Type="mscorlib.dll@System.Guid" Name="OnLeave"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="354058088" Type="mscorlib.dll@System.Guid" Name="Id"/>
+		<Property HashCode="1465070141" Type="cscommon@SlimDX.Matrix" Name="TransMatrix"/>
+		<Property HashCode="-302224628" Type="mscorlib.dll@System.Guid" Name="OnTick"/>
+		<Property HashCode="-649185954" Type="mscorlib.dll@System.String" Name="TriggerGroup"/>
+	</Class>
+	<Class HashCode="-1233141408" LastUseTime="2015/12/25 15:25:52">
+		<Property HashCode="-1416028274" Type="mscorlib.dll@System.Guid" Name="OnCreate"/>
+		<Property HashCode="1182723077" Type="cscommon@CSUtility.Map.Trigger.TriggerData+enProcessType" Name="ProcessType"/>
+		<Property HashCode="637385890" Type="mscorlib.dll@System.UInt16" Name="MonsterCreateTemplateId"/>
+		<Property HashCode="1299654956" Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Graphics.PostProcess]]" Name="PostProcesses"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-1075532827" Type="mscorlib.dll@System.Int64" Name="LerpDuration"/>
+		<Property HashCode="1957535250" Type="mscorlib.dll@System.Guid" Name="ProcessDataOnTimer"/>
+		<Property HashCode="-1218529682" Type="mscorlib.dll@System.Guid" Name="OnEnter"/>
+		<Property HashCode="393352768" Type="mscorlib.dll@System.Guid" Name="OnLeave"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="354058088" Type="mscorlib.dll@System.Guid" Name="Id"/>
+		<Property HashCode="1465070141" Type="cscommon@SlimDX.Matrix" Name="TransMatrix"/>
+		<Property HashCode="-302224628" Type="mscorlib.dll@System.Guid" Name="OnTick"/>
+		<Property HashCode="-649185954" Type="mscorlib.dll@System.String" Name="TriggerGroup"/>
+	</Class>
+	<Class HashCode="358514846" LastUseTime="2016/1/22 15:59:33">
+		<Property HashCode="-1416028274" Type="mscorlib.dll@System.Guid" Name="OnCreate"/>
+		<Property HashCode="1182723077" Type="cscommon@CSUtility.Map.Trigger.TriggerData+enProcessType" Name="ProcessType"/>
+		<Property HashCode="637385890" Type="mscorlib.dll@System.UInt16" Name="MonsterCreateTemplateId"/>
+		<Property HashCode="1299654956" Type="mscorlib.dll@System.Collections.Generic.List`1[[cscommon@CCore.Graphics.PostProcess]]" Name="PostProcesses"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-1075532827" Type="mscorlib.dll@System.Int64" Name="LerpDuration"/>
+		<Property HashCode="1957535250" Type="mscorlib.dll@System.Guid" Name="ProcessDataOnTimer"/>
+		<Property HashCode="-1218529682" Type="mscorlib.dll@System.Guid" Name="OnEnter"/>
+		<Property HashCode="393352768" Type="mscorlib.dll@System.Guid" Name="OnLeave"/>
+		<Property HashCode="1257603129" Type="mscorlib.dll@System.Boolean" Name="Enable"/>
+		<Property HashCode="603747932" Type="mscorlib.dll@System.UInt16" Name="FactionId"/>
+		<Property HashCode="354058088" Type="mscorlib.dll@System.Guid" Name="Id"/>
+		<Property HashCode="1465070141" Type="cscommon@SlimDX.Matrix" Name="TransMatrix"/>
+		<Property HashCode="-302224628" Type="mscorlib.dll@System.Guid" Name="OnTick"/>
+		<Property HashCode="-649185954" Type="mscorlib.dll@System.String" Name="TriggerGroup"/>
+	</Class>
+</CCore.World.Trigger.PostprocessTriggerData>
+

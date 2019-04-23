@@ -1,0 +1,50 @@
+/*Material
+
+<Material Name="法师武器特效冰球" Require="DiffuseUV|LocalNorm|LocalPos" Main="DoMaterial_ee169f18_65fd_42d8_8f7a_b16fe9ea8fd8" ExtendString="" Id="ee169f18-65fd-42d8-8f7a-b16fe9ea8fd8" Ver="5">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="ee169f18-65fd-42d8-8f7a-b16fe9ea8fd8" Id="fb7138a8-30e6-4ad0-b765-387fd2e26e2b" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_d8218f3a_4265_4ad0_b61c_ba857ab81fa5 EditorType="Texture" Type="texture" Value="resources/texture/effect/ice/iceroad.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../shader/function/Common.function"
+
+
+texture ShaderVar_d8218f3a_4265_4ad0_b61c_ba857ab81fa5;
+sampler2D Samp_ShaderVar_d8218f3a_4265_4ad0_b61c_ba857ab81fa5 = sampler_state
+{
+	Texture = <ShaderVar_d8218f3a_4265_4ad0_b61c_ba857ab81fa5>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_ee169f18_65fd_42d8_8f7a_b16fe9ea8fd8(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float3 ShaderVar_db62d22a_202e_4155_a4f4_423ca6e94784 = float3(0,0,0);
+    float3 ShaderVar_ed9bef62_29ba_4246_9fb7_8801384f7709 = float3(0,0,0);
+    float2 ShaderVar_303343cf_2233_4a79_8590_201825a3b9d4 = float2(0.75,1);
+    float4 ShaderVar_eb6eb355_7106_4d7f_9f5a_28c836ab35e4 = float4(0.5,0.95,1.2,1);
+    float1 ShaderVar_2baf36f4_76ca_480e_b28d_bf52653fd6d0 = 1;
+
+
+    ShaderVar_db62d22a_202e_4155_a4f4_423ca6e94784 = pssem.mLocalNorm.xyz;
+    ShaderVar_ed9bef62_29ba_4246_9fb7_8801384f7709 = pssem.mLocalPos.xyz;
+    float4 FuncTempValue_9950c3fc_9158_4eb6_bdcd_5479fa5021bc_6 = float4(0, 0, 0, 0);
+    RimLight(ShaderVar_db62d22a_202e_4155_a4f4_423ca6e94784,ShaderVar_ed9bef62_29ba_4246_9fb7_8801384f7709,ShaderVar_303343cf_2233_4a79_8590_201825a3b9d4.x,ShaderVar_303343cf_2233_4a79_8590_201825a3b9d4.y,(vise_tex2D(Samp_ShaderVar_d8218f3a_4265_4ad0_b61c_ba857ab81fa5,pssem.mDiffuseUV.xy) * ShaderVar_eb6eb355_7106_4d7f_9f5a_28c836ab35e4),ShaderVar_2baf36f4_76ca_480e_b28d_bf52653fd6d0,FuncTempValue_9950c3fc_9158_4eb6_bdcd_5479fa5021bc_6);
+    pssem.mDiffuseColor = FuncTempValue_9950c3fc_9158_4eb6_bdcd_5479fa5021bc_6;
+
+}

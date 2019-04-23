@@ -1,0 +1,11 @@
+<Technique Name="UI不透明材质实例" Ver="4" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="8b9f2585-7c7e-4647-aa80-56145a4e2d9d" Id="6968ae97-95bf-44f7-a58e-fbf12978bf53" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_GDiffuseTexture EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+		<ShaderVar_BackColor EditorType="Color" Type="float4" Value="0,0,0,0"/>
+		<ShaderVar_RotCenter EditorType="Vector" Type="float2" Value="0,0"/>
+		<ShaderVar_Scale EditorType="Vector" Type="float2" Value="1,1"/>
+		<ShaderVar_RotSpeed EditorType="Vector" Type="float1" Value="0"/>
+		<ShaderVar_Opacity EditorType="Vector" Type="float1" Value="1"/>
+	</ShaderVar>
+</Technique>
+

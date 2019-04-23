@@ -1,0 +1,7 @@
+<Technique Name="DecalTechnique" Ver="8" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcColor" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="9e575414-5e2b-4763-b8ae-40589d2b5f6a" Id="dfd9df4b-9626-4a00-aec1-b32de0a56873" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_GDiffuse EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+		<ShaderVar_Bright EditorType="Vector" Type="float1" Value="1"/>
+	</ShaderVar>
+</Technique>
+

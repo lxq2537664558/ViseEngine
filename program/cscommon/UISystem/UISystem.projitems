@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>f1c7d29c-c925-42ed-b7c8-94a1a7cf56a0</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>UISystem</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Assist.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Base.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bind\ControlBindManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bind\UIBind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Bind\WinBase_Bind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Button.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComboBox\ComboBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ComboBox\ComboBoxItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Container\Canvas.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Container\Container.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Container\Grid\DefinitionBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Container\Grid\Grid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Container\Grid\GridLength.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Container\Grid\GridSplitter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Content\ContentControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Content\ContentPresenter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Content\Expander.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Content\ItemsControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Content\ItemsPresenter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Content\ScrollContentPresenter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DefaultValueTemplate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Image.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ImeWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IHotKey.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IKeyboardFocusAble.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\IMouseFocusAble.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Interfaces\ITabAble.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IRender.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Joysticks\Joysticks.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Layout\LayoutManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Layout\LayoutQueue.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UIRenderer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Label.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Layout\Helper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListBox\ListBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ListBox\ListBoxItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MessageBox\MessageBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Message\Keyboard.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Message\Mouse.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Message\RoutedEventArgs.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Panel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Popup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Program.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Progress\ProgressBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RichText\BaseObj.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RichText\Document.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RichText\FragmentObj.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RichText\HyperLinkObj.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RichText\ImgObj.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RichText\LineObj.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RichText\RichTextBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RichText\TextObj.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RichText\WinState_RichText.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scroll\ScrollBar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scroll\ScrollViewer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scroll\Slider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scroll\Thumb.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Scroll\Track.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Shape\Line.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)StackPanel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Table\Table.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Template\ControlTemplate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Template\TemplateMananger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)TextBlock.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ToggleButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Trigger\EventTrigger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Trigger\PropertyTrigger.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Trigger\TriggerAction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Trigger\UITriggerManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UIInterface.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UIReflectionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)UIRenderPipe.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinBase_Command.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinBase_Delegate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinBase_Editor.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinBase_Layout.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinBase_Msg.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinBase_Template.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinControl.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinForm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinMsg.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinRoot.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinState.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinState_Line.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinState_Progress.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinState_Text.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WrapPanel.cs" />
+  </ItemGroup>
+</Project>

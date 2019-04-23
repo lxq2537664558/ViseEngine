@@ -1,0 +1,27 @@
+/*Material
+
+<?xml version="1.0" encoding="utf-16"?>
+<Material Name="UIRectMaterial" Require="DiffuseUV" Main="DoMaterial_018aa8d2_406f_44a9_9db1_c6403338baaa" Id="018aa8d2-406f-44a9-9db1-c6403338baaa" Ver="2">
+  <DefaultTechnique Name="DefaultTech" Ver="3" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" HostMaterialId="018aa8d2-406f-44a9-9db1-c6403338baaa" Id="043bfd57-738a-423a-b3dd-5bc8e84e933b" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="0" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace">
+    <ShaderVar>
+      <BackColor Type="float4" Value="0,0,0,0" />
+    </ShaderVar>
+  </DefaultTechnique>
+</Material>
+*/
+
+
+
+float4 BackColor;
+
+#ifdef ByLayerBased
+void DoMaterial_018aa8d2_406f_44a9_9db1_c6403338baaa(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+
+
+    pssem.mDiffuseColor = BackColor;
+
+}

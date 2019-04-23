@@ -1,0 +1,97 @@
+/*function
+<?xml version="1.0" encoding="utf-16"?>
+<Function>
+  <Func0 Name="CharacterMergePart">
+    <Param>
+	<Param0 Type="float4" Name="InDiffuseColor"/>
+	<Param1 Type="sampler" Name="Samp_Part"/>
+	<Param2 Type="float2" Name="UV"/>
+	<Param2 Type="float2" Name="StartUV"/>
+	<Param2 Type="float2" Name="Size"/>
+	<Param3 Type="float4" Name="DiffuseColor" Attribute="out"/>
+	<Param3 Type="float2" Name="PartUV" Attribute="out"/>
+	<Param3 Type="float1" Name="PartAlpha" Attribute="out"/>
+    </Param>
+  </Func0>
+</Function>
+*/
+
+void CharacterMergePart(float4 InDiffuseColor, sampler2D Samp_Part, float2 UV, float2 StartUV, float2 Size, out float4 DiffuseColor, out float2 PartUV, out float PartAlpha)
+{
+	float2 EndUV = StartUV + Size;
+	PartUV = float2(-1, -1);
+
+	DiffuseColor = 0;
+	PartAlpha = DiffuseColor.a;
+	float4 PartColor = 0;
+	float alpha = 0;
+	// 如果BaseUV在ChestUV范围内，则从Samp_Part中取颜色
+	if (UV.x >= StartUV.x)
+	{
+		if (UV.x <= EndUV.x)
+		{
+			if (UV.y >= StartUV.y)
+			{
+				if (UV.y <= EndUV.y)
+				{
+					PartUV.x = (UV.x - StartUV.x) / Size.x;
+					PartUV.y = (UV.y - StartUV.y) / Size.y;
+					
+					PartColor = vise_tex2D(Samp_Part, PartUV);
+					PartAlpha = PartColor.a;
+					alpha = PartColor.a;
+				}
+			}
+		}
+	}
+
+	DiffuseColor = lerp(InDiffuseColor, PartColor, alpha);
+
+	if (UV.x > EndUV.x)
+	{
+		PartUV.x = -1;
+	}
+	if (UV.y > EndUV.y)
+	{
+		PartUV.y = -1;
+	}
+}
+
+//void CharacterMergePart( sampler2D Samp_Base, sampler2D Samp_Part, float2 UV, float2 StartUV, float2 Size, out float4 DiffuseColor, out float2 PartUV, out float PartAlpha )
+//{
+//	float2 EndUV = StartUV + Size;
+//	PartUV = float2(-1, -1);
+//
+//	// 从Samp_Base中取颜色
+//	DiffuseColor = vise_tex2D(Samp_Base, UV);
+//	PartAlpha = DiffuseColor.a;
+//
+//	// 如果BaseUV在ChestUV范围内，则从Samp_Part中取颜色
+//	if( UV.x >= StartUV.x )
+//	{
+//		if( UV.x <= EndUV.x )
+//		{
+//			if( UV.y >= StartUV.y )
+//			{
+//				if( UV.y <= EndUV.y )
+//				{
+//					PartUV.x = (UV.x - StartUV.x) / Size.x;
+//					PartUV.y = (UV.y - StartUV.y) / Size.y;
+//
+//					float4 PartColor = vise_tex2D( Samp_Part, PartUV );
+//					DiffuseColor.rgb = DiffuseColor.rgb * (1-PartColor.a) + PartColor.rgb * PartColor.a;
+//					PartAlpha = PartColor.a;
+//				}
+//			}
+//		}
+//	}
+//
+//	if( UV.x > EndUV.x )
+//	{
+//		PartUV.x = -1;
+//	}
+//	if( UV.y > EndUV.y )
+//	{
+//		PartUV.y = -1;
+//	}
+//}

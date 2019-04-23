@@ -1,0 +1,33 @@
+﻿<UserControl x:Name="userControl" x:Class="MainEditor.PropertyGrid.ActorSetter"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MainEditor.PropertyGrid"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"	
+             mc:Ignorable="d" d:DesignWidth="300">
+    <Grid x:Name="LayoutRoot" AllowDrop="True" DragEnter="Rectangle_AddUVAnim_DragEnter" DragLeave="Rectangle_AddUVAnim_DragLeave" DragOver="Rectangle_AddUVAnim_DragOver" Drop="Rectangle_AddUVAnim_Drop" Background="#02000000">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox Text="{Binding ActorName, ElementName=userControl}" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=TextBoxStyle_Default}}" IsReadOnly="True" MinWidth="150" IsHitTestVisible="False" VerticalAlignment="Center" Margin="2"/>
+        <Grid Grid.Column="1" Margin="0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="Button_Search" Margin="1" Grid.Column="1" Click="Button_Search_Click" Width="25" Height="25" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0">
+                <Image Source="/ResourceLibrary;component/Icon/search.png" Margin="0"/>
+            </Button>
+            <Button x:Name="Button_Set" Margin="1" Click="Button_Set_Click" Width="25" Height="25" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0">
+                <Image Source="/ResourceLibrary;component/Icon/set.png" Margin="0"/>
+            </Button>
+            <Button x:Name="Button_Delete" Grid.Column="2" Margin="1" Click="Button_Delete_Click" Width="25" Height="25" Style="{DynamicResource {ComponentResourceKey TypeInTargetAssembly={x:Type res:CustomResources}, ResourceId=ButtonStyle_Default}}" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0">
+                <Image Source="/ResourceLibrary;component/Icon/File/delete.png"/>
+            </Button>
+        </Grid>
+    </Grid>
+</UserControl>

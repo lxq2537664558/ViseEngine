@@ -1,0 +1,14 @@
+<FSMGrid Name="Summon">
+	<DefaultState Type="Walk"/>
+	<State Type="Walk" NickName="Walk" BaseType="CSUtility.AISystem.States.Walk">
+		<StatePropertys/>
+	</State>
+	<State Type="Death" NickName="Death" BaseType="CSUtility.AISystem.States.Death">
+		<StatePropertys/>
+	</State>
+	<StateSwitch FromState="Walk" ToState="Walk" NewCurrentState="Walk" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="Walk" NewCurrentState="" NewTargetState=""/>
+	<StateSwitch FromState="Walk" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+	<StateSwitch FromState="Death" ToState="Death" NewCurrentState="Death" NewTargetState=""/>
+</FSMGrid>
+

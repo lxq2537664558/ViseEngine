@@ -1,0 +1,9 @@
+<Technique Name="Å¤¶¯ÉÁµç" Ver="11" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="RevSubtract" BlendSrc="SrcAlpha" BlendDest="One" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="c1cb06d8-e8ea-42fe-9e8c-5b89d273db8e" Id="b343ff98-f5d7-4d52-9b64-2b0fbc191049" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_4294ca34_ece8_47d2_a05e_8d32ecb4b4ce EditorType="Texture" Type="texture" Value="resources/texture/effect/light/2.png"/>
+		<ShaderVar_934cad9b_46e6_4c93_a085_e81bbe4d99a8 EditorType="Texture" Type="texture" Value="resources/texture/effect/light/lightning_Arcs.png"/>
+		<ShaderVar_3b3d9e12_bf25_47d1_ae71_d258f92fb3f5 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_cfd91a35_791c_4a00_9c67_9aa112dc1765 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/suolian_M2.png"/>
+	</ShaderVar>
+</Technique>
+

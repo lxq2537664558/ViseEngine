@@ -1,0 +1,41 @@
+/*Material
+
+<Material Name="213213" Require="DiffuseUV" Main="DoMaterial_0f677c2a_8e6c_4b3c_b143_adae20d4e929" ExtendString="" Id="0f677c2a-8e6c-4b3c-b143-adae20d4e929" Ver="9">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="0f677c2a-8e6c-4b3c-b143-adae20d4e929" Id="833fccda-6c88-44df-8f93-8084cf47bf16" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_9d9e53fc_b9b9_4fce_b2b8_f71e5dd0d911 EditorType="Texture" Type="texture" Value="resources/texture/scene/gmg_landscape_cliff001_id02.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+texture ShaderVar_9d9e53fc_b9b9_4fce_b2b8_f71e5dd0d911;
+sampler2D Samp_ShaderVar_9d9e53fc_b9b9_4fce_b2b8_f71e5dd0d911 = sampler_state
+{
+	Texture = <ShaderVar_9d9e53fc_b9b9_4fce_b2b8_f71e5dd0d911>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_0f677c2a_8e6c_4b3c_b143_adae20d4e929(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float2 ShaderVar_9fb8da5f_9e23_4ce5_b4d4_937cd29ef631 = float2(3.2,3.2);
+
+
+    pssem.mDiffuseColor = vise_tex2D(Samp_ShaderVar_9d9e53fc_b9b9_4fce_b2b8_f71e5dd0d911,(pssem.mDiffuseUV * ShaderVar_9fb8da5f_9e23_4ce5_b4d4_937cd29ef631).xy);
+
+}

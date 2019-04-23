@@ -1,0 +1,16 @@
+<cscommon TypeName="UISystem.WinForm" Id="640ddb7d-b59e-425a-9956-ef8879480cea" Width_Auto="True" Height="1024" Height_Auto="True" BackColor="1D3D3D3" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,1,0,-1">
+	<WinState/>
+	<cscommon TypeName="UISystem.Button" Id="dd3a4814-b277-4c0b-9205-7492a409183e" WinName="win" Width="440" Height="165" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="22,37,0,0">
+		<NormalState UVAnim="05e68dae-511e-49ee-a4f0-dd75356f602b"/>
+		<LightState UVAnim="05e68dae-511e-49ee-a4f0-dd75356f602b" TextOffset="-1,-1"/>
+		<PressState UVAnim="ef79c0f4-3c80-4173-a4d7-ce978ba8ba5d" TextOffset="1,1"/>
+		<DisableState/>
+	</cscommon>
+	<cscommon TypeName="UISystem.Button" Id="8ab4de4c-181b-4a5b-ae17-235e785a312b" WinName="lose" Width="390" Height="286" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
+		<NormalState UVAnim="11eec1c0-3ae0-4fe7-997b-500b7540947c"/>
+		<LightState UVAnim="11eec1c0-3ae0-4fe7-997b-500b7540947c" TextOffset="-1,-1"/>
+		<PressState UVAnim="11eec1c0-3ae0-4fe7-997b-500b7540947c" TextOffset="1,1"/>
+		<DisableState/>
+	</cscommon>
+</cscommon>
+

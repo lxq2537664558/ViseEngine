@@ -1,0 +1,11 @@
+<Technique Name="µØÁÑ²ÄÖÊ" Ver="13" AlphaRef="50" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="3f5ad558-a4b0-4125-895e-9504de367de0" Id="448eb7a4-6dd8-4ae6-a357-8ec0bf02ac63" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_655269fc_0686_4cd4_a2cb_fdde3129e63c EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/lava.png"/>
+		<ShaderVar_035d3a2a_0d15_4af9_a241_eba620d4a784 EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/dark_earth.png"/>
+		<ShaderVar_d31afca3_a3da_40c7_a31c_21550b348cb5 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_70864c53_32a3_4ae8_a785_82e9efc6827b EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/GF_173.png"/>
+		<ShaderVar_3fa8116c_94d4_4de0_ba7e_5aaea3128dda EditorType="Texture" Type="texture" Value="resources/texture/effect/dilie/lava_mask.png"/>
+		<ShaderVar_ad4284a9_5bde_4466_83cf_de9313a41d09 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/3788371711548769713.png"/>
+	</ShaderVar>
+</Technique>
+

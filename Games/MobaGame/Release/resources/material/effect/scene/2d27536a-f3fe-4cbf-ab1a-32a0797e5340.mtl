@@ -1,0 +1,37 @@
+/*Material
+
+<Material Name="»Ø¸´buff" Require="DiffuseUV|LocalNorm|LocalPos" Main="DoMaterial_2d27536a_f3fe_4cbf_ab1a_32a0797e5340" ExtendString="" Id="2d27536a-f3fe-4cbf-ab1a-32a0797e5340" Ver="24">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="2d27536a-f3fe-4cbf-ab1a-32a0797e5340" Id="bd5ee0be-5aeb-4dea-ad75-e1b74fc09993" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar/>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../Shader/function/Common.function"
+
+
+
+#ifdef ByLayerBased
+void DoMaterial_2d27536a_f3fe_4cbf_ab1a_32a0797e5340(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float3 ShaderVar_9427107d_ca0c_42c5_8af6_26d36aa214b1 = float3(0,0,0);
+    float3 ShaderVar_f9fe1e93_ee38_4655_ba3f_83f4a08cb2b9 = float3(0,0,0);
+    float2 ShaderVar_f367cd2b_28ea_41d3_90f0_4bdf7e3bd40c = float2(1,0);
+    float4 ShaderVar_3ab6978e_48d2_4445_92b0_ca447e18a61b = float4(0.1,0.7,0.02,1);
+    float1 ShaderVar_974e2a54_aee5_4391_bff4_2f472ca77f51 = 1;
+    float4 ShaderVar_281e4dda_5a09_494b_93c9_78251689c7c8 = float4(0.01,0.05,0.001,1);
+
+
+    ShaderVar_9427107d_ca0c_42c5_8af6_26d36aa214b1 = pssem.mLocalPos.xyz;
+    ShaderVar_f9fe1e93_ee38_4655_ba3f_83f4a08cb2b9 = pssem.mLocalNorm.xyz;
+    float4 FuncTempValue_3aa87cbe_6cb6_4639_9863_a59c886c76c3_6 = float4(0, 0, 0, 0);
+    RimLight(ShaderVar_9427107d_ca0c_42c5_8af6_26d36aa214b1,ShaderVar_f9fe1e93_ee38_4655_ba3f_83f4a08cb2b9,ShaderVar_f367cd2b_28ea_41d3_90f0_4bdf7e3bd40c.x,ShaderVar_f367cd2b_28ea_41d3_90f0_4bdf7e3bd40c.y,ShaderVar_3ab6978e_48d2_4445_92b0_ca447e18a61b,ShaderVar_974e2a54_aee5_4391_bff4_2f472ca77f51,FuncTempValue_3aa87cbe_6cb6_4639_9863_a59c886c76c3_6);
+    pssem.mDiffuseColor = (FuncTempValue_3aa87cbe_6cb6_4639_9863_a59c886c76c3_6 + ShaderVar_281e4dda_5a09_494b_93c9_78251689c7c8);
+
+}

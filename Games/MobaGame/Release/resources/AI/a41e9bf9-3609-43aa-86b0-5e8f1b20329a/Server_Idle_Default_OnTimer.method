@@ -1,0 +1,71 @@
+<Method ViewBoxMain_X="-178.659606933594" ViewBoxMain_Y="-905.46533203125" ViewBoxMain_Width="2683.73657226563" GUID="00000000-0000-0000-0000-000000000000">
+	<OrigionCtrls>
+		<OrigionCtrl Id="d5132df9-5204-407f-92c9-11aa0cfaaf04"/>
+	</OrigionCtrls>
+	<ChildNodesCtrls>
+		<MethodNode CurrentState="" TargetState="" ChangeToState="" MethodEditType="Default" Useable="False" OverrideAble="True" CallBasePosition="None" UseBaseVisibility="Visible" IsStatic="False" ID="d5132df9-5204-407f-92c9-11aa0cfaaf04" Type="AIEditor.dll@AIEditor.LinkSystem.MethodNode" X="0" Y="0" Params="OnTimer,name:mscorlib.dll@System.String,mscorlib.dll@System.Boolean,game@Server.Hall.ServerStates.Idle,true,false" IsDeleteable="False" Comment="">
+			<ChildNodes>
+				<ParameterControl ID="9ca83631-3d1c-44da-ba36-a2582e576968" Type="AIEditor.dll@CodeDomNode.ParameterControl" X="NaN" Y="NaN" Params="name:mscorlib.dll@System.String" IsDeleteable="True" Comment="">
+					<ChildNodes/>
+					<MoveableChildNodes/>
+					<LinkObjects>
+						<LinkObject ID="fc98f7c3-b024-48ee-a363-466fdaf4dba8">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+					</LinkObjects>
+				</ParameterControl>
+			</ChildNodes>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="b4e51734-3a43-407c-a017-3a69928c1eea">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="d34c3243-5529-477d-b709-b20d76fc79a0">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="5243cfd8-592f-4596-914d-2a6cfc0925eb">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="22e39c5f-b752-4c82-9c55-125f34d479d8">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="f9b77161-f25c-48cd-89c1-3cac4b3eb197">
+					<Link LinkFrom="f9b77161-f25c-48cd-89c1-3cac4b3eb197" LinkTo="8bb36a23-1e62-4dbf-bdb0-395d062dbc45"/>
+				</LinkObject>
+			</LinkObjects>
+		</MethodNode>
+		<PropertyNode ID="7eb05a37-9036-47ce-8a3c-a71e42ac91ef" Type="AIEditor.dll@CodeDomNode.PropertyNode" X="-185.4677734375" Y="164.107269287109" Params="所属角色(读取),Host,CSUtility.AISystem.IStateHost,get;This,Server.Hall.ServerStates.Idle,null,null" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="f2702882-391f-4993-be8c-e35899f8d180">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+			</LinkObjects>
+		</PropertyNode>
+		<MethodInvokeNode ID="86aea850-0de4-4549-b100-8df659ce071c" Type="AIEditor.dll@CodeDomNode.MethodInvokeNode" X="49.3536376953125" Y="253.392974853516" Params="角色对象.攻击.寻找仇恨目标攻击,game@Server.Hall.Role.RoleActor,DoAttackCurTargetAIBehavior,,mscorlib.dll@System.Boolean,Server;Normal,Server.Hall.Role.RoleActor,7eb05a37-9036-47ce-8a3c-a71e42ac91ef,f2702882-391f-4993-be8c-e35899f8d180" IsDeleteable="True" Comment="">
+			<DefaultParamValue/>
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="7aa97b4f-7692-4081-9c5a-233d76b4b2df">CodeGenerateSystem.Base.LinkObjInfo</LinkObject>
+				<LinkObject ID="8bb36a23-1e62-4dbf-bdb0-395d062dbc45">
+					<Link LinkFrom="f9b77161-f25c-48cd-89c1-3cac4b3eb197" LinkTo="8bb36a23-1e62-4dbf-bdb0-395d062dbc45"/>
+				</LinkObject>
+				<LinkObject ID="cf7507d6-7cfc-4437-828e-a1fe0e0f438a">
+					<Link LinkFrom="cf7507d6-7cfc-4437-828e-a1fe0e0f438a" LinkTo="19ffb3cb-c2b1-4b10-97fa-8d839d0fcc55"/>
+				</LinkObject>
+			</LinkObjects>
+		</MethodInvokeNode>
+		<Return ID="84376ffc-fbca-4e32-98d3-359c74b3e92d" Type="AIEditor.dll@CodeDomNode.Return" X="307.389343261719" Y="420.357269287109" Params="" IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="1dd55f44-14b1-4716-b580-38ddd89c7b80">
+					<Link LinkFrom="2bb05561-d0b2-421e-bacf-5c545d025124" LinkTo="1dd55f44-14b1-4716-b580-38ddd89c7b80"/>
+				</LinkObject>
+				<LinkObject ID="19ffb3cb-c2b1-4b10-97fa-8d839d0fcc55">
+					<Link LinkFrom="cf7507d6-7cfc-4437-828e-a1fe0e0f438a" LinkTo="19ffb3cb-c2b1-4b10-97fa-8d839d0fcc55"/>
+				</LinkObject>
+			</LinkObjects>
+		</Return>
+		<Value_Boolean ID="072b1504-1df0-4987-9781-9fe11341a05f" Type="AIEditor.dll@CodeDomNode.Value_Boolean" X="131.496520996094" Y="444.464447021484" Params="True," IsDeleteable="True" Comment="">
+			<ChildNodes/>
+			<MoveableChildNodes/>
+			<LinkObjects>
+				<LinkObject ID="2bb05561-d0b2-421e-bacf-5c545d025124">
+					<Link LinkFrom="2bb05561-d0b2-421e-bacf-5c545d025124" LinkTo="1dd55f44-14b1-4716-b580-38ddd89c7b80"/>
+				</LinkObject>
+			</LinkObjects>
+		</Value_Boolean>
+	</ChildNodesCtrls>
+</Method>
+

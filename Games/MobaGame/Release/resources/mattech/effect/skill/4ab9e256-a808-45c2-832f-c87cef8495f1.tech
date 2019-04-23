@@ -1,0 +1,10 @@
+<Technique Name="±ùÁú¾íÌõ´ø" Ver="7" AlphaRef="0" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="0a90dd39-f43e-4cf6-8f0a-3f0b053c3c3a" Id="4ab9e256-a808-45c2-832f-c87cef8495f1" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_2c5ff68a_e48c_4f37_a182_3525447b7cc4 EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/SF4_dds_0184.png"/>
+		<ShaderVar_90eb8f41_4679_4157_bd92_f6c0b99e81d8 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+		<ShaderVar_adfe9927_a7be_4fdf_bae6_d1b3c38b1932 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_f918f984_6157_485c_bc96_2a6d50aa818b EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/Mask_412.png"/>
+		<ShaderVar_a14d676a_c757_4518_8444_14696fb67045 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/ice_shock_mask.png"/>
+	</ShaderVar>
+</Technique>
+

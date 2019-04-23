@@ -1,0 +1,9 @@
+<Technique Name="·¨Ê¦Ì××°" Ver="72" AlphaRef="20" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyTest" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="1c1023d1-0f98-46db-af2e-3ebad1eab941" Id="d7243f6f-3a24-4277-bcf1-889c30d6a15e" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_80756e86_567f_4c5c_856d_c4a52a4da673 EditorType="Texture" Type="texture" Value="resources/texture/character/wizard/wizard_suit10_01_chest.png"/>
+		<ShaderVar_Scale EditorType="Vector" Type="float2" Value="0.5,1"/>
+		<ShaderVar_Pos EditorType="Vector" Type="float2" Value="0.5,0"/>
+		<ShaderVar_Color EditorType="Vector" Type="float4" Value="0.4,0.85,1,1"/>
+	</ShaderVar>
+</Technique>
+

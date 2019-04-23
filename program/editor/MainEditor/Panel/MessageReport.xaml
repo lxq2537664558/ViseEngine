@@ -1,0 +1,72 @@
+﻿<UserControl x:Name="userControl" x:Class="MainEditor.Panel.MessageReport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MainEditor.Panel"
+             xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"	
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <DataTemplate x:Key="DataTemplate_Item" DataType="local:Message">
+            <Grid d:DesignWidth="142.261" Margin="0,1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="{Binding Icon}" Width="16" Height="16"/>
+                <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="2" Text="{Binding Time}" Foreground="#FF818181"/>
+                <TextBlock Margin="2" Grid.Column="2" VerticalAlignment="Center" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Text="{Binding MessageStr}" Foreground="{Binding MessageBrush}" />
+            </Grid>
+        </DataTemplate>
+        <Image x:Key="InfoImage" Source="/ResourceLibrary;component/Icon/output_info.png" />
+        <Image x:Key="WarningImage" Source="/ResourceLibrary;component/Icon/output_bang.png" />
+        <Image x:Key="ErrorImage" Source="/ResourceLibrary;component/Icon/output_error.png" />
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="ListBox_Messages" VirtualizingPanel.IsVirtualizing="True" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" ItemTemplate="{DynamicResource DataTemplate_Item}" ItemsSource="{Binding Messages, ElementName=userControl}" Grid.Row="1"/>
+        <StackPanel Margin="0" Orientation="Horizontal">
+            <ToggleButton IsChecked="{Binding ShowError, ElementName=userControl, Mode=TwoWay}" Height="20" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/ResourceLibrary;component/Icon/output_error.png" Width="16" Height="16" />
+                    <TextBlock Text="错误" Margin="2,0" VerticalAlignment="Center" Grid.Column="1" />
+                    <TextBlock Text="{Binding ErrorCount, ElementName=userControl, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Grid.Column="2" Margin="2,0"/>
+                </Grid>
+            </ToggleButton>
+            <ToggleButton IsChecked="{Binding ShowWarning, ElementName=userControl, Mode=TwoWay}" Height="20" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/ResourceLibrary;component/Icon/output_bang.png" Width="16" Height="16" />
+                    <TextBlock Text="警告" Margin="2,0" VerticalAlignment="Center" Grid.Column="1" />
+                    <TextBlock Text="{Binding WarningCount, ElementName=userControl, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Grid.Column="2" Margin="2,0"/>
+                </Grid>
+            </ToggleButton>
+            <ToggleButton IsChecked="{Binding ShowInfo, ElementName=userControl, Mode=TwoWay}" Height="20" >
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Source="/ResourceLibrary;component/Icon/output_info.png" Width="16" Height="16" />
+                    <TextBlock Text="消息" Margin="2,0" VerticalAlignment="Center" Grid.Column="1" />
+                    <TextBlock Text="{Binding InfoCount, ElementName=userControl, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Grid.Column="2" Margin="2,0"/>
+                </Grid>
+            </ToggleButton>
+        </StackPanel>
+    </Grid>
+</UserControl>

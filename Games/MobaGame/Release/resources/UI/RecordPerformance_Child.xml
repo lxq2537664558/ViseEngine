@@ -1,0 +1,35 @@
+<cscommon TypeName="UISystem.WinForm" Id="2d99f804-5535-4f94-abc3-edb1d9603ac8" Width="263" Width_Auto="True" Height="120" Height_Auto="True">
+	<WinState/>
+	<cscommon TypeName="UISystem.Container.Grid.Grid" Id="9f6bfe2e-652c-43d3-9497-2ec44d47ef3d" Width="263" Width_Auto="True" Height="120" Height_Auto="True">
+		<WinState/>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="1*"/>
+			<ColumnDefinition Width="1*"/>
+		</Grid.ColumnDefinitions>
+		<cscommon TypeName="UISystem.Image" Id="6c53c4ef-c6c9-4ed7-a4a0-d174d1f65037" Width="133" Width_Auto="True" Height="120" Height_Auto="True" BackColor="7B4FAD79" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HitTestVisible="False">
+			<WinState/>
+		</cscommon>
+		<cscommon TypeName="UISystem.Image" Id="338b2840-4510-4a0b-88bd-24fe08861497" Width="130" Width_Auto="True" Height="120" Height_Auto="True" BackColor="54D1CB60" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" GridColumn="1" HitTestVisible="False">
+			<WinState/>
+		</cscommon>
+		<cscommon TypeName="UISystem.TextBlock" Id="e28f40a1-5267-4886-a752-76ffbc1cb567" WinName="Name" Width="123" Width_Auto="True" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,5,0" Text="Name" FontSize="50">
+			<WinState/>
+			<FontRenderParams>
+				<0 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="None" OutlineThickness="0"/>
+			</FontRenderParams>
+		</cscommon>
+		<cscommon TypeName="UISystem.Button" Id="5ed76247-cd66-405e-913e-6cfa81951c7e" Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,5,0" GridColumn="1" WinButtonClick="game@Client.RecordVManager|DisableOrUseRecordBlur">
+			<NormalState UVAnim="3eb06418-f96e-4a37-b233-ddbc5c906080"/>
+			<LightState TextOffset="-1,-1"/>
+			<PressState UVAnim="021575d1-0d00-4c75-9d3c-b8d7cb803ad6" TextOffset="1,1"/>
+			<DisableState/>
+		</cscommon>
+		<cscommon TypeName="UISystem.TextBlock" Id="793943a7-23ea-4e92-a9d9-3665684165f2" WinName="TextHint" Width="110" Width_Auto="True" Height="30" ForeColor="FFFFFFFF" BackColor="D3D3D3" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5,0,5,0" GridColumn="1" HitTestVisible="False" Text="Enabled" FontSize="30">
+			<WinState/>
+			<FontRenderParams>
+				<0 BLColor="FFFFFFFF" BRColor="FFFFFFFF" TLColor="FFFFFFFF" TRColor="FFFFFFFF" OutlineType="None" OutlineThickness="0"/>
+			</FontRenderParams>
+		</cscommon>
+	</cscommon>
+</cscommon>
+

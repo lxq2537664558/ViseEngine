@@ -1,0 +1,112 @@
+﻿<UserControl x:Name="panelBase" x:Class="NavigationEditor.NavigationPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:WPG="clr-namespace:WPG;assembly=WPG"
+             mc:Ignorable="d" Loaded="NavigationPanel_Loaded">
+    <ScrollViewer Style="{DynamicResource {ComponentResourceKey ResourceId=ScrollViewerStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" VerticalScrollBarVisibility="Auto">
+        <Grid Background="{DynamicResource {ComponentResourceKey ResourceId=PanelBackground, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+    	    <Grid.RowDefinitions>
+    		    <RowDefinition Height="Auto"/>
+    		    <RowDefinition Height="Auto"/>
+    		    <RowDefinition Height="Auto"/>
+			    <RowDefinition Height="Auto"/>
+			    <RowDefinition Height="Auto"/>
+    	    </Grid.RowDefinitions>
+            <GroupBox Header="显示" Margin="2" Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+    		    <Grid>
+    			    <Grid.ColumnDefinitions>
+    				    <ColumnDefinition Width="0.847*"/>
+    				    <ColumnDefinition Width="Auto"/>
+    			    </Grid.ColumnDefinitions>
+    			    <Grid.RowDefinitions>
+    				    <RowDefinition Height="Auto"/>
+    				    <RowDefinition Height="Auto"/>
+					    <RowDefinition Height="Auto"/>
+					    <RowDefinition Height="Auto"/>
+					    <RowDefinition Height="Auto"/>
+    			    </Grid.RowDefinitions>
+                    <Button Content="全部显示" Grid.Column="1" Margin="2" d:LayoutOverrides="Width" Foreground="White" Height="20" Click="Button_ShowAll_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <Button Content="全部不显示" Grid.Column="1" Margin="2" Grid.Row="1" Foreground="White" Height="20" Width="90" Click="Button_HideAll_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+    			    <CheckBox Content="显示生成的寻路" Margin="2" d:LayoutOverrides="Height" VerticalAlignment="Center" Foreground="White" IsChecked="{Binding ShowAutoGenerateNavigation, ElementName=panelBase, Mode=TwoWay}"/>
+    			    <CheckBox Content="显示绘制的寻路" Margin="2" VerticalAlignment="Center" Foreground="White" Grid.Row="1" IsChecked="{Binding ShowManualNavigation, ElementName=panelBase, Mode=TwoWay}"/>
+    			    <CheckBox Content="显示动态阻挡" Margin="2" VerticalAlignment="Center" Foreground="White" Grid.Row="2" IsChecked="{Binding ShowDynamicBlock, ElementName=panelBase, Mode=TwoWay}"/>
+    			    <CheckBox Content="显示寻路路径" Margin="2" VerticalAlignment="Center" Foreground="White" Grid.Row="3" IsChecked="{Binding ShowFindedPathNavigation, ElementName=panelBase, Mode=TwoWay}"/>
+    			    <CheckBox Content="显示路点" Margin="2" VerticalAlignment="Center" Foreground="White" Grid.Row="4" IsChecked="{Binding ShowNavigationPoint, ElementName=panelBase, Mode=TwoWay}"/>
+    		    </Grid>
+    	    </GroupBox>
+            <GroupBox Header="创建" Margin="2" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <WPG:PropertyGrid x:Name="PG_CreateInfo" Margin="1" d:LayoutOverrides="Width" Grid.ColumnSpan="3" ExpanderHeadline="True" Headline="初始化属性"/>
+                    <Button Content="创建寻路网格" Margin="2" Grid.Row="3" d:LayoutOverrides="Height" Grid.ColumnSpan="3" Click="Button_CreateNavigation_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="生成" Margin="2" Grid.Row="2" Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+    		    <Grid>
+    			    <Grid.ColumnDefinitions>
+    				    <ColumnDefinition Width="Auto"/>
+    				    <ColumnDefinition Width="0.826*"/>
+    				    <ColumnDefinition Width="Auto"/>
+    			    </Grid.ColumnDefinitions>
+    			    <Grid.RowDefinitions>
+    				    <RowDefinition Height="Auto"/>
+					    <RowDefinition Height="Auto"/>
+    				    <RowDefinition Height="0.553*"/>
+    			    </Grid.RowDefinitions>
+    			    <TextBlock Margin="2,2,1.999,2" Text="地形阻挡倾斜度(角度)" d:LayoutOverrides="Width" VerticalAlignment="Center"/>
+                    <Slider x:Name="Slider_BlockDelta" Grid.Column="1" Margin="2" Minimum="1" Maximum="89" Value="{Binding TerrainBlockAngleDelta, ElementName=panelBase, Mode=TwoWay}" Style="{DynamicResource {ComponentResourceKey ResourceId=SliderStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <TextBox Grid.Column="2" Margin="2" Text="{Binding Value, ElementName=Slider_BlockDelta, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, StringFormat=00}" d:LayoutOverrides="Height" VerticalAlignment="Center" Width="23" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+    			    <CheckBox Content="清除手绘数据" Margin="2" d:LayoutOverrides="Width, Height" Grid.Row="1" VerticalAlignment="Center" Foreground="White" IsChecked="{Binding ClearManualData, ElementName=panelBase, Mode=TwoWay}"/>
+                    <Button Content="生成寻路网格" Margin="2" Grid.Row="2" d:LayoutOverrides="Height" Grid.ColumnSpan="3" Click="Button_GenerateNavigation_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+    		    </Grid>
+    	    </GroupBox>
+            <GroupBox Header="编辑" Margin="2" Grid.Row="3" d:LayoutOverrides="Height" Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+    		    <Grid>
+    			    <Grid.ColumnDefinitions>
+    				    <ColumnDefinition Width="Auto"/>
+    				    <ColumnDefinition Width="0.55*"/>
+    				    <ColumnDefinition Width="Auto"/>
+    			    </Grid.ColumnDefinitions>
+    			    <Grid.RowDefinitions>
+    				    <RowDefinition Height="Auto"/>
+    				    <RowDefinition Height="Auto"/>
+    				    <RowDefinition Height="Auto"/>
+    				    <RowDefinition Height="0.637*"/>
+    			    </Grid.RowDefinitions>
+                    <ToggleButton Content="编辑寻路网格" Margin="2" d:LayoutOverrides="Width, Height" Grid.ColumnSpan="3" IsChecked="{Binding EnableEdit, ElementName=panelBase, Mode=TwoWay}" Style="{DynamicResource {ComponentResourceKey ResourceId=ToggleButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+    			    <RadioButton Content=" 绘制通过格" Margin="2,2,-29,2" Grid.Row="1" VerticalAlignment="Center" d:LayoutOverrides="Width" GroupName="BrushMode" Checked="Brush_Throught_Checked" IsChecked="True" Foreground="White"/>
+    			    <RadioButton Content=" 绘制阻挡格" Margin="2,2,-29,2" Grid.Row="2" VerticalAlignment="Center" d:LayoutOverrides="Width" GroupName="BrushMode" Checked="Brush_Block_Checked" Foreground="White"/>
+                    <Slider x:Name="Slider_BrushSize" Margin="2" Grid.Row="3" VerticalAlignment="Center" Grid.Column="1" Value="{Binding BrushSize, ElementName=panelBase, Mode=TwoWay}" Maximum="100" Style="{DynamicResource {ComponentResourceKey ResourceId=SliderStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+    			    <TextBlock Margin="2" Grid.Row="3" Text="笔刷大小" d:LayoutOverrides="Width, Height" VerticalAlignment="Center"/>
+                    <TextBox Grid.Column="2" Margin="2" Grid.Row="3" Text="{Binding Value, ElementName=Slider_BrushSize, Mode=TwoWay, StringFormat=000, UpdateSourceTrigger=PropertyChanged}" d:LayoutOverrides="Height" VerticalAlignment="Center" Style="{DynamicResource {ComponentResourceKey ResourceId=TextBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+    		    </Grid>
+    	    </GroupBox>
+            <GroupBox Header="路点" Grid.Row="4" Margin="2" Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}">
+    		    <Grid>
+    			    <Grid.RowDefinitions>
+    				    <RowDefinition Height="Auto"/>
+    				    <RowDefinition Height="Auto"/>
+    				    <RowDefinition Height="Auto"/>
+					    <RowDefinition Height="Auto"/>
+    			    </Grid.RowDefinitions>
+    			    <Grid.ColumnDefinitions>
+    				    <ColumnDefinition Width="0.5*"/>
+    				    <ColumnDefinition Width="0.5*"/>
+    			    </Grid.ColumnDefinitions>
+				    <CheckBox  Margin="2" Content="自动链接最后一个选择的点" Grid.ColumnSpan="2" Foreground="White" IsChecked="{Binding AutoLinkLastSelectedPoint, ElementName=panelBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    <ToggleButton Content="添加路点" Margin="2" IsChecked="{Binding IsAddNavigationPoint, ElementName=panelBase, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey ResourceId=ToggleButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <Button Content="删除路点" Margin="2" Grid.Column="1" Click="Button_RemoveNavigationPoint_Click" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <Button Content="添加链接" Margin="2" Grid.Row="2" Click="Button_AddNavigationLink_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <Button Content="删除链接" Margin="2" Grid.Row="2" Grid.Column="1" Click="Button_RemoveNavigationLink_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <Button Content="自动生成链接" Margin="2" Click="Button_AutoGenerateNavigationPointLink_Click" Grid.Row="3" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}"/> 		
+			    </Grid>
+    	    </GroupBox>
+        </Grid>
+    </ScrollViewer>
+</UserControl>

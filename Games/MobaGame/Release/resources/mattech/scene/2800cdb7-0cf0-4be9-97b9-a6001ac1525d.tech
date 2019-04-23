@@ -1,0 +1,10 @@
+<Technique Name="Ïä×Ó" Ver="3" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="98e4c9bf-0101-4e44-bb7c-cf075e9bd97c" Id="2800cdb7-0cf0-4be9-97b9-a6001ac1525d" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_Vein EditorType="Texture" Type="texture" Value="resources/texture/scene/box_type_03_d.png"/>
+		<ShaderVar_Color EditorType="Color" Type="float4" Value="1,1,1,1"/>
+		<ShaderVar_d2934526_33c3_43ba_add9_147f6ac4e7ae EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+		<ShaderVar_SpecPow EditorType="Vector" Type="float1" Value="0.7"/>
+		<ShaderVar_speed EditorType="Vector" Type="float2" Value="0,0"/>
+	</ShaderVar>
+</Technique>
+

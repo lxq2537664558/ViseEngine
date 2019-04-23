@@ -1,0 +1,12 @@
+<Technique Name="Ìå»ýÎí" Ver="39" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="d62b4e44-062a-4f35-9b8c-b717440ee080" Id="1a8389f0-2f68-4ca1-bd51-30b2f85f84cb" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_0aa1ba89_dd92_4033_b0d4_1b1843698ea3 EditorType="Texture" Type="texture" Value="resources/texture/effect/smoke/smoke_uv.png"/>
+		<ShaderVar_179022ba_9b1f_4bbb_9928_3c4a20bf8361 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_FogDepth EditorType="Vector" Type="float1" Value="8"/>
+		<ShaderVar_4382287d_79a4_4065_8143_d6f002216903 EditorType="Texture" Type="texture" Value="resources/texture/effect/smoke/GF_301.png"/>
+		<ShaderVar_FogColor1 EditorType="Vector" Type="float3" Value="1,1.08,1.15"/>
+		<ShaderVar_FogColor2 EditorType="Vector" Type="float3" Value="1,1.05,1.08"/>
+		<ShaderVar_0e286371_83db_4f76_b41a_58c5c66f808a EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,18 @@
+/*Material
+
+<Material Name="新建材质模板" Require="DiffuseColor|DiffuseUV" Main="DoMaterial_b32d6167_2fe3_4300_a20f_480ef1ac8df3" ExtendString="" Id="b32d6167-2fe3-4300-a20f-480ef1ac8df3" Ver="1">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="b32d6167-2fe3-4300-a20f-480ef1ac8df3" Id="4f5c4143-c397-4729-b0c1-966234db737b" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar/>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#ifdef ByLayerBased
+void DoMaterial_b32d6167_2fe3_4300_a20f_480ef1ac8df3(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{}

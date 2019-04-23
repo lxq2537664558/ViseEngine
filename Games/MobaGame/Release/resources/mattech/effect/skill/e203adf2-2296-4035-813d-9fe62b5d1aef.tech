@@ -1,0 +1,9 @@
+<Technique Name="À©É¢µÄ·ç" Ver="12" AlphaRef="44" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="5988f2b8-1778-4d20-8677-99542c78cd64" Id="e203adf2-2296-4035-813d-9fe62b5d1aef" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_4cc30279_c6ac_4bfa_af7b_08676ca82758 EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/smokeRing_diff.png"/>
+		<ShaderVar_a3bf7d16_6801_488d_bc84_e5a1d94c8853 EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_b025c09a_8333_4d3b_a8f7_4857d579a63c EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_469.png"/>
+		<ShaderVar_6ea08144_924b_451c_b690_3cc2eb971f8a EditorType="Texture" Type="texture" Value="resources/texture/effect/vein/arrowmask.png"/>
+	</ShaderVar>
+</Technique>
+

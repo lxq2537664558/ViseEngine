@@ -1,0 +1,9 @@
+<Server.RegisterServerParameter Ver="4">
+	<LocalNetIp Type="mscorlib.dll@System.String" Value="127.0.0.1"/>
+	<ListenPort Type="mscorlib.dll@System.UInt16" Value="8888"/>
+	<GlobalNetIp Type="mscorlib.dll@System.String" Value="127.0.0.1"/>
+	<ClientListenPort Type="mscorlib.dll@System.UInt16" Value="9998"/>
+	<ServerPortAllocStart Type="mscorlib.dll@System.UInt16" Value="32000"/>
+	<ServerPortAllocEnd Type="mscorlib.dll@System.UInt16" Value="33000"/>
+</Server.RegisterServerParameter>
+

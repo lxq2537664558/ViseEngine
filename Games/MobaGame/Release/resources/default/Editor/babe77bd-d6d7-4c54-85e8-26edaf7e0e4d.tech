@@ -1,0 +1,8 @@
+<Technique Name="±à¼­Æ÷±³¾°²ÄÖÊÊµÀý" Ver="5822" AlphaRef="0" CullMode="CW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="OnlyBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="29dd1539-eb9d-4b18-bb09-be483a4ef8cc" Id="babe77bd-d6d7-4c54-85e8-26edaf7e0e4d" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_e8c3f6fc_6118_4343_b189_08581d362331 EditorType="Texture" Type="texture" Value="resources/default/Editor/texture/EditorBackgroundLerp.png"/>
+		<ShaderVar_bottom EditorType="Color" Type="float4" Value="0,0,0,1"/>
+		<ShaderVar_top EditorType="Color" Type="float4" Value="0.06666667,0.06666667,0.06666667,1"/>
+	</ShaderVar>
+</Technique>
+

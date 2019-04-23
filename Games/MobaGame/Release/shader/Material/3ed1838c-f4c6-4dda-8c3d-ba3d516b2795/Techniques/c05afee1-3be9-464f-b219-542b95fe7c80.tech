@@ -1,0 +1,8 @@
+<Technique Name="Green_Wireframe" Ver="4" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="1" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="0" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="3ed1838c-f4c6-4dda-8c3d-ba3d516b2795" Id="c05afee1-3be9-464f-b219-542b95fe7c80" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<GDiffuse Type="float4" Value="0,1,0,0"/>
+		<GEmissive Type="float4" Value="0,1,0,1"/>
+		<GSpecular Type="float4" Value="0,0,0,0"/>
+	</ShaderVar>
+</Technique>
+

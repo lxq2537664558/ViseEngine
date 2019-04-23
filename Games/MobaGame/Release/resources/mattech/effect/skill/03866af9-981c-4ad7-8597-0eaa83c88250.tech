@@ -1,0 +1,9 @@
+<Technique Name="µ¶¹âÍÏÎ²" Ver="8" AlphaRef="35" CullMode="NONE" ZDisable="0" ZWriteDisable="1" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="TestBlend" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="e1142afc-44b0-45d6-801b-b59cd3d61e3c" Id="03866af9-981c-4ad7-8597-0eaa83c88250" DepthBias="0" SlopeScaleDepthBias="0">
+	<ShaderVar>
+		<ShaderVar_51300f24_1715_4d88_a204_24adc1eb6675 EditorType="Texture" Type="texture" Value="resources/texture/effect/weapontrail/214-1.png"/>
+		<ShaderVar_ad15b32c_2f70_4a91_849f_8a5ae07467de EditorType="Texture" Type="texture" Value="resources/texture/effect/mask/GF_263.png"/>
+		<ShaderVar_93c0a2dc_5e94_49e5_961e_68103878be25 EditorType="Texture" Type="texture" Value="resources/texture/effect/weapontrail/Trail9.png"/>
+		<ShaderVar_12a25cd3_3a62_4437_8dc0_730d7453afe6 EditorType="Texture" Type="texture" Value="resources/texture/effect/trail/wire.png"/>
+	</ShaderVar>
+</Technique>
+

@@ -1,0 +1,798 @@
+/*Material
+
+<Material Name="Ñ°Â·¸¨Öú" Require="DiffuseUV" Main="DoMaterial_23686dd6_2795_4653_b03e_49f5944e1dac" ExtendString="" Id="23686dd6-2795-4653-b03e-49f5944e1dac" Ver="45">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="23686dd6-2795-4653-b03e-49f5944e1dac" Id="0399f4be-975f-4036-9819-3a5bc0f96062" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_DiffuseTexture0 EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+			<ShaderVar_BlockTile EditorType="Texture" Type="texture" Value="resources/default/Editor/texture/PathBlockTile.bmp"/>
+			<ShaderVar_ManualTile EditorType="Texture" Type="texture" Value="resources/default/Editor/texture/PathManualTile.bmp"/>
+			<ShaderVar_DynamicTile EditorType="Texture" Type="texture" Value="resources/default/Editor/texture/PathDynamicTile.bmp"/>
+			<ShaderVar_PathTile EditorType="Texture" Type="texture" Value="resources/default/Editor/texture/PathPathTile.bmp"/>
+			<ShaderVar_TileCount EditorType="Vector" Type="float2" Value="512,512"/>
+			<ShaderVar_ShowDelta0 EditorType="Vector" Type="float4" Value="1,1,1,1"/>
+			<ShaderVar_DiffuseTexture1 EditorType="Texture" Type="texture" Value="resources/default/UVchecker.png"/>
+			<ShaderVar_ShowDelta1 EditorType="Vector" Type="float4" Value="1,1,1,1"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+
+
+texture ShaderVar_DiffuseTexture0;
+sampler2D Samp_ShaderVar_DiffuseTexture0 = sampler_state
+{
+	Texture = <ShaderVar_DiffuseTexture0>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+texture ShaderVar_BlockTile;
+sampler2D Samp_ShaderVar_BlockTile = sampler_state
+{
+	Texture = <ShaderVar_BlockTile>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+texture ShaderVar_ManualTile;
+sampler2D Samp_ShaderVar_ManualTile = sampler_state
+{
+	Texture = <ShaderVar_ManualTile>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+texture ShaderVar_DynamicTile;
+sampler2D Samp_ShaderVar_DynamicTile = sampler_state
+{
+	Texture = <ShaderVar_DynamicTile>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+texture ShaderVar_PathTile;
+sampler2D Samp_ShaderVar_PathTile = sampler_state
+{
+	Texture = <ShaderVar_PathTile>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+float2 ShaderVar_TileCount;
+float4 ShaderVar_ShowDelta0;
+texture ShaderVar_DiffuseTexture1;
+sampler2D Samp_ShaderVar_DiffuseTexture1 = sampler_state
+{
+	Texture = <ShaderVar_DiffuseTexture1>;
+	MipFilter = POINT;
+	MinFilter = POINT;
+	MagFilter = POINT;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = False;
+};
+
+float4 ShaderVar_ShowDelta1;
+
+#ifdef ByLayerBased
+void DoMaterial_23686dd6_2795_4653_b03e_49f5944e1dac(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float4 ShaderVar_DiffuseFinal = float4(0,0,0,0);
+    float4 ShaderVar_DynamicBlock = float4(0,0,0,0);
+    float4 ShaderVar_DiffuseWithShowDelta = float4(0,0,0,0);
+    float4 ShaderVar_DiffuseTexture0_2D = float4(0,0,0,0);
+    float1 ShaderVar_Alpha = 0.5;
+    float1 ShaderVar_640aad32_8d67_45dc_966e_81398ed7644f = 0;
+    float1 Value_1b521861_f7fe_4e1d_a48c_6f5c313b87a6 = 0;
+    float1 ShaderVar_V_0 = 0;
+    float4 ShaderVar_Path = float4(0,0,0,0);
+    float4 ShaderVar_DiffuseWithShowDelta1 = float4(0,0,0,0);
+    float4 ShaderVar_DiffuseTexture1_2D = float4(0,0,0,0);
+    float1 Value_18f620d4_d249_4201_8e95_c56c6eddf7d8 = 0;
+    float4 ShaderVar_ABlockColor = float4(0,0,0,0);
+    float4 ShaderVar_BlockTile_2D = float4(0,0,0,0);
+    float4 ShaderVar_ABlock = float4(0,0,0,0);
+    float1 ShaderVar_Value_0 = 0;
+    float1 Value_a205307c_22af_4905_95fe_ee966022525e = 0;
+    float1 ShaderVar_Value_1 = 1;
+    float1 Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = 0;
+    float4 ShaderVar_MBlockColor = float4(0,0,0,0);
+    float4 ShaderVar_ManualTile_2D = float4(0,0,0,0);
+    float4 ShaderVar_MBlock = float4(0,0,0,0);
+    float4 ShaderVar_BlockShowColor = float4(1,0,0,1);
+    float4 ShaderVar_MThroughColor = float4(0,0,0,0);
+    float4 ShaderVar_MThrough = float4(0,0,0,0);
+    float1 ShaderVar_2b0a2acb_d025_4aca_a07b_69509f4aba6d = 0;
+    float1 Value_199af297_1a88_4b09_a2cb_c8b9b625c5fb = 0;
+    float1 ShaderVar_V0 = 0;
+    float1 Value_333f5fe5_33a0_4916_934f_a318fdd4195f = 0;
+    float4 ShaderVar_ThroughShowColor = float4(0,1,0,1);
+    float4 ShaderVar_DBlockColor = float4(0,0,0,0);
+    float4 ShaderVar_DynamicTile_2D = float4(0,0,0,0);
+    float1 ShaderVar_aae1573c_5900_4186_bde9_cc3fada3bff7 = 0;
+    float1 Value_2641180a_3f89_4bfb_98b5_23272bd033aa = 0;
+    float1 ShaderVar_348640aa_6582_4ce3_983e_adbb6bc58fcd = 1;
+    float4 ShaderVar_48e4e009_20c7_49a9_be1b_3499504f7675 = float4(1,0,1,1);
+    float4 ShaderVar_8c8dd68a_b7de_4b23_9c44_4128b495ded3 = float4(0,1,0.7294118,1);
+    float4 ShaderVar_PathColor = float4(0,0,0,0);
+    float4 ShaderVar_PathTile_2D = float4(0,0,0,0);
+    float1 ShaderVar_Bloom = 0;
+
+
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_DynamicBlock.x = ShaderVar_DiffuseWithShowDelta.w;
+    ShaderVar_DynamicBlock.w = ShaderVar_Alpha;
+    if( ShaderVar_DynamicBlock.x > ShaderVar_640aad32_8d67_45dc_966e_81398ed7644f)
+    {
+        Value_1b521861_f7fe_4e1d_a48c_6f5c313b87a6 = ShaderVar_640aad32_8d67_45dc_966e_81398ed7644f;
+    }
+    else if( ShaderVar_DynamicBlock.x == ShaderVar_640aad32_8d67_45dc_966e_81398ed7644f)
+    {
+        ShaderVar_DiffuseTexture1_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture1,pssem.mDiffuseUV.xy);
+        ShaderVar_DiffuseWithShowDelta1 = (ShaderVar_DiffuseTexture1_2D * ShaderVar_ShowDelta1);
+        ShaderVar_Path.x = ShaderVar_DiffuseWithShowDelta1.x;
+        if( ShaderVar_V_0 > ShaderVar_Path.x)
+        {
+            Value_18f620d4_d249_4201_8e95_c56c6eddf7d8 = ShaderVar_V_0;
+        }
+        else if( ShaderVar_V_0 == ShaderVar_Path.x)
+        {
+            ShaderVar_BlockTile_2D = vise_tex2D(Samp_ShaderVar_BlockTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+            ShaderVar_ABlock.w = ShaderVar_Alpha;
+            ShaderVar_ABlockColor = (ShaderVar_BlockTile_2D * ShaderVar_ABlock);
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+            ShaderVar_ABlock.w = ShaderVar_Alpha;
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+            ShaderVar_ABlock.w = ShaderVar_Alpha;
+            ShaderVar_ABlockColor.w = (ShaderVar_ABlock.x * ShaderVar_ABlock.w);
+            ShaderVar_ManualTile_2D = vise_tex2D(Samp_ShaderVar_ManualTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MBlock.x = ShaderVar_DiffuseWithShowDelta.x;
+            ShaderVar_MBlock.w = ShaderVar_Alpha;
+            ShaderVar_MBlockColor = (ShaderVar_ManualTile_2D * ShaderVar_MBlock);
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MBlock.x = ShaderVar_DiffuseWithShowDelta.x;
+            ShaderVar_MBlock.w = ShaderVar_Alpha;
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MBlock.x = ShaderVar_DiffuseWithShowDelta.x;
+            ShaderVar_MBlock.w = ShaderVar_Alpha;
+            ShaderVar_MBlockColor.w = (ShaderVar_MBlock.x * ShaderVar_MBlock.w);
+            Value_18f620d4_d249_4201_8e95_c56c6eddf7d8 = (ShaderVar_ABlockColor.x + ShaderVar_MBlockColor.x);
+        }
+        else
+        {
+            Value_18f620d4_d249_4201_8e95_c56c6eddf7d8 = ShaderVar_V_0;
+        }
+        Value_1b521861_f7fe_4e1d_a48c_6f5c313b87a6 = Value_18f620d4_d249_4201_8e95_c56c6eddf7d8;
+    }
+    else
+    {
+        ShaderVar_DiffuseTexture1_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture1,pssem.mDiffuseUV.xy);
+        ShaderVar_DiffuseWithShowDelta1 = (ShaderVar_DiffuseTexture1_2D * ShaderVar_ShowDelta1);
+        ShaderVar_Path.x = ShaderVar_DiffuseWithShowDelta1.x;
+        if( ShaderVar_V_0 > ShaderVar_Path.x)
+        {
+            Value_18f620d4_d249_4201_8e95_c56c6eddf7d8 = ShaderVar_V_0;
+        }
+        else if( ShaderVar_V_0 == ShaderVar_Path.x)
+        {
+            ShaderVar_BlockTile_2D = vise_tex2D(Samp_ShaderVar_BlockTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+            ShaderVar_ABlock.w = ShaderVar_Alpha;
+            ShaderVar_ABlockColor = (ShaderVar_BlockTile_2D * ShaderVar_ABlock);
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+            ShaderVar_ABlock.w = ShaderVar_Alpha;
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+            }
+            else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            else
+            {
+                Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+            }
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+            ShaderVar_ABlock.w = ShaderVar_Alpha;
+            ShaderVar_ABlockColor.w = (ShaderVar_ABlock.x * ShaderVar_ABlock.w);
+            ShaderVar_ManualTile_2D = vise_tex2D(Samp_ShaderVar_ManualTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MBlock.x = ShaderVar_DiffuseWithShowDelta.x;
+            ShaderVar_MBlock.w = ShaderVar_Alpha;
+            ShaderVar_MBlockColor = (ShaderVar_ManualTile_2D * ShaderVar_MBlock);
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MBlock.x = ShaderVar_DiffuseWithShowDelta.x;
+            ShaderVar_MBlock.w = ShaderVar_Alpha;
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MBlock.x = ShaderVar_DiffuseWithShowDelta.x;
+            ShaderVar_MBlock.w = ShaderVar_Alpha;
+            ShaderVar_MBlockColor.w = (ShaderVar_MBlock.x * ShaderVar_MBlock.w);
+            Value_18f620d4_d249_4201_8e95_c56c6eddf7d8 = (ShaderVar_ABlockColor.x + ShaderVar_MBlockColor.x);
+        }
+        else
+        {
+            Value_18f620d4_d249_4201_8e95_c56c6eddf7d8 = ShaderVar_V_0;
+        }
+        Value_1b521861_f7fe_4e1d_a48c_6f5c313b87a6 = Value_18f620d4_d249_4201_8e95_c56c6eddf7d8;
+    }
+    if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+    ShaderVar_ABlock.w = ShaderVar_Alpha;
+    ShaderVar_ABlockColor = (ShaderVar_BlockTile_2D * ShaderVar_ABlock);
+    if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+    ShaderVar_ABlock.w = ShaderVar_Alpha;
+    if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+    ShaderVar_ABlock.w = ShaderVar_Alpha;
+    ShaderVar_ABlockColor.w = (ShaderVar_ABlock.x * ShaderVar_ABlock.w);
+    ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+    ShaderVar_MThrough.w = ShaderVar_Alpha;
+    ShaderVar_ManualTile_2D = vise_tex2D(Samp_ShaderVar_ManualTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+    ShaderVar_MThroughColor = (ShaderVar_MThrough * ShaderVar_ManualTile_2D);
+    ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+    ShaderVar_MThrough.w = ShaderVar_Alpha;
+    ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+    ShaderVar_MThrough.w = ShaderVar_Alpha;
+    ShaderVar_MThroughColor.w = (ShaderVar_MThrough.x * ShaderVar_MThrough.w);
+    ShaderVar_BlockShowColor.w = (ShaderVar_ABlockColor.w + ShaderVar_MThroughColor.w);
+    ShaderVar_DynamicBlock.x = ShaderVar_DiffuseWithShowDelta.w;
+    ShaderVar_DynamicBlock.w = ShaderVar_Alpha;
+    if( ShaderVar_DynamicBlock.x > ShaderVar_2b0a2acb_d025_4aca_a07b_69509f4aba6d)
+    {
+        Value_199af297_1a88_4b09_a2cb_c8b9b625c5fb = ShaderVar_2b0a2acb_d025_4aca_a07b_69509f4aba6d;
+    }
+    else if( ShaderVar_DynamicBlock.x == ShaderVar_2b0a2acb_d025_4aca_a07b_69509f4aba6d)
+    {
+        ShaderVar_DiffuseTexture1_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture1,pssem.mDiffuseUV.xy);
+        ShaderVar_DiffuseWithShowDelta1 = (ShaderVar_DiffuseTexture1_2D * ShaderVar_ShowDelta1);
+        ShaderVar_Path.x = ShaderVar_DiffuseWithShowDelta1.x;
+        if( ShaderVar_V0 > ShaderVar_Path.x)
+        {
+            Value_333f5fe5_33a0_4916_934f_a318fdd4195f = ShaderVar_V0;
+        }
+        else if( ShaderVar_V0 == ShaderVar_Path.x)
+        {
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+            ShaderVar_MThrough.w = ShaderVar_Alpha;
+            ShaderVar_ManualTile_2D = vise_tex2D(Samp_ShaderVar_ManualTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+            ShaderVar_MThroughColor = (ShaderVar_MThrough * ShaderVar_ManualTile_2D);
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+            ShaderVar_MThrough.w = ShaderVar_Alpha;
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+            ShaderVar_MThrough.w = ShaderVar_Alpha;
+            ShaderVar_MThroughColor.w = (ShaderVar_MThrough.x * ShaderVar_MThrough.w);
+            Value_333f5fe5_33a0_4916_934f_a318fdd4195f = ShaderVar_MThroughColor.x;
+        }
+        else
+        {
+            Value_333f5fe5_33a0_4916_934f_a318fdd4195f = ShaderVar_V0;
+        }
+        Value_199af297_1a88_4b09_a2cb_c8b9b625c5fb = Value_333f5fe5_33a0_4916_934f_a318fdd4195f;
+    }
+    else
+    {
+        ShaderVar_DiffuseTexture1_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture1,pssem.mDiffuseUV.xy);
+        ShaderVar_DiffuseWithShowDelta1 = (ShaderVar_DiffuseTexture1_2D * ShaderVar_ShowDelta1);
+        ShaderVar_Path.x = ShaderVar_DiffuseWithShowDelta1.x;
+        if( ShaderVar_V0 > ShaderVar_Path.x)
+        {
+            Value_333f5fe5_33a0_4916_934f_a318fdd4195f = ShaderVar_V0;
+        }
+        else if( ShaderVar_V0 == ShaderVar_Path.x)
+        {
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+            ShaderVar_MThrough.w = ShaderVar_Alpha;
+            ShaderVar_ManualTile_2D = vise_tex2D(Samp_ShaderVar_ManualTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+            ShaderVar_MThroughColor = (ShaderVar_MThrough * ShaderVar_ManualTile_2D);
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+            ShaderVar_MThrough.w = ShaderVar_Alpha;
+            ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+            ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+            ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+            ShaderVar_MThrough.w = ShaderVar_Alpha;
+            ShaderVar_MThroughColor.w = (ShaderVar_MThrough.x * ShaderVar_MThrough.w);
+            Value_333f5fe5_33a0_4916_934f_a318fdd4195f = ShaderVar_MThroughColor.x;
+        }
+        else
+        {
+            Value_333f5fe5_33a0_4916_934f_a318fdd4195f = ShaderVar_V0;
+        }
+        Value_199af297_1a88_4b09_a2cb_c8b9b625c5fb = Value_333f5fe5_33a0_4916_934f_a318fdd4195f;
+    }
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+    ShaderVar_MThrough.w = ShaderVar_Alpha;
+    ShaderVar_ManualTile_2D = vise_tex2D(Samp_ShaderVar_ManualTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+    ShaderVar_MThroughColor = (ShaderVar_MThrough * ShaderVar_ManualTile_2D);
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+    ShaderVar_MThrough.w = ShaderVar_Alpha;
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+    ShaderVar_MThrough.w = ShaderVar_Alpha;
+    ShaderVar_MThroughColor.w = (ShaderVar_MThrough.x * ShaderVar_MThrough.w);
+    ShaderVar_ThroughShowColor.w = ShaderVar_MThroughColor.w;
+    ShaderVar_DynamicTile_2D = vise_tex2D(Samp_ShaderVar_DynamicTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_DynamicBlock.x = ShaderVar_DiffuseWithShowDelta.w;
+    ShaderVar_DynamicBlock.w = ShaderVar_Alpha;
+    ShaderVar_DBlockColor = (ShaderVar_DynamicTile_2D * ShaderVar_DynamicBlock);
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_DynamicBlock.x = ShaderVar_DiffuseWithShowDelta.w;
+    ShaderVar_DynamicBlock.w = ShaderVar_Alpha;
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_DynamicBlock.x = ShaderVar_DiffuseWithShowDelta.w;
+    ShaderVar_DynamicBlock.w = ShaderVar_Alpha;
+    if( (ShaderVar_DynamicBlock.x * ShaderVar_DynamicBlock.w) > ShaderVar_aae1573c_5900_4186_bde9_cc3fada3bff7)
+    {
+        Value_2641180a_3f89_4bfb_98b5_23272bd033aa = ShaderVar_348640aa_6582_4ce3_983e_adbb6bc58fcd;
+    }
+    else if( (ShaderVar_DynamicBlock.x * ShaderVar_DynamicBlock.w) == ShaderVar_aae1573c_5900_4186_bde9_cc3fada3bff7)
+    {
+        Value_2641180a_3f89_4bfb_98b5_23272bd033aa = ShaderVar_aae1573c_5900_4186_bde9_cc3fada3bff7;
+    }
+    else
+    {
+        Value_2641180a_3f89_4bfb_98b5_23272bd033aa = ShaderVar_aae1573c_5900_4186_bde9_cc3fada3bff7;
+    }
+    ShaderVar_DBlockColor.w = Value_2641180a_3f89_4bfb_98b5_23272bd033aa;
+    ShaderVar_PathTile_2D = vise_tex2D(Samp_ShaderVar_PathTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+    ShaderVar_PathColor = (ShaderVar_PathTile_2D * ShaderVar_Path);
+    ShaderVar_PathColor.w = (ShaderVar_Path.x * ShaderVar_Path.w);
+    ShaderVar_8c8dd68a_b7de_4b23_9c44_4128b495ded3.w = ShaderVar_PathColor.w;
+    ShaderVar_DiffuseFinal = ((((Value_1b521861_f7fe_4e1d_a48c_6f5c313b87a6 * ShaderVar_BlockShowColor) + (Value_199af297_1a88_4b09_a2cb_c8b9b625c5fb * ShaderVar_ThroughShowColor)) + (ShaderVar_DBlockColor.x * ShaderVar_48e4e009_20c7_49a9_be1b_3499504f7675)) + (ShaderVar_DiffuseWithShowDelta1.x * ShaderVar_8c8dd68a_b7de_4b23_9c44_4128b495ded3));
+    ShaderVar_BlockTile_2D = vise_tex2D(Samp_ShaderVar_BlockTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+    ShaderVar_ABlock.w = ShaderVar_Alpha;
+    ShaderVar_ABlockColor = (ShaderVar_BlockTile_2D * ShaderVar_ABlock);
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+    ShaderVar_ABlock.w = ShaderVar_Alpha;
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    if( ShaderVar_DiffuseWithShowDelta.x > ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.x == ShaderVar_Value_0)
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_a205307c_22af_4905_95fe_ee966022525e = ShaderVar_Value_1;
+    }
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    if( ShaderVar_DiffuseWithShowDelta.y > ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_0;
+    }
+    else if( ShaderVar_DiffuseWithShowDelta.y == ShaderVar_Value_0)
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    else
+    {
+        Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92 = ShaderVar_Value_1;
+    }
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_ABlock.x = ((Value_a205307c_22af_4905_95fe_ee966022525e * Value_7a8ed2df_925e_4550_a7a9_e8ba03688e92) * ShaderVar_DiffuseWithShowDelta.z);
+    ShaderVar_ABlock.w = ShaderVar_Alpha;
+    ShaderVar_ABlockColor.w = (ShaderVar_ABlock.x * ShaderVar_ABlock.w);
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+    ShaderVar_MThrough.w = ShaderVar_Alpha;
+    ShaderVar_ManualTile_2D = vise_tex2D(Samp_ShaderVar_ManualTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+    ShaderVar_MThroughColor = (ShaderVar_MThrough * ShaderVar_ManualTile_2D);
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+    ShaderVar_MThrough.w = ShaderVar_Alpha;
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_MThrough.x = ShaderVar_DiffuseWithShowDelta.y;
+    ShaderVar_MThrough.w = ShaderVar_Alpha;
+    ShaderVar_MThroughColor.w = (ShaderVar_MThrough.x * ShaderVar_MThrough.w);
+    ShaderVar_ManualTile_2D = vise_tex2D(Samp_ShaderVar_ManualTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_MBlock.x = ShaderVar_DiffuseWithShowDelta.x;
+    ShaderVar_MBlock.w = ShaderVar_Alpha;
+    ShaderVar_MBlockColor = (ShaderVar_ManualTile_2D * ShaderVar_MBlock);
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_MBlock.x = ShaderVar_DiffuseWithShowDelta.x;
+    ShaderVar_MBlock.w = ShaderVar_Alpha;
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_MBlock.x = ShaderVar_DiffuseWithShowDelta.x;
+    ShaderVar_MBlock.w = ShaderVar_Alpha;
+    ShaderVar_MBlockColor.w = (ShaderVar_MBlock.x * ShaderVar_MBlock.w);
+    ShaderVar_DynamicTile_2D = vise_tex2D(Samp_ShaderVar_DynamicTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_DynamicBlock.x = ShaderVar_DiffuseWithShowDelta.w;
+    ShaderVar_DynamicBlock.w = ShaderVar_Alpha;
+    ShaderVar_DBlockColor = (ShaderVar_DynamicTile_2D * ShaderVar_DynamicBlock);
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_DynamicBlock.x = ShaderVar_DiffuseWithShowDelta.w;
+    ShaderVar_DynamicBlock.w = ShaderVar_Alpha;
+    ShaderVar_DiffuseTexture0_2D = vise_tex2D(Samp_ShaderVar_DiffuseTexture0,pssem.mDiffuseUV.xy);
+    ShaderVar_DiffuseWithShowDelta = (ShaderVar_DiffuseTexture0_2D * ShaderVar_ShowDelta0);
+    ShaderVar_DynamicBlock.x = ShaderVar_DiffuseWithShowDelta.w;
+    ShaderVar_DynamicBlock.w = ShaderVar_Alpha;
+    if( (ShaderVar_DynamicBlock.x * ShaderVar_DynamicBlock.w) > ShaderVar_aae1573c_5900_4186_bde9_cc3fada3bff7)
+    {
+        Value_2641180a_3f89_4bfb_98b5_23272bd033aa = ShaderVar_348640aa_6582_4ce3_983e_adbb6bc58fcd;
+    }
+    else if( (ShaderVar_DynamicBlock.x * ShaderVar_DynamicBlock.w) == ShaderVar_aae1573c_5900_4186_bde9_cc3fada3bff7)
+    {
+        Value_2641180a_3f89_4bfb_98b5_23272bd033aa = ShaderVar_aae1573c_5900_4186_bde9_cc3fada3bff7;
+    }
+    else
+    {
+        Value_2641180a_3f89_4bfb_98b5_23272bd033aa = ShaderVar_aae1573c_5900_4186_bde9_cc3fada3bff7;
+    }
+    ShaderVar_DBlockColor.w = Value_2641180a_3f89_4bfb_98b5_23272bd033aa;
+    ShaderVar_PathTile_2D = vise_tex2D(Samp_ShaderVar_PathTile,(pssem.mDiffuseUV * ShaderVar_TileCount).xy);
+    ShaderVar_PathColor = (ShaderVar_PathTile_2D * ShaderVar_Path);
+    ShaderVar_PathColor.w = (ShaderVar_Path.x * ShaderVar_Path.w);
+    ShaderVar_DiffuseFinal.w = ((((ShaderVar_ABlockColor.w + ShaderVar_MThroughColor.w) + ShaderVar_MBlockColor.w) + ShaderVar_DBlockColor.w) + ShaderVar_PathColor.w);
+    pssem.mDiffuseColor = ShaderVar_DiffuseFinal;
+    pssem.mBloom = ShaderVar_Bloom;
+
+}

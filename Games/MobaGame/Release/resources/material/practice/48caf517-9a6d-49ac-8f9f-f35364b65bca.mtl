@@ -1,0 +1,46 @@
+/*Material
+
+<Material Name="Å¤Çú±³¾°ÓÃ²ÄÖÊ" Require="DiffuseUV|LocalNorm|LocalPos|ViewPos|ProjPos|VertexColor0" Main="DoMaterial_48caf517_9a6d_49ac_8f9f_f35364b65bca" ExtendString="" Id="48caf517-9a6d-49ac-8f9f-f35364b65bca" Ver="2">
+	<DefaultTechnique Name="DefaultTech" Ver="0" AlphaRef="0" CullMode="CCW" ZDisable="0" ZWriteDisable="0" WireFrame="0" UseSystemMaterialFilterType="1" AlphaType="Disable" BlendOp="Add" BlendSrc="SrcAlpha" BlendDest="InvSrcAlpha" BillboardType="Disable" ZCmpFunc="LessEqual" AcceptDecal="0" AcceptLight="1" StencilEnable="1" StencilCmp="Always" StencilRef="1" StencilMask="0" StencilWriteMask="255" StencilFailOp="Keep" StencilZFailOp="Keep" StencilPassOp="Replace" HostMaterialId="48caf517-9a6d-49ac-8f9f-f35364b65bca" Id="5703ac4f-7b34-4a61-a8bb-c3c5bbd6e210" DepthBias="0" SlopeScaleDepthBias="0">
+		<ShaderVar>
+			<ShaderVar_834195c9_28b5_4983_84bb_95b35ca7e4f2 EditorType="Texture" Type="texture" Value="resources/texture/effect/glow/double_ring.png"/>
+		</ShaderVar>
+	</DefaultTechnique>
+</Material>
+
+
+
+*/
+
+#include "../shader/function/Common.function"
+
+
+texture ShaderVar_834195c9_28b5_4983_84bb_95b35ca7e4f2;
+sampler2D Samp_ShaderVar_834195c9_28b5_4983_84bb_95b35ca7e4f2 = sampler_state
+{
+	Texture = <ShaderVar_834195c9_28b5_4983_84bb_95b35ca7e4f2>;
+	MipFilter = LINEAR;
+	MinFilter = LINEAR;
+	MagFilter = LINEAR;
+	AddressU = Wrap;
+	AddressV = Wrap;
+	SRGBTexture = True;
+};
+
+
+#ifdef ByLayerBased
+void DoMaterial_48caf517_9a6d_49ac_8f9f_f35364b65bca(inout PixelMaterialTrans pssem)
+#else
+void	DoMaterial(inout PixelMaterialTrans pssem)
+#endif
+{
+    float2 ShaderVar_9a777709_2528_4902_9a25_8ace5b9860fe = float2(0.1,0.01);
+    float4 ShaderVar_834195c9_28b5_4983_84bb_95b35ca7e4f2_2D = float4(0,0,0,0);
+
+
+    ShaderVar_834195c9_28b5_4983_84bb_95b35ca7e4f2_2D = vise_tex2D(Samp_ShaderVar_834195c9_28b5_4983_84bb_95b35ca7e4f2,pssem.mDiffuseUV.xy);
+    float4 FuncTempValue_5d4920f3_03b0_4427_9e6d_10e7566cefff_7 = float4(0, 0, 0, 0);
+    Distortion2(pssem.mLocalPos,pssem.mLocalNorm,pssem.mViewPos,pssem.mProjPos,ShaderVar_9a777709_2528_4902_9a25_8ace5b9860fe.x,ShaderVar_9a777709_2528_4902_9a25_8ace5b9860fe.y,(ShaderVar_834195c9_28b5_4983_84bb_95b35ca7e4f2_2D.z * pssem.mVertexColor0.a).x,FuncTempValue_5d4920f3_03b0_4427_9e6d_10e7566cefff_7);
+    pssem.mDiffuseColor = FuncTempValue_5d4920f3_03b0_4427_9e6d_10e7566cefff_7;
+
+}

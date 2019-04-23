@@ -1,0 +1,67 @@
+<GameData.Role.SummonData ClassType="game@GameData.Role.SummonData" Ver="0">
+	<Class HashCode="-525967487" LastUseTime="2015/12/15 15:18:00">
+		<Property HashCode="-651440940" Type="mscorlib.dll@System.Single" Name="Direction"/>
+		<Property HashCode="-30343172" Type="cscommon@SlimDX.Vector3" Name="OriPosition"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-473393427" Type="mscorlib.dll@System.Single" Name="Scale"/>
+		<Property HashCode="-1798883791" Type="cscommon@SlimDX.Vector3" Name="Position"/>
+		<Property HashCode="849180968" Type="mscorlib.dll@System.UInt16" Name="TemplateId"/>
+		<Property HashCode="-1391857358" Type="mscorlib.dll@System.Guid" Name="RoleId"/>
+	</Class>
+	<Class HashCode="-542482820" LastUseTime="2015/12/25 15:25:52">
+		<Property HashCode="-651440940" Type="mscorlib.dll@System.Single" Name="Direction"/>
+		<Property HashCode="-122758239" Type="mscorlib.dll@System.Guid" Name="AIGuid"/>
+		<Property HashCode="917992732" Type="mscorlib.dll@System.Int64" Name="RebornElapsed"/>
+		<Property HashCode="-30343172" Type="cscommon@SlimDX.Vector3" Name="OriPosition"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-2012537187" Type="mscorlib.dll@System.Int32" Name="MaxRoleMp"/>
+		<Property HashCode="-2012486747" Type="mscorlib.dll@System.Int32" Name="MaxRoleHp"/>
+		<Property HashCode="-473393427" Type="mscorlib.dll@System.Single" Name="Scale"/>
+		<Property HashCode="-1798883791" Type="cscommon@SlimDX.Vector3" Name="Position"/>
+		<Property HashCode="-1379448635" Type="mscorlib.dll@System.Single" Name="RoleMoveSpeed"/>
+		<Property HashCode="849180968" Type="mscorlib.dll@System.UInt16" Name="TemplateId"/>
+		<Property HashCode="-1053485153" Type="mscorlib.dll@System.Int32" Name="RoleMp"/>
+		<Property HashCode="-1053463795" Type="mscorlib.dll@System.Int32" Name="RoleHp"/>
+		<Property HashCode="-1391857358" Type="mscorlib.dll@System.Guid" Name="RoleId"/>
+		<Property HashCode="1570401570" Type="mscorlib.dll@System.Boolean" Name="Reborn"/>
+		<Property HashCode="-248212288" Type="mscorlib.dll@System.Int32" Name="MonsterFaction"/>
+		<Property HashCode="1090400381" Type="mscorlib.dll@System.Collections.Generic.List`1[[game@GameData.Skill.SkillData]]" Name="Skills"/>
+	</Class>
+	<Class HashCode="247502538" LastUseTime="2015/12/26 11:12:05">
+		<Property HashCode="-651440940" Type="mscorlib.dll@System.Single" Name="Direction"/>
+		<Property HashCode="-122758239" Type="mscorlib.dll@System.Guid" Name="AIGuid"/>
+		<Property HashCode="-30343172" Type="cscommon@SlimDX.Vector3" Name="OriPosition"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-2012537187" Type="mscorlib.dll@System.Int32" Name="MaxRoleMp"/>
+		<Property HashCode="-2012486747" Type="mscorlib.dll@System.Int32" Name="MaxRoleHp"/>
+		<Property HashCode="-473393427" Type="mscorlib.dll@System.Single" Name="Scale"/>
+		<Property HashCode="-1798883791" Type="cscommon@SlimDX.Vector3" Name="Position"/>
+		<Property HashCode="-1379448635" Type="mscorlib.dll@System.Single" Name="RoleMoveSpeed"/>
+		<Property HashCode="849180968" Type="mscorlib.dll@System.UInt16" Name="TemplateId"/>
+		<Property HashCode="-1053485153" Type="mscorlib.dll@System.Int32" Name="RoleMp"/>
+		<Property HashCode="-1053463795" Type="mscorlib.dll@System.Int32" Name="RoleHp"/>
+		<Property HashCode="-1391857358" Type="mscorlib.dll@System.Guid" Name="RoleId"/>
+		<Property HashCode="-248212288" Type="mscorlib.dll@System.Int32" Name="MonsterFaction"/>
+		<Property HashCode="1090400381" Type="mscorlib.dll@System.Collections.Generic.List`1[[game@GameData.Skill.SkillData]]" Name="Skills"/>
+	</Class>
+	<Class HashCode="810034262" LastUseTime="2016/1/7 18:14:01">
+		<Property HashCode="-651440940" Type="mscorlib.dll@System.Single" Name="Direction"/>
+		<Property HashCode="-122758239" Type="mscorlib.dll@System.Guid" Name="AIGuid"/>
+		<Property HashCode="-30343172" Type="cscommon@SlimDX.Vector3" Name="OriPosition"/>
+		<Property HashCode="-241194725" Type="mscorlib.dll@System.String" Name="Name"/>
+		<Property HashCode="-2012537187" Type="mscorlib.dll@System.Int32" Name="MaxRoleMp"/>
+		<Property HashCode="-2012486747" Type="mscorlib.dll@System.Int32" Name="MaxRoleHp"/>
+		<Property HashCode="-473393427" Type="mscorlib.dll@System.Single" Name="Scale"/>
+		<Property HashCode="-1798883791" Type="cscommon@SlimDX.Vector3" Name="Position"/>
+		<Property HashCode="1836783377" Type="mscorlib.dll@System.Boolean" Name="Unrivaled"/>
+		<Property HashCode="2057319700" Type="mscorlib.dll@System.Guid" Name="NextLinkedRoleId"/>
+		<Property HashCode="-1379448635" Type="mscorlib.dll@System.Single" Name="RoleMoveSpeed"/>
+		<Property HashCode="849180968" Type="mscorlib.dll@System.UInt16" Name="TemplateId"/>
+		<Property HashCode="-1053485153" Type="mscorlib.dll@System.Int32" Name="RoleMp"/>
+		<Property HashCode="-1053463795" Type="mscorlib.dll@System.Int32" Name="RoleHp"/>
+		<Property HashCode="-1391857358" Type="mscorlib.dll@System.Guid" Name="RoleId"/>
+		<Property HashCode="-248212288" Type="mscorlib.dll@System.Int32" Name="MonsterFaction"/>
+		<Property HashCode="1090400381" Type="mscorlib.dll@System.Collections.Generic.List`1[[game@GameData.Skill.SkillData]]" Name="Skills"/>
+	</Class>
+</GameData.Role.SummonData>
+

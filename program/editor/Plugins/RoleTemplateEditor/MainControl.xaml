@@ -1,0 +1,145 @@
+﻿<UserControl x:Name="userControl" x:Class="RoleTemplateEditor.MainControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:wpg="clr-namespace:WPG;assembly=WPG"
+			 xmlns:res="clr-namespace:ResourceLibrary;assembly=ResourceLibrary"
+             xmlns:D3DViewer="clr-namespace:D3DViewer;assembly=EditorControlLib" 
+             mc:Ignorable="d" 
+             d:DesignHeight="343.333" d:DesignWidth="534.667">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="0.15*" MinHeight="260"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.667*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="0.326*"/>
+        </Grid.ColumnDefinitions>
+        <ToolBar d:LayoutOverrides="Height" Grid.ColumnSpan="3" Style="{DynamicResource {ComponentResourceKey ResourceId=ToolBarStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}">
+            <Button Foreground="White" Click="Menu_Save_Click" Content="保存" />
+            <Separator />
+            <ToggleButton IsChecked="True" Content="播放" Style="{DynamicResource {ComponentResourceKey ResourceId=ToolBarToggleButtonStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+        </ToolBar>
+        <Grid x:Name="Grid_Preview"  Margin="2" Grid.ColumnSpan="1" Grid.Row="1">
+            <D3DViewer:D3DViewerControl x:Name="D3DViewer"/>
+        </Grid>
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Header="模型" Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                <Grid Grid.IsSharedSizeScope="True">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="0.828*"/>
+                    </Grid.RowDefinitions>
+                    <ListBox x:Name="ListBox_MeshList" Margin="2" Grid.Row="1" HorizontalContentAlignment="Stretch" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                    <Button Content=" 添加 " HorizontalAlignment="Right" Margin="0,2,36,2" Click="Button_AddMeshTemplate_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}" Width="35"/>
+                    <Button Content=" 删除 " HorizontalAlignment="Right" Margin="0,2,2,2" Click="Button_DelMeshTemplate_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}" Width="35"/>
+                </Grid>
+            </GroupBox>
+            <GroupBox Header="动作" Margin="1" Grid.Row="2" Style="{DynamicResource {ComponentResourceKey ResourceId=GroupBoxStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                <TabControl Style="{DynamicResource {ComponentResourceKey ResourceId=TabControlStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                    <TabItem Header="系统动作" Style="{DynamicResource {ComponentResourceKey ResourceId=TabItemStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}" >
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="0.688*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid Margin="0" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="0.918*"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Margin="1" Text="未使用动作列表" d:LayoutOverrides="Width, Height"/>
+                                <ListBox x:Name="ListBox_ActionNames" Margin="1" Grid.Row="1" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                            </Grid>
+                            <Grid Margin="0" Grid.Column="1" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="0.2*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="0.1*"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="0.2*"/>
+                                </Grid.RowDefinitions>
+                                <Button Content=" → " Margin="2,0" Click="AddAction_Click" Foreground="White" Grid.Row="1" ToolTip="添加" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                <Button Content=" ← " Margin="2,0" Click="RemoveAction_Click" Foreground="White" Grid.Row="3" ToolTip="删除" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                            </Grid>
+                            <Grid Margin="0" Grid.Column="2" Grid.IsSharedSizeScope="True" ClipToBounds="True" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="0.867*"/>
+                                </Grid.RowDefinitions>
+                                <ListBox x:Name="ActionListBox" Margin="1" BorderThickness="1,1,1,1" Grid.RowSpan="2" Grid.Row="1" Grid.ColumnSpan="3" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                <Grid x:Name="Grid_ActionListTitle" Grid.ColumnSpan="3" Margin="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="ActionPreview"/>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="ActionName"/>
+                                        <ColumnDefinition Width="2"/>
+                                        <ColumnDefinition Width="0.755*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Grid.ColumnSpan="4" Fill="#FF333333" Margin="0" Stroke="Black" d:LayoutOverrides="GridBox"/>
+                                    <TextBlock Text="动作预览" VerticalAlignment="Center" Margin="2" />
+                                    <TextBlock Margin="2" Text="动作名称" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1"/>
+                                    <TextBlock Margin="2" Text="动作文件" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3"/>
+                                    <GridSplitter Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Column="2" HorizontalAlignment="Stretch" Margin="0" Background="Black"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                    <TabItem Header="扩展动作" Style="{DynamicResource {ComponentResourceKey ResourceId=TabItemStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}">
+                        <Grid Grid.RowSpan="3" Grid.Row="2">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="0.69*"/>
+                            </Grid.RowDefinitions>
+                            <Button Content=" 添加 " HorizontalAlignment="Right" Margin="0,2,37,2" Foreground="White" Click="Button_AddExtAction_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}" Width="35"/>
+                            <Button Content=" 删除 " HorizontalAlignment="Right" Margin="0,2,2,2" Foreground="White" Click="Button_DelExtAction_Click" Style="{DynamicResource {ComponentResourceKey ResourceId=ButtonStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}" Width="35"/>
+                            <Grid Margin="1" Grid.IsSharedSizeScope="True" ClipToBounds="True" Grid.Row="1">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="0.867*"/>
+                                </Grid.RowDefinitions>
+                                <ListBox x:Name="ActionListBox_Ext" Margin="0,1" BorderThickness="1,1,1,1" Grid.RowSpan="2" Grid.Row="1" Grid.ColumnSpan="3" Style="{DynamicResource {ComponentResourceKey ResourceId=ListBoxStyle_Default,TypeInTargetAssembly={x:Type res:CustomResources}}}"/>
+                                <Grid x:Name="Grid_ExpActionListTitle" Grid.ColumnSpan="3" Margin="0">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="ActionPreview"/>
+                                        <ColumnDefinition Width="Auto" SharedSizeGroup="ActionName"/>
+                                        <ColumnDefinition Width="2"/>
+                                        <ColumnDefinition Width="0.755*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Rectangle Grid.ColumnSpan="4" Fill="#FF333333" Margin="0" Stroke="Black" d:LayoutOverrides="GridBox"/>
+                                    <TextBlock Text="动作预览" VerticalAlignment="Center" Margin="2" />
+                                    <TextBlock Margin="2" Text="动作名称" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1"/>
+                                    <TextBlock Margin="2" Text="动作文件" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3"/>
+                                    <GridSplitter Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Column="2" HorizontalAlignment="Stretch" Margin="0" Background="Black"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </TabItem>
+                </TabControl>
+            </GroupBox>
+            <GridSplitter Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" HorizontalAlignment="Stretch" Grid.Row="1"/>
+        </Grid>
+        <GridSplitter Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" Grid.Column="1" HorizontalAlignment="Stretch" Width="3" Grid.Row="1" Grid.RowSpan="3"/>
+        <GridSplitter Style="{DynamicResource {ComponentResourceKey ResourceId=GridSplitterStyle_Default, TypeInTargetAssembly={x:Type res:CustomResources}}}" HorizontalAlignment="Stretch" Grid.Row="2"/>
+        <Grid Margin="0" Grid.Row="1" Grid.Column="3" Grid.RowSpan="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <!--RowDefinition Height="3"/>
+				<RowDefinition Height="0.5*"/-->
+            </Grid.RowDefinitions>
+            <wpg:PropertyGrid x:Name="PropertyGrid_RoleTemplate" Headline="属性" Margin="2" Alphabetical="False"/>
+            <!--GridSplitter HorizontalAlignment="Stretch" Margin="0" Grid.Row="1" Background="Black"/>
+			<TreeView x:Name="TreeView_BoneView" Margin="2" Grid.Row="2"/-->
+        </Grid>
+    </Grid>
+</UserControl>
